@@ -1,0 +1,2 @@
+# Magistrska-Naloga
+Magistrska naloga 
