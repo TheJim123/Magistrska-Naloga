@@ -1,0 +1,4 @@
+\babel@toc {slovene}{}\relax 
+\contentsline {section}{\tocsection {}{1}{Uvod}}{4}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Hilbertovi prostori}}{4}{section.2}%
+\contentsline {section}{\tocsection {}{}{Literatura}}{4}{section*.2}%
