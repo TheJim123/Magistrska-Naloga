@@ -10,10 +10,10 @@
 
 %  V povzetku na kratko opišite vsebinske rezultate dela. Sem ne sodi razlaga organizacije dela --
 %  v katerem poglavju/razdelku je kaj, pač pa le opis vsebine.
-\povzetek{...}
+\povzetek{Bo napisan zadnji}
 
 %  Prevod slovenskega povzetka v angleščino.
-\abstract{...}
+\abstract{Will be written last}
 
 % navedite vsaj eno klasifikacijsko oznako --
 % dostopne so na www.ams.org/mathscinet/msc/msc2020.html
@@ -46,6 +46,7 @@
 
 % za številske množice uporabite naslednje simbole
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\C}{\mathbb{C}}
@@ -59,14 +60,18 @@
 % vstavite svoje definicije ...
 
 \newcommand{\abs}[1]{\ensuremath{\lvert #1 \rvert}}
+\newcommand{\norm}[1]{\abs{\abs{#1}}}
+
 \newcommand{\Pplus}[1]{\mathbb{#1}_{+}}
 
 \newcommand{\pojem}[1]{\ensuremath{\emph{#1}}}
 \newcommand{\con}{\ensuremath{\mathscr{C}}}
-\newcommand{\padex}[2]{\ensuremath{{#1}^{\underline{#2}}}}
-\newcommand{\rastx}[2]{\ensuremath{{#1}^{\bar{#2}}}}
+
+\newcommand{\Sp}[2]{\ensuremath{\left<#1, #2\right>}}
+
 \newcommand{\map}[3]{\ensuremath{{#1}:{#2}\rightarrow{#3}}}
 \newcommand{\pra}[3]{{#1}{\ast}({#2}) = {#3}}
+
 \newcommand{\Gen}[1]{\ensuremath{\left<{#1}\right>}}
 
 %===============================================================================
@@ -76,10 +81,79 @@
 	\tableofcontents
 	
 	\section{Uvod}\label{sect:intro}
-	To je uvod
+	Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	
 	\section{Hilbertovi prostori}
-		Tukaj bom povedal osnovno o Hilbertovih prostorih
+		Tukaj bom povedal osnovno o Hilbertovih prostorih:
+		Kaj so Hilbertovi prostori
+		Prostor omejenih linearnih operatorjev nad Hilbertovimi prostori
+		Osnovne lastnosti in rezultati
+		
+		Preden se lotimo glavne teme naloge bomo definirali in opisali nekaj osnovnih lastnosti Hilbertovih prostorov. 
+		
+		Spomnimo se najprej definicije vektorskih prostorov in linearne neodvisnosti.
+		
+		\begin{definicija}
+			\label{def:VektSpac}
+			Naj bo $F$ poljubno polje z nevtralnim elementom $0$ in enoto $1$. Neprazna množica $V$, skupaj z operacijama $\map{+}{V\times V}{V}$ in $\map{\cdot}{F\times V}{V}$ je \pojem{vektorski prostor nad $F$}, če velja: \begin{itemize}
+				\item $(V, +)$ je Abelova grupa
+				\item $(\alpha + \beta)\cdot x = \alpha\cdot x + \beta\cdot x;~\forall \alpha, \beta \in F~\&~\forall x\in V$
+				\item $\alpha\cdot(x+y) = \alpha\cdot x + \alpha\cdot y;~\forall \alpha\in F~\&~\forall x, y\in V$
+				\item $\alpha\cdot(\beta\cdot x) = (\alpha\beta)\cdot x;~\forall \alpha, \beta\in F~\&~\forall x\in V$
+				\item $1\cdot x = x;~\forall x\in V$
+			\end{itemize}
+		\end{definicija}
+		
+		\begin{definicija}
+			\label{def:LinNeodv}
+			Naj bo $n\in\N$ in naj bo $V$ poljuben vektorski prostor nad poljubnim poljem $F$. Pravimo, da so vektorji $x_1, x_2, \ldots, x_n \in V$ \pojem{linearno neodvisni}, če enakost $\alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n = 0 $ velja le za $\alpha_1 = \alpha_2 = \ldots = \alpha_n = 0$.
+			Če vektorji $x_1, x_2, \ldots, x_n$ niso linearno neodvisni, pravimo, da so \pojem{linearno odvisni}.
+			
+			Naj bo $M$ poljubna neprazna podmnožica vektorskega prostora $V$. Pravimo, da je $M$ \pojem{linearno neodvisna}, če je vsaka njena končna podmnožica linearno neodvisna.
+		\end{definicija}
+		
+		\begin{opomba}
+			\label{op:Polj}
+			V nadaljevanju bomo s $\F$ označili polje, ki je ali polje realnih števil $\R$, ali pa polje kompleksnih števil $\C$. Kadar bo pomembno, bomo natančno navedli, če je $\F = \R$~ali~$\F = \C$.
+		\end{opomba}
+		Sedaj se spomnimo definicij norme in skalarnega produkta, saj bosta v nadaljevanju ta pojma ključna.
+		\begin{definicija}
+			\label{def:Norm}
+			Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\norm{.}}{V}{\R}$ pravimo \pojem{norma} na $V$, če velja: \begin{itemize}
+				\item $\norm{x} \geq 0;~\forall x\in V$
+				\item $\norm{x} = 0 \iff x = 0$
+				\item $\norm{\alpha\cdot x} = \abs{\alpha}\norm{x};~\forall \alpha\in\F~\&~\forall x\in V$
+				\item $\norm{x+y} \leq \norm{x}+\norm{y};~\forall x, y\in V$
+			\end{itemize}
+			Če je $\norm{.}$ norma na $V$, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor} (nad $\F$).
+		\end{definicija}
+		\begin{opomba}
+			\label{op:Norm}
+			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti, da je s predpisom $d(x, y) = \norm{x - y} ~\forall x, y \in V$ definirana metrika na $V$. Za to metriko pravimo, da je \pojem{porojena z normo} $\norm{.}$.
+		\end{opomba}
+		\begin{definicija}
+			\label{def:ScalProd}
+			Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\R}$ pravimo \pojem{skalarni produkt} na $V$, če velja: \begin{itemize}
+				\item $\Sp{x}{x} \geq 0;~\forall x\in V$
+				\item $\Sp{x}{x} = 0 \iff x = 0$
+				\item $\Sp{x}{y} = \overline{\Sp{y}{x}};~\forall x, y\in V$
+				\item $\Sp{\alpha_1\cdot x_1 + \alpha_2\cdot x_2}{y} = \alpha_1\Sp{x_1}{y} +\alpha_2\Sp{x_2}{y};~\forall \alpha_1, \alpha_2\in\F~\&~\forall x_1, x_2, y\in V$
+			\end{itemize}
+			Če je $V$ vektorski prostor (nad $\F$) in $\Sp{.}{.}$ skalarni produkt na njem, pravimo, da je $(V, +, \cdot, \Sp{.}{.})$ \pojem{prostor s skalarnim produktom}.
+		\end{definicija}
+		\begin{opomba}
+			\label{op:ScalProd}
+			Naj bo $(V, +, \cdot, \Sp{.}{.})$ prostor s skalarnim produktom nad poljem $\F$. Enostavno je preveriti, da je s predpisom $\norm{x} = \sqrt{\Sp{x}{x}}~\forall x\in V$ definirana norma na $V$. Za tako normo pravimo, da je \pojem{porojena s skalarnim produktom} $\Sp{.}{.}$.
+		\end{opomba}
+		\begin{definicija}
+			\label{def:PolnMP}
+			Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ konvergentno v $M$.
+		\end{definicija}
+		Sedaj definirajmo Hilbertove prostore.
+		\begin{definicija}
+			\label{def:Hilbert}
+			Naj bo $(V, \Sp{.}{.})$ poljuben prostor s skalarnim produktom nad poljem $\F$. Naj bo $\norm{.}$ norma na $V$ porojena s $\Sp{.}{.}$ in naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Hilbertov prostor} nad $\F$. 
+		\end{definicija}
 		
 	\begin{thebibliography}{99}
 		\bibitem{bib:Rynne} B.~P.~Rynne,~M.~A.~Youngson, \emph{Linear functional analysis},~Springer-Verlag London,~Ltd.,~London,~2008.
