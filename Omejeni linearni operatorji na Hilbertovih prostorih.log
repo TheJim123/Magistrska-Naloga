@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.25)  30 JUL 2024 18:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.25)  31 JUL 2024 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1667,6 +1667,9 @@ t.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-r
 m.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-m
 athsy.enc}]
 
+[5{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathe
+x.enc}]
+
 
 Package hyperxmp Warning: `pdfa' was passed to hyperref, but `pdfapart' was
 (hyperxmp)                not specified.  Setting pdfapart to `1' and
@@ -1676,8 +1679,7 @@ Package hyperxmp Warning: `pdfa' was passed to hyperref, but `pdfapart' was
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-utf8
 .def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [5{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mat
-hex.enc}] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
+) [6] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -1687,13 +1689,13 @@ prostorih".out' has not changed.
 (rerunfilecheck)             Checksum: 3B8371E0253F2808494475576F6FE3CB;151.
  ) 
 Here is how much of TeX's memory you used:
- 33232 strings out of 473903
- 645058 string characters out of 5724691
- 1943908 words of memory out of 5000000
- 55339 multiletter control sequences out of 15000+600000
+ 33257 strings out of 473903
+ 645496 string characters out of 5724691
+ 1947908 words of memory out of 5000000
+ 55353 multiletter control sequences out of 15000+600000
  633834 words of font info for 101 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 92i,7n,95p,893b,2687s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,7n,95p,893b,2760s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 2.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mcsc10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public
@@ -1707,11 +1709,14 @@ onts/type1/public/lm/lmr8.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX
 eX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/
 MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Uporabnik/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Uporabnik/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (5
- pages, 264406 bytes).
+rograms/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Upor
+abnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb>
+Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (6
+ pages, 294091 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
