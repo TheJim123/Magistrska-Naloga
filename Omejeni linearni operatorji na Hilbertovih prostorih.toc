@@ -1,4 +1,6 @@
 \babel@toc {slovene}{}\relax 
 \contentsline {section}{\tocsection {}{1}{Uvod}}{4}{section.1}%
 \contentsline {section}{\tocsection {}{2}{Hilbertovi prostori}}{4}{section.2}%
-\contentsline {section}{\tocsection {}{}{Literatura}}{6}{section*.2}%
+\contentsline {section}{\tocsection {}{3}{Omejeni linearni operatorji nad Hilbertovimi prostori}}{5}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Adjungirani operatorji}}{6}{subsection.3.1}%
+\contentsline {section}{\tocsection {}{}{Literatura}}{8}{section*.2}%
