@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.29)  29 AUG 2024 18:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.29)  6 SEP 2024 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1655,20 +1655,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 90.
+(Font)              <12> on input line 91.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 90.
+(Font)              <8> on input line 91.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 90.
+(Font)              <6> on input line 91.
 
 
 [4{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-maths
 y.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-m
 athit.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/
-lm-rm.enc}]
+lm-rm.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/
+lm-mathex.enc}]
 
-[5{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathe
-x.enc}]
+[5]
 
 [6]
 
@@ -1690,12 +1690,12 @@ L3 programming layer <2024-07-20>
  ***********
 Package rerunfilecheck Info: File `"Omejeni linearni operatorji na Hilbertovih 
 prostorih".out' has not changed.
-(rerunfilecheck)             Checksum: 88CE042A4B553B75D8E7BD295B8179B8;340.
+(rerunfilecheck)             Checksum: 9D636BDDEBB1CF246128B9BB172CBEA3;418.
  ) 
 Here is how much of TeX's memory you used:
- 33287 strings out of 473898
- 645850 string characters out of 5724591
- 1947960 words of memory out of 5000000
+ 33296 strings out of 473898
+ 645936 string characters out of 5724591
+ 1948960 words of memory out of 5000000
  55371 multiletter control sequences out of 15000+600000
  633834 words of font info for 101 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -1718,9 +1718,9 @@ l/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Upor
 abnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (8
- pages, 311158 bytes).
+ pages, 314733 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 228 PDF objects out of 1000 (max. 8388607)
+ 57 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

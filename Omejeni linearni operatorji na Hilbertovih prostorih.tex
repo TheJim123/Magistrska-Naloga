@@ -86,83 +86,81 @@
 	\section{Uvod}\label{sect:intro}
 	Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	
-	Pojmi: \begin{itemize}
-		\item Neenakost $C-S-B$
-		\item Ortogonalni komplement
-		\item Riezsov izrek
-	\end{itemize}
-	
 	\section{Hilbertovi prostori}
-		Tukaj bom povedal osnovno o Hilbertovih prostorih:
-		Kaj so Hilbertovi prostori
-		Prostor omejenih linearnih operatorjev nad Hilbertovimi prostori
-		Osnovne lastnosti in rezultati
+		Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
+			\item Izrek o odprti preslikavi (brez dokaza)
+			\item Kaj so Hilbertovi prostori
+			\item Neenakost $C-S-B$
+			\item Ortogonalni komplement
+			\item Riezsov izrek
+			\item Prostor omejenih linearnih operatorjev nad Hilbertovimi prostori
+		\end{itemize}
 		
-		Preden se lotimo glavne teme naloge bomo definirali in opisali nekaj osnovnih lastnosti Hilbertovih prostorov. 
-		
-		Spomnimo se najprej definicije vektorskih prostorov in linearne neodvisnosti.
-		
-		\begin{definicija}
-			\label{def:VektSpac}
-			Naj bo $F$ poljubno polje z nevtralnim elementom $0$ in enoto $1$. Neprazna množica $V$, skupaj z operacijama $\map{+}{V\times V}{V}$ in $\map{\cdot}{F\times V}{V}$ je \pojem{vektorski prostor nad $F$}, če velja: \begin{itemize}
-				\item $(V, +)$ je Abelova grupa
-				\item $(\alpha + \beta)\cdot x = \alpha\cdot x + \beta\cdot x;~\forall \alpha, \beta \in F~\&~\forall x\in V$
-				\item $\alpha\cdot(x+y) = \alpha\cdot x + \alpha\cdot y;~\forall \alpha\in F~\&~\forall x, y\in V$
-				\item $\alpha\cdot(\beta\cdot x) = (\alpha\beta)\cdot x;~\forall \alpha, \beta\in F~\&~\forall x\in V$
-				\item $1\cdot x = x;~\forall x\in V$
-			\end{itemize}
-		\end{definicija}
-		
-		\begin{definicija}
-			\label{def:LinNeodv}
-			Naj bo $n\in\N$ in naj bo $V$ poljuben vektorski prostor nad poljubnim poljem $F$. Pravimo, da so vektorji $x_1, x_2, \ldots, x_n \in V$ \pojem{linearno neodvisni}, če enakost $\alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n = 0 $ velja le za $\alpha_1 = \alpha_2 = \ldots = \alpha_n = 0$.
-			Če vektorji $x_1, x_2, \ldots, x_n$ niso linearno neodvisni, pravimo, da so \pojem{linearno odvisni}.
-			
-			Naj bo $M$ poljubna neprazna podmnožica vektorskega prostora $V$. Pravimo, da je $M$ \pojem{linearno neodvisna}, če je vsaka njena končna podmnožica linearno neodvisna.
-		\end{definicija}
-		
-		\begin{opomba}
-			\label{op:Polj}
-			V nadaljevanju bomo s $\F$ označili polje, ki je ali polje realnih števil $\R$, ali pa polje kompleksnih števil $\C$. Kadar bo pomembno, bomo natančno navedli, če je $\F = \R$~ali~$\F = \C$.
-		\end{opomba}
-		Sedaj se spomnimo definicij norme in skalarnega produkta, saj bosta v nadaljevanju ta pojma ključna.
-		\begin{definicija}
-			\label{def:Norm}
-			Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\norm{.}}{V}{\R}$ pravimo \pojem{norma} na $V$, če velja: \begin{itemize}
-				\item $\norm{x} \geq 0;~\forall x\in V$
-				\item $\norm{x} = 0 \iff x = 0$
-				\item $\norm{\alpha\cdot x} = \abs{\alpha}\norm{x};~\forall \alpha\in\F~\&~\forall x\in V$
-				\item $\norm{x+y} \leq \norm{x}+\norm{y};~\forall x, y\in V$
-			\end{itemize}
-			Če je $\norm{.}$ norma na $V$, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor} (nad $\F$).
-		\end{definicija}
-		
-		\begin{opomba}
-			\label{op:Norm1}
-			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti naslednje rezultate: \begin{itemize}
-				\item $\norm{0} = 0$
-				\item  $\norm{x_1 + x_2 + \ldots + x_n} \leq \norm{x_1} + \norm{x_2} + \ldots + \norm{x_n};~\forall x_1, x_2, \ldots, x_n\in V$
-				\item $\abs{\norm{x} - \norm{y}} \leq \norm{x-y};~\forall x, y\in V$
-			\end{itemize}
-		\end{opomba}
-		
-		\begin{opomba}
-			\label{op:Norm2}
-			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti, da je s predpisom $d(x, y) = \norm{x - y} ~\forall x, y \in V$ definirana metrika na $V$. Za to metriko pravimo, da je \pojem{porojena z normo} $\norm{.}$.
-		\end{opomba}
-
-		Dejstvo, da vsaka norma porodi metriko nas motivira, da obravnavamo konvergenco tudi v normiranih prostorih.
-		\begin{definicija}
-			\label{def:NormKonv}
-			Naj bo $(V, \norm{.})$ normiran prostor nad poljem $\F$. Naj bo $\bar{x} = \left(x_n\right)_{n\in\N}$ zaporedje s členi iz $V$.
-			\begin{itemize}
-				\item Pravimo, da je zaporedje $\bar{x}$ \pojem{konvergentno}, če obstaja tak $x\in V$, da za vsak $\varepsilon > 0$ obstaja tak $n_0\in \N$, da za vsak $n\in \N$ velja: $n\geq n_0 \Rightarrow \norm{x_n - x} < \varepsilon$. V tem primeru pravimo, da je $x$ \pojem{limita zaporedja} $\left(x_n\right)_{n\in\N}$ in pišemo $\lim_{n\to\infty}x_n = x$.
-				\item Pravimo, da je zaporedje $\bar{x}$ \pojem{Cauchyjevo}, če za vsak $\varepsilon >0$ obstaja tak $n_0\in\N$, da za poljubna $m, n \in \N$ velja: $m, n \geq n_0 \Rightarrow \norm{x_m - x_n} < \varepsilon$.
-				\item Naj bo $\bar{s}$ zaporedje podano s predpisom $s_n = \sum_{k = 1}^{n}x_k;~\forall n\in\N$. Pravimo, da je vrsta $\sum_{k = 1}^{\infty}x_k$ \pojem{konvergentna}, če je konvergentno zaporedje $\bar{s}$. Če je $s$ limita zaporedja $\bar{s}$, tedaj pravimo, da je $s$ \pojem{vsota vrste} $\sum_{k = 1}^{\infty}x_k$ in pišemo $s = \sum_{k = 1}^{\infty}x_k$.
-				\item Pravimo, da je vrsta $\sum_{k = 1}^{\infty}x_k$ \pojem{absolutno konvergentna}, če je vrsta $\sum_{k = 1}^{\infty}\norm{x_k}$ konvergentna.
-			\end{itemize} 
-		\end{definicija}
-		Naslednja trditev nam pove, da za limite v normiranih prostorih veljajo analogi nekaterih rezultatov, ki so nam znani že iz obravnave realnih zaporedij.
+%		Preden se lotimo glavne teme naloge bomo definirali in opisali nekaj osnovnih lastnosti Hilbertovih prostorov. 
+%		
+%		Spomnimo se najprej definicije vektorskih prostorov in linearne neodvisnosti.
+%		
+%		\begin{definicija}
+%			\label{def:VektSpac}
+%			Naj bo $F$ poljubno polje z nevtralnim elementom $0$ in enoto $1$. Neprazna množica $V$, skupaj z operacijama $\map{+}{V\times V}{V}$ in $\map{\cdot}{F\times V}{V}$ je \pojem{vektorski prostor nad $F$}, če velja: \begin{itemize}
+%				\item $(V, +)$ je Abelova grupa
+%				\item $(\alpha + \beta)\cdot x = \alpha\cdot x + \beta\cdot x;~\forall \alpha, \beta \in F~\&~\forall x\in V$
+%				\item $\alpha\cdot(x+y) = \alpha\cdot x + \alpha\cdot y;~\forall \alpha\in F~\&~\forall x, y\in V$
+%				\item $\alpha\cdot(\beta\cdot x) = (\alpha\beta)\cdot x;~\forall \alpha, \beta\in F~\&~\forall x\in V$
+%				\item $1\cdot x = x;~\forall x\in V$
+%			\end{itemize}
+%		\end{definicija}
+%		
+%		\begin{definicija}
+%			\label{def:LinNeodv}
+%			Naj bo $n\in\N$ in naj bo $V$ poljuben vektorski prostor nad poljubnim poljem $F$. Pravimo, da so vektorji $x_1, x_2, \ldots, x_n \in V$ \pojem{linearno neodvisni}, če enakost $\alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n = 0 $ velja le za $\alpha_1 = \alpha_2 = \ldots = \alpha_n = 0$.
+%			Če vektorji $x_1, x_2, \ldots, x_n$ niso linearno neodvisni, pravimo, da so \pojem{linearno odvisni}.
+%			
+%			Naj bo $M$ poljubna neprazna podmnožica vektorskega prostora $V$. Pravimo, da je $M$ \pojem{linearno neodvisna}, če je vsaka njena končna podmnožica linearno neodvisna.
+%		\end{definicija}
+%		
+%		\begin{opomba}
+%			\label{op:Polj}
+%			V nadaljevanju bomo s $\F$ označili polje, ki je ali polje realnih števil $\R$, ali pa polje kompleksnih števil $\C$. Kadar bo pomembno, bomo natančno navedli, če je $\F = \R$~ali~$\F = \C$.
+%		\end{opomba}
+%		Sedaj se spomnimo definicij norme in skalarnega produkta, saj bosta v nadaljevanju ta pojma ključna.
+%		\begin{definicija}
+%			\label{def:Norm}
+%			Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\norm{.}}{V}{\R}$ pravimo \pojem{norma} na $V$, če velja: \begin{itemize}
+%				\item $\norm{x} \geq 0;~\forall x\in V$
+%				\item $\norm{x} = 0 \iff x = 0$
+%				\item $\norm{\alpha\cdot x} = \abs{\alpha}\norm{x};~\forall \alpha\in\F~\&~\forall x\in V$
+%				\item $\norm{x+y} \leq \norm{x}+\norm{y};~\forall x, y\in V$
+%			\end{itemize}
+%			Če je $\norm{.}$ norma na $V$, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor} (nad $\F$).
+%		\end{definicija}
+%		
+%		\begin{opomba}
+%			\label{op:Norm1}
+%			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti naslednje rezultate: \begin{itemize}
+%				\item $\norm{0} = 0$
+%				\item  $\norm{x_1 + x_2 + \ldots + x_n} \leq \norm{x_1} + \norm{x_2} + \ldots + \norm{x_n};~\forall x_1, x_2, \ldots, x_n\in V$
+%				\item $\abs{\norm{x} - \norm{y}} \leq \norm{x-y};~\forall x, y\in V$
+%			\end{itemize}
+%		\end{opomba}
+%		
+%		\begin{opomba}
+%			\label{op:Norm2}
+%			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti, da je s predpisom $d(x, y) = \norm{x - y} ~\forall x, y \in V$ definirana metrika na $V$. Za to metriko pravimo, da je \pojem{porojena z normo} $\norm{.}$.
+%		\end{opomba}
+%
+%		Dejstvo, da vsaka norma porodi metriko nas motivira, da obravnavamo konvergenco tudi v normiranih prostorih.
+%		\begin{definicija}
+%			\label{def:NormKonv}
+%			Naj bo $(V, \norm{.})$ normiran prostor nad poljem $\F$. Naj bo $\bar{x} = \left(x_n\right)_{n\in\N}$ zaporedje s členi iz $V$.
+%			\begin{itemize}
+%				\item Pravimo, da je zaporedje $\bar{x}$ \pojem{konvergentno}, če obstaja tak $x\in V$, da za vsak $\varepsilon > 0$ obstaja tak $n_0\in \N$, da za vsak $n\in \N$ velja: $n\geq n_0 \Rightarrow \norm{x_n - x} < \varepsilon$. V tem primeru pravimo, da je $x$ \pojem{limita zaporedja} $\left(x_n\right)_{n\in\N}$ in pišemo $\lim_{n\to\infty}x_n = x$.
+%				\item Pravimo, da je zaporedje $\bar{x}$ \pojem{Cauchyjevo}, če za vsak $\varepsilon >0$ obstaja tak $n_0\in\N$, da za poljubna $m, n \in \N$ velja: $m, n \geq n_0 \Rightarrow \norm{x_m - x_n} < \varepsilon$.
+%				\item Naj bo $\bar{s}$ zaporedje podano s predpisom $s_n = \sum_{k = 1}^{n}x_k;~\forall n\in\N$. Pravimo, da je vrsta $\sum_{k = 1}^{\infty}x_k$ \pojem{konvergentna}, če je konvergentno zaporedje $\bar{s}$. Če je $s$ limita zaporedja $\bar{s}$, tedaj pravimo, da je $s$ \pojem{vsota vrste} $\sum_{k = 1}^{\infty}x_k$ in pišemo $s = \sum_{k = 1}^{\infty}x_k$.
+%				\item Pravimo, da je vrsta $\sum_{k = 1}^{\infty}x_k$ \pojem{absolutno konvergentna}, če je vrsta $\sum_{k = 1}^{\infty}\norm{x_k}$ konvergentna.
+%			\end{itemize} 
+%		\end{definicija}
+%		Naslednja trditev nam pove, da za limite v normiranih prostorih veljajo analogi nekaterih rezultatov, ki so nam znani že iz obravnave realnih zaporedij.
 %		\begin{trditev}
 %			\label{trd:Normlim}
 %			Naj bo $(V, \norm{.})$ normiran prostor nad $\F$. Naj bosta $\left(x_n\right)_{n\in\N}$ in $\left(y_n\right)_{n\in\N}$ poljubni konvergentni zaporedji s členi iz $V$ in z limitama $x$ ter $y$. Naj bo $\left(\alpha_n\right)_{n\in\N}$ poljubno konvergentno zaporedje s členi iz $\F$ z limito $\alpha$. Tedaj velja: \begin{enumerate}[i)]
@@ -185,6 +183,15 @@
 %				Dodatno vidimo, da je $\lim_{n\to\infty}\abs{\alpha}\norm{x_n - x} = \abs{\alpha}\lim_{n\to\infty}\norm{x_n - x} = \abs{\alpha}\cdot 0 = 0$. Potem sledi, da je zaporedje $\left(\abs{\alpha_n - \alpha}\norm{x_n} + \abs{\alpha}\norm{x_n - x}\right)_{n\in\N}$ realno konvergentno zaporedje z limito $0$. Po pravilu o sendviču, upoštevajoč oceno \eqref{eq:Normlim3}, sklepamo, da je potem $\lim_{n\to\infty}\norm{\alpha_n\cdot x_n - \alpha\cdot x} = 0$, od tod pa sledi, da za vsak $\varepsilon > 0$ obstaja $n_0\in\N$, da za vsak $n\in\N$, ki je večji ali enak $n_0$, velja $\norm{(\alpha_n\cdot x_n - \alpha\cdot x) - 0}=\norm{\alpha_n\cdot x_n - \alpha\cdot x} < \varepsilon$. Po definiciji konvergence zaporedja potem sledi, da je $\lim_{n\to\infty}(\alpha_n\cdot x_n) = \alpha\cdot x$.
 %			\end{enumerate}
 %		\end{dokaz}
+		\begin{lema}
+			\label{lem:invnorm}
+			Za poljubna normirana prostora $X$ ter $Y$ in poljuben $T\in B(X, Y)$ velja: Če je $T$ obrnljiv, je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$.
+		\end{lema}
+		
+		\begin{lema}
+			\label{lem:banzap}
+			Za poljuben Banachov prostor $X$, poljuben normiran prostor $Y$ ter poljuben $T\in B(X, Y)$ velja: Če obstaja tak $r>0$, da je $\norm{Tx}\geq r\norm{x};~\forall x\in X$, je $ImT$ zaprti podprostor v $Y$.
+		\end{lema}
 		
 		\begin{definicija}
 			\label{def:ScalProd}
@@ -210,6 +217,16 @@
 			\label{def:Hilbert}
 			Naj bo $(V, \Sp{.}{.})$ poljuben prostor s skalarnim produktom nad poljem $\F$. Naj bo $\norm{.}$ norma na $V$ porojena s $\Sp{.}{.}$ in naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Hilbertov prostor} nad $\F$. 
 		\end{definicija}
+		
+		\begin{posledica}
+			\label{posl:zaportoggost}
+			Za poljuben zaprti podprostor $Y$ poljubnega Hilbertovega prostora velja $Y^{\bot\bot} = Y$.
+		\end{posledica}
+		
+		\begin{posledica}
+			\label{posl:ortoggost}
+			Za poljuben podprostor $Y$ poljubnega Hilbertovega prostora velja $Y^{\bot\bot} = \overline{Y}$.
+		\end{posledica}
 		
 	\section{Omejeni linearni operatorji nad Hilbertovimi prostori}
 		V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev nad Hilbertovimi prostori ter lastnosti njihovih spektrov, kadar sta domena in kodomena kompleksna Hilbertova prostora. Posebej nas bo zanimala operacija adjungiranja, zato bomo najprej povedali nekaj o njej.
@@ -281,25 +298,71 @@
 			\end{lema}
 			
 			\begin{dokaz}
-				...
+				\begin{enumerate}[a)]
+					\item Najprej pokažimo, da je $KerT \subseteq (ImT^*)^\bot$. Naj bo $x\in KerT$ poljuben ter izberemo poljuben $z\in ImT^*$. Potem za $z$ obstaja $y\in Y$, da je $T^*y = z$. Posledično, je $$\Spp{x}{z} = \Spp{x}{T^*y} = \Sp{Tx}{y} = \Sp{0}{y} = 0$$
+					Sledi, da je $x\in (ImT^*)^\bot$. Ker je $x$ bil poljuben, premislek velja za vsak $x\in KerT$, torej je $KerT \subseteq (ImT^*)^\bot$.
+					Naj bo sedaj $x\in (ImT^*)^\bot$ poljuben. Ker je $T^*Tx \in ImT^*$, velja: $$\norm{Tx}^2 = \Sp{Tx}{Tx} = \Sp{x}{T^*Tx}= 0$$
+					Sledi, da je $Tx = 0$ oz. $x\in KerT$. Ker je bil $x$ poljuben, sledi $(ImT^*)^\bot \subseteq KerT$. Posledično velja enakost.
+					\item Da dokažemo ta rezultat, upoštevamo prejšnjo točko tega dokaza za $T^*$ ter točko $c)$ izreka \ref{izr:adjlast}. Posledično je $KerT^* = (Im(T^*)^*)^\bot = (ImT)^\bot$.
+					\item Da dokažemo ta rezultat bomo dokazali, da velja implikacija v obe smeri. \begin{itemize}
+						\item[$\Rightarrow)$] Denimo, da je $KerT^* = \{0\}$. Potem vidimo, upoštevajoč posledico \ref{posl:ortoggost} ter točko $a)$ tega dokaza, da velja: $$\overline{ImT} = ((ImT)^\bot)^\bot = (KerT^*)^\bot = \{0\}^\bot = Y$$
+						Sledi, da je $ImT$ gosta v $Y$ po definiciji.
+						\item[$\Leftarrow)$] Denimo, da je $ImT$ gosta v $Y$. Potem po posledici \ref{posl:ortoggost} velja, da je $$((ImT)^{\bot})^\bot = \overline{ImT} = Y$$ Po točki $b)$ tega dokaza velja $KerT^* = (ImT)^\bot$. Ker je $ImT\subseteq Y$ neprazna podmnožica, velja, da je $(ImT)^\bot$ zaprti podprostor v $Y$. Po posledici \ref{posl:zaportoggost} potem sledi: $$KerT^* = (ImT)^\bot =(((ImT)^\bot)^\bot)^\bot = Y^\bot = \{0\}$$
+					\end{itemize} 
+					
+				\end{enumerate}
 			\end{dokaz}
 			
 			\begin{posledica}
 				\label{posl:adjinv}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$. Naslednji trditvi sta ekvivalentni: \begin{enumerate}
+					\item Operator $T$ je obrnljiv.
+					\item $KerT^* = \{0\}$ ter obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
+				\end{enumerate}
 			\end{posledica}
 			
 			\begin{dokaz}
-				...
+				Dokazali bomo obe implikaciji.
+				\begin{itemize}
+					\item[$(1)\Rightarrow (2)$] Denimo, da je $T$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$ pripada $B(X)$. Posledično je $ImT = Y$. Ker je $X$ Hilbertov prostor, je tudi normiran prostor, torej po lemi \ref{lem:invnorm} velja, da je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$. Določimo $r = \norm{T^{-1}}^{-1}$. Ker je $X$ tudi Banachov prostor, po lemi \ref{lem:banzap} velja, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$, torej je $ImT$ gost v $Y$. Po lemi \ref{lem:adjlast2} je potem $KerT^* = \{0\}$.
+					\item[$(1)\Leftarrow (2)$] Denimo sedaj, da je $KerT^* = \{0\}$ in da obstaja tak $r>0$, da za $\forall x\in X$ velja $\norm{Tx} \geq r\norm{x}$. Po lemi \ref{lem:adjlast2} potem sledi, da je $ImT$ gost v $Y$. Lema \ref{lem:banzap} nam tudi pove, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$.
+					Naj bo sedaj $x\in KerT$ poljuben. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. To je pa možno le, kadar je $x = 0$. Sledi, da je $KerT = \{0\}$, torej je $T$ bijektiven endomorfizem nad Banachovim prostorom $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
+				\end{itemize}
 			\end{dokaz}
 			
 			\begin{lema}
 				\label{lem:adjinv}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Če je $T$ obrnljiv, je obrnljiv tudi $T^*$.
 			\end{lema}
 		
 			\begin{dokaz}
-				...
+				Naj bo $T\in B(X)$ poljuben obrnljiv operator. Tedaj velja, da je $TT^{-1} = T^{-1}T = I$. Enačbo adjungiramo ter tako dobimo $(TT^{-1})^* = (T^{-1}T)^* = I^*$. Ko upoštevamo točko $b)$ izreka \ref{izr:adjlast}, se enačba poenostavi v: $$(T^{-1})^*T^* = T^*(T^{-1})^* = I$$
+				Posledično je $T*$ obrnljiv ter $(T^*)^{-1} = (T^{-1})^*$.
 			\end{dokaz}
-		
+		\subsection{Normalni operatorji}
+			\begin{definicija}
+				\label{def:normalop}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T$ poljuben omejen linearen operator nad $X$. Pravimo, da je $T$ \pojem{normalen}, če je $TT^* = T^*T$.
+			\end{definicija}
+			
+			\begin{lema}
+				\label{lem:normalnorm}
+				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bota $T\in B(X)$ ter $r > 0$ poljubna. Velja: \begin{enumerate}[a)]
+					\item $\norm{Tx} = \norm{T^*x};~\forall x\in X$.
+					\item Če je $\norm{Tx} \geq r\norm{x};~\forall x\in X$, je $KerT^* = \{0\}$.
+				\end{enumerate}
+			\end{lema}
+			\begin{dokaz}
+				\begin{enumerate}[a)]
+					\item Naj bo $x\in X$ poljuben. Potem je \begin{align*}
+						\norm{Tx}^2 - \norm{T^*x}^2 &= \Sp{Tx}{Tx} - \Sp{T^*x}{T^*x} = \Sp{T^*Tx}{x} - \Sp{TT^*x}{x}\\
+						&= \Sp{T^*Tx - TT^*x}{x} = \Sp{(T^*T - TT^*)x}{x}
+					\end{align*}
+					Ker je $T$ normalen, je $TT^* = T^*T$, torej je $$\norm{Tx}^2 - \norm{T^*x}^2 = \Sp{(T^*T - TT^*)x}{x} = \Sp{0}{x} = 0 $$
+					Posledično je $\norm{Tx} - \norm{T^*x}$. Ker je bil $x$ poljuben, enakost velja za $\forall x\in X$.
+					\item Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x};~\forall x\in X$. Naj bo $x\in KerT^*$ poljuben. Po točki $a)$ tega dokaza je potem $0 = \norm{T^*x} = \norm{Tx} \geq r\norm{x}$. Sledi, da je $\norm{x} = 0$ oz. $x = 0$. Posledično je $KerT^* = \{0\}$.
+				\end{enumerate}
+			\end{dokaz}
 	\begin{thebibliography}{99}
 		\bibitem{bib:Rynne} B.~P.~Rynne,~M.~A.~Youngson, \emph{Linear functional analysis},~Springer-Verlag London,~Ltd.,~London,~2008.
 	\end{thebibliography}
