@@ -4,4 +4,5 @@
 \contentsline {section}{\tocsection {}{3}{Omejeni linearni operatorji nad Hilbertovimi prostori}}{4}{section.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{Adjungirani operatorji}}{5}{subsection.3.1}%
 \contentsline {subsection}{\tocsubsection {}{3.2}{Normalni operatorji}}{8}{subsection.3.2}%
-\contentsline {section}{\tocsection {}{}{Literatura}}{8}{section*.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Sebi-adjungirani operatorji}}{9}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{}{Literatura}}{9}{section*.2}%

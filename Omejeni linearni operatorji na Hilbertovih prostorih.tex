@@ -247,12 +247,12 @@
 				Če je $\norm{T^*y}_X \neq 0$, dobljeno neenakost delimo z $\norm{T^*y}_X$ ter tako dobimo oceno $\norm{T^*y}_X \leq \norm{T}\norm{y}_Y$. V primeru, ko je $\norm{T^*y}_X = 0$, prejšnja ocena velja trivialno. Sledi, da je $$\norm{T^*y}_X \leq \norm{T}\norm{y}_Y; \forall y\in Y$$
 				Preslikava $T^*$ je torej omejen linearen operator in velja $\norm{T^*}\leq \norm{T}$. Za konec še pokažimo, da je $T^*$ enolično določen. Denimo, da imamo $U_1, U_2 \in B(Y, X)$, za katera velja: $\Sp{Tx}{y} = \Spp{x}{U_1 y} = \Spp{x}{U_2 y};~\forall x\in X, \forall y\in Y$. Tedaj velja, da je $U_1y = U_2y;~\forall y\in Y$, torej je $U_1 = U_2$. Sledi, da je $T^*$ res enolično določen.
 			\end{dokaz}
-			
+			Izrek \ref{izr:Adjexist} nas motivira, da vpeljemo naslednjo definicijo.
 			\begin{definicija}
 				\label{def:adjop}
 				Naj bosta $X$ in $Y$ kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$. Tedaj operatorju $T^*$ iz izreka \ref{izr:Adjexist} pravimo \pojem{adjungiran operator} operatorja $T$.
 			\end{definicija}
-			Sedaj bomo navedli in premislili nekatere pomembne lastnosti adjungiranja.
+			Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 			
 			\begin{izrek}
 				\label{izr:adjlast}
@@ -287,7 +287,7 @@
 					Hkrati vidimo, da za $\forall x\in X$ velja $\norm{Ux}_Y^2 = \Sp{Ux}{Ux} = \Spp{U^*Ux}{x}$. Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo oceno $\Spp{U^*Ux}{x} \leq \norm{U^*Ux}_X\norm{x}_X \leq \norm{U^*U}\norm{x}_X^2$. Sledi ocena: $\norm{Ux}_Y^2 \leq \norm{U^*U}\norm{x}_X^2 \forall x\in X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Posledično velja iskana enakost.
 				\end{enumerate}
 			\end{dokaz}
-			
+			Pri obravnavi adjungiranih operatorjev nam bodo prav prišli naslednji pomožni rezultati.
 			\begin{lema}
 				\label{lem:adjlast2}
 				Naj bosta $(X, \Spp{.}{.})$ in $(Y, \Sp{.}{.})$ poljubna kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$ poljuben. Tedaj velja: \begin{enumerate}[a)]
@@ -304,7 +304,7 @@
 					Naj bo sedaj $x\in (ImT^*)^\bot$ poljuben. Ker je $T^*Tx \in ImT^*$, velja: $$\norm{Tx}^2 = \Sp{Tx}{Tx} = \Sp{x}{T^*Tx}= 0$$
 					Sledi, da je $Tx = 0$ oz. $x\in KerT$. Ker je bil $x$ poljuben, sledi $(ImT^*)^\bot \subseteq KerT$. Posledično velja enakost.
 					\item Da dokažemo ta rezultat, upoštevamo prejšnjo točko tega dokaza za $T^*$ ter točko $c)$ izreka \ref{izr:adjlast}. Posledično je $KerT^* = (Im(T^*)^*)^\bot = (ImT)^\bot$.
-					\item Da dokažemo ta rezultat bomo dokazali, da velja implikacija v obe smeri. \begin{itemize}
+					\item Da dokažemo ta rezultat bomo dokazali, da veljata implikaciji v obe smeri. \begin{itemize}
 						\item[$\Rightarrow)$] Denimo, da je $KerT^* = \{0\}$. Potem vidimo, upoštevajoč posledico \ref{posl:ortoggost} ter točko $a)$ tega dokaza, da velja: $$\overline{ImT} = ((ImT)^\bot)^\bot = (KerT^*)^\bot = \{0\}^\bot = Y$$
 						Sledi, da je $ImT$ gosta v $Y$ po definiciji.
 						\item[$\Leftarrow)$] Denimo, da je $ImT$ gosta v $Y$. Potem po posledici \ref{posl:ortoggost} velja, da je $$((ImT)^{\bot})^\bot = \overline{ImT} = Y$$ Po točki $b)$ tega dokaza velja $KerT^* = (ImT)^\bot$. Ker je $ImT\subseteq Y$ neprazna podmnožica, velja, da je $(ImT)^\bot$ zaprti podprostor v $Y$. Po posledici \ref{posl:zaportoggost} potem sledi: $$KerT^* = (ImT)^\bot =(((ImT)^\bot)^\bot)^\bot = Y^\bot = \{0\}$$
@@ -312,7 +312,7 @@
 					
 				\end{enumerate}
 			\end{dokaz}
-			
+
 			\begin{posledica}
 				\label{posl:adjinv}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$. Naslednji trditvi sta ekvivalentni: \begin{enumerate}
@@ -329,7 +329,7 @@
 					Naj bo sedaj $x\in KerT$ poljuben. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. To je pa možno le, kadar je $x = 0$. Sledi, da je $KerT = \{0\}$, torej je $T$ bijektiven endomorfizem nad Banachovim prostorom $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
 				\end{itemize}
 			\end{dokaz}
-			
+			Za konec tega podpoglavja premislimo, v sledeči lemi, kako sta povezani operaciji invertiranja in adjungiranja.
 			\begin{lema}
 				\label{lem:adjinv}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Če je $T$ obrnljiv, je obrnljiv tudi $T^*$.
@@ -337,9 +337,10 @@
 		
 			\begin{dokaz}
 				Naj bo $T\in B(X)$ poljuben obrnljiv operator. Tedaj velja, da je $TT^{-1} = T^{-1}T = I$. Enačbo adjungiramo ter tako dobimo $(TT^{-1})^* = (T^{-1}T)^* = I^*$. Ko upoštevamo točko $b)$ izreka \ref{izr:adjlast}, se enačba poenostavi v: $$(T^{-1})^*T^* = T^*(T^{-1})^* = I$$
-				Posledično je $T*$ obrnljiv ter $(T^*)^{-1} = (T^{-1})^*$.
+				Posledično je $T^*$ obrnljiv ter $(T^*)^{-1} = (T^{-1})^*$.
 			\end{dokaz}
 		\subsection{Normalni operatorji}
+			Sedaj se bomo posvetili, glede na adjungiranje, posebnim primerom operatorjev. Prvi izmed teh, so t.~i.~ normalni operatorji.
 			\begin{definicija}
 				\label{def:normalop}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T$ poljuben omejen linearen operator nad $X$. Pravimo, da je $T$ \pojem{normalen}, če je $TT^* = T^*T$.
@@ -347,7 +348,7 @@
 			
 			\begin{lema}
 				\label{lem:normalnorm}
-				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bota $T\in B(X)$ ter $r > 0$ poljubna. Velja: \begin{enumerate}[a)]
+				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben normalen operator ter $r > 0$ poljuben. Velja: \begin{enumerate}[a)]
 					\item $\norm{Tx} = \norm{T^*x};~\forall x\in X$.
 					\item Če je $\norm{Tx} \geq r\norm{x};~\forall x\in X$, je $KerT^* = \{0\}$.
 				\end{enumerate}
@@ -361,6 +362,51 @@
 					Ker je $T$ normalen, je $TT^* = T^*T$, torej je $$\norm{Tx}^2 - \norm{T^*x}^2 = \Sp{(T^*T - TT^*)x}{x} = \Sp{0}{x} = 0 $$
 					Posledično je $\norm{Tx} - \norm{T^*x}$. Ker je bil $x$ poljuben, enakost velja za $\forall x\in X$.
 					\item Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x};~\forall x\in X$. Naj bo $x\in KerT^*$ poljuben. Po točki $a)$ tega dokaza je potem $0 = \norm{T^*x} = \norm{Tx} \geq r\norm{x}$. Sledi, da je $\norm{x} = 0$ oz. $x = 0$. Posledično je $KerT^* = \{0\}$.
+				\end{enumerate}
+			\end{dokaz}
+			Na podlagi posledice \ref{posl:adjinv} in leme \ref{lem:normalnorm} sledi naslednja posledica.
+			\begin{posledica}
+				\label{posl:normalinv}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Naslednji trditvi sta ekvivalentni: \begin{enumerate}
+					\item Operator $T$ je obrnljiv.
+					\item Obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
+				\end{enumerate}
+			\end{posledica}
+			\begin{dokaz}
+				Dokazali bomo implikaciji v obe smeri.
+				\begin{itemize}
+					\item[$(1)\Rightarrow (2)$] Velja direktno po posledici \ref{posl:adjinv}.
+					\item[$(1)\Leftarrow (2)$] Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$. Po lemi \ref{lem:normalnorm} je potem $KerT^* = \{0\}$. Po posledici \ref{posl:adjinv} je potem $T$ obrnljiv.
+				\end{itemize}
+			\end{dokaz}
+			\subsection{Sebi-adjungirani operatorji}
+			Pri obravnavi preslikav nas pogosto zanimajo t.~i.~ ">fiksne točke"< - točke, ki jih preslikava preslika nazaj vase. V primeru adjungiranja, operatorjem, ki jih operacija ">fiksira"< damo posebno ime.
+			\begin{definicija}
+				\label{def:sebiadjop}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Pravimo, da je $T$ \pojem{sebi-adjungiran}, če velja $T = T^*$.
+			\end{definicija}
+			V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operatorjev.
+			\begin{lema}
+				\label{lem:sebiadjlast}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $\mathcal{S}(X)$ množica vseh sebi-adjungiranih operatorjev znotraj $B(X)$ in naj bo $T\in B(X)$ poljuben. Velja:
+				\begin{enumerate}[a)]
+					\item Za poljubni $\alpha, \beta \in \R$ in poljubna $T_1, T_2 \in \mathcal{S}(X)$ velja: $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$
+					\item Množica $\mathcal{S}(X)$ je zaprta podmnožica $B(X)$.
+					\item Operatorja $TT^*$ in $T^*T$ sta sebi-adjungirana.
+					\item $T = R + iS$, za neka sebi-adjungirana operatorja $R, S \in \mathcal{S}(X)$.
+				\end{enumerate}
+			\end{lema}
+			\begin{dokaz}
+				\begin{enumerate}[a)]
+					\item Naj bosta $T_1, T_2 \in \mathcal{S}(X)$ poljubna. Ker sta operatorja sebi-adjungirana, po prvi točki izreka \ref{izr:adjlast} velja: $(\alpha T_1 + \beta T_2)^* = \alpha T_1^* + \beta T_2^* = \alpha T_1 + \beta T_2$. Posledično je $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
+					\item Naj bo $\{T_n\}_{n\in\N}$ konvergentno zaporedje s členi v $\mathcal{S}(X)$ in limito $T\in B(X)$. Predzadnja točka izreka \ref{izr:adjlast} nam pove, da je adjungiranje zvezno, torej je tudi zaporedje $\{T_n^*\}_{n\in\N}$ konvergentno z limito $T^* \in B(X)$. Ker so $T_n \in \mathcal{S}(X)~ \forall n\in \N$, velja $T_n^* = T_n~\forall n\in \N$, torej je $T^* = T$. Posledično je tudi $T\in \mathcal{S}(X)$. Sledi, da je $\mathcal{S}(X)$ zaprta.
+					\item Naj bo $T\in B(X)$ poljuben. Tedaj je, upoštevajoč točko $c)$ izreka \ref{izr:adjlast}, $(T^*T)^* = T^*T^{**} = T^*T$. Sledi, da je $T^*T\in \mathcal{S}(X)$ in na enak način premislimo, da enako velja za $TT^*$.
+					\item Naj bo $T\in B(X)$ poljuben. Definiramo operatorja $R$ in $S$ na naslednji način: $$R = \frac{1}{2}(T + T^*),~ S=\frac{1}{2i}(T - T^*)$$
+					Očitno velja, da je $T = R + iS$. Preverimo še, da sta $R$ in $S$ res sebi-adjungirana.
+					\begin{align*}
+						R^* &= (\frac{1}{2}(T + T^*))^* = \frac{1}{2}(T^* + T^{**}) = \frac{1}{2}(T^* + T) = R \\
+						S^* &= (\frac{1}{2i}(T - T^*))^* = \frac{-1}{2i}(T - T^*)^* = \frac{-1}{2i}(T^* - T^{**}) =\frac{1}{2i}(T - T^*) = S
+					\end{align*}
 				\end{enumerate}
 			\end{dokaz}
 	\begin{thebibliography}{99}
