@@ -228,6 +228,11 @@
 			Za poljuben podprostor $Y$ poljubnega Hilbertovega prostora velja $Y^{\bot\bot} = \overline{Y}$.
 		\end{posledica}
 		
+		\begin{lema}
+			\label{lem:scalprodopenak}
+			Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna. Če $\forall x\in X$ velja $\Sp{Tx}{x} = \Sp{Sx}{x}$, potem je $T = S$.
+		\end{lema}
+		
 	\section{Omejeni linearni operatorji nad Hilbertovimi prostori}
 		V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev nad Hilbertovimi prostori ter lastnosti njihovih spektrov, kadar sta domena in kodomena kompleksna Hilbertova prostora. Posebej nas bo zanimala operacija adjungiranja, zato bomo najprej povedali nekaj o njej.
 		\subsection{Adjungirani operatorji}
@@ -257,12 +262,12 @@
 			\begin{izrek}
 				\label{izr:adjlast}
 				Naj bodo $(X, \Spp{.}{.})$, $(Y, \Sp{.}{.})$ in $(Z, \Sppp{.}{.})$ poljubni kompleksni Hilbertovi prostori ter naj bodo $U, V \in B(X, Y)$ ter $T \in B(Y, Z)$ poljubni omejeni linearni operatorji. Tedaj velja: \begin{enumerate}[a)]
-					\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*; \forall \alpha, \beta \in \C$
-					\item $(TU)^* = U^*T^*$
-					\item $(U^*)^* = U$
-					\item $\norm{U^*} = \norm{U}$
+					\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*; \forall \alpha, \beta \in \C$.
+					\item $(TU)^* = U^*T^*$.
+					\item $(U^*)^* = U$.
+					\item $\norm{U^*} = \norm{U}$.
 					\item Preslikava $\map{f}{B(X, Y)}{B(Y, X)}$, definirana s predpisom $f(U) = U^*$ je zvezna.
-					\item $\norm{U^*U} = \norm{U}^2$
+					\item $\norm{U^*U} = \norm{U}^2$.
 				\end{enumerate}
 			\end{izrek}
 			
@@ -287,13 +292,13 @@
 					Hkrati vidimo, da za $\forall x\in X$ velja $\norm{Ux}_Y^2 = \Sp{Ux}{Ux} = \Spp{U^*Ux}{x}$. Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo oceno $\Spp{U^*Ux}{x} \leq \norm{U^*Ux}_X\norm{x}_X \leq \norm{U^*U}\norm{x}_X^2$. Sledi ocena: $\norm{Ux}_Y^2 \leq \norm{U^*U}\norm{x}_X^2 \forall x\in X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Posledično velja iskana enakost.
 				\end{enumerate}
 			\end{dokaz}
-			Pri obravnavi adjungiranih operatorjev nam bodo prav prišli naslednji pomožni rezultati.
+			Pri obravnavi adjungiranih operatorjev bomo potrebovali naslednji pomožni rezultat.
 			\begin{lema}
 				\label{lem:adjlast2}
 				Naj bosta $(X, \Spp{.}{.})$ in $(Y, \Sp{.}{.})$ poljubna kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$ poljuben. Tedaj velja: \begin{enumerate}[a)]
-					\item $KerT = (ImT^*)^{\bot}$
-					\item $KerT^* = (ImT)^{\bot}$
-					\item $KerT^* = \{0\} \iff ImT$ je gosta v $Y$
+					\item $KerT = (ImT^*)^{\bot}$.
+					\item $KerT^* = (ImT)^{\bot}$.
+					\item $KerT^* = \{0\} \iff ImT$ je gosta v $Y$.
 				\end{enumerate}
 			\end{lema}
 			
@@ -315,17 +320,14 @@
 
 			\begin{posledica}
 				\label{posl:adjinv}
-				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$. Naslednji trditvi sta ekvivalentni: \begin{enumerate}
-					\item Operator $T$ je obrnljiv.
-					\item $KerT^* = \{0\}$ ter obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
-				\end{enumerate}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$. Tedaj je operator $T$ obrnljiv natanko tedaj, ko je $KerT^* = \{0\}$ in obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
 			\end{posledica}
 			
 			\begin{dokaz}
 				Dokazali bomo obe implikaciji.
 				\begin{itemize}
-					\item[$(1)\Rightarrow (2)$] Denimo, da je $T$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$ pripada $B(X)$. Posledično je $ImT = Y$. Ker je $X$ Hilbertov prostor, je tudi normiran prostor, torej po lemi \ref{lem:invnorm} velja, da je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$. Določimo $r = \norm{T^{-1}}^{-1}$. Ker je $X$ tudi Banachov prostor, po lemi \ref{lem:banzap} velja, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$, torej je $ImT$ gost v $Y$. Po lemi \ref{lem:adjlast2} je potem $KerT^* = \{0\}$.
-					\item[$(1)\Leftarrow (2)$] Denimo sedaj, da je $KerT^* = \{0\}$ in da obstaja tak $r>0$, da za $\forall x\in X$ velja $\norm{Tx} \geq r\norm{x}$. Po lemi \ref{lem:adjlast2} potem sledi, da je $ImT$ gost v $Y$. Lema \ref{lem:banzap} nam tudi pove, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$.
+					\item[$\Rightarrow)$] Denimo, da je $T$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$, pripada $B(X)$. Posledično je $ImT = Y$. Ker je $X$ Hilbertov prostor, je tudi normiran prostor, torej po lemi \ref{lem:invnorm} velja, da je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$. Določimo $r = \norm{T^{-1}}^{-1}$. Ker je $X$ tudi Banachov prostor, po lemi \ref{lem:banzap} velja, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$, torej je $ImT$ gost v $Y$. Po lemi \ref{lem:adjlast2} je potem $KerT^* = \{0\}$.
+					\item[$\Leftarrow)$] Denimo sedaj, da je $KerT^* = \{0\}$ in da obstaja tak $r>0$, da za $\forall x\in X$ velja $\norm{Tx} \geq r\norm{x}$. Po lemi \ref{lem:adjlast2} potem sledi, da je $ImT$ gost v $Y$. Lema \ref{lem:banzap} nam tudi pove, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$.
 					Naj bo sedaj $x\in KerT$ poljuben. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. To je pa možno le, kadar je $x = 0$. Sledi, da je $KerT = \{0\}$, torej je $T$ bijektiven endomorfizem nad Banachovim prostorom $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
 				\end{itemize}
 			\end{dokaz}
@@ -343,7 +345,7 @@
 			Sedaj se bomo posvetili, glede na adjungiranje, posebnim primerom operatorjev. Prvi izmed teh, so t.~i.~ normalni operatorji.
 			\begin{definicija}
 				\label{def:normalop}
-				Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T$ poljuben omejen linearen operator nad $X$. Pravimo, da je $T$ \pojem{normalen}, če je $TT^* = T^*T$.
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je $T \in B(X)$ \pojem{normalen}, če je $TT^* = T^*T$.
 			\end{definicija}
 			
 			\begin{lema}
@@ -367,30 +369,27 @@
 			Na podlagi posledice \ref{posl:adjinv} in leme \ref{lem:normalnorm} sledi naslednja posledica.
 			\begin{posledica}
 				\label{posl:normalinv}
-				Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Naslednji trditvi sta ekvivalentni: \begin{enumerate}
-					\item Operator $T$ je obrnljiv.
-					\item Obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
-				\end{enumerate}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Tedaj je operator $T$ obrnljiv natanko tedaj, ko obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
 			\end{posledica}
 			\begin{dokaz}
-				Dokazali bomo implikaciji v obe smeri.
+				Da dokažemo ekvivalenco, bomo dokazali implikaciji v obe smeri.
 				\begin{itemize}
-					\item[$(1)\Rightarrow (2)$] Velja direktno po posledici \ref{posl:adjinv}.
-					\item[$(1)\Leftarrow (2)$] Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$. Po lemi \ref{lem:normalnorm} je potem $KerT^* = \{0\}$. Po posledici \ref{posl:adjinv} je potem $T$ obrnljiv.
+					\item[$\Rightarrow)$] Velja direktno po posledici \ref{posl:adjinv}.
+					\item[$\Leftarrow)$] Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$. Po lemi \ref{lem:normalnorm} je potem $KerT^* = \{0\}$. Po posledici \ref{posl:adjinv} je potem $T$ obrnljiv.
 				\end{itemize}
 			\end{dokaz}
 			\subsection{Sebi-adjungirani operatorji}
 			Pri obravnavi preslikav nas pogosto zanimajo t.~i.~ ">fiksne točke"< - točke, ki jih preslikava preslika nazaj vase. V primeru adjungiranja, operatorjem, ki jih operacija ">fiksira"< damo posebno ime.
 			\begin{definicija}
 				\label{def:sebiadjop}
-				Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Pravimo, da je $T$ \pojem{sebi-adjungiran}, če velja $T = T^*$.
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je $T\in B(X)$ \pojem{sebi-adjungiran}, če velja $T = T^*$.
 			\end{definicija}
 			V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operatorjev.
 			\begin{lema}
 				\label{lem:sebiadjlast}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $\mathcal{S}(X)$ množica vseh sebi-adjungiranih operatorjev znotraj $B(X)$ in naj bo $T\in B(X)$ poljuben. Velja:
 				\begin{enumerate}[a)]
-					\item Za poljubni $\alpha, \beta \in \R$ in poljubna $T_1, T_2 \in \mathcal{S}(X)$ velja: $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$
+					\item Za poljubni $\alpha, \beta \in \R$ in poljubna $T_1, T_2 \in \mathcal{S}(X)$ velja: $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
 					\item Množica $\mathcal{S}(X)$ je zaprta podmnožica $B(X)$.
 					\item Operatorja $TT^*$ in $T^*T$ sta sebi-adjungirana.
 					\item $T = R + iS$, za neka sebi-adjungirana operatorja $R, S \in \mathcal{S}(X)$.
@@ -407,6 +406,63 @@
 						R^* &= (\frac{1}{2}(T + T^*))^* = \frac{1}{2}(T^* + T^{**}) = \frac{1}{2}(T^* + T) = R \\
 						S^* &= (\frac{1}{2i}(T - T^*))^* = \frac{-1}{2i}(T - T^*)^* = \frac{-1}{2i}(T^* - T^{**}) =\frac{1}{2i}(T - T^*) = S
 					\end{align*}
+				\end{enumerate}
+			\end{dokaz}
+			
+			\subsection{Unitarni operatorji}
+			Zadnji posebni primer operatorjev, glede na adjungiranje, je primer, v katerem je adjungirani operator hkrati tudi inverz.
+			
+			\begin{definicija}
+				\label{def:unitarop}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{unitaren}, če velja: $TT^* = T^*T = I$.
+			\end{definicija}
+			Naslednji izrek nam pove, da so unitarni operatorji hkrati tudi izometrije.
+			\begin{izrek}
+				\label{izr:uniizo}
+				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bosta $T, U\in B(X)$ poljubna. Velja: \begin{enumerate}[a)]
+					\item $T^*T = I \iff T$~je izometrija.
+					\item $U$ je unitaren $\iff U$~je surjektivna izometrija na $X$.
+				\end{enumerate}
+			\end{izrek}
+			\begin{dokaz}
+				Obe ekvivalenci bomo dokazali tako, da bomo pokazali, da veljata implikaciji v obe smeri.
+				\begin{enumerate}[a)]
+					\item Pri dokazu si bomo pomagali z lemo \ref{lem:scalprodopenak}. \begin{itemize}
+						\item[$\Rightarrow)$] Denimo, da je $T^*T = I$ in naj bo $x\in X$ poljuben. Tedaj je: $$\norm{Tx}^2=\Sp{Tx}{Tx} = \Sp{T^*Tx}{x}= \Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2$$
+						Ker je bil $x$ poljuben, zgornja enakost velja za vse elemente $X$, torej je $T$ res izometrija.
+						\item[$\Leftarrow)$] Denimo, da je $T$ izometrija. Naj bo $x\in X$ poljuben. Tedaj velja $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 = \norm{x}^2 = \Sp{Ix}{x}$$
+						Ker je $x$ poljuben, sklep velja za vse elemente $X$, torej po lemi \ref{lem:scalprodopenak} sledi, da je $T^*T = I$.
+					\end{itemize}
+					\item Pri dokazu te ekvivalence, si bomo pomagali s prejšnjo točko dokaza.  \begin{itemize}
+						\item[$\Rightarrow)$] Denimo, da je $U$ unitaren. Potem sledi, da je $UU^*=U^*U = I$ in po točki $a)$ je potem $U$ izometrija. Dodatno, naj bo $x\in X$ poljuben. Potem je $x = U(U^*x)$, torej je $x\in ImU$. Sledi, da je $ImU = X$ oz. $U$ je surjektiven.
+						\item[$\Leftarrow)$] Denimo, da je $U$ surjektivna izometrija na $X$. Ker je $U$ izometrija, po točki $a)$ tega dokaza sledi, da je $U^*U = I$. Naj bo sedaj $y\in X$ poljuben. Ker je $U$ surjektiven operator na $X$, obstaja tak $x\in X$, da je $Ux = y$. Posledično velja naslednje: $$UU^*y = UU^*(Ux) = U(U^*Ux) = U(Ix) = Ux = y$$
+						Ker je bil $y$ poljuben, prejšnji sklep velja za vsak element $X$. Sledi, da je $UU^* = I$, torej je $U$ unitaren operator.
+					\end{itemize}
+				\end{enumerate}
+			\end{dokaz}
+			Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
+			\begin{lema}
+				\label{lem:unitarset}
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $\mathcal{U}(X)$ množica vseh unitarnih operatorjev na $X$. Velja:
+				\begin{enumerate}[a)]
+					\item Če je $U\in \mathcal{U}(X)$, je tudi $U^*\in \mathcal{U}(X)$, ter $\norm{U} = \norm{U^*} = 1$.
+					\item Če sta $U_1, U_2 \in \mathcal{U}(X)$, sta tudi $U_1U_2$ in $U_1^{-1}$.
+					\item $\mathcal{U}(X)$ je zaprta podmnožica $B(X)$.
+				\end{enumerate}
+			\end{lema}
+			\begin{dokaz}
+				\begin{enumerate}[a)]
+					\item Naj bo $U$ poljuben unitaren operator na $X$. Tedaj je $U^*(U^*)^* = U^*U = I$ in $(U^*)^*U^* = UU^* = I$, torej je tudi $U^*\in B(X)$ unitaren. Po izreku \ref{izr:adjlast} že vemo, da je $\norm{U} = \norm{U^*}$. Dodatno nam izrek \ref{izr:uniizo} pove, da je $U$ tudi izometrija, torej je $\norm{U} = 1$.
+					\item Naj bosta $U_1$ in $U_2$ poljubna unitarna operatorja na $X$. S pomočjo izreka \ref{izr:adjlast} vidimo, da je: \begin{align*}
+						U_1U_2(U_1U_2)^* &= U_1U_2U_2^*U_1^* = U_1IU_1^* = I \\
+						(U_1U_2)^*U_1U_2 &= U_2^*U_1^*U_1U_2 = U_2^*IU_2 = I 
+					\end{align*} torej je tudi $U_1U_2 \in \mathcal{U}(X)$.
+					Ker je $U_1$ unitaren, je omejen in po izreku \ref{izr:uniizo} bijektiven, je po posledici izreka o odprti preslikavi tudi obrnljiv (znotraj $B(X)$). Dodatno, upoštevamo lemo \ref{lem:adjinv} in tako dobimo: \begin{align*}
+						(U_1^{-1})^*U_1^{-1} &= (U_1^*)^{-1}U_1^{-1} = (U_1U_1^*)^{-1} = I^{-1} = I \\
+						U_1^{-1}(U_1^{-1})^* &= U_1^{-1}(U_1^*)^{-1} = (U_1^*U_1)^{-1} = I^{-1} = I
+					\end{align*}
+					Sledi, da je $U_1^{-1}$ unitaren.
+					\item Naj bo $\{U_n\}_{n\in\N}$ zaporedje s členi v $\mathcal{U}(X)$ in limito $U \in B(X)$. Potem je po točki $a)$ tega dokaza tudi zaporedje $\{U_n^*\}_{n\in\N}$ zaporedje s členi v $\mathcal{U}(X)$. Ker je adjungiranje zvezno, je $U^*\in B(X)$ limita zaporedja $\{U_n^*\}_{n\in\N}$. Naj bo $x\in X$ poljuben. Potem je $\norm{Ux}^2 = \Sp{Ux}{Ux} = \lim_{n\to\infty}\Sp{U_nx}{U_nx} = \lim_{n\to\infty}\norm{U_nx}^2 = \norm{x}^2$. Sledi, da je $U$ izometrija, po izreku \ref{izr:uniizo} pa sledi, da je potem $U^*U = I$. Na enak način kot za $U$ vidimo, da je tudi $U^*$ izometrija in posledično po izreku \ref{izr:uniizo} velja, da je $(U^*)^*U^* = UU^* = I$. Sledi, da je $U$ unitaren.
 				\end{enumerate}
 			\end{dokaz}
 	\begin{thebibliography}{99}
