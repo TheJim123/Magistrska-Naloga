@@ -87,6 +87,8 @@
 	Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	
 	\section{Hilbertovi prostori}
+	V tem poglavju bomo najprej osvežili znanje o nekaterih pomembnih definicijah in rezultatih iz študije Banachovih in Hilbertovih prostorov. V nadaljevanju bomo pozornost posvetili t.~i.~ adjungiranim operatorjem, nato pa še njihovim posebnim primerom - normalnim, sebi-adjungiranim in unitarnim operatorjem. Pri tem se bomo primarno sklicevali na vir \cite{bib:Rynne}.
+	
 		Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 			\item Izrek o odprti preslikavi (brez dokaza)
 			\item Kaj so Hilbertovi prostori
@@ -96,93 +98,6 @@
 			\item Prostor omejenih linearnih operatorjev nad Hilbertovimi prostori
 		\end{itemize}
 		
-%		Preden se lotimo glavne teme naloge bomo definirali in opisali nekaj osnovnih lastnosti Hilbertovih prostorov. 
-%		
-%		Spomnimo se najprej definicije vektorskih prostorov in linearne neodvisnosti.
-%		
-%		\begin{definicija}
-%			\label{def:VektSpac}
-%			Naj bo $F$ poljubno polje z nevtralnim elementom $0$ in enoto $1$. Neprazna množica $V$, skupaj z operacijama $\map{+}{V\times V}{V}$ in $\map{\cdot}{F\times V}{V}$ je \pojem{vektorski prostor nad $F$}, če velja: \begin{itemize}
-%				\item $(V, +)$ je Abelova grupa
-%				\item $(\alpha + \beta)\cdot x = \alpha\cdot x + \beta\cdot x;~\forall \alpha, \beta \in F~\&~\forall x\in V$
-%				\item $\alpha\cdot(x+y) = \alpha\cdot x + \alpha\cdot y;~\forall \alpha\in F~\&~\forall x, y\in V$
-%				\item $\alpha\cdot(\beta\cdot x) = (\alpha\beta)\cdot x;~\forall \alpha, \beta\in F~\&~\forall x\in V$
-%				\item $1\cdot x = x;~\forall x\in V$
-%			\end{itemize}
-%		\end{definicija}
-%		
-%		\begin{definicija}
-%			\label{def:LinNeodv}
-%			Naj bo $n\in\N$ in naj bo $V$ poljuben vektorski prostor nad poljubnim poljem $F$. Pravimo, da so vektorji $x_1, x_2, \ldots, x_n \in V$ \pojem{linearno neodvisni}, če enakost $\alpha_1\cdot x_1 + \alpha_2\cdot x_2 + \ldots + \alpha_n\cdot x_n = 0 $ velja le za $\alpha_1 = \alpha_2 = \ldots = \alpha_n = 0$.
-%			Če vektorji $x_1, x_2, \ldots, x_n$ niso linearno neodvisni, pravimo, da so \pojem{linearno odvisni}.
-%			
-%			Naj bo $M$ poljubna neprazna podmnožica vektorskega prostora $V$. Pravimo, da je $M$ \pojem{linearno neodvisna}, če je vsaka njena končna podmnožica linearno neodvisna.
-%		\end{definicija}
-%		
-%		\begin{opomba}
-%			\label{op:Polj}
-%			V nadaljevanju bomo s $\F$ označili polje, ki je ali polje realnih števil $\R$, ali pa polje kompleksnih števil $\C$. Kadar bo pomembno, bomo natančno navedli, če je $\F = \R$~ali~$\F = \C$.
-%		\end{opomba}
-%		Sedaj se spomnimo definicij norme in skalarnega produkta, saj bosta v nadaljevanju ta pojma ključna.
-%		\begin{definicija}
-%			\label{def:Norm}
-%			Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\norm{.}}{V}{\R}$ pravimo \pojem{norma} na $V$, če velja: \begin{itemize}
-%				\item $\norm{x} \geq 0;~\forall x\in V$
-%				\item $\norm{x} = 0 \iff x = 0$
-%				\item $\norm{\alpha\cdot x} = \abs{\alpha}\norm{x};~\forall \alpha\in\F~\&~\forall x\in V$
-%				\item $\norm{x+y} \leq \norm{x}+\norm{y};~\forall x, y\in V$
-%			\end{itemize}
-%			Če je $\norm{.}$ norma na $V$, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor} (nad $\F$).
-%		\end{definicija}
-%		
-%		\begin{opomba}
-%			\label{op:Norm1}
-%			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti naslednje rezultate: \begin{itemize}
-%				\item $\norm{0} = 0$
-%				\item  $\norm{x_1 + x_2 + \ldots + x_n} \leq \norm{x_1} + \norm{x_2} + \ldots + \norm{x_n};~\forall x_1, x_2, \ldots, x_n\in V$
-%				\item $\abs{\norm{x} - \norm{y}} \leq \norm{x-y};~\forall x, y\in V$
-%			\end{itemize}
-%		\end{opomba}
-%		
-%		\begin{opomba}
-%			\label{op:Norm2}
-%			Naj bo $(V, +, \cdot, \norm{.})$ normiran prostor nad poljem $\F$. Enostavno je preveriti, da je s predpisom $d(x, y) = \norm{x - y} ~\forall x, y \in V$ definirana metrika na $V$. Za to metriko pravimo, da je \pojem{porojena z normo} $\norm{.}$.
-%		\end{opomba}
-%
-%		Dejstvo, da vsaka norma porodi metriko nas motivira, da obravnavamo konvergenco tudi v normiranih prostorih.
-%		\begin{definicija}
-%			\label{def:NormKonv}
-%			Naj bo $(V, \norm{.})$ normiran prostor nad poljem $\F$. Naj bo $\bar{x} = \left(x_n\right)_{n\in\N}$ zaporedje s členi iz $V$.
-%			\begin{itemize}
-%				\item Pravimo, da je zaporedje $\bar{x}$ \pojem{konvergentno}, če obstaja tak $x\in V$, da za vsak $\varepsilon > 0$ obstaja tak $n_0\in \N$, da za vsak $n\in \N$ velja: $n\geq n_0 \Rightarrow \norm{x_n - x} < \varepsilon$. V tem primeru pravimo, da je $x$ \pojem{limita zaporedja} $\left(x_n\right)_{n\in\N}$ in pišemo $\lim_{n\to\infty}x_n = x$.
-%				\item Pravimo, da je zaporedje $\bar{x}$ \pojem{Cauchyjevo}, če za vsak $\varepsilon >0$ obstaja tak $n_0\in\N$, da za poljubna $m, n \in \N$ velja: $m, n \geq n_0 \Rightarrow \norm{x_m - x_n} < \varepsilon$.
-%				\item Naj bo $\bar{s}$ zaporedje podano s predpisom $s_n = \sum_{k = 1}^{n}x_k;~\forall n\in\N$. Pravimo, da je vrsta $\sum_{k = 1}^{\infty}x_k$ \pojem{konvergentna}, če je konvergentno zaporedje $\bar{s}$. Če je $s$ limita zaporedja $\bar{s}$, tedaj pravimo, da je $s$ \pojem{vsota vrste} $\sum_{k = 1}^{\infty}x_k$ in pišemo $s = \sum_{k = 1}^{\infty}x_k$.
-%				\item Pravimo, da je vrsta $\sum_{k = 1}^{\infty}x_k$ \pojem{absolutno konvergentna}, če je vrsta $\sum_{k = 1}^{\infty}\norm{x_k}$ konvergentna.
-%			\end{itemize} 
-%		\end{definicija}
-%		Naslednja trditev nam pove, da za limite v normiranih prostorih veljajo analogi nekaterih rezultatov, ki so nam znani že iz obravnave realnih zaporedij.
-%		\begin{trditev}
-%			\label{trd:Normlim}
-%			Naj bo $(V, \norm{.})$ normiran prostor nad $\F$. Naj bosta $\left(x_n\right)_{n\in\N}$ in $\left(y_n\right)_{n\in\N}$ poljubni konvergentni zaporedji s členi iz $V$ in z limitama $x$ ter $y$. Naj bo $\left(\alpha_n\right)_{n\in\N}$ poljubno konvergentno zaporedje s členi iz $\F$ z limito $\alpha$. Tedaj velja: \begin{enumerate}[i)]
-%				\item $\lim_{n\to\infty}(x_n + y_n) = x + y$
-%				\item $\lim_{n\to\infty}\norm{x_n} = \norm{\lim_{n\to\infty}x_n}=\norm{x}$
-%				\item $\lim_{n\to\infty}(\alpha_n\cdot x_n) = \alpha\cdot x$
-%			\end{enumerate}
-%		\end{trditev}
-%		
-%		\begin{dokaz}
-%			\begin{enumerate}[i)]
-%				\item Naj bo $\varepsilon > 0$ poljuben. Ker sta zaporedji $\left(x_n\right)_{n\in\N}$ in $\left(y_n\right)_{n\in\N}$ konvergentni z limitama $x$ in $y$, obstajata taka $n_1, n_2\in\N$, da vse $n\in\N$, ki so večji ali enaki $n_1$, velja $\norm{x_n - x} < \frac{\varepsilon}{2}$ in za vse $n\in\N$, ki so večji ali enaki $n_2$ velja $\norm{y_n - y} < \frac{\varepsilon}{2}$. Naj bo $n_0 = \max\{n_1, n_2\}$. Tedaj je $\norm{x_n + y_n - (x + y)} = \norm{(x_n - x) + (y_n - y)} \leq \norm{x_n - x} + \norm{y_n - y} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon$ za vse $n\in\N$, ki so večji ali enaki $n_0$. Sledi, da je zaporedje $\left(x_n + y_n\right)_{n\in\N}$ konvergentno z limito $x + y$.
-%				\item Najprej opazimo, da je zaporedje $\left(\norm{x_n - x}\right)$ realno konvergentno zaporedje z limito $0$, saj je zaporedje $\left(x_n\right)$ konvergentno z limito $x$. Po tretji točki iz opombe \ref{op:Norm1} za vsak $n\in\N$ velja $0 \leq \abs{\norm{x_n} - \norm{x}} \leq \norm{x_n - x}$. Po pravilu o sendviču zato sklepamo, da je $\lim_{n\to\infty}\abs{\norm{x_n} - \norm{x}} = 0$. Po znanem rezultatu iz Analize $1$ potem velja, da je tudi $\lim_{n\to\infty}(\norm{x_n} - \norm{x}) = 0$. Sledi, da je $\lim_{n\to\infty}\norm{x_n} - \norm{x} = 0$ oziroma $\lim_{n\to\infty}\norm{x_n} = \norm{x}$.
-%				\item Ponovno upoštevamo, da je $\norm{x_n - x}$ konvergentno realno zaporedje z limito $0$, ter na enak način vidimo, da je $\abs{\alpha_n - \alpha}$ konvergentno realno zaporedje z limito $0$. Dodatno vidimo, da za vsak $n\in\N$ velja: $$0 \leq \norm{\alpha_n\cdot x_n - \alpha\cdot x} \leq \norm{\alpha_n\cdot x_n - \alpha\cdot x_n + \alpha\cdot x_n - \alpha\cdot x}$$
-%				Skrajno desno normo sedaj po trikotniškem pravilu ocenimo navzgor z $$\norm{\alpha_n\cdot x_n - \alpha\cdot x_n} + \norm{\alpha\cdot x_n - \alpha\cdot x}=\abs{\alpha_n - \alpha}\norm{x_n} + \abs{\alpha}\norm{x_n - x}$$ Velja torej ocena: \begin{equation}
-%					\label{eq:Normlim3}
-%					0 \leq \norm{\alpha_n\cdot x_n - \alpha\cdot x} \leq \abs{\alpha_n - \alpha}\norm{x_n} + \abs{\alpha}\norm{x_n - x}
-%				\end{equation}
-%				Sedaj opazimo, upoštevajoč prejšnjo točko, da je $\abs{\alpha_n - \alpha}\norm{x_n}$ produkt dveh konvergentnih realnih zaporedij in velja: $$\lim_{n\to\infty}\abs{\alpha_n - \alpha}\norm{x_n} = \lim_{n\to\infty}\abs{\alpha_n - \alpha} \cdot \lim_{n\to\infty}\norm{x_n} = 0\cdot\norm{x} = 0$$
-%				Dodatno vidimo, da je $\lim_{n\to\infty}\abs{\alpha}\norm{x_n - x} = \abs{\alpha}\lim_{n\to\infty}\norm{x_n - x} = \abs{\alpha}\cdot 0 = 0$. Potem sledi, da je zaporedje $\left(\abs{\alpha_n - \alpha}\norm{x_n} + \abs{\alpha}\norm{x_n - x}\right)_{n\in\N}$ realno konvergentno zaporedje z limito $0$. Po pravilu o sendviču, upoštevajoč oceno \eqref{eq:Normlim3}, sklepamo, da je potem $\lim_{n\to\infty}\norm{\alpha_n\cdot x_n - \alpha\cdot x} = 0$, od tod pa sledi, da za vsak $\varepsilon > 0$ obstaja $n_0\in\N$, da za vsak $n\in\N$, ki je večji ali enak $n_0$, velja $\norm{(\alpha_n\cdot x_n - \alpha\cdot x) - 0}=\norm{\alpha_n\cdot x_n - \alpha\cdot x} < \varepsilon$. Po definiciji konvergence zaporedja potem sledi, da je $\lim_{n\to\infty}(\alpha_n\cdot x_n) = \alpha\cdot x$.
-%			\end{enumerate}
-%		\end{dokaz}
 		\begin{lema}
 			\label{lem:invnorm}
 			Za poljubna normirana prostora $X$ ter $Y$ in poljuben $T\in B(X, Y)$ velja: Če je $T$ obrnljiv, je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$.
@@ -204,19 +119,58 @@
 			Če je $V$ vektorski prostor (nad $\F$) in $\Sp{.}{.}$ skalarni produkt na njem, pravimo, da je $(V, +, \cdot, \Sp{.}{.})$ \pojem{prostor s skalarnim produktom}.
 		\end{definicija}
 		
+		\begin{primer}
+			\label{prim:ScalProd}
+			Spomnimo se nekaj znanih primerov vektorskih prostorov s skalarnim produktom: \begin{itemize}
+				\item Prostor $\R^n$ (za $n\in\N$) skupaj s skalarnim produktom $\Sp{x}{y} = \sum_{i = 1}^{n}x_iy_i$.
+				\item Prostor $\C^n$ (za $n\in\N$) skupaj s skalarnim produktom $\Sp{z}{w} = \sum_{i = 1}^{n}z_i\overline{w_i}$.
+				\item V prostoru zaporedij $l^2$ je s predpisom $\Sp{\bar{x}}{\bar{y}} = \sum_{i = 1}^{\infty}x_i\overline{y_i};~\forall \bar{x}, \bar{y}\in l^2$ definiran skalarni produkt.
+				\item V prostoru zveznih funkcij na zaprtem intervalu $[a, b], \mathcal{C}([a, b])$, je s predpisom $\Sp{f}{g} = \int_{a}^{b}f(x)g(x)dx;~\forall f, g \in \mathcal{C}([a, b])$ definiran skalarni produkt.
+			\end{itemize}
+		\end{primer}
+		
 		\begin{opomba}
 			\label{op:ScalProd}
 			Naj bo $(V, +, \cdot, \Sp{.}{.})$ prostor s skalarnim produktom nad poljem $\F$. Enostavno je preveriti, da je s predpisom $\norm{x} = \sqrt{\Sp{x}{x}}~\forall x\in V$ definirana norma na $V$. Za tako normo pravimo, da je \pojem{porojena s skalarnim produktom} $\Sp{.}{.}$.
 		\end{opomba}
+		
 		\begin{definicija}
 			\label{def:PolnMP}
 			Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ konvergentno v $M$.
 		\end{definicija}
+		
+		\begin{primer}
+			\label{prim:PolnMP}
+			Navedimo nekaj klasičnih primerov polnih metričnih prostorov.
+			\begin{itemize}
+				\item Prostori $\R^n$ ($n\in\N$) s standardno Evklidsko normo.
+				\item Prostori $\C^n$ ($n\in\N$) s standardno Evklidsko normo.
+				\item Prostor $l^2$, skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$; $\forall \bar{x}\in l^2$, je polni metrični prostor.
+				\item Prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, opremljenim z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2};\forall f\in \mathcal{L}^2(X, \mu)$.
+			\end{itemize}
+		\end{primer}
+		
 		Sedaj definirajmo Hilbertove prostore.
+		
 		\begin{definicija}
 			\label{def:Hilbert}
 			Naj bo $(V, \Sp{.}{.})$ poljuben prostor s skalarnim produktom nad poljem $\F$. Naj bo $\norm{.}$ norma na $V$ porojena s $\Sp{.}{.}$ in naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Hilbertov prostor} nad $\F$. 
 		\end{definicija}
+		
+		\begin{primer}
+			\label{prim:Hilbert}
+			Navedimo nekaj znanih primerov Hilbertovih prostorov. \begin{itemize}
+				\item Prostori $\R^n$ (za $n\in\N$) skupaj s standardnim skalarnim produktom.
+				\item Prostori $\C^n$ (za $n\in\N$) skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd}.
+				\item Prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd}.
+				\item Prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \int_{[a, b]}(f\cdot \bar{g}) d\mu;\forall f, g\in \mathcal{L}^2(X, \mu)$.
+			\end{itemize}
+		\end{primer}
+		
+		\begin{opomba}
+			\label{opomb:Hilbert}
+			V primeru, ko je merljivi prostor $X$ v primeru \ref{prim:Hilbert} zaprti interval $[a, b]$, sta Lebesguesov in Riemannov integral enaka. Tako oznako za množico poenostavimo na $\mathcal{L}^2([a, b])$, predpis za skalarni produkt pa se spremeni v: $\Sp{f}{g} = \int_{a}^{b}f(x)\overline{g(x)}dx;~\forall f, g \in \mathcal{L}^2([a, b])$.
+		\end{opomba}
 		
 		\begin{posledica}
 			\label{posl:zaportoggost}
@@ -236,10 +190,12 @@
 	\section{Omejeni linearni operatorji nad Hilbertovimi prostori}
 		V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev nad Hilbertovimi prostori ter lastnosti njihovih spektrov, kadar sta domena in kodomena kompleksna Hilbertova prostora. Posebej nas bo zanimala operacija adjungiranja, zato bomo najprej povedali nekaj o njej.
 		\subsection{Adjungirani operatorji}
+		
 			\begin{izrek}
 				\label{izr:Adjexist}
 				Naj bosta $(X, \Spp{.}{.})$ in $(Y, \Sp{.}{.})$ poljubna kompleksna Hilbertova prostora in naj bo $T$ poljuben element $B(X, Y)$. Tedaj obstaja enolično določen operator $T^*\in B(Y, X)$, za katerega velja $$\Sp{Tx}{y} = \Spp{x}{T^*y};~\forall x\in X~\&~\forall y \in Y $$
 			\end{izrek}
+			
 			\begin{dokaz}
 				Naj bo $y\in Y$ poljuben ter naj bo $\map{f_y}{X}{\C}$ preslikava definirana s predpisom $f_y(x) = \Sp{Tx}{y};~\forall x\in X$. Opazimo, da je $f_y$ linearen funkcional nad $X$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem velja: $$\abs{f_y(x)} = \abs{\Sp{Tx}{y}} \leq \norm{Tx}_Y \cdot \norm{y}_Y \leq \norm{T}\cdot\norm{x}_X\cdot\norm{y}_Y;~ \forall x\in X$$ To pomeni, da je $f_y$ omejen linearen funkcional nad $X$. Posledično velja, po Riezsovem izreku, da obstaja enolično določen $z\in X$, tak, da je $f_y(x) = \Spp{x}{z};~\forall x\in X$. Sedaj definiramo preslikavo $\map{T^*}{Y}{X}$, ki vsakemu $y\in Y$ priredi pripadajoči $z\in X$ (tisti, enolično določen, za katerega je $f_y(x) = \Spp{x}{z};~\forall x\in X$). Posledično velja: $$\Sp{Tx}{y}=\Spp{x}{T^*y}~\forall x\in X,~\forall y\in Y$$
 				Sedaj preverimo, da je $T^*$ omejen linearen operator. Naj bodo $y_1, y_2 \in Y$ in $x\in X$ poljubni elementi ter $\alpha, \beta \in \C$ poljubna skalarja. Tedaj je: \begin{align*}
@@ -253,10 +209,26 @@
 				Preslikava $T^*$ je torej omejen linearen operator in velja $\norm{T^*}\leq \norm{T}$. Za konec še pokažimo, da je $T^*$ enolično določen. Denimo, da imamo $U_1, U_2 \in B(Y, X)$, za katera velja: $\Sp{Tx}{y} = \Spp{x}{U_1 y} = \Spp{x}{U_2 y};~\forall x\in X, \forall y\in Y$. Tedaj velja, da je $U_1y = U_2y;~\forall y\in Y$, torej je $U_1 = U_2$. Sledi, da je $T^*$ res enolično določen.
 			\end{dokaz}
 			Izrek \ref{izr:Adjexist} nas motivira, da vpeljemo naslednjo definicijo.
+		
 			\begin{definicija}
 				\label{def:adjop}
 				Naj bosta $X$ in $Y$ kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$. Tedaj operatorju $T^*$ iz izreka \ref{izr:Adjexist} pravimo \pojem{adjungiran operator} operatorja $T$.
 			\end{definicija}
+			
+			\begin{primer}
+				\label{prim:adjop1} Spomnimo se operatorja $D\in B(l^2)$, imenovanega ">desni premik"<, s predpisom $D(x_1, x_2, x_3, \ldots) = (0, x_1, x_2, \ldots);~\forall \bar{x}\in l^2$ in določimo predpis njegovega adjungiranega operatorja $D^*$. Naj bosta $\bar{x}, \bar{y}\in l^2$ poljubna ter označimo $\bar{z} = D^*y$. Tedaj po definiciji adjungiranega operatorja velja, da je $\Sp{Dx}{y} = \Sp{x}{D^*y} = \Sp{x}{z}$ oziroma $$\Sp{(0, x_1, x_2, \ldots)}{(y_1, y_2, y_3, \ldots)}=\Sp{(x_1, x_2, x_3, \ldots)}{(z_1, z_2, z_3, \ldots)}$$
+				Ko to enakost razpišemo, dobimo: $$x_1\overline{y_2}+x_2\overline{y_3} + \ldots = x_1\overline{z_1} + x_2\overline{z_2}+x_3\overline{z_3} + \ldots$$
+				Opazimo, da če velja $z_1 = y_2, z_2 = y_3, \ldots z_i = y_{i+1}\forall i\in \N$, potem bo naša enačba veljavna za poljuben $\bar{x}$. Enoličnost adjungiranega operatorja nam posledično da predpis: $D^*(y_1, y_2, y_3 \ldots) = (y_2, y_3, y_4, \ldots)$; $\forall \bar{y}\in l^2$. Še več, prepoznamo, da je dobljeni operator ravno t.~i.~ ">levi premik"<, ki ga tipično označimo z $L$.
+			\end{primer}
+			
+			\begin{primer}
+				\label{prim:adjop2} Za vsak $k\in \mathcal{C}([0, 1])$ definiramo operator $T_k\in B(\mathcal{L}^2([0, 1]))$ (skupaj s skalarnim produktom iz primera \ref{prim:Hilbert}) s predpisom $(T_kg)(t) = k(t)g(t);~\forall t\in [0, 1]$ (oziroma $T_kg = kg$), $\forall g\in \mathcal{L}^2([0, 1])$. Določimo predpis adjungiranega operatorja $(T_k)^*$.
+				
+				Naj bosta $f, g \in \mathcal{L}^2([0, 1])$ poljubna ter naj bo $h = (T_k)^*g$. Tedaj, po definiciji adjungiranega operatorja, velja: $$\Sp{T_kf}{g} = \Sp{f}{(T_k)^*g} = \Sp{f}{h}$$
+				V skladu z opombo \ref{opomb:Hilbert} potem sledi: $$\int_{0}^{1}k(t)f(t)\overline{g(t)}dt = \int_{0}^{1}f(t)\overline{h(t)}dt$$
+				Ta enačba bo držala, če je $\overline{h(t)} = k(t)\overline{g(t)};~\forall t\in [0, 1]$ oziroma $h(t) = \overline{k(t)}g(t);~\forall t\in [0, 1]$. Drugače povedano, enačba velja, če je $h = T_{\overline{k}}g$. Ker sta bila $f$ in $g$ poljubna, sledi, da sklep velja za vsak par elementov $\mathcal{L}^2([0, 1])$. Ker je adjungirani operator enolično določen, sledi, da je $(T_k)^* = T_{\overline{k}}$.
+			\end{primer}
+			
 			Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 			
 			\begin{izrek}
@@ -292,7 +264,9 @@
 					Hkrati vidimo, da za $\forall x\in X$ velja $\norm{Ux}_Y^2 = \Sp{Ux}{Ux} = \Spp{U^*Ux}{x}$. Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo oceno $\Spp{U^*Ux}{x} \leq \norm{U^*Ux}_X\norm{x}_X \leq \norm{U^*U}\norm{x}_X^2$. Sledi ocena: $\norm{Ux}_Y^2 \leq \norm{U^*U}\norm{x}_X^2 \forall x\in X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Posledično velja iskana enakost.
 				\end{enumerate}
 			\end{dokaz}
+			
 			Pri obravnavi adjungiranih operatorjev bomo potrebovali naslednji pomožni rezultat.
+			
 			\begin{lema}
 				\label{lem:adjlast2}
 				Naj bosta $(X, \Spp{.}{.})$ in $(Y, \Sp{.}{.})$ poljubna kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$ poljuben. Tedaj velja: \begin{enumerate}[a)]
@@ -331,7 +305,14 @@
 					Naj bo sedaj $x\in KerT$ poljuben. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. To je pa možno le, kadar je $x = 0$. Sledi, da je $KerT = \{0\}$, torej je $T$ bijektiven endomorfizem nad Banachovim prostorom $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
 				\end{itemize}
 			\end{dokaz}
+			
+			\begin{primer}
+				\label{prim:adjinv}
+				Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = \bar{0}$. Sledi, da $KerD^* = KerL \neq \{0\}$, torej $D$ ni obrnljiv.
+			\end{primer}
+			
 			Za konec tega podpoglavja premislimo, v sledeči lemi, kako sta povezani operaciji invertiranja in adjungiranja.
+			
 			\begin{lema}
 				\label{lem:adjinv}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Če je $T$ obrnljiv, je obrnljiv tudi $T^*$.
@@ -341,12 +322,25 @@
 				Naj bo $T\in B(X)$ poljuben obrnljiv operator. Tedaj velja, da je $TT^{-1} = T^{-1}T = I$. Enačbo adjungiramo ter tako dobimo $(TT^{-1})^* = (T^{-1}T)^* = I^*$. Ko upoštevamo točko $b)$ izreka \ref{izr:adjlast}, se enačba poenostavi v: $$(T^{-1})^*T^* = T^*(T^{-1})^* = I$$
 				Posledično je $T^*$ obrnljiv ter $(T^*)^{-1} = (T^{-1})^*$.
 			\end{dokaz}
+			
 		\subsection{Normalni operatorji}
+		
 			Sedaj se bomo posvetili, glede na adjungiranje, posebnim primerom operatorjev. Prvi izmed teh, so t.~i.~ normalni operatorji.
+			
 			\begin{definicija}
 				\label{def:normalop}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je $T \in B(X)$ \pojem{normalen}, če je $TT^* = T^*T$.
 			\end{definicija}
+			
+			\begin{primer}
+				\label{prim:normalop}
+				Enostavno je videti, da je operator $T_k$, kot je bil definiran v primeru \ref{prim:adjop2}, normalen operator. Naj bo $f\in \mathcal{L}^2([0, 1])$ poljuben.
+				\begin{align*}
+					(T_k(T_k)^*)f &= (T_kT_{\overline{k}})f =T_k(\overline{k}f) = k\overline{k}f \\
+					((T_k)^*T_k)f &= (T_{\overline{k}}T_k)f = T_{\overline{k}}(kf)=\overline{k}kf = k\overline{k}f
+				\end{align*}
+				Ker je bil $f$ poljuben, sklep velja za vse elemente $\mathcal{L}^2([0, 1])$. Sledi, da je $T_k(T_k)^* = (T_k)^*T_k$, torej je operator $T_k$ res normalen.
+			\end{primer}
 			
 			\begin{lema}
 				\label{lem:normalnorm}
@@ -355,6 +349,7 @@
 					\item Če je $\norm{Tx} \geq r\norm{x};~\forall x\in X$, je $KerT^* = \{0\}$.
 				\end{enumerate}
 			\end{lema}
+			
 			\begin{dokaz}
 				\begin{enumerate}[a)]
 					\item Naj bo $x\in X$ poljuben. Potem je \begin{align*}
@@ -366,11 +361,14 @@
 					\item Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x};~\forall x\in X$. Naj bo $x\in KerT^*$ poljuben. Po točki $a)$ tega dokaza je potem $0 = \norm{T^*x} = \norm{Tx} \geq r\norm{x}$. Sledi, da je $\norm{x} = 0$ oz. $x = 0$. Posledično je $KerT^* = \{0\}$.
 				\end{enumerate}
 			\end{dokaz}
+			
 			Na podlagi posledice \ref{posl:adjinv} in leme \ref{lem:normalnorm} sledi naslednja posledica.
+			
 			\begin{posledica}
 				\label{posl:normalinv}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Tedaj je operator $T$ obrnljiv natanko tedaj, ko obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
 			\end{posledica}
+			
 			\begin{dokaz}
 				Da dokažemo ekvivalenco, bomo dokazali implikaciji v obe smeri.
 				\begin{itemize}
@@ -378,13 +376,24 @@
 					\item[$\Leftarrow)$] Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$. Po lemi \ref{lem:normalnorm} je potem $KerT^* = \{0\}$. Po posledici \ref{posl:adjinv} je potem $T$ obrnljiv.
 				\end{itemize}
 			\end{dokaz}
+			
 			\subsection{Sebi-adjungirani operatorji}
+			
 			Pri obravnavi preslikav nas pogosto zanimajo t.~i.~ ">fiksne točke"< - točke, ki jih preslikava preslika nazaj vase. V primeru adjungiranja, operatorjem, ki jih operacija ">fiksira"< damo posebno ime.
+			
 			\begin{definicija}
 				\label{def:sebiadjop}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je $T\in B(X)$ \pojem{sebi-adjungiran}, če velja $T = T^*$.
 			\end{definicija}
+			
+			\begin{primer}
+				\label{prim:sebiadjop}
+				Trivialno je videti, da je identični operator $I$ sebi-adjungiran. Dodatno, če se vrnemo k operatorju $T_k$ iz primera \ref{prim:adjop2}, vidimo, da je tudi ta sebi-adjungiran za vsako izbiro funkcije $k\in\mathcal{C}([0, 1])$. To je res, saj je funkcija $k\in\mathcal{C}([0, 1])$ realna, torej je $\overline{k} = k$ in posledično je $(T_k)^* = T_{\overline{k}} = T_k$.
+				
+			\end{primer}
+			
 			V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operatorjev.
+			
 			\begin{lema}
 				\label{lem:sebiadjlast}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $\mathcal{S}(X)$ množica vseh sebi-adjungiranih operatorjev znotraj $B(X)$ in naj bo $T\in B(X)$ poljuben. Velja:
@@ -395,6 +404,7 @@
 					\item $T = R + iS$, za neka sebi-adjungirana operatorja $R, S \in \mathcal{S}(X)$.
 				\end{enumerate}
 			\end{lema}
+			
 			\begin{dokaz}
 				\begin{enumerate}[a)]
 					\item Naj bosta $T_1, T_2 \in \mathcal{S}(X)$ poljubna. Ker sta operatorja sebi-adjungirana, po prvi točki izreka \ref{izr:adjlast} velja: $(\alpha T_1 + \beta T_2)^* = \alpha T_1^* + \beta T_2^* = \alpha T_1 + \beta T_2$. Posledično je $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
@@ -409,14 +419,42 @@
 				\end{enumerate}
 			\end{dokaz}
 			
+			\begin{trditev}
+				\label{trd:sebiadjop}
+				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Operator $A$ je sebi-adjungiran natanko tedaj, ko je $\Sp{Tx}{x}\in\R;\forall x\in X$.
+			\end{trditev}
+			
+			\begin{dokaz}
+				Dokazali bomo implikaciji v obe smeri.
+				\begin{itemize}
+					\item[$\Rightarrow)$] Denimo, da je $T$ sebi-adjungiran in naj bo $x\in X$ poljuben. Tedaj je $\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}$, torej je $\Sp{Tx}{x}\in \R$. Ker je bil $x$ poljuben, sklep velja za vse elemente $X$.
+					\item[$\Leftarrow)$] Denimo, da je $\Sp{Tx}{x}\in\R;~\forall x\in X$. Tedaj za poljubne $\alpha\in\C, x, y\in X$ velja, da je $\Sp{T(x + \alpha y)}{x + \alpha y}\in \R$ oziroma $$\Sp{Tx}{x} + \alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} + \alpha\overline{\alpha}\Sp{Ty}{y}\in\R$$
+					Prvi in zadnji člen sta, po predpostavki, avtomatsko elementa $\R$. Sledi torej, da je tudi $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}\in\R$. Velja: $$\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} = \overline{\alpha}\overline{\Sp{Ty}{x}} + \overline{\overline{\alpha}}\overline{\Sp{Tx}{y}} = \overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx}$$
+					Dodatno upoštevamo, da je $\overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx} = \overline{\alpha}\Sp{T^*x}{y} + \alpha\Sp{T^*y}{x}$. Sklepamo torej, da je $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}=\overline{\alpha}\Sp{T^*x}{y} + \alpha\Sp{T^*y}{x}$ za vsak $\alpha\in\C$. Če vstavimo $\alpha = 1$ in $\alpha = i$, dobimo naslednji sistem enačb: \begin{align*}
+						\alpha = 1&:\Sp{Tx}{y} + \Sp{Ty}{x} = \Sp{T^*x}{y} + \Sp{T^*y}{x} \\
+						\alpha = i&:-i\Sp{Tx}{y} + i\Sp{Ty}{x} = -i\Sp{T^*x}{y} + i\Sp{T^*y}{x}
+					\end{align*}
+					Prvo enačbo pomnožimo z $i$, jo odštejemo od druge, ter tako dobimo enakost $\Sp{Tx}{y} = \Sp{T^*x}{y}$. Ker sta bila $x$ in $y$ poljubna, ta sklep velja za vse pare $x, y \in X$, torej po lemi \ref{lem:scalprodopenak} sledi, da je $T = T^*$.
+				\end{itemize}	
+			\end{dokaz}
+			
 			\subsection{Unitarni operatorji}
+			
 			Zadnji posebni primer operatorjev, glede na adjungiranje, je primer, v katerem je adjungirani operator hkrati tudi inverz.
 			
 			\begin{definicija}
 				\label{def:unitarop}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{unitaren}, če velja: $TT^* = T^*T = I$.
 			\end{definicija}
+			
+			\begin{primer}
+				\label{prim:unitarop}
+				Za funkcijo $k\in\mathcal{C}([0, 1])$ za katero velja, da je $\abs{k(t)} = 1,~\forall t\in [0, 1]$, je operator $T_k$ iz primera \ref{prim:adjop2} unitaren operator.
+				Iz primera \ref{prim:normalop} že vemo, da je za poljuben $k\in\mathcal{C}([0, 1])$ operator $T_k$ normalen ter da je $T_k(T_k)^*f = k\overline{k}f =\abs{k}^2f= (T_k)^*T_kf,~\forall f\in\mathcal{L}^2([0, 1])$. Naj bo torej $f\in\mathcal{L}^2([0, 1])$ poljuben in naj bo $k\in\mathcal{C}([0, 1])$ tak, da je $\abs{k(t)}=1;\forall t\in[0, 1]$. Tedaj je $\abs{k(t)}^2f(t) = f(t);~\forall t\in[0, 1]$, torej je $T_k(T_k)^*f = f = (T_k)^*T_kf$. Ker je bil $f$ poljuben, sklep velja za vse elemente $\mathcal{L}^2([0, 1])$. Sledi, da je $T_k(T_k)^* = I = (T_k)^*T_k$.
+			\end{primer}
+			
 			Naslednji izrek nam pove, da so unitarni operatorji hkrati tudi izometrije.
+			
 			\begin{izrek}
 				\label{izr:uniizo}
 				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bosta $T, U\in B(X)$ poljubna. Velja: \begin{enumerate}[a)]
@@ -424,6 +462,7 @@
 					\item $U$ je unitaren $\iff U$~je surjektivna izometrija na $X$.
 				\end{enumerate}
 			\end{izrek}
+			
 			\begin{dokaz}
 				Obe ekvivalenci bomo dokazali tako, da bomo pokazali, da veljata implikaciji v obe smeri.
 				\begin{enumerate}[a)]
@@ -440,7 +479,9 @@
 					\end{itemize}
 				\end{enumerate}
 			\end{dokaz}
+			
 			Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
+			
 			\begin{lema}
 				\label{lem:unitarset}
 				Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $\mathcal{U}(X)$ množica vseh unitarnih operatorjev na $X$. Velja:
@@ -450,6 +491,7 @@
 					\item $\mathcal{U}(X)$ je zaprta podmnožica $B(X)$.
 				\end{enumerate}
 			\end{lema}
+			
 			\begin{dokaz}
 				\begin{enumerate}[a)]
 					\item Naj bo $U$ poljuben unitaren operator na $X$. Tedaj je $U^*(U^*)^* = U^*U = I$ in $(U^*)^*U^* = UU^* = I$, torej je tudi $U^*\in B(X)$ unitaren. Po izreku \ref{izr:adjlast} že vemo, da je $\norm{U} = \norm{U^*}$. Dodatno nam izrek \ref{izr:uniizo} pove, da je $U$ tudi izometrija, torej je $\norm{U} = 1$.
@@ -465,7 +507,9 @@
 					\item Naj bo $\{U_n\}_{n\in\N}$ zaporedje s členi v $\mathcal{U}(X)$ in limito $U \in B(X)$. Potem je po točki $a)$ tega dokaza tudi zaporedje $\{U_n^*\}_{n\in\N}$ zaporedje s členi v $\mathcal{U}(X)$. Ker je adjungiranje zvezno, je $U^*\in B(X)$ limita zaporedja $\{U_n^*\}_{n\in\N}$. Naj bo $x\in X$ poljuben. Potem je $\norm{Ux}^2 = \Sp{Ux}{Ux} = \lim_{n\to\infty}\Sp{U_nx}{U_nx} = \lim_{n\to\infty}\norm{U_nx}^2 = \norm{x}^2$. Sledi, da je $U$ izometrija, po izreku \ref{izr:uniizo} pa sledi, da je potem $U^*U = I$. Na enak način kot za $U$ vidimo, da je tudi $U^*$ izometrija in posledično po izreku \ref{izr:uniizo} velja, da je $(U^*)^*U^* = UU^* = I$. Sledi, da je $U$ unitaren.
 				\end{enumerate}
 			\end{dokaz}
+			
 	\begin{thebibliography}{99}
 		\bibitem{bib:Rynne} B.~P.~Rynne,~M.~A.~Youngson, \emph{Linear functional analysis},~Springer-Verlag London,~Ltd.,~London,~2008.
 	\end{thebibliography}
+	
 \end{document}
