@@ -187,6 +187,20 @@
 			Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna. Če $\forall x\in X$ velja $\Sp{Tx}{x} = \Sp{Sx}{x}$, potem je $T = S$.
 		\end{lema}
 		
+		\begin{izrek}
+			\label{izr:Hilbertopinv}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $(I-T)^{-1} = \sum_{n = 1}^{\infty}T^n$.
+		\end{izrek}
+		
+		\begin{izrek}
+			\label{izr:Hilbertinvset}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor ter z $\mathcal{G}(X)$ označimo množico vseh obrnljivih operatorjev v $B(X)$. Velja: \begin{enumerate}[a)]
+				\item $(\mathcal{G}, \cdot)$ je grupa.
+				\item Množica $\mathcal{G}$ je odprta v $B(X)$.
+				\item Preslikava invertiranja, $\map{^{-1}}{\mathcal{G}}{\mathcal{G}}$, s predpisom $^{-1}(T) = T^{-1};~\forall T\in \mathcal{G}(X)$ je zvezna.
+			\end{enumerate}
+		\end{izrek}
+		
 	\section{Omejeni linearni operatorji nad Hilbertovimi prostori}
 		V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev nad Hilbertovimi prostori ter lastnosti njihovih spektrov, kadar sta domena in kodomena kompleksna Hilbertova prostora. Posebej nas bo zanimala operacija adjungiranja, zato bomo najprej povedali nekaj o njej.
 		\subsection{Adjungirani operatorji}
@@ -308,7 +322,7 @@
 			
 			\begin{primer}
 				\label{prim:adjinv}
-				Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = \bar{0}$. Sledi, da $KerD^* = KerL \neq \{0\}$, torej $D$ ni obrnljiv.
+				Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop2}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = \bar{0}$. Sledi, da $KerD^* = KerL \neq \{0\}$, torej $D$ ni obrnljiv.
 			\end{primer}
 			
 			Za konec tega podpoglavja premislimo, v sledeči lemi, kako sta povezani operaciji invertiranja in adjungiranja.
@@ -507,7 +521,113 @@
 					\item Naj bo $\{U_n\}_{n\in\N}$ zaporedje s členi v $\mathcal{U}(X)$ in limito $U \in B(X)$. Potem je po točki $a)$ tega dokaza tudi zaporedje $\{U_n^*\}_{n\in\N}$ zaporedje s členi v $\mathcal{U}(X)$. Ker je adjungiranje zvezno, je $U^*\in B(X)$ limita zaporedja $\{U_n^*\}_{n\in\N}$. Naj bo $x\in X$ poljuben. Potem je $\norm{Ux}^2 = \Sp{Ux}{Ux} = \lim_{n\to\infty}\Sp{U_nx}{U_nx} = \lim_{n\to\infty}\norm{U_nx}^2 = \norm{x}^2$. Sledi, da je $U$ izometrija, po izreku \ref{izr:uniizo} pa sledi, da je potem $U^*U = I$. Na enak način kot za $U$ vidimo, da je tudi $U^*$ izometrija in posledično po izreku \ref{izr:uniizo} velja, da je $(U^*)^*U^* = UU^* = I$. Sledi, da je $U$ unitaren.
 				\end{enumerate}
 			\end{dokaz}
-			
+	\section{Spekter}
+		Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omejen le na matrike - na enak način jih lahko definiramo tudi za operatorje na poljubnih prostorih. V tem poglavju bomo obravnavali t.~i.~ spekter operatorja nad kompleksnim Hilbertovim prostorom.
+		
+		\begin{definicija}
+			\label{def:specter}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. \pojem{Spekter} operatorja $T$ je množica, definirana na naslednji način: $$\sigma(T) = \{\lambda\in\C~|~T-\lambda I~\text{ni obrnljiv}\}$$
+		\end{definicija}
+		
+		V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
+		
+		\begin{lema}
+			\label{lem:eigeninspecter}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Če je $\lambda$ lastna vrednost operatorja $T$, potem je $\lambda\in\sigma(T)$.
+		\end{lema}
+		
+		\begin{dokaz}
+			Naj bo $T\in B(X)$ poljuben ter naj bo $\lambda$ njegova lastna vrednost. Tedaj po definiciji obstaja nek neničelni vektor $x\in X$, za katerega velja: $Tx = \lambda x$. Posledično, je $x\in Ker(T-\lambda I)$, torej operator $T - \lambda I$ ni injektiven in posledično ni obrnljiv.
+		\end{dokaz}
+		
+		\begin{opomba}
+			\label{opomb:eigeninspecter}
+			V končno-razsežnih vektorskih prostorih vemo, da je injektivnost linearne preslikave ekvivalentna surjektivnosti. Posledično, je spekter linearne preslikave nad končno-razsežnem kompleksnem Hilbertovim prostorom natanko množica njegovih lastnih vrednosti. V splošnem primeru to ni res - obstajajo omejeni linearni operatorji nad kompleksnimi Hilbertovimi prostori, ki ne premorejo nobene lastne vrednosti. Primer tega je desni premik $D\in B(l^2)$.
+		\end{opomba}
+		
+		Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvilleovega izreka iz kompleksne analize.
+		
+		\begin{izrek}
+			\label{izr:Liouville}
+			Naj bo $\map{f}{\C}{\C}$ poljubna cela funkcija. Če je $f$ omejena, je tudi konstantna.
+		\end{izrek}
+		
+		\begin{izrek}
+			\label{izr:specter}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za vsak $T\in B(X)$ velja: \begin{enumerate}[a)]
+				\item $\lambda\in\sigma(T) \Rightarrow \abs{\lambda}\leq\norm{T}$.
+				\item $\sigma(T)$ je kompaktna množica v $B(X)$.
+				\item $\sigma(T)\neq \emptyset$.
+			\end{enumerate}
+		\end{izrek}
+		
+		\begin{dokaz}
+			Tekom dokaza se bomo sklicali na izreke \ref{izr:Hilbertopinv}, \ref{izr:Hilbertinvset} in \ref{izr:Liouville}.
+			\begin{enumerate}[a)]
+				\item Denimo, da je $\lambda > \norm{T}$. Tedaj je $\norm{\lambda^{-1}T} < 1$ in posledično je po izreku \ref{izr:Hilbertopinv} operator $I - \lambda^{-1}T$ obrnljiv. Sledi, da je tudi operator $-\lambda(I - \lambda^{-1}T)= T - \lambda I$ obrnljiv. Sledi, da $\lambda\notin\sigma(T)$.
+				\item Ker smo v točki $a)$ pokazali, da je spekter omejena množica, za dokaz te točke zadošča, da pokažemo, da je tudi zaprta. Naj bo torej $T\in B(X)$ poljuben in definirajmo preslikavo $\map{f}{\C}{B(X)}$ s predpisom $f(\lambda) = T - \lambda I$. Opazimo: Za poljubna $\mu, \lambda \in \C$ je $\norm{f(\mu) - f(\lambda)} = \abs{\mu - \lambda}\cdot\norm{I}$.
+				Naj bo sedaj $\varepsilon>0$ poljuben in naj bo $\delta = \frac{\varepsilon}{\norm{I}}$. Velja: Če je $\abs{\mu - \lambda}<\delta$, je $\norm{f(\mu) - f(\lambda)} < \frac{\varepsilon}{\norm{I}}\norm{I} = \varepsilon$. Sledi, da je naša funkcija $f$ enakomerno zvezna. Opazimo še naslednje: $$\lambda\in\sigma(T) \iff T-\lambda I \in \mathcal{G}^{c}\iff f(\lambda)\in\mathcal{G}^{c} \iff \lambda\in f^{-1}(\mathcal{G}^{c})$$
+				Posledično je $f^{-1}(\mathcal{G}^{c}) = \sigma(T)$. Ker je $f$ zvezna in $\mathcal{G}^{c}$ zaprta ($\mathcal{G}$ je po izreku \ref{izr:Hilbertinvset} odprta), je $f^{-1}(\mathcal{G}^{c})$ zaprta, torej je tudi $\sigma(T)$ zaprta. Po izreku Heine-Borel-Lebesgue je potem $\sigma(T)$ kompakt.
+				\item Dokaz bomo izvedli s protislovjem. Naj bo $\sigma(T)=\emptyset$ za nek $T\in B(X)$. Sledi, da je za vsak $\lambda\in\C$ operator $T - \lambda I$ obrnljiv in označimo njegov inverz z $(T - \lambda I)^{-1}$. Naj bo $\map{f}{X}{\C}$ poljuben omejen linearen funkcional na $X$. Sedaj  definiramo funkcijo $\map{\varphi}{\C}{\C}$ s predpisom $\varphi(\lambda)= f((T-\lambda I)^{-1})$. V nadaljevanju bomo pokazali, da je $\varphi$ cela omejena funkcija.
+				Premislimo najprej, da je cela: Naj bo $\lambda_0\in\C$ poljuben. Opazimo: \begin{align*}
+					\frac{\varphi(\lambda)-\varphi(\lambda_0)}{\lambda - \lambda_0} &= \frac{1}{\lambda - \lambda_0}(f((T-\lambda I)^{-1}) - f((T-\lambda_0 I)^{-1})) \\
+					&= \frac{1}{\lambda - \lambda_0}f((T-\lambda I)^{-1} - (T-\lambda_0 I)^{-1}) \\
+					&= \frac{1}{\lambda - \lambda_0}f((T-\lambda_0 I)^{-1}\left((T-\lambda_0 I) - (T-\lambda I)\right)(T-\lambda I)^{-1}) \\
+					&= \frac{1}{\lambda - \lambda_0}f((\lambda - \lambda_0)(T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}) \\
+					&= f((T-\lambda_0 I)^{-1}(T-\lambda I)^{-1})
+				\end{align*}
+				Posledično je \begin{align*}
+					\lim_{\lambda\to \lambda_0}\frac{\varphi(\lambda)-\varphi(\lambda_0)}{\lambda - \lambda_0} &= \lim_{\lambda\to\lambda_0}f((T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}) \\
+					&= f(\lim_{\lambda\to \lambda_0}(T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}) \\
+					&= f((T-\lambda_0 I)^{-1}\lim_{\lambda\to \lambda_0}(T-\lambda I)^{-1}) \\
+					&= f(((T-\lambda_0 I)^{-1})^2)
+				\end{align*}
+				Ker ta limita obstaja za vsak $\lambda_0\in\C$, je $\varphi$ holomorfna na $\C$, torej cela. Premislimo še, da je $\varphi$ omejena.
+				Naj bo $\lambda\in\C$ in naj bo $\abs{\lambda}>\norm{T}$. Tedaj je $(T- \lambda I)^{-1} = (-\lambda)(I - \lambda^{-1}T)^{-1}$. Opazimo, da je $\norm{\lambda^{-1}T}<1$. Po izreku \ref{izr:Hilbertopinv}, je potem $(T- \lambda I)^{-1} = (-\lambda)\sum_{n = 1}^{\infty}(\lambda^{-1}T)^n$. Sledi: $$\norm{(T- \lambda I)^{-1}} \leq\frac{1}{\abs{\lambda}}\sum_{n = 1}^{\infty}\abs{\lambda}^{-n}\norm{T}^n = \frac{1}{\abs{\lambda}}\sum_{n=1}^{\infty}\left(\frac{\norm{T}}{\abs{\lambda}}\right)^n = \frac{1}{\abs{\lambda}}\frac{1}{1-\frac{\norm{T}}{\abs{\lambda}}}=\frac{1}{\abs{\lambda}-\norm{T}}$$
+				V limiti, ko pošljemo $\abs{\lambda}$ proti $\infty$, gre $\frac{1}{\abs{\lambda} - \norm{T}}$ proti $0$. Posledično sklepamo, da je $\lim_{\abs{\lambda}\to\infty}\norm{(T- \lambda I)^{-1}} = 0$. Z dobljeno limito obravnavamo obnašanje $\varphi$ daleč od izhodišča: Za vsak $\lambda\in\C$ velja ocena: $\abs{\varphi(\lambda)} = \abs{f((T-\lambda I)^{-1})} \leq \norm{f}\norm{(T-\lambda I)^{-1}}$. Ko pošljemo $\abs{\lambda}$ proti $\infty$, gre izraz na desni proti $0$, torej bo enako veljalo za $\abs{\varphi(\lambda)}$ in posledično je $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda)=0$. Sledi, da obstaja tak $R>0$, da je $\abs{\varphi(\lambda)}\leq 1$ za vsak $\lambda\in \overline{K_R(0)}^c$. Hkrati je $\varphi$ zvezna na $\overline{K_R(0)}$, torej je tam tudi omejena. Posledično je $\varphi$ omejena na celem $\C$.
+				Po Liouvilleovem izreku \ref{izr:Liouville} je potem $\varphi$ konstantna funkcija, limita $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda) = 0$ pa nam pove, da je $\varphi\equiv 0$. Sledi, da je $f((T - \lambda I)^{-1})=0;~\forall \lambda\in\C$. Ker je $f$ bil poljuben omejen linearen funkcional na $X$, sklep velja za vse omejene linearne funkcionale na $X$. Sedaj se spomnimo posledice Hahn-Banachovega izreka, ki nam pove, da obstaja tak omejen linearen funkcional $f$ nad $X$, da je $f((T- \lambda I)^{-1})=\norm{(T- \lambda I)^{-1}}=0;~\forall \lambda\in\C$ oziroma $(T- \lambda I)^{-1} = 0;~ \forall \lambda\in\C$. To nas pa privede v protislovje, saj ničelni operator ni obrnljiv.
+			\end{enumerate}
+		\end{dokaz}
+		
+		Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom njegovega adjungiranca.
+		
+		\begin{lema}
+			\label{lem:adjspec}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(x)$ poljuben. Tedaj je $\sigma(T^*)=\{\bar{\lambda}~|~\lambda\in\sigma(T)\}$.
+		\end{lema}
+		
+		\begin{dokaz}
+			Denimo, da nek $\lambda\notin\sigma(T)$. Tedaj je operator $T-\lambda I$ obrnljiv in po lemi \ref{lem:adjinv} je potem tudi $(T-\lambda I)^* = T^* - \bar{\lambda}I$ obrnljiv. Sledi, da $\bar{\lambda}\notin\sigma(T^*)$. Na enak način premislimo, da če $\bar{\lambda}\notin\sigma(T^*)$, potem $\lambda\notin\sigma(T)$. Sledi, da je $\sigma(T^*) =\{\bar{\lambda}~|~\lambda\in\sigma(T)\}$.
+		\end{dokaz}
+		
+		\begin{izrek}
+			\label{izr:polyspec}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Naj bo $p\in\C[X]$ poljuben nekonstanten polinom. Velja: \begin{enumerate}[a)]
+				\item $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$.
+				\item Če je $T$ obrnljiv, je $\sigma(T^{-1})=\{\lambda^{-1}~|~\lambda\in\sigma(T)\}$.
+			\end{enumerate}
+		\end{izrek}
+		
+		\begin{dokaz}
+			Naj bo $T\in B(X)$ poljuben.
+			\begin{enumerate}[a)]
+				\item Naj bo $p\in\C[X]$ poljuben nekonstanten polinom in naj bo $\lambda\in\C$ poljuben. Definiramo polinom $q$ s predpisom $q(z) = \lambda - p(z)$. Po osnovnem izreku algebre lahko polinom $q$ zapišemo kot produkt linearnih faktorjev: $q(z) = a(z-\lambda_1)(z-\lambda_2)\ldots(z-\lambda_n)$, kjer so $\lambda_1, \lambda_2,\ldots, \lambda_n\in\C$ ničle polinoma in $a\in\C\setminus\{0\}$. Velja: \begin{align*}
+					\lambda\notin \sigma(p(T)) &\iff~\text{Operator}~\lambda I - p(T)~\text{je obrnljiv} \iff q(T)~\text{je obrnljiv} \\
+					&\iff a(T-\lambda_1 I)(T-\lambda_2 I)\ldots(T-\lambda_n I)~\text{je obrnljiv} \\
+					&\iff (T-\lambda_i I)~\text{je obrnljiv za}~\forall i\in \{1, 2, \ldots, n\}\\
+					&\iff \text{Nobena ničla polinoma}~q~\text{ni vsebovana v}~\sigma(T) \\
+					&\iff q(z)\neq 0;~\forall z\in\sigma(T) \iff \lambda \neq p(z);~\forall z\in\sigma(T)
+				\end{align*}
+				Posledično sledi: $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$.
+				\item Naj bo $T\in B(X)$ obrnljiv. Posledično $0\notin\sigma(T)$ in zato lahko vsak element $\sigma(T^{-1})$ zapišemo kot inverz nekega $\mu\in\C$. Opazimo, da je $\mu^{-1}I - T^{-1} = -\mu^{-1}T^{-1}(\mu I - T)$ in da je operator $\mu^{-1}T^{-1}$ obrnljiv. Sledi: \begin{align*}
+					\mu^{-1}\in\sigma(T^{-1}) &\iff \mu^{-1}I - T^{-1}~\text{ni obrnljiv} \\
+					&\iff -\mu^{-1}T^{-1}(\mu I - T)~\text{ni obrnljiv} \\
+					&\iff (\mu I - T)~\text{ni obrnljiv} \iff \mu\in\sigma(T) \\
+				\end{align*}
+				Sledi, da je $\sigma(T^{-1})=\{\mu^{-1}~|~\mu\in\sigma(T)\}$.
+			\end{enumerate}
+		\end{dokaz}
+		
 	\begin{thebibliography}{99}
 		\bibitem{bib:Rynne} B.~P.~Rynne,~M.~A.~Youngson, \emph{Linear functional analysis},~Springer-Verlag London,~Ltd.,~London,~2008.
 	\end{thebibliography}

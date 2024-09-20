@@ -1,9 +1,10 @@
 \babel@toc {slovene}{}\relax 
 \contentsline {section}{\tocsection {}{1}{Uvod}}{4}{section.1}%
 \contentsline {section}{\tocsection {}{2}{Hilbertovi prostori}}{4}{section.2}%
-\contentsline {section}{\tocsection {}{3}{Omejeni linearni operatorji nad Hilbertovimi prostori}}{5}{section.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{Adjungirani operatorji}}{5}{subsection.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Normalni operatorji}}{9}{subsection.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{Sebi-adjungirani operatorji}}{10}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{3}{Omejeni linearni operatorji nad Hilbertovimi prostori}}{6}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Adjungirani operatorji}}{6}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Normalni operatorji}}{10}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Sebi-adjungirani operatorji}}{11}{subsection.3.3}%
 \contentsline {subsection}{\tocsubsection {}{3.4}{Unitarni operatorji}}{12}{subsection.3.4}%
-\contentsline {section}{\tocsection {}{}{Literatura}}{13}{section*.2}%
+\contentsline {section}{\tocsection {}{4}{Spekter}}{14}{section.4}%
+\contentsline {section}{\tocsection {}{}{Literatura}}{16}{section*.2}%
