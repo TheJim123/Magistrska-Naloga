@@ -589,6 +589,10 @@
 			\end{enumerate}
 		\end{dokaz}
 		
+		\begin{opomba}
+			\label{opomb:specprimeri} Naj bo $X$ poljuben kompleksen Hilbertov prostor. Prva točka izreka \ref{izr:specter} nam pove, da za poljuben $T\in B(X)$ velja, da je $\sigma(T)\subseteq \overline{K_{\norm{T}}(0)}$. S pomočjo druge točke izreka tudi opazimo dva skrajna primera za spekter. V prvem skrajnem primeru spekter vsebuje le eno samo vrednost: $\sigma(T)=\{\lambda_0\}$, za nek $\lambda_0\in\overline{K_{\norm{T}}(0)}$. Primer takega operatorja $T$ je ravno ničelni operator: $\sigma(0) = \{0\}$. Drugi skrajni primer je, da je $\sigma(T) = \overline{K_{\norm{T}}(0)}$.
+		\end{opomba}
+		
 		Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom njegovega adjungiranca.
 		
 		\begin{lema}
@@ -625,6 +629,80 @@
 					&\iff (\mu I - T)~\text{ni obrnljiv} \iff \mu\in\sigma(T) \\
 				\end{align*}
 				Sledi, da je $\sigma(T^{-1})=\{\mu^{-1}~|~\mu\in\sigma(T)\}$.
+			\end{enumerate}
+		\end{dokaz}
+		
+		S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih posebnih tipov operatorjev. V naslednji lemi bomo to storili za idempotentne, nilpotentne in unitarne operatorje.
+		
+		\begin{lema}
+			\label{lem:idenilunispec}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Velja: \begin{enumerate}[a)]
+				\item Če je $T\in B(X)\setminus\{0, I\}$ idempotent (torej, če je $T^2 = T$), je $\sigma(T) = \{0, 1\}$.
+				\item Če je $T\in B(X)$ nilpotent (torej, če obstaja tak $n\in \N$, da je $T^n = 0$), je $\sigma(T) = \{0\}$.
+				\item Če je $T\in B(X)$ unitaren, je $\sigma(T) \subseteq \{\lambda\in\C~|~ \abs{\lambda}=1\}$.
+			\end{enumerate}
+		\end{lema}
+		
+		\begin{dokaz}
+			Ključni del dokaza vseh trditev bo uporaba izreka \ref{izr:polyspec}.\begin{enumerate}[a)]
+				\item Naj bo $T\in B(X)\setminus\{0, I\}$ idempotent. Ker je $T$ idempotent, zadošča enačbi $T^2 - T = 0$. Označimo polinom $p(z) = z^2 - z$ in opazimo, da potem operator $T$ zadošča enačbi $p(z) = 0$. Kot smo že omenili v opombi \ref{opomb:specprimeri}, je $\sigma(0) = \{0\}$. Po prvi točki izreka \ref{izr:polyspec} je potem $\{0\}=\sigma(0)=\sigma(p(T))=\sigma(T^2 - T) = \{\lambda^2 - \lambda~|~\lambda\in\sigma(T)\}$. Za vsak $\lambda\in\sigma(T)$ torej velja, da je $\lambda^2 - \lambda = 0$. Ta enačba ima dve rešitvi: $\lambda=0$ in $\lambda=1$. Sledi, da je $\sigma(T)\subseteq\{0, 1\}$. Hkrati po tretji točki izreka \ref{izr:specter} vemo, da $\sigma(T)\neq\emptyset$.
+				Obravnavajmo naslednji možnosti: \begin{enumerate}[i)]
+					\item Denimo, da $1\notin\sigma(T)$. Tedaj je operator $T- I$ obrnljiv, torej lahko enačbo $(T-I)T = T^2 - T = 0$ z leve pomnožimo z $(T-I)^{-1}$. Tako dobimo enačbo $T = 0$, kar pa nas privede v protislovje z začetno predpostavko, da je $T\in B(X\setminus\{0, I\})$. Sledi, da je $1\in\sigma(T)$
+					\item Denimo sedaj, da $0\notin\sigma(T)$. Tedaj je $T$ obrnljiv, torej lahko enačbo $(T-I)T = T^2 - T = 0$ z leve pomnožimo z $T^{-1}$. Tako dobimo enačbo $T-I = 0$ oziroma $T=I$. Tudi to nas privede v protislovje z isto začetno predpostavko, kot v prejšnji točki. Sledi, da je $0\in\sigma(T)$.
+				\end{enumerate}
+				Sledi, da je $\sigma(T) = \{0, 1\}$.
+				\item Naj bo sedaj $T\in B(X)$ nilpotent in naj bo $n\in\N$ najmanjši taki, da je $T^n = 0$. Označimo polinom $q(z)=z^n$. Tedaj operator $T$ zadošča enačbi $q(T) = 0$. Po prvi točki izreka \ref{izr:polyspec} je potem $\{0\}=\sigma(0)=\sigma(q(T))=\sigma(T^n)=\{\lambda^n~|~\lambda\in\sigma(T)\}$. Sledi, da za vsak $\lambda\in\sigma(T)$ velja, da je $\lambda^n = 0$. Ta enačba ima edino rešitev $\lambda=0$, torej je $\sigma(T)\subseteq\{0\}$. Ker po tretji točki izreka \ref{izr:specter} spekter ne more biti prazna množica, sledi, da je $\sigma(T)=0$.
+				\item Naj bo sedaj $T\in \mathcal{U}(X)$. Po prvi točki leme \ref{lem:unitarset} vemo, da je $\norm{T}=1$. Posledično je $\sigma(T)\subseteq \overline{K_1(0)} = \{\lambda\in\C~|~\abs{\lambda}\leq 1\}$. Hkrati opazimo, da je tudi $\sigma(T^*) \subseteq \overline{K_1(0)}$. Sedaj upoštevamo, da je $T$ unitaren operator, torej je $U^* = U^{-1}$. Po drugi točki izreka \ref{izr:polyspec} je potem $\sigma(T) =
+				\{\lambda^{-1}~|~\lambda\in\sigma(T^*)\}\subseteq \{\lambda\in\C~|~\abs{\lambda}\geq 1\}$. Ker je $\sigma(T)$ hkrati podmnožica $\overline{K_1(0)} in K_1^c(0)$, sledi, da je $\sigma(T)$ vsebovana v robu enotske krogle $K_1(0)$, torej je $\sigma(T)\subseteq\{\lambda\in\C~|~\abs{\lambda}=1\}$.
+			\end{enumerate}
+		\end{dokaz}
+		
+		Pred obravnavo spektrov normalnih in sebi-adjungiranih operatorjev vpeljimo naslednja pojma.
+		
+		\begin{definicija}
+			\label{def:specrad}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. \begin{enumerate}[a)]
+				\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda~|~\lambda\in\sigma(T)}\}$$
+				\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~\norm{x}=1\}$$
+			\end{enumerate}
+		\end{definicija}
+		
+		V primeru normalnih operatorjev velja naslednja zveza med spektrom in numeričnim razponom.
+		
+		\begin{lema}
+			\label{lem:normalnumrazspec}
+			Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Če je $T$ normalen, je $\sigma(T)\subseteq \overline{V(T)}$.
+		\end{lema}
+		
+		\begin{dokaz}
+			Naj bo $\lambda\in\sigma(T)$ poljuben. Preverimo, da je operator $T-\lambda I$ tudi normalen operator: \begin{align*}
+				(T-\lambda I)(T - \lambda I)^* &= (T-\lambda I)(T^*-\bar{\lambda} I) \\
+				&= TT^* - \bar{\lambda}T -\lambda T^* + \lambda\bar{\lambda} I \\
+				&= T^*T -\lambda T^* -\bar{\lambda}T + \bar{\lambda}\lambda I \\
+				(T-\lambda I)^*(T - \lambda I) &= (T^*-\bar{\lambda} I)(T-\lambda I) \\
+				&= T^*T -\lambda T^* -\bar{\lambda}T + \bar{\lambda}\lambda I \\
+			\end{align*}
+			Sledi, da je $(T-\lambda I)(T - \lambda I)^* = (T-\lambda I)^*(T - \lambda I)$, torej je $(T-\lambda I)$ normalen. Ker operator $(T - \lambda I)$ ni obrnljiv, po posledici \ref{posl:normalinv} za vsak $r>0$ obstaja nek $x_r$, taki, da je $\norm{(T-\lambda I)x_r}< r\norm{x_r}$. Posledično v $X$ obstaja zaporedje $\{x_n\}_{n\in\N};~\norm{x_n} = 1;~\forall n\in\N$, za katero je $\lim_{n\to\infty}\norm{(T-\lambda I)x_n} = 0$.
+			Po neenakosti Cauchy-Schwarz-Bunyakowsky je $\forall n\in\N \abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}$. Posledično sledi, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v $\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0$ in upoštevamo, da je $\Sp{x_n}{x_n} = 1;~\forall n\in\N$. Tako dobimo, da je $\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda$. Sledi, da je $\lambda \in \overline{V(T)}$.
+		\end{dokaz}
+		
+		Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungiranih operatorjev.
+		
+		\begin{izrek}
+			\label{izr:sebiadjnumraz}
+			Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in \mathcal{S}(X)$ poljuben. Velja: \begin{enumerate}[a)]
+				\item $V(T)\subseteq \R$.
+				\item $\sigma(T)\subseteq \R$.
+				\item $\norm{T}\in\sigma(T)$ ali $-\norm{T}\in\sigma(T)$.
+				\item $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
+				\item $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t \leq \sup\{\lambda~|~\lambda\in\sigma(T)\};~\forall t\in V(T)$.
+			\end{enumerate}
+		\end{izrek}
+		
+		\begin{dokaz}
+			Naj bo $T\in \mathcal{S}(X)$ poljuben.
+			\begin{enumerate}[a)]
+				\item 
 			\end{enumerate}
 		\end{dokaz}
 		

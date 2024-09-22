@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.29)  20 SEP 2024 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.29)  22 SEP 2024 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1693,6 +1693,10 @@ Underfull \vbox (badness 1448) has occurred while \output is active []
 
 [15]
 
+[16]
+
+[17]
+
 
 Package hyperxmp Warning: `pdfa' was passed to hyperref, but `pdfapart' was
 (hyperxmp)                not specified.  Setting pdfapart to `1' and
@@ -1702,7 +1706,7 @@ Package hyperxmp Warning: `pdfa' was passed to hyperref, but `pdfapart' was
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\se-utf8
 .def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [16] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
+) [18] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1712,10 +1716,10 @@ prostorih".out' has not changed.
 (rerunfilecheck)             Checksum: 71D135789D4B46BECC0F185796A28DC0;629.
  ) 
 Here is how much of TeX's memory you used:
- 33402 strings out of 473898
- 647291 string characters out of 5724591
+ 33430 strings out of 473898
+ 647582 string characters out of 5724591
  1947960 words of memory out of 5000000
- 55410 multiletter control sequences out of 15000+600000
+ 55415 multiletter control sequences out of 15000+600000
  633834 words of font info for 101 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  92i,14n,95p,908b,2811s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1738,9 +1742,9 @@ cal/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Up
 orabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (1
-6 pages, 403601 bytes).
+8 pages, 418711 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 147 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
