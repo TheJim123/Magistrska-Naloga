@@ -18,7 +18,7 @@
 % navedite vsaj eno klasifikacijsko oznako --
 % dostopne so na www.ams.org/mathscinet/msc/msc2020.html
 \klasifikacija{47A25, 47B02, 47B15, }
-\kljucnebesede{Linearna algebra, funkcionalna analiza, Hilbertov prostor, omejen linearen operator, spekter, spektralni radij, normalen operator, unitaren operator, sebi-adjungiran operator} % navedite nekaj ključnih pojmov, ki nastopajo v delu
+\kljucnebesede{Linearna algebra, funkcionalna analiza, Hilbertov prostor, omejen linearen operator, spekter, spektralni radij, normalen operator, unitaren operator, sebiadjungiran operator} % navedite nekaj ključnih pojmov, ki nastopajo v delu
 \keywords{Linear algebra, funkcional analysis, Hilbert space, bounded linear operator, spectrum, spectral radius, normal operator, unitary operator, self-adjoint operator} % angleški prevod ključnih besed
 
 \zapisiMetaPodatke  % poskrbi za metapodatke in veljaven PDF/A-1b standard
@@ -87,7 +87,7 @@
 	Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	
 	\section{Hilbertovi prostori}
-	V tem poglavju bomo najprej osvežili znanje o nekaterih pomembnih definicijah in rezultatih iz študije Banachovih in Hilbertovih prostorov. V nadaljevanju bomo pozornost posvetili t.~i.~ adjungiranim operatorjem, nato pa še njihovim posebnim primerom - normalnim, sebi-adjungiranim in unitarnim operatorjem. Pri tem se bomo primarno sklicevali na vir \cite{bib:Rynne}.
+	V tem poglavju bomo najprej osvežili znanje o nekaterih pomembnih definicijah in rezultatih iz študije Banachovih in Hilbertovih prostorov. V nadaljevanju bomo pozornost posvetili t.~i.~ adjungiranim operatorjem, nato pa še njihovim posebnim primerom - normalnim, sebiadjungiranim in unitarnim operatorjem. Pri tem se bomo primarno sklicevali na vir \cite{bib:Rynne}.
 	
 		Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 			\item Izrek o odprti preslikavi (brez dokaza)
@@ -391,41 +391,46 @@
 				\end{itemize}
 			\end{dokaz}
 			
-			\subsection{Sebi-adjungirani operatorji}
+			\subsection{Sebiadjungirani operatorji}
 			
 			Pri obravnavi preslikav nas pogosto zanimajo t.~i.~ ">fiksne točke"< - točke, ki jih preslikava preslika nazaj vase. V primeru adjungiranja, operatorjem, ki jih operacija ">fiksira"< damo posebno ime.
 			
 			\begin{definicija}
 				\label{def:sebiadjop}
-				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je $T\in B(X)$ \pojem{sebi-adjungiran}, če velja $T = T^*$.
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je $T\in B(X)$ \pojem{sebiadjungiran}, če velja $T = T^*$.
 			\end{definicija}
+			
+			\begin{opomba}
+				\label{opomb:sebiadjsonormal}
+				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebiadjungiran operator na $X$. Enostavno je videti, da je potem $T$ tudi normalen operator: $$T^*T = TT = TT^*$$
+			\end{opomba}
 			
 			\begin{primer}
 				\label{prim:sebiadjop}
-				Trivialno je videti, da je identični operator $I$ sebi-adjungiran. Dodatno, če se vrnemo k operatorju $T_k$ iz primera \ref{prim:adjop2}, vidimo, da je tudi ta sebi-adjungiran za vsako izbiro funkcije $k\in\mathcal{C}([0, 1])$. To je res, saj je funkcija $k\in\mathcal{C}([0, 1])$ realna, torej je $\overline{k} = k$ in posledično je $(T_k)^* = T_{\overline{k}} = T_k$.
+				Trivialno je videti, da je identični operator $I$ sebiadjungiran. Dodatno, če se vrnemo k operatorju $T_k$ iz primera \ref{prim:adjop2}, vidimo, da je tudi ta sebiadjungiran za vsako izbiro funkcije $k\in\mathcal{C}([0, 1])$. To je res, saj je funkcija $k\in\mathcal{C}([0, 1])$ realna, torej je $\overline{k} = k$ in posledično je $(T_k)^* = T_{\overline{k}} = T_k$.
 				
 			\end{primer}
 			
-			V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operatorjev.
+			V naslednji lemi so povzete nekatere osnovne lastnosti sebiadjungiranih operatorjev.
 			
 			\begin{lema}
 				\label{lem:sebiadjlast}
-				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $\mathcal{S}(X)$ množica vseh sebi-adjungiranih operatorjev znotraj $B(X)$ in naj bo $T\in B(X)$ poljuben. Velja:
+				Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $\mathcal{S}(X)$ množica vseh sebiadjungiranih operatorjev znotraj $B(X)$ in naj bo $T\in B(X)$ poljuben. Velja:
 				\begin{enumerate}[a)]
 					\item Za poljubni $\alpha, \beta \in \R$ in poljubna $T_1, T_2 \in \mathcal{S}(X)$ velja: $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
 					\item Množica $\mathcal{S}(X)$ je zaprta podmnožica $B(X)$.
-					\item Operatorja $TT^*$ in $T^*T$ sta sebi-adjungirana.
-					\item $T = R + iS$, za neka sebi-adjungirana operatorja $R, S \in \mathcal{S}(X)$.
+					\item Operatorja $TT^*$ in $T^*T$ sta sebiadjungirana.
+					\item $T = R + iS$, za neka sebiadjungirana operatorja $R, S \in \mathcal{S}(X)$.
 				\end{enumerate}
 			\end{lema}
 			
 			\begin{dokaz}
 				\begin{enumerate}[a)]
-					\item Naj bosta $T_1, T_2 \in \mathcal{S}(X)$ poljubna. Ker sta operatorja sebi-adjungirana, po prvi točki izreka \ref{izr:adjlast} velja: $(\alpha T_1 + \beta T_2)^* = \alpha T_1^* + \beta T_2^* = \alpha T_1 + \beta T_2$. Posledično je $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
+					\item Naj bosta $T_1, T_2 \in \mathcal{S}(X)$ poljubna. Ker sta operatorja sebiadjungirana, po prvi točki izreka \ref{izr:adjlast} velja: $(\alpha T_1 + \beta T_2)^* = \alpha T_1^* + \beta T_2^* = \alpha T_1 + \beta T_2$. Posledično je $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
 					\item Naj bo $\{T_n\}_{n\in\N}$ konvergentno zaporedje s členi v $\mathcal{S}(X)$ in limito $T\in B(X)$. Predzadnja točka izreka \ref{izr:adjlast} nam pove, da je adjungiranje zvezno, torej je tudi zaporedje $\{T_n^*\}_{n\in\N}$ konvergentno z limito $T^* \in B(X)$. Ker so $T_n \in \mathcal{S}(X)~ \forall n\in \N$, velja $T_n^* = T_n~\forall n\in \N$, torej je $T^* = T$. Posledično je tudi $T\in \mathcal{S}(X)$. Sledi, da je $\mathcal{S}(X)$ zaprta.
 					\item Naj bo $T\in B(X)$ poljuben. Tedaj je, upoštevajoč točko $c)$ izreka \ref{izr:adjlast}, $(T^*T)^* = T^*T^{**} = T^*T$. Sledi, da je $T^*T\in \mathcal{S}(X)$ in na enak način premislimo, da enako velja za $TT^*$.
 					\item Naj bo $T\in B(X)$ poljuben. Definiramo operatorja $R$ in $S$ na naslednji način: $$R = \frac{1}{2}(T + T^*),~ S=\frac{1}{2i}(T - T^*)$$
-					Očitno velja, da je $T = R + iS$. Preverimo še, da sta $R$ in $S$ res sebi-adjungirana.
+					Očitno velja, da je $T = R + iS$. Preverimo še, da sta $R$ in $S$ res sebiadjungirana.
 					\begin{align*}
 						R^* &= (\frac{1}{2}(T + T^*))^* = \frac{1}{2}(T^* + T^{**}) = \frac{1}{2}(T^* + T) = R \\
 						S^* &= (\frac{1}{2i}(T - T^*))^* = \frac{-1}{2i}(T - T^*)^* = \frac{-1}{2i}(T^* - T^{**}) =\frac{1}{2i}(T - T^*) = S
@@ -435,13 +440,13 @@
 			
 			\begin{trditev}
 				\label{trd:sebiadjop}
-				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Operator $A$ je sebi-adjungiran natanko tedaj, ko je $\Sp{Tx}{x}\in\R;\forall x\in X$.
+				Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Operator $A$ je sebiadjungiran natanko tedaj, ko je $\Sp{Tx}{x}\in\R;\forall x\in X$.
 			\end{trditev}
 			
 			\begin{dokaz}
 				Dokazali bomo implikaciji v obe smeri.
 				\begin{itemize}
-					\item[$\Rightarrow)$] Denimo, da je $T$ sebi-adjungiran in naj bo $x\in X$ poljuben. Tedaj je $\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}$, torej je $\Sp{Tx}{x}\in \R$. Ker je bil $x$ poljuben, sklep velja za vse elemente $X$.
+					\item[$\Rightarrow)$] Denimo, da je $T$ sebiadjungiran in naj bo $x\in X$ poljuben. Tedaj je $\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}$, torej je $\Sp{Tx}{x}\in \R$. Ker je bil $x$ poljuben, sklep velja za vse elemente $X$.
 					\item[$\Leftarrow)$] Denimo, da je $\Sp{Tx}{x}\in\R;~\forall x\in X$. Tedaj za poljubne $\alpha\in\C, x, y\in X$ velja, da je $\Sp{T(x + \alpha y)}{x + \alpha y}\in \R$ oziroma $$\Sp{Tx}{x} + \alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} + \alpha\overline{\alpha}\Sp{Ty}{y}\in\R$$
 					Prvi in zadnji člen sta, po predpostavki, avtomatsko elementa $\R$. Sledi torej, da je tudi $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}\in\R$. Velja: $$\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} = \overline{\alpha}\overline{\Sp{Ty}{x}} + \overline{\overline{\alpha}}\overline{\Sp{Tx}{y}} = \overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx}$$
 					Dodatno upoštevamo, da je $\overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx} = \overline{\alpha}\Sp{T^*x}{y} + \alpha\Sp{T^*y}{x}$. Sklepamo torej, da je $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}=\overline{\alpha}\Sp{T^*x}{y} + \alpha\Sp{T^*y}{x}$ za vsak $\alpha\in\C$. Če vstavimo $\alpha = 1$ in $\alpha = i$, dobimo naslednji sistem enačb: \begin{align*}
@@ -657,13 +662,13 @@
 			\end{enumerate}
 		\end{dokaz}
 		
-		Pred obravnavo spektrov normalnih in sebi-adjungiranih operatorjev vpeljimo naslednja pojma.
+		Pred obravnavo spektrov normalnih in sebiadjungiranih operatorjev vpeljimo naslednja pojma.
 		
 		\begin{definicija}
 			\label{def:specrad}
 			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. \begin{enumerate}[a)]
-				\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda~|~\lambda\in\sigma(T)}\}$$
-				\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~\norm{x}=1\}$$
+				\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda}~|~\lambda\in\sigma(T)\}$$
+				\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}$$
 			\end{enumerate}
 		\end{definicija}
 		
@@ -686,14 +691,14 @@
 			Po neenakosti Cauchy-Schwarz-Bunyakowsky je $\forall n\in\N \abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}$. Posledično sledi, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v $\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0$ in upoštevamo, da je $\Sp{x_n}{x_n} = 1;~\forall n\in\N$. Tako dobimo, da je $\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda$. Sledi, da je $\lambda \in \overline{V(T)}$.
 		\end{dokaz}
 		
-		Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungiranih operatorjev.
+		Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebiadjungiranih operatorjev.
 		
 		\begin{izrek}
 			\label{izr:sebiadjnumraz}
 			Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in \mathcal{S}(X)$ poljuben. Velja: \begin{enumerate}[a)]
 				\item $V(T)\subseteq \R$.
 				\item $\sigma(T)\subseteq \R$.
-				\item $\norm{T}\in\sigma(T)$ ali $-\norm{T}\in\sigma(T)$.
+				\item $\norm{T}\in\sigma(T)\lor (-\norm{T})\in\sigma(T)$.
 				\item $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
 				\item $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t \leq \sup\{\lambda~|~\lambda\in\sigma(T)\};~\forall t\in V(T)$.
 			\end{enumerate}
@@ -702,7 +707,26 @@
 		\begin{dokaz}
 			Naj bo $T\in \mathcal{S}(X)$ poljuben.
 			\begin{enumerate}[a)]
-				\item 
+				\item Naj bo $x\in X$ poljuben. Ker je $T$ po predpostavki sebiadjungiran, je $\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}$. Posledično je $\Sp{Tx}{x}\in \R$. Ker to velja za poljuben element $X$, v posebnem primeru velja za vse elemente katerih norma je $1$. Sledi, da je $V(T)=\{\Sp{Tx}{x}~|~\norm{x}=1\}\subseteq \R$.
+				\item Po prejšnji točki vemo, da je $V(T)\subseteq \R$. Posledično je tudi $\overline{V(T)}\subseteq\R$. Ker je po opombi \ref{opomb:sebiadjsonormal} vsak sebiadjungiran operator tudi normalen, po lemi \ref{lem:normalnumrazspec} sledi, da je $\sigma(T)\subseteq\overline{V(T)}\subseteq \R$.
+				\item Če je $T=0$, je po opombi \ref{opomb:specprimeri} $\sigma(T) = \sigma(0)=\{0\}$ in trditev v tem primeru očitno velja. Denimo torej, da je $T\neq 0$. Označimo $\norm{T} = a$ Po definiciji norme operatorja v $X$ obstaja zaporedje $\{x_n\}_{n\in\N};~\norm{x_n}=1~\forall n\in\N$, tako, da je $\lim_{n\to\infty}\norm{Tx_n} = \norm{T} = a$. Posledično je za $\forall n\in\N$: \begin{align*}
+					\norm{(a^2I - T^2)x_n}^2 &= \Sp{(a^2I - T^2)x_n}{(a^2I - T^2)x_n} \\
+					&= \Sp{a^2x_n}{a^2x_n} - \Sp{T^2x_n}{a^2x_n} - \Sp{a^2x_n}{T^2x_n} + \Sp{T^2x_n}{T^2x_n} \\
+					&= \norm{a^2x_n}^2 - a^2\Sp{T^2x_n}{x_n} - a^2\Sp{x_n}{T^2x_n} + \norm{T^2x_n}^2 \\
+				\end{align*}
+				Ker je $T$ sebiadjungiran je $\Sp{T^2x}{x} = \Sp{x}{T^2x};~\forall x\in X$. To upoštevamo v našem računu in tako $\forall n\in\N$ dobimo: 
+				\begin{align*}
+					\norm{(a^2I - T^2)x_n}^2 &= \norm{a^2x_n}^2 - 2a^2\Sp{T^2x_n}{x_n} + \norm{T^2x_n}^2 \\
+					&\leq a^4\norm{x_n}^2 + \norm{T^2}^2\norm{x_n}^2 - 2a^2\Sp{T^2x_n}{x_n}  \\
+					&\leq a^4 + a^4\norm{x_n}^2 - 2a^2\Sp{Tx_n}{Tx_n}  \\
+					&= 2a^4 - 2a^2\norm{Tx_n}^2 = 2a^2(a^2 - \norm{Tx_n}^2)
+				\end{align*}
+				Upoštevamo, da je $\lim_{n\to\infty}\norm{Tx_n} = a$, ter da je kvadriranje zvezna preslikava na $\R$. Posledično je $\lim_{n\to\infty}\norm{Tx_n}^2 = a^2$, torej je $\lim_{n\to\infty}\norm{(a^2I - T^2)x_n}^2 = 0$. Sledi, da operator $a^2I - T^2$ ni obrnljiv, torej je $a^2 \in \sigma(T^2)$. Po prvi točki izreka \ref{izr:polyspec} je potem $a^2\in \{\lambda^2~|~\lambda\in \sigma(T)\}$, torej je vsaj eden izmed $a$ in $-a$ vsebovan v $\sigma(T)$.
+				\item Po prejšnji točki in definiciji spektralnega radija velja, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, je $r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}$. Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
+				\item Vpeljemo oznaki $\alpha=\inf\{\lambda~|~\lambda\in\sigma(T)\}$ in $\beta=\sup\{\lambda~|~ \lambda\in\sigma(T)\}$. Naj bo sedaj $t\in V(T)$ in naj bo $x\in X$ tak, da je $\norm{x}=1$ in $\Sp{Tx}{x}=t$. Denimo sedaj, da je $t < \alpha$. Tedaj ima operator $\beta I - T$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(\beta I - T)=\{\beta - \lambda~|~\lambda\in\sigma(T)\}$ in leži znotraj intervala $[0, \beta - \alpha]$. Sledi, da je $r_\sigma(\beta I - T) \leq \beta - \alpha$. Opazimo tudi, da je $(\beta I - T)^* = \bar{\beta}I - T^* = \beta I - T$, saj je $\beta\in\R$, torej je operator $\beta I - T$ sebiadjungiran. Dodatno je: $$\Sp{(\beta I - T)x}{x} = \beta\Sp{x}{x} - \Sp{Tx}{x} = \beta - t > \beta - \alpha$$ Po prejšnji točki tega izreka za operator $\beta I - T$ pa velja: $$\beta - \alpha \geq r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}\geq\Sp{(\beta I - T)x}{x}>\beta - \alpha$$ Prišli smo v protislovje. Sledi, da je $\alpha \leq t$.
+				Denimo sedaj, da je $\beta < t$. Tedaj opazimo, da ima operator $T - \alpha I$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(T - \alpha I)=\{\lambda - \alpha~|~ \lambda \in \sigma(T)\}$, ki leži znotraj intervala $[0, \beta - \alpha]$. Posledično velja, da je $r_\sigma(T - \alpha I)\leq \beta - \alpha$. Opazimo tudi, da je operator $T - \alpha I$ sebiadjungiran, torej po prejšnji točki tega izreka velja, da je $r_\sigma(T - \alpha I) = \sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}$. Velja torej, da je $$\Sp{(T - \alpha I)x}{x} = \Sp{Tx}{x} - \alpha\Sp{x}{x} = t - \alpha > \beta - \alpha$$
+				Posledično je $$\beta - \alpha \geq r_\sigma(T - \alpha I) =\sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}\geq \Sp{(T - \alpha I)x}{x} > \beta - \alpha$$
+				Ponovno smo prišli v protislovje. Sledi, da je $t \leq \beta$. Ko to združimo s prejšnjo ugotovitvijo, dobimo, da je $\alpha \leq t \leq \beta$. Ker je bil izbrani $t\in V(T)$ poljuben, ta sklep velja za vse elemente $V(T)$.
 			\end{enumerate}
 		\end{dokaz}
 		

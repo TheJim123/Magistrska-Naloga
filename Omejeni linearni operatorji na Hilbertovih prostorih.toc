@@ -4,7 +4,7 @@
 \contentsline {section}{\tocsection {}{3}{Omejeni linearni operatorji nad Hilbertovimi prostori}}{6}{section.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{Adjungirani operatorji}}{6}{subsection.3.1}%
 \contentsline {subsection}{\tocsubsection {}{3.2}{Normalni operatorji}}{10}{subsection.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{Sebi-adjungirani operatorji}}{11}{subsection.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Sebiadjungirani operatorji}}{11}{subsection.3.3}%
 \contentsline {subsection}{\tocsubsection {}{3.4}{Unitarni operatorji}}{12}{subsection.3.4}%
 \contentsline {section}{\tocsection {}{4}{Spekter}}{14}{section.4}%
-\contentsline {section}{\tocsection {}{}{Literatura}}{18}{section*.2}%
+\contentsline {section}{\tocsection {}{}{Literatura}}{20}{section*.2}%
