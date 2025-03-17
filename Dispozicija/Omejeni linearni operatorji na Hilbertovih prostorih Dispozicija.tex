@@ -1,0 +1,202 @@
+\documentclass[12pt,a4paper,oneside,fleqn,openany]{book}
+\usepackage{amsfonts}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+%\usepackage{algorithm2e}
+
+%%!\input{graphicx.inc}  %poskrbi za izbiro slike eps ali pdf (glede na prevajanje LaTeX ali PDF LaTeX)
+
+\usepackage{longtable}
+\renewcommand{\baselinestretch}{1}
+\bibliographystyle{unsrt}
+\usepackage{graphicx}
+\usepackage{index}
+\usepackage{fancyhdr}
+\usepackage{lhelp}
+\usepackage{optparams}
+\usepackage{psfrag}
+%\usepackage{enumitem}
+\usepackage{hyperref}
+
+% Paketi, ki jih pogosto uporabljam
+
+\usepackage{leftidx}
+\usepackage{stmaryrd}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{silence}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage[format=plain, font=small, labelfont=bf, textfont=it, justification=centerlast]{caption}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{enumerate}
+
+
+%za dvojni razmik med vrsticami
+\usepackage{setspace}
+
+%
+% Page setup
+\setlength{\oddsidemargin}{0.5in}%
+\setlength{\evensidemargin}{0.0in}%
+\setlength{\topmargin}{0.0in}%
+\setlength{\textwidth}{6.0in}%
+\setlength{\textheight}{9.0in}%
+%\setlength{\marginparsep}{3 mm}%
+%\setlength{\marginparwidth}{1.5 cm}%
+\raggedbottom
+%
+
+% Paragraf settings
+\setlength{\parindent}{0 mm}%
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}%
+\renewcommand{\baselinestretch}{1.25}%
+\setlength{\mathindent}{1 cm}%
+%
+%
+
+%
+\newcommand{\nnsection}[1]{\section*{#1}\addcontentsline{toc}{section}{\protect\numberline{}#1}}
+\newcommand{\nnsubsection}[1]{\subsection*{#1}\addcontentsline{toc}{subsection}{\protect\numberline{}#1}}
+
+\newcommand{\symbolschapter}[1]{%
+	\chapter*{#1}
+	\markboth{#1}{#1}%
+	\addcontentsline{toc}{chapter}{#1}
+}
+
+%\renewcommand{\chaptermark}[1]{%
+%	\markboth{\thechapter.\ \chaptername.\ #1}{}}
+
+%\newcommand{\mptt}[1]{\marginpar{\footnotesize \texttt{#1}}}
+%\newcommand{\mindex}[2]{\marginpar{\footnotesize \textsl{#1}}\index[#2]{#1}}
+%\newcommand{\mptt}[1]{}
+%\newcommand{\mindex}[2]{\index[#2]{#1}}
+%\newcommand{\POZOR}[1]{\marginpar{\tiny\bf #1}}
+
+%\newcommand{\midef}[3]{\textsl{#1}\mindex{#2}{default}\index[default]{#3}}
+%\newcommand{\midf}[1]{\textsl{#1}\mindex{#1}{default}}
+%\newcommand{\midx}[2]{\mindex{#1}{default}\index[default]{#2}}
+%\newcommand{\msdef}[2]{\textsl{#1}\mindex{#2}{symbols}}
+%\newcommand{\msdf}[1]{\textsl{#1}\mindex{#1}{symbols}}
+
+{\newtheorem{izrek}{Izrek}[chapter]  %ce pise na koncu Chapter, bo potem vse številčeno 1.15 in podobno%
+	\newtheorem{posledica}[izrek]{Posledica}
+	\newtheorem{lema}[izrek]{Lema}
+	\newtheorem{trditev}[izrek]{Trditev}
+	%\newtheorem{domneva}[izrek]{Domneva}
+	\newtheorem{definicija}[izrek]{Definicija}
+	%\newtheorem{problem}[izrek]{Problem}
+	%\newtheorem{vprasanje}[izrek]{Vpra\v sanje}
+	\newtheorem{opomba}[izrek]{Opomba}
+	\newtheorem{primer*}[izrek]{Primer}
+}
+
+\newcommand{\eopf}{\raisebox{0.8ex}{\framebox{}}} %za kvadratek na koncu dokaza%
+
+\newenvironment{zgled}[1][Zgled.]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+
+\newenvironment{dokaz}%
+{\noindent{\bf Dokaz.}\ }%
+{\hfill\eopf\par\bigskip}% 
+
+%Dodatna okolja
+
+\newenvironment{primer}[1][]{\begin{primer*}[#1]\renewcommand*{\qedsymbol}{$\diamondsuit$}\pushQED{\qed}}{\popQED\end{primer*}}
+
+%\newenvironment{zgled}[1][]{\begin{zgled*}[#1]\renewcommand*{\qedsymbol}{$\diamondsuit$}\pushQED{\qed}}{\popQED\end{zgled*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% številske množice
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\No}{\N_0}
+\newcommand{\n}{\underline{n}}
+
+
+%\renewcommand{\chaptermark}[1]{%
+%	\markboth{\thechapter.\ \chaptername.\ #1}{}}
+
+% Glave & noge
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhf{}
+%\fancyhead[LE]{\bfseries\thepage\ }
+%\fancyhead[RO]{\bfseries\thepage}
+%\fancyhead[LO]{\bfseries\rightmark}
+%\fancyhead[RE]{\bfseries\leftmark}
+%\fancypagestyle{plain}{%
+%	\fancyhead{} % get rid of headers
+%	\fancyfoot[C]{\bfseries \thepage}
+%	\renewcommand{\headrulewidth}{1pt} % and the line
+%	
+%}
+
+%\renewcommand{\midf}[1]{{\em #1}}
+% Moji ukazi
+\newcommand{\abs}[1]{\ensuremath{\lvert #1 \rvert}}
+\newcommand{\norm}[1]{\abs{\abs{#1}}}
+
+\newcommand{\Pplus}[1]{\mathbb{#1}_{+}}
+
+\newcommand{\pojem}[1]{\ensuremath{\emph{#1}}}
+\newcommand{\con}{\ensuremath{\mathscr{C}}}
+
+\newcommand{\Sp}[2]{\ensuremath{\left<#1, #2\right>}}
+\newcommand{\Spp}[2]{\ensuremath{\left<\left<#1, #2\right>\right>}}
+\newcommand{\Sppp}[2]{\ensuremath{\left<\left<\left<#1, #2\right>\right>\right>}}
+
+
+\newcommand{\map}[3]{\ensuremath{{#1}:{#2}\rightarrow{#3}}}
+\newcommand{\pra}[3]{{#1}{\ast}({#2}) = {#3}}
+
+\newcommand{\Gen}[1]{\ensuremath{\left<{#1}\right>}}
+
+
+\begin{document}
+	\selectlanguage{slovene}
+	
+	%\pagenumbering{roman}
+	%\cleardoublepage
+	%\cleardoublepage
+
+	% --------------------------------------------
+	% ---------======== Program  =======----------
+	% --------------------------------------------
+	
+	\newpage
+	\thispagestyle{empty}
+	\begin{center}
+		\large
+		Omejeni linearni operatorji na Hilbertovih prostorih\\\small program magistrskega dela
+	\end{center}
+	
+	V magistrskem delu naj bodo obravnavani omejeni linearni operatorji na Hilbertovih prostorih. Osrednji del obravnave naj predstavlja študij normalnih, sebi-adjungiranih in unitarnih operatorjev. Posebna pozornost naj bo namenjena sebi-adjungiranim operatorjem, katerih spekter leži v množici nenegativnih realnih števil. Uvodoma naj bodo predstavljene osnove teorije Hilbertovih prostorov.
+	
+	Osnovni viri:
+	\begin{enumerate}
+		\item B.~P.~ Rynne, M.~A.~Youngson, \emph{Linear functional analysis}, Springer-Verlag, London, 2008.
+	\end{enumerate}
+	
+	
+	\vspace{1cm}
+	\begin{flushright}
+		doc.\ dr.\ Daniel Eremita\\
+	\end{flushright}	
+	
+\end{document}
