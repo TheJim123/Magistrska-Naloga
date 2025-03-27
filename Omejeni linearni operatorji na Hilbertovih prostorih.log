@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  17 MAR 2025 22:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  27 MAR 2025 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1014,31 +1014,31 @@ less.
 ine 142.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-71.
+69.
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
 \openout1 = `"Omejeni linearni operatorji na Hilbertovih prostorih.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
-LaTeX Font Info:    ... okay on input line 171.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 169.
+LaTeX Font Info:    ... okay on input line 169.
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pd
 f.mkii
@@ -1065,7 +1065,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 ys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 171.
+Package hyperref Info: Link coloring OFF on input line 169.
  (Omejeni linearni operatorji na Hilbertovih prostorih.out)
 (Omejeni linearni operatorji na Hilbertovih prostorih.out)
 \@outlinefile=\write5
@@ -1074,49 +1074,49 @@ Package hyperref Info: Link coloring OFF on input line 171.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package translations Info: no dictionary file `translations-basic-dictionary-sl
-ovenian.trsl' found. on input line 171.
+ovenian.trsl' found. on input line 169.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-81.
+79.
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-181.
+179.
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-181.
+179.
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 181.
+(Font)              <12> on input line 179.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 181.
+(Font)              <8> on input line 179.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 181.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 181
+(Font)              <6> on input line 179.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 179
 .
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 181
+LaTeX Font Info:    Trying to load font information for U+msb on input line 179
 .
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
-81.
+79.
 
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 18
-1.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 17
+9.
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -1141,14 +1141,14 @@ Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
@@ -1175,7 +1175,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Poglavje 1.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-65.
+63.
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1186,7 +1186,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 }{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit
 .enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ma
 thsy.enc}]
-Overfull \hbox (12.45383pt too wide) in paragraph at lines 491--492
+Overfull \hbox (12.45383pt too wide) in paragraph at lines 489--490
 []\OT1/lmr/m/it/10.95 Ce je $\OML/lmm/m/it/10.95 V$ \OT1/lmr/m/it/10.95 vek-tor
 -ski pro-stor (nad $\U/msb/m/n/10.95 F$\OT1/lmr/m/it/10.95 ) in $[]$ ska-larni 
 pro-dukt na njem, pra-vimo, da je $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 V; \
@@ -1238,7 +1238,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-Overfull \hbox (12.76746pt too wide) in paragraph at lines 606--608
+Overfull \hbox (12.76746pt too wide) in paragraph at lines 604--606
 \OT1/lmr/m/it/10.95 po-lju-ben $[]$. Enoli^^Tcnost ad-jun-gi-ra-nega ope-ra-tor
 ja nam po-sledi^^Tcno da pred-pis: $\OML/lmm/m/it/10.95 D[]\OT1/lmr/m/n/10.95 (
 \OML/lmm/m/it/10.95 y[]; y[]; y[] []\OT1/lmr/m/n/10.95 ) =
@@ -1386,7 +1386,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-Overfull \hbox (31.12141pt too wide) in paragraph at lines 1063--1066
+Overfull \hbox (31.12141pt too wide) in paragraph at lines 1061--1064
 \OML/lmm/m/it/10.95 ^^U []\OT1/lmr/m/n/10.95 ) = 0$ in upo^^Tstevamo, da je $[]
  = 1;  \OMS/lmsy/m/n/10.95 8\OML/lmm/m/it/10.95 n \OMS/lmsy/m/n/10.95 2 \U/msb/
 m/n/10.95 N$\OT1/lmr/m/n/10.95 . Tako do-bimo, da je $[][] [] =
@@ -1402,7 +1402,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Overfull \hbox (1.31659pt too wide) detected at line 1090
+Overfull \hbox (1.31659pt too wide) detected at line 1088
 []
  []
 
@@ -1426,7 +1426,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [26]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-1149.
+1147.
  (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1450,13 +1450,13 @@ L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `"Omejeni linearni operatorji na Hilbertovih 
 prostorih".out' has not changed.
-(rerunfilecheck)             Checksum: 305ACFA2EDB52AA0001B156CBA05D51E;1901.
+(rerunfilecheck)             Checksum: AF3BBCFFB19452B9E0ADF048C7DADC31;1896.
  ) 
 Here is how much of TeX's memory you used:
- 29252 strings out of 473522
- 591249 string characters out of 5712673
- 1027077 words of memory out of 5000000
- 51803 multiletter control sequences out of 15000+600000
+ 29250 strings out of 473522
+ 591242 string characters out of 5712673
+ 1027035 words of memory out of 5000000
+ 51801 multiletter control sequences out of 15000+600000
  615095 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,14n,93p,1116b,1336s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1479,7 +1479,7 @@ cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (3
-9 pages, 459148 bytes).
+9 pages, 459424 bytes).
 PDF statistics:
  565 PDF objects out of 1000 (max. 8388607)
  181 named destinations out of 1000 (max. 500000)

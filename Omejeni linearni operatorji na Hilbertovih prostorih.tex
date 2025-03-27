@@ -158,8 +158,6 @@
 \newcommand{\con}{\ensuremath{\mathscr{C}}}
 
 \newcommand{\Sp}[2]{\ensuremath{\left<#1, #2\right>}}
-\newcommand{\Spp}[2]{\ensuremath{\left<\left<#1, #2\right>\right>}}
-\newcommand{\Sppp}[2]{\ensuremath{\left<\left<\left<#1, #2\right>\right>\right>}}
 
 
 \newcommand{\map}[3]{\ensuremath{{#1}:{#2}\rightarrow{#3}}}
@@ -368,7 +366,7 @@ Kon\v cna ugotovitev ka\v ze na to, da je...
 \textbf{Math.\ Subj.\ Class.\ (2020):} \=xxxxx \=\kill
 \textbf{Math.\ Subj.\ Class.\ (2020):} \>47A25 spektri linearnih operatorjev,\\
 \> 47B02 operatorji na Hilbertovih prostorih,\\
-\>47B15 hermitski in normalni operatorji.\\
+\>47B15 Hermitski in normalni operatorji.\\
 \end{tabbing}
 
 % --------------------------------------------
@@ -400,14 +398,14 @@ Will be written last.
 \textbf{Keywords:} \=\kill
 \textbf{Keywords:}  Linear algebra, funkcional analysis, Hilbert space, bounded \\
 \>linear operator, spectral set, spectral radius, normal operator, \\
-\> unitary operator, self-adjoint operator.
+\>unitary operator, self-adjoint operator.
 \end{tabbing}
 
 \begin{tabbing}
 \textbf{Math.\ Subj.\ Class.\ (2020):} \=xxxxx \=\kill
 \textbf{Math.\ Subj.\ Class.\ (2020):} \>47A25 spectral sets of linear operators,\\
 \> 47B02 operators on Hilbert spaces,\\
-\>47B15 hermitian and normal operators.\\
+\>47B15 Hermitian and normal operators.\\
 \end{tabbing}
 
 
@@ -467,26 +465,26 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 	\item Neenakost $C-S-B$
 	\item Ortogonalni komplement
 	\item Riezsov izrek
-	\item Prostor omejenih linearnih operatorjev nad Hilbertovimi prostori
+	\item Prostor omejenih linearnih operatorjev na Hilbertovih prostorih
 \end{itemize}
 
 \begin{lema}
 	\label{lem:invnorm}
-	Za poljubna normirana prostora $X$ ter $Y$ in poljuben $T\in B(X, Y)$ velja: Če je $T$ obrnljiv, je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$.
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora in naj bo $T\in B(X, Y)$ poljuben omejen linearen operator. Če je $T$ obrnljiv, potem za vse $x\in X$ velja, da je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}$.
 \end{lema}
 
 \begin{lema}
 	\label{lem:banzap}
-	Za poljuben Banachov prostor $X$, poljuben normiran prostor $Y$ ter poljuben $T\in B(X, Y)$ velja: Če obstaja tak $r>0$, da je $\norm{Tx}\geq r\norm{x};~\forall x\in X$, je $ImT$ zaprti podprostor v $Y$.
+	Naj bo $X$ poljuben Banachov prostor, $Y$ poljuben normiran prostor ter $T\in B(X, Y)$ poljuben omejen linearen operator. Če obstaja tak $r>0$, da je $\norm{Tx}\geq r\norm{x}$ za vsak $x\in X$, je $\operatorname{Im}T$ zaprti podprostor v $Y$.
 \end{lema}
 
 \begin{definicija}
 	\label{def:ScalProd}
-	Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\R}$ pravimo \pojem{skalarni produkt} na $V$, če velja: \begin{itemize}
-		\item $\Sp{x}{x} \geq 0;~\forall x\in V$
-		\item $\Sp{x}{x} = 0 \iff x = 0$
-		\item $\Sp{x}{y} = \overline{\Sp{y}{x}};~\forall x, y\in V$
-		\item $\Sp{\alpha_1\cdot x_1 + \alpha_2\cdot x_2}{y} = \alpha_1\Sp{x_1}{y} +\alpha_2\Sp{x_2}{y};~\forall \alpha_1, \alpha_2\in\F~\&~\forall x_1, x_2, y\in V$
+	Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\R}$ pravimo \pojem{skalarni produkt} na $V$, če za poljubne elemente $x, x_1, x_2, y\in V$ ter poljubna skalarja $\alpha_1, \alpha_2\in \F$ velja: \begin{itemize}
+		\item $\Sp{x}{x} \geq 0$,
+		\item $\Sp{x}{x} = 0 \iff x = 0$,
+		\item $\Sp{x}{y} = \overline{\Sp{y}{x}}$,
+		\item $\Sp{\alpha_1\cdot x_1 + \alpha_2\cdot x_2}{y} = \alpha_1\Sp{x_1}{y} +\alpha_2\Sp{x_2}{y}$.
 	\end{itemize}
 	Če je $V$ vektorski prostor (nad $\F$) in $\Sp{.}{.}$ skalarni produkt na njem, pravimo, da je $(V, +, \cdot, \Sp{.}{.})$ \pojem{prostor s skalarnim produktom}.
 \end{definicija}
@@ -494,16 +492,16 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 \begin{primer}
 	\label{prim:ScalProd}
 	Spomnimo se nekaj znanih primerov vektorskih prostorov s skalarnim produktom: \begin{itemize}
-		\item Prostor $\R^n$ (za $n\in\N$) skupaj s skalarnim produktom $\Sp{x}{y} = \sum_{i = 1}^{n}x_iy_i$.
-		\item Prostor $\C^n$ (za $n\in\N$) skupaj s skalarnim produktom $\Sp{z}{w} = \sum_{i = 1}^{n}z_i\overline{w_i}$.
-		\item V prostoru zaporedij $l^2$ je s predpisom $\Sp{\bar{x}}{\bar{y}} = \sum_{i = 1}^{\infty}x_i\overline{y_i};~\forall \bar{x}, \bar{y}\in l^2$ definiran skalarni produkt.
-		\item V prostoru zveznih funkcij na zaprtem intervalu $[a, b], \mathcal{C}([a, b])$, je s predpisom $\Sp{f}{g} = \int_{a}^{b}f(x)g(x)dx;~\forall f, g \in \mathcal{C}([a, b])$ definiran skalarni produkt.
+		\item V prostoru $\R^n$ je s predpisom $\Sp{x}{y} = \sum_{i = 1}^{n}x_iy_i$ definiran skalarni produkt,
+		\item v prostoru $\C^n$ je s predpisom $\Sp{z}{w} = \sum_{i = 1}^{n}z_i\overline{w_i}$ definiran skalarni produkt,
+		\item v prostoru zaporedij $l^2$ je s predpisom $\Sp{\bar{x}}{\bar{y}} = \sum_{i = 1}^{\infty}x_i\overline{y_i}$ definiran skalarni produkt,
+		\item v prostoru zveznih funkcij na zaprtem intervalu $[a, b]$, z oznako $\mathcal{C}([a, b])$, je s predpisom $\Sp{f}{g} = \int_{a}^{b}f(x)g(x)dx$ definiran skalarni produkt.
 	\end{itemize}
 \end{primer}
 
 \begin{opomba}
 	\label{op:ScalProd}
-	Naj bo $(V, +, \cdot, \Sp{.}{.})$ prostor s skalarnim produktom nad poljem $\F$. Enostavno je preveriti, da je s predpisom $\norm{x} = \sqrt{\Sp{x}{x}}~\forall x\in V$ definirana norma na $V$. Za tako normo pravimo, da je \pojem{porojena s skalarnim produktom} $\Sp{.}{.}$.
+	Naj bo $(V, +, \cdot, \Sp{.}{.})$ prostor s skalarnim produktom nad poljem $\F$. Enostavno je preveriti, da je s predpisom $\norm{x} = \sqrt{\Sp{x}{x}}$ definirana norma na $V$. Za tako normo pravimo, da je \pojem{porojena s skalarnim produktom} $\Sp{.}{.}$.
 \end{opomba}
 
 \begin{definicija}
@@ -515,10 +513,10 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 	\label{prim:PolnMP}
 	Navedimo nekaj klasičnih primerov polnih metričnih prostorov.
 	\begin{itemize}
-		\item Prostori $\R^n$ ($n\in\N$) s standardno Evklidsko normo.
-		\item Prostori $\C^n$ ($n\in\N$) s standardno Evklidsko normo.
-		\item Prostor $l^2$, skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$; $\forall \bar{x}\in l^2$, je polni metrični prostor.
-		\item Prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, opremljenim z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2};\forall f\in \mathcal{L}^2(X, \mu)$.
+		\item Prostori $\R^n$ s standardno Evklidsko normo,
+		\item Prostori $\C^n$ s standardno Evklidsko normo,
+		\item Prostor $l^2$, skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$,
+		\item Prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, opremljenim z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
 	\end{itemize}
 \end{primer}
 
@@ -532,67 +530,67 @@ Sedaj definirajmo Hilbertove prostore.
 \begin{primer}
 	\label{prim:Hilbert}
 	Navedimo nekaj znanih primerov Hilbertovih prostorov. \begin{itemize}
-		\item Prostori $\R^n$ (za $n\in\N$) skupaj s standardnim skalarnim produktom.
-		\item Prostori $\C^n$ (za $n\in\N$) skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd}.
-		\item Prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd}.
-		\item Prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \int_{[a, b]}(f\cdot \bar{g}) d\mu;\forall f, g\in \mathcal{L}^2(X, \mu)$.
+		\item Prostori $\R^n$ skupaj s standardnim skalarnim produktom,
+		\item Prostori $\C^n$ skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd},
+		\item Prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd},
+		\item Prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \int_{[a, b]}(f\cdot \bar{g}) d\mu$.
 	\end{itemize}
 \end{primer}
 
 \begin{opomba}
 	\label{opomb:Hilbert}
-	V primeru, ko je merljivi prostor $X$ v primeru \ref{prim:Hilbert} zaprti interval $[a, b]$, sta Lebesguesov in Riemannov integral enaka. Tako oznako za množico poenostavimo na $\mathcal{L}^2([a, b])$, predpis za skalarni produkt pa se spremeni v: $\Sp{f}{g} = \int_{a}^{b}f(x)\overline{g(x)}dx;~\forall f, g \in \mathcal{L}^2([a, b])$.
+	V primeru, ko je merljivi prostor $X$ iz primera \ref{prim:Hilbert} zaprti interval $[a, b]$, oznako za množico poenostavimo na $\mathcal{L}^2([a, b])$. Pri tem je mera na zaprtem intervalu kar standardna Lebesgueova mera. Predpis za skalarni produkt se v tem primeru spremeni v: $$\Sp{f}{g} = \int_{a}^{b}f(x)\overline{g(x)}dx.$$
 \end{opomba}
 \section[Ortogonalni komplement in Riezsov izrek]{Ortogonalni komplement in Riezsov izrek}
 \begin{posledica}
 	\label{posl:zaportoggost}
-	Za poljuben zaprti podprostor $Y$ poljubnega Hilbertovega prostora velja $Y^{\bot\bot} = Y$.
+	Za poljuben zaprti podprostor $Y$ poljubnega Hilbertovega prostora $X$ velja, da je $Y^{\bot\bot} = Y$.
 \end{posledica}
 
 \begin{posledica}
 	\label{posl:ortoggost}
-	Za poljuben podprostor $Y$ poljubnega Hilbertovega prostora velja $Y^{\bot\bot} = \overline{Y}$.
+	Za poljuben podprostor $Y$ poljubnega Hilbertovega prostora $X$ velja, da je $Y^{\bot\bot} = \overline{Y}$.
 \end{posledica}
 
 \begin{lema}
 	\label{lem:scalprodopenak}
-	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna. Če $\forall x\in X$ velja $\Sp{Tx}{x} = \Sp{Sx}{x}$, potem je $T = S$.
+	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna omejena linearna operatorja. Če je $\Sp{Tx}{x} = \Sp{Sx}{x}$ za vsak $x\in X$, sledi, da je $T = S$.
 \end{lema}
 
 \begin{izrek}
 	\label{izr:Hilbertopinv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $(I-T)^{-1} = \sum_{n = 1}^{\infty}T^n$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben omejen linearen operator. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $$(I-T)^{-1} = \sum_{n = 1}^{\infty}T^n.$$
 \end{izrek}
 
 \begin{izrek}
 	\label{izr:Hilbertinvset}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter z $\mathcal{G}(X)$ označimo množico vseh obrnljivih operatorjev v $B(X)$. Velja: \begin{enumerate}[a)]
-		\item $(\mathcal{G}, \cdot)$ je grupa.
-		\item Množica $\mathcal{G}$ je odprta v $B(X)$.
-		\item Preslikava invertiranja, $\map{^{-1}}{\mathcal{G}}{\mathcal{G}}$, s predpisom $^{-1}(T) = T^{-1};~\forall T\in \mathcal{G}(X)$ je zvezna.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $\mathcal{G}(X)$ množica vseh obrnljivih operatorjev v $B(X)$. Velja: \begin{enumerate}[a)]
+		\item $(\mathcal{G}, \cdot)$ je grupa,
+		\item množica $\mathcal{G}$ je odprta v $B(X)$,
+		\item preslikava invertiranja, $\map{^{-1}}{\mathcal{G}}{\mathcal{G}}$, s predpisom $^{-1}(T) = T^{-1}$ je zvezna.
 	\end{enumerate}
 \end{izrek}
 
-\chapter{Omejeni linearni operatorji nad Hilbertovimi prostori}
-V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev nad Hilbertovimi prostori ter lastnosti njihovih spektrov, kadar sta domena in kodomena kompleksna Hilbertova prostora. Posebej nas bo zanimala operacija adjungiranja, zato bomo najprej povedali nekaj o njej.
+\chapter{Omejeni linearni operatorji na Hilbertovih prostorih}
+V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev na Hilbertovih prostorih ter lastnosti njihovih spektrov, kadar sta domena in kodomena kompleksna Hilbertova prostora. Posebej nas bo zanimala operacija adjungiranja, zato bomo najprej povedali nekaj o njej.
 \section[Adjungiran operator]{Adjungiran operator}
 
 \begin{izrek}
 	\label{izr:Adjexist}
-	Naj bosta $(X, \Spp{.}{.})$ in $(Y, \Sp{.}{.})$ poljubna kompleksna Hilbertova prostora in naj bo $T$ poljuben element $B(X, Y)$. Tedaj obstaja enolično določen operator $T^*\in B(Y, X)$, za katerega velja $$\Sp{Tx}{y} = \Spp{x}{T^*y};~\forall x\in X~\&~\forall y \in Y $$
+	Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora in naj bo $T$ poljuben element $B(X, Y)$. Tedaj obstaja enolično določen operator $T^*\in B(Y, X)$, za katerega velja $$\Sp{Tx}{y}_Y = \Sp{x}{T^*y}_X;~\forall x\in X~\&~\forall y \in Y $$
 \end{izrek}
 
 \begin{dokaz}
-	Naj bo $y\in Y$ poljuben ter naj bo $\map{f_y}{X}{\C}$ preslikava definirana s predpisom $f_y(x) = \Sp{Tx}{y};~\forall x\in X$. Opazimo, da je $f_y$ linearen funkcional nad $X$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem velja: $$\abs{f_y(x)} = \abs{\Sp{Tx}{y}} \leq \norm{Tx}_Y \cdot \norm{y}_Y \leq \norm{T}\cdot\norm{x}_X\cdot\norm{y}_Y;~ \forall x\in X$$ To pomeni, da je $f_y$ omejen linearen funkcional nad $X$. Posledično velja, po Riezsovem izreku, da obstaja enolično določen $z\in X$, tak, da je $f_y(x) = \Spp{x}{z};~\forall x\in X$. Sedaj definiramo preslikavo $\map{T^*}{Y}{X}$, ki vsakemu $y\in Y$ priredi pripadajoči $z\in X$ (tisti, enolično določen, za katerega je $f_y(x) = \Spp{x}{z};~\forall x\in X$). Posledično velja: $$\Sp{Tx}{y}=\Spp{x}{T^*y}~\forall x\in X,~\forall y\in Y$$
+	Naj bo $y\in Y$ poljuben ter naj bo $\map{f_y}{X}{\C}$ preslikava definirana s predpisom $f_y(x) = \Sp{Tx}{y}_Y;~\forall x\in X$. Opazimo, da je $f_y$ linearen funkcional nad $X$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem velja: $$\abs{f_y(x)} = \abs{\Sp{Tx}{y}_Y} \leq \norm{Tx}_Y \cdot \norm{y}_Y \leq \norm{T}\cdot\norm{x}_X\cdot\norm{y}_Y;~ \forall x\in X$$ To pomeni, da je $f_y$ omejen linearen funkcional nad $X$. Posledično velja, po Riezsovem izreku, da obstaja enolično določen $z\in X$, tak, da je $f_y(x) = \Sp{x}{z}_X;~\forall x\in X$. Sedaj definiramo preslikavo $\map{T^*}{Y}{X}$, ki vsakemu $y\in Y$ priredi pripadajoči $z\in X$ (tisti, enolično določen, za katerega je $f_y(x) = \Sp{x}{z}_X;~\forall x\in X$). Posledično velja: $$\Sp{Tx}{y}_Y=\Sp{x}{T^*y}_X~\forall x\in X,~\forall y\in Y$$
 	Sedaj preverimo, da je $T^*$ omejen linearen operator. Naj bodo $y_1, y_2 \in Y$ in $x\in X$ poljubni elementi ter $\alpha, \beta \in \C$ poljubna skalarja. Tedaj je: \begin{align*}
-		\Spp{x}{T^*(\alpha y_1 + \beta y_2)} &= \Sp{Tx}{\alpha y_1 + \beta y_2} \\
-		&= \bar{\alpha}\Sp{Tx}{y_1} + \bar{\beta}\Sp{Tx}{y_2} \\
-		&= \bar{\alpha}\Spp{x}{T^*y_1} + \bar{\beta}\Spp{x}{T^*y_2} \\
-		&= \Spp{x}{\alpha T^*y_1} + \Spp{x}{\beta T^*y_2}
+		\Sp{x}{T^*(\alpha y_1 + \beta y_2)}_X &= \Sp{Tx}{\alpha y_1 + \beta y_2}_Y \\
+		&= \bar{\alpha}\Sp{Tx}{y_1}_Y + \bar{\beta}\Sp{Tx}{y_2}_Y \\
+		&= \bar{\alpha}\Sp{x}{T^*y_1}_X + \bar{\beta}\Sp{x}{T^*y_2}_X \\
+		&= \Sp{x}{\alpha T^*y_1}_X + \Sp{x}{\beta T^*y_2}_X
 	\end{align*}
-	Sledi, da je $T^*(\alpha y_1 + \beta y_2)=\alpha T^*y_1 + \beta T^*y_2;~\forall x\in X, \forall y_1, y_2 \in Y, \forall \alpha, \beta \in \C$, torej je $T^*$ res linearna preslikava. Dodatno, velja: $$\norm{T^*y}_X^2 = \Spp{T^*y}{T^*y} = \Sp{TT^*y}{y} \leq \norm{TT^*y}_Y\norm{y}_Y \leq \norm{T}\norm{T^*y}_X\norm{y}_Y;~\forall y\in Y$$
+	Sledi, da je $T^*(\alpha y_1 + \beta y_2)=\alpha T^*y_1 + \beta T^*y_2;~\forall x\in X, \forall y_1, y_2 \in Y, \forall \alpha, \beta \in \C$, torej je $T^*$ res linearna preslikava. Dodatno, velja: $$\norm{T^*y}_X^2 = \Sp{T^*y}{T^*y}_X = \Sp{TT^*y}{y}_Y \leq \norm{TT^*y}_Y\norm{y}_Y \leq \norm{T}\norm{T^*y}_X\norm{y}_Y;~\forall y\in Y$$
 	Če je $\norm{T^*y}_X \neq 0$, dobljeno neenakost delimo z $\norm{T^*y}_X$ ter tako dobimo oceno $\norm{T^*y}_X \leq \norm{T}\norm{y}_Y$. V primeru, ko je $\norm{T^*y}_X = 0$, prejšnja ocena velja trivialno. Sledi, da je $$\norm{T^*y}_X \leq \norm{T}\norm{y}_Y; \forall y\in Y$$
-	Preslikava $T^*$ je torej omejen linearen operator in velja $\norm{T^*}\leq \norm{T}$. Za konec še pokažimo, da je $T^*$ enolično določen. Denimo, da imamo $U_1, U_2 \in B(Y, X)$, za katera velja: $\Sp{Tx}{y} = \Spp{x}{U_1 y} = \Spp{x}{U_2 y};~\forall x\in X, \forall y\in Y$. Tedaj velja, da je $U_1y = U_2y;~\forall y\in Y$, torej je $U_1 = U_2$. Sledi, da je $T^*$ res enolično določen.
+	Preslikava $T^*$ je torej omejen linearen operator in velja, da je $\norm{T^*}\leq \norm{T}$. Za konec še pokažimo, da je $T^*$ enolično določen. Denimo, da imamo $U_1, U_2 \in B(Y, X)$, za katera velja: $\Sp{Tx}{y}_Y = \Sp{x}{U_1 y}_X = \Sp{x}{U_2 y}_X;~\forall x\in X, \forall y\in Y$. Tedaj velja, da je $U_1y = U_2y;~\forall y\in Y$, torej je $U_1 = U_2$. Sledi, da je $T^*$ res enolično določen.
 \end{dokaz}
 Izrek \ref{izr:Adjexist} nas motivira, da vpeljemo naslednjo definicijo.
 
@@ -619,7 +617,7 @@ Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 
 \begin{izrek}
 	\label{izr:adjlast}
-	Naj bodo $(X, \Spp{.}{.})$, $(Y, \Sp{.}{.})$ in $(Z, \Sppp{.}{.})$ poljubni kompleksni Hilbertovi prostori ter naj bodo $U, V \in B(X, Y)$ ter $T \in B(Y, Z)$ poljubni omejeni linearni operatorji. Tedaj velja: \begin{enumerate}[a)]
+	Naj bodo $(X, \Sp{.}{.}_X)$, $(Y, \Sp{.}{.}_Y)$ in $(Z, \Sp{.}{.}_Z)$ poljubni kompleksni Hilbertovi prostori ter naj bodo $U, V \in B(X, Y)$ ter $T \in B(Y, Z)$ poljubni omejeni linearni operatorji. Tedaj velja: \begin{enumerate}[a)]
 		\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*; \forall \alpha, \beta \in \C$.
 		\item $(TU)^* = U^*T^*$.
 		\item $(U^*)^* = U$.
@@ -632,22 +630,22 @@ Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 \begin{dokaz}
 	\begin{enumerate}[a)]
 		\item Naj bodo $U, V \in B(X, Y)$ in $\alpha, \beta \in \C$ poljubni. Tedaj $\forall x\in X, \forall y\in Y$ velja: \begin{align*}
-			\Spp{x}{(\alpha U + \beta V)^*y} &= \Sp{(\alpha U + \beta V)x}{y} \\
-			&= \alpha \Sp{Ux}{y} + \beta \Sp{Vx}{y} \\
-			&= \alpha \Spp{x}{U^*y} + \beta\Spp{x}{V^*y} \\
-			&= \Spp{x}{\bar{\alpha}U^*y} + \Spp{x}{\bar{\beta}V^*y} \\
-			&= \Spp{x}{(\bar{\alpha} U^* + \bar{\beta} V^*)y}
+			\Sp{x}{(\alpha U + \beta V)^*y}_X &= \Sp{(\alpha U + \beta V)x}{y}_Y \\
+			&= \alpha \Sp{Ux}{y}_Y + \beta \Sp{Vx}{y}_Y \\
+			&= \alpha \Sp{x}{U^*y}_X + \beta\Sp{x}{V^*y}_X \\
+			&= \Sp{x}{\bar{\alpha}U^*y}_X + \Sp{x}{\bar{\beta}V^*y}_X \\
+			&= \Sp{x}{(\bar{\alpha} U^* + \bar{\beta} V^*)y}_X
 		\end{align*} 
 		Sledi, da je $(\alpha U + \beta V)^* = (\bar{\alpha} U^* + \bar{\beta} V^*)$.
-		\item Naj bosta $U\in B(X, Y)$ in $T\in B(Y, Z)$ poljubna. Tedaj $\forall x\in X, \forall z\in Z$ velja: $$\Spp{x}{(TU)^*z} = \Sppp{(TU)x}{z} = \Sppp{T(Ux)}{z} = \Sp{Ux}{T^*z} = \Spp{x}{U^*T^*z}$$
+		\item Naj bosta $U\in B(X, Y)$ in $T\in B(Y, Z)$ poljubna. Tedaj $\forall x\in X, \forall z\in Z$ velja: $$\Sp{x}{(TU)^*z}_X = \Sp{(TU)x}{z}_Z = \Sp{T(Ux)}{z}_Z = \Sp{Ux}{T^*z}_Y = \Sp{x}{U^*T^*z}_X$$
 		Posledično je res $(TU)^* = U^*T^*$.
-		\item Naj bo $U\in B(X, Y)$ poljuben. Tedaj $\forall x\in X, \forall y\in Y$ velja: $$\Sp{y}{(U^*)^*x} = \Spp{U^*y}{x} = \overline{\Spp{x}{U^*y}} = \overline{\Sp{Ux}{y}} = \Sp{y}{Ux}$$
+		\item Naj bo $U\in B(X, Y)$ poljuben. Tedaj $\forall x\in X, \forall y\in Y$ velja: $$\Sp{y}{(U^*)^*x}_Y = \Sp{U^*y}{x}_X = \overline{\Sp{x}{U^*y}_X} = \overline{\Sp{Ux}{y}_Y} = \Sp{y}{Ux}_Y$$
 		Posledično je $(U^*)^* = U$.
 		\item V dokazu izreka \ref{izr:Adjexist} smo že pokazali, da je $\norm{U^*} \leq \norm{U}$. Ko upoštevamo prejšnjo točko, vidimo, da velja: $$\norm{U} = \norm{(U^*)^*} \leq \norm{U^*} \leq \norm{U}$$
 		Posledično sledi, da je $\norm{U^*} = \norm{U}$.
 		\item Naj bodo $U, V \in B(X, Y)$ $\varepsilon > 0$ poljubni in izberemo $\delta = \varepsilon$. Denimo, da je $\norm{U - V} < \delta$. Tedaj je $\norm{f(U) - f(V)} = \norm{U^* - V^*} = \norm{(U - V)^*}$. Po prejšnji točki je $\norm{(U-V)^*} = \norm{U - V} < \delta = \varepsilon$, torej je $f$ zvezna.
 		\item Naj bo $U\in B(X, Y)$ poljuben. Ker že vemo, da je $\norm{U^*} = \norm{U}$, hitro vidimo, da je $\norm{U^*U}\leq\norm{U^*}\norm{U} = \norm{U}^2$.
-		Hkrati vidimo, da za $\forall x\in X$ velja $\norm{Ux}_Y^2 = \Sp{Ux}{Ux} = \Spp{U^*Ux}{x}$. Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo oceno $\Spp{U^*Ux}{x} \leq \norm{U^*Ux}_X\norm{x}_X \leq \norm{U^*U}\norm{x}_X^2$. Sledi ocena: $\norm{Ux}_Y^2 \leq \norm{U^*U}\norm{x}_X^2 \forall x\in X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Posledično velja iskana enakost.
+		Hkrati vidimo, da za $\forall x\in X$ velja $\norm{Ux}_Y^2 = \Sp{Ux}{Ux}_Y = \Sp{U^*Ux}{x}_X$. Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo oceno $\Sp{U^*Ux}{x}_X \leq \norm{U^*Ux}_X\norm{x}_X \leq \norm{U^*U}\norm{x}_X^2$. Sledi ocena: $\norm{Ux}_Y^2 \leq \norm{U^*U}\norm{x}_X^2 \forall x\in X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Posledično velja iskana enakost.
 	\end{enumerate}
 \end{dokaz}
 
@@ -655,7 +653,7 @@ Pri obravnavi adjungiranih operatorjev bomo potrebovali naslednji pomožni rezul
 
 \begin{lema}
 	\label{lem:adjlast2}
-	Naj bosta $(X, \Spp{.}{.})$ in $(Y, \Sp{.}{.})$ poljubna kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$ poljuben. Tedaj velja: \begin{enumerate}[a)]
+	Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$ poljuben. Tedaj velja: \begin{enumerate}[a)]
 		\item $KerT = (ImT^*)^{\bot}$.
 		\item $KerT^* = (ImT)^{\bot}$.
 		\item $KerT^* = \{0\} \iff ImT$ je gosta v $Y$.
@@ -664,9 +662,9 @@ Pri obravnavi adjungiranih operatorjev bomo potrebovali naslednji pomožni rezul
 
 \begin{dokaz}
 	\begin{enumerate}[a)]
-		\item Najprej pokažimo, da je $KerT \subseteq (ImT^*)^\bot$. Naj bo $x\in KerT$ poljuben ter izberemo poljuben $z\in ImT^*$. Potem za $z$ obstaja $y\in Y$, da je $T^*y = z$. Posledično, je $$\Spp{x}{z} = \Spp{x}{T^*y} = \Sp{Tx}{y} = \Sp{0}{y} = 0$$
+		\item Najprej pokažimo, da je $KerT \subseteq (ImT^*)^\bot$. Naj bo $x\in KerT$ poljuben ter izberemo poljuben $z\in ImT^*$. Potem za $z$ obstaja $y\in Y$, da je $T^*y = z$. Posledično, je $$\Sp{x}{z}_X = \Sp{x}{T^*y}_X = \Sp{Tx}{y}_Y = \Sp{0}{y}_Y = 0$$
 		Sledi, da je $x\in (ImT^*)^\bot$. Ker je $x$ bil poljuben, premislek velja za vsak $x\in KerT$, torej je $KerT \subseteq (ImT^*)^\bot$.
-		Naj bo sedaj $x\in (ImT^*)^\bot$ poljuben. Ker je $T^*Tx \in ImT^*$, velja: $$\norm{Tx}^2 = \Sp{Tx}{Tx} = \Sp{x}{T^*Tx}= 0$$
+		Naj bo sedaj $x\in (ImT^*)^\bot$ poljuben. Ker je $T^*Tx \in ImT^*$, velja: $$\norm{Tx}^2 = \Sp{Tx}{Tx}_Y = \Sp{x}{T^*Tx}_X= 0$$
 		Sledi, da je $Tx = 0$ oz. $x\in KerT$. Ker je bil $x$ poljuben, sledi $(ImT^*)^\bot \subseteq KerT$. Posledično velja enakost.
 		\item Da dokažemo ta rezultat, upoštevamo prejšnjo točko tega dokaza za $T^*$ ter točko $c)$ izreka \ref{izr:adjlast}. Posledično je $KerT^* = (Im(T^*)^*)^\bot = (ImT)^\bot$.
 		\item Da dokažemo ta rezultat bomo dokazali, da veljata implikaciji v obe smeri. \begin{itemize}
@@ -901,7 +899,7 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 \end{dokaz}
 
 \chapter{Spekter}
-Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omejen le na matrike - na enak način jih lahko definiramo tudi za operatorje na poljubnih prostorih. V tem poglavju bomo obravnavali t.~i.~ spekter operatorja nad kompleksnim Hilbertovim prostorom.
+Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omejen le na matrike - na enak način jih lahko definiramo tudi za operatorje na poljubnih prostorih. V tem poglavju bomo obravnavali t.~i.~ spekter operatorja na kompleksnem Hilbertovem prostoru.
 
 \begin{definicija}
 	\label{def:specter}
@@ -921,7 +919,7 @@ V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
 
 \begin{opomba}
 	\label{opomb:eigeninspecter}
-	V končno-razsežnih vektorskih prostorih vemo, da je injektivnost linearne preslikave ekvivalentna surjektivnosti. Posledično, je spekter linearne preslikave nad končno-razsežnem kompleksnem Hilbertovim prostorom natanko množica njegovih lastnih vrednosti. V splošnem primeru to ni res - obstajajo omejeni linearni operatorji nad kompleksnimi Hilbertovimi prostori, ki ne premorejo nobene lastne vrednosti. Primer tega je desni premik $D\in B(l^2)$.
+	V končno-razsežnih vektorskih prostorih vemo, da je injektivnost linearne preslikave ekvivalentna surjektivnosti. Posledično, je spekter linearne preslikave nad končno-razsežnem kompleksnem Hilbertovem prostoru natanko množica njegovih lastnih vrednosti. V splošnem to ni res - obstajajo omejeni linearni operatorji na kompleksnih Hilbertovih prostorih, ki ne premorejo nobene lastne vrednosti. Primer tega je desni premik $D\in B(l^2)$.
 \end{opomba}
 
 Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvilleovega izreka iz kompleksne analize.
