@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  27 MAR 2025 14:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  28 MAR 2025 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,13 +1238,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7]
-Overfull \hbox (12.76746pt too wide) in paragraph at lines 604--606
-\OT1/lmr/m/it/10.95 po-lju-ben $[]$. Enoli^^Tcnost ad-jun-gi-ra-nega ope-ra-tor
-ja nam po-sledi^^Tcno da pred-pis: $\OML/lmm/m/it/10.95 D[]\OT1/lmr/m/n/10.95 (
-\OML/lmm/m/it/10.95 y[]; y[]; y[] []\OT1/lmr/m/n/10.95 ) =
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1335,12 +1328,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [17]
-Poglavje 3.
 
 
-[18
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-]
+[18]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1350,15 +1346,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+Poglavje 3.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+[20
 
-[20]
+]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1386,13 +1379,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [23]
-Overfull \hbox (31.12141pt too wide) in paragraph at lines 1061--1064
-\OML/lmm/m/it/10.95 ^^U []\OT1/lmr/m/n/10.95 ) = 0$ in upo^^Tstevamo, da je $[]
- = 1;  \OMS/lmsy/m/n/10.95 8\OML/lmm/m/it/10.95 n \OMS/lmsy/m/n/10.95 2 \U/msb/
-m/n/10.95 N$\OT1/lmr/m/n/10.95 . Tako do-bimo, da je $[][] [] =
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1402,11 +1388,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Overfull \hbox (1.31659pt too wide) detected at line 1088
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1425,23 +1406,46 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
+Overfull \hbox (1.31659pt too wide) detected at line 1120
+[]
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-1147.
+1179.
  (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[27
+[29
 
 
 {C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
 c}]
 
-[28
+[30
 
 ]
 
-[29
+[31
 
 ] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
@@ -1450,16 +1454,16 @@ L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `"Omejeni linearni operatorji na Hilbertovih 
 prostorih".out' has not changed.
-(rerunfilecheck)             Checksum: AF3BBCFFB19452B9E0ADF048C7DADC31;1896.
+(rerunfilecheck)             Checksum: 65B0F2AE2841F603E7530D85855CF0BE;1896.
  ) 
 Here is how much of TeX's memory you used:
- 29250 strings out of 473522
- 591242 string characters out of 5712673
- 1027035 words of memory out of 5000000
- 51801 multiletter control sequences out of 15000+600000
+ 29259 strings out of 473522
+ 591315 string characters out of 5712673
+ 1027064 words of memory out of 5000000
+ 51802 multiletter control sequences out of 15000+600000
  615095 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,1116b,1336s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,1118b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1478,10 +1482,10 @@ grams/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Uporabnik/AppData/Local
 cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (3
-9 pages, 459424 bytes).
+Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (4
+1 pages, 464945 bytes).
 PDF statistics:
- 565 PDF objects out of 1000 (max. 8388607)
- 181 named destinations out of 1000 (max. 500000)
+ 583 PDF objects out of 1000 (max. 8388607)
+ 189 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

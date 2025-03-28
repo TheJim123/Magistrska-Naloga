@@ -470,7 +470,7 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 
 \begin{lema}
 	\label{lem:invnorm}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora in naj bo $T\in B(X, Y)$ poljuben omejen linearen operator. Če je $T$ obrnljiv, potem za vse $x\in X$ velja, da je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}$.
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora in naj bo $T\in B(X, Y)$ poljuben omejen linearen operator. Če je $T$ obrnljiv, potem za vse $x\in X$ velja: $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}.$$
 \end{lema}
 
 \begin{lema}
@@ -480,7 +480,7 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 
 \begin{definicija}
 	\label{def:ScalProd}
-	Naj bo $V$ vektorski prostor nad $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\R}$ pravimo \pojem{skalarni produkt} na $V$, če za poljubne elemente $x, x_1, x_2, y\in V$ ter poljubna skalarja $\alpha_1, \alpha_2\in \F$ velja: \begin{itemize}
+	Naj bo $V$ vektorski prostor nad poljem $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\R}$ pravimo \pojem{skalarni produkt} na $V$, če za poljubne elemente $x, x_1, x_2, y\in V$ ter poljubna skalarja $\alpha_1, \alpha_2\in \F$ velja: \begin{itemize}
 		\item $\Sp{x}{x} \geq 0$,
 		\item $\Sp{x}{x} = 0 \iff x = 0$,
 		\item $\Sp{x}{y} = \overline{\Sp{y}{x}}$,
@@ -514,9 +514,9 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 	Navedimo nekaj klasičnih primerov polnih metričnih prostorov.
 	\begin{itemize}
 		\item Prostori $\R^n$ s standardno Evklidsko normo,
-		\item Prostori $\C^n$ s standardno Evklidsko normo,
-		\item Prostor $l^2$, skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$,
-		\item Prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, opremljenim z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
+		\item prostori $\C^n$ s standardno Evklidsko normo,
+		\item prostor $l^2$, skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$,
+		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, opremljenim z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
 	\end{itemize}
 \end{primer}
 
@@ -531,9 +531,9 @@ Sedaj definirajmo Hilbertove prostore.
 	\label{prim:Hilbert}
 	Navedimo nekaj znanih primerov Hilbertovih prostorov. \begin{itemize}
 		\item Prostori $\R^n$ skupaj s standardnim skalarnim produktom,
-		\item Prostori $\C^n$ skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd},
-		\item Prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd},
-		\item Prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \int_{[a, b]}(f\cdot \bar{g}) d\mu$.
+		\item prostori $\C^n$ skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd},
+		\item prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd},
+		\item prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \int_{[a, b]}(f\cdot \bar{g}) d\mu$.
 	\end{itemize}
 \end{primer}
 
@@ -541,6 +541,16 @@ Sedaj definirajmo Hilbertove prostore.
 	\label{opomb:Hilbert}
 	V primeru, ko je merljivi prostor $X$ iz primera \ref{prim:Hilbert} zaprti interval $[a, b]$, oznako za množico poenostavimo na $\mathcal{L}^2([a, b])$. Pri tem je mera na zaprtem intervalu kar standardna Lebesgueova mera. Predpis za skalarni produkt se v tem primeru spremeni v: $$\Sp{f}{g} = \int_{a}^{b}f(x)\overline{g(x)}dx.$$
 \end{opomba}
+
+\begin{primer}
+	\label{prim:Tkop}
+	Za vsako funkcijo $k\in \mathcal{C}([0, 1])$ definiramo operator $\map{T_k}{\mathcal{L}^2([0, 1])}{\mathcal{L}^2([0, 1])}$ na kompleksnem Hilbertovem prostoru $\mathcal{L}^2([0, 1])$ (s skalarnim produktom iz primera \ref{prim:Hilbert}) s predpisom: $$T_k(g) = k\cdot g.$$ Premislimo najprej, da je $T_k$ omejen linearen operator na $\mathcal{L}^2([0, 1])$. Najprej preverimo linearnost. Naj bosta $g_1, g_2\in \mathcal{L}^2([0, 1])$ poljubni funkciji ter $\alpha_1, \alpha_2\in\C$ poljubna skalarja. Tedaj je: \begin{align*}
+		T_k(\alpha_1g_1 + \alpha_2g_2) &= k\cdot(\alpha_1g_1 + \alpha_2g_2) = k\cdot (\alpha_1g_1) + k\cdot (\alpha_2g_2) = \alpha_1(k\cdot g_1) + \alpha_2(k\cdot g_2) \\ &= \alpha_1T_k(g_1) + \alpha_2T_k(g_2).
+	\end{align*}
+	To pomeni, da je $T_k$ linearen operator. Sedaj preverimo še omejenost. Naj bo $g\in \mathcal{L}^2([0, 1])$ poljubna funkcija. Tedaj je: $$\norm{T_k(g)} = \left(\int_{0}^{1}\abs{k(t)g(t)}^2dt\right)^{\frac{1}{2}} = \left(\int_{0}^{1}\abs{k(t)}^2\abs{g(t)}^2dt\right)^{\frac{1}{2}}.$$ Ker je funkcija $k$ zvezna na intervalu $[0, 1]$, je tam tudi omejena, torej obstaja tak $M>0$, da je $\abs{k(t)}\leq M$ za vsak $t\in [0, 1]$. Posledično velja ocena: $$\norm{T_k(g)} = \left(\int_{0}^{1}\abs{k(t)}^2\abs{g(t)}^2dt\right)^{\frac{1}{2}} \leq \left(\int_{0}^{1}M^2\abs{g(t)}^2dt\right)^{\frac{1}{2}} = \left(M^2 \int_{0}^{1}\abs{g(t)}^2dt\right)^{\frac{1}{2}} = M \norm{g}.$$
+	Ker je bila funkcija $g$ poljubna, sledi, da je operator $T_k$ omejen.
+\end{primer}
+
 \section[Ortogonalni komplement in Riezsov izrek]{Ortogonalni komplement in Riezsov izrek}
 \begin{posledica}
 	\label{posl:zaportoggost}
@@ -554,7 +564,7 @@ Sedaj definirajmo Hilbertove prostore.
 
 \begin{lema}
 	\label{lem:scalprodopenak}
-	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna omejena linearna operatorja. Če je $\Sp{Tx}{x} = \Sp{Sx}{x}$ za vsak $x\in X$, sledi, da je $T = S$.
+	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna omejena linearna operatorja. Če je $\Sp{Tx}{x} = \Sp{Sx}{x}$ za vsak $x\in X$, je $T = S$.
 \end{lema}
 
 \begin{izrek}
@@ -577,20 +587,20 @@ V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev na Hilb
 
 \begin{izrek}
 	\label{izr:Adjexist}
-	Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora in naj bo $T$ poljuben element $B(X, Y)$. Tedaj obstaja enolično določen operator $T^*\in B(Y, X)$, za katerega velja $$\Sp{Tx}{y}_Y = \Sp{x}{T^*y}_X;~\forall x\in X~\&~\forall y \in Y $$
+	Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora in naj bo $T$ poljuben element $B(X, Y)$. Tedaj obstaja enolično določen operator $T^*\in B(Y, X)$, tak, da velja $$\Sp{Tx}{y}_Y = \Sp{x}{T^*y}_X$$ za vse $x\in X$ in vse $y \in Y$.
 \end{izrek}
 
 \begin{dokaz}
-	Naj bo $y\in Y$ poljuben ter naj bo $\map{f_y}{X}{\C}$ preslikava definirana s predpisom $f_y(x) = \Sp{Tx}{y}_Y;~\forall x\in X$. Opazimo, da je $f_y$ linearen funkcional nad $X$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem velja: $$\abs{f_y(x)} = \abs{\Sp{Tx}{y}_Y} \leq \norm{Tx}_Y \cdot \norm{y}_Y \leq \norm{T}\cdot\norm{x}_X\cdot\norm{y}_Y;~ \forall x\in X$$ To pomeni, da je $f_y$ omejen linearen funkcional nad $X$. Posledično velja, po Riezsovem izreku, da obstaja enolično določen $z\in X$, tak, da je $f_y(x) = \Sp{x}{z}_X;~\forall x\in X$. Sedaj definiramo preslikavo $\map{T^*}{Y}{X}$, ki vsakemu $y\in Y$ priredi pripadajoči $z\in X$ (tisti, enolično določen, za katerega je $f_y(x) = \Sp{x}{z}_X;~\forall x\in X$). Posledično velja: $$\Sp{Tx}{y}_Y=\Sp{x}{T^*y}_X~\forall x\in X,~\forall y\in Y$$
-	Sedaj preverimo, da je $T^*$ omejen linearen operator. Naj bodo $y_1, y_2 \in Y$ in $x\in X$ poljubni elementi ter $\alpha, \beta \in \C$ poljubna skalarja. Tedaj je: \begin{align*}
+	Naj bo $y\in Y$ poljuben element ter naj bo $\map{f_y}{X}{\C}$ preslikava definirana s predpisom $f_y(x) = \Sp{Tx}{y}_Y$. Opazimo, da je $f_y$ linearen funkcional na $X$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem za vsak element $x\in X$ velja: $$\abs{f_y(x)} = \abs{\Sp{Tx}{y}_Y} \leq \norm{Tx}_Y \cdot \norm{y}_Y \leq \norm{T}\cdot\norm{x}_X\cdot\norm{y}_Y.$$ To pomeni, da je $f_y$ omejen linearen funkcional na $X$. Posledično po Riezsovem izreku obstaja tak enolično določen $z\in X$, da je $f_y(x) = \Sp{x}{z}_X$ za vse $x\in X$. Sedaj definiramo preslikavo $\map{T^*}{Y}{X}$, ki vsakemu $y\in Y$ priredi pripadajoči $z\in X$ (tisti, enolično določen, za katerega je $f_y(x) = \Sp{x}{z}_X$ za vse $x\in X$). Posledično za vsak $x\in X$ in vsak $y\in Y$ velja: $$\Sp{Tx}{y}_Y=\Sp{x}{T^*y}_X .$$
+	Sedaj preverimo, da je $T^*$ omejen linearen operator. Naj bodo $y_1, y_2 \in Y$ in $x\in X$ poljubni elementi ter $\alpha, \beta \in \C$ poljubna skalarja. Tedaj je \begin{align*}
 		\Sp{x}{T^*(\alpha y_1 + \beta y_2)}_X &= \Sp{Tx}{\alpha y_1 + \beta y_2}_Y \\
 		&= \bar{\alpha}\Sp{Tx}{y_1}_Y + \bar{\beta}\Sp{Tx}{y_2}_Y \\
 		&= \bar{\alpha}\Sp{x}{T^*y_1}_X + \bar{\beta}\Sp{x}{T^*y_2}_X \\
-		&= \Sp{x}{\alpha T^*y_1}_X + \Sp{x}{\beta T^*y_2}_X
+		&= \Sp{x}{\alpha T^*y_1}_X + \Sp{x}{\beta T^*y_2}_X.
 	\end{align*}
-	Sledi, da je $T^*(\alpha y_1 + \beta y_2)=\alpha T^*y_1 + \beta T^*y_2;~\forall x\in X, \forall y_1, y_2 \in Y, \forall \alpha, \beta \in \C$, torej je $T^*$ res linearna preslikava. Dodatno, velja: $$\norm{T^*y}_X^2 = \Sp{T^*y}{T^*y}_X = \Sp{TT^*y}{y}_Y \leq \norm{TT^*y}_Y\norm{y}_Y \leq \norm{T}\norm{T^*y}_X\norm{y}_Y;~\forall y\in Y$$
-	Če je $\norm{T^*y}_X \neq 0$, dobljeno neenakost delimo z $\norm{T^*y}_X$ ter tako dobimo oceno $\norm{T^*y}_X \leq \norm{T}\norm{y}_Y$. V primeru, ko je $\norm{T^*y}_X = 0$, prejšnja ocena velja trivialno. Sledi, da je $$\norm{T^*y}_X \leq \norm{T}\norm{y}_Y; \forall y\in Y$$
-	Preslikava $T^*$ je torej omejen linearen operator in velja, da je $\norm{T^*}\leq \norm{T}$. Za konec še pokažimo, da je $T^*$ enolično določen. Denimo, da imamo $U_1, U_2 \in B(Y, X)$, za katera velja: $\Sp{Tx}{y}_Y = \Sp{x}{U_1 y}_X = \Sp{x}{U_2 y}_X;~\forall x\in X, \forall y\in Y$. Tedaj velja, da je $U_1y = U_2y;~\forall y\in Y$, torej je $U_1 = U_2$. Sledi, da je $T^*$ res enolično določen.
+	To pomeni, da je $T^*(\alpha y_1 + \beta y_2)=\alpha T^*y_1 + \beta T^*y_2$ za vse $x\in X$, vse $y_1, y_2 \in Y$ in vse $\alpha, \beta \in \C$, torej je $T^*$ res linearna preslikava. S pomočjo neenakosti Cauchy-Schwarz-Bunyakowsky vidimo tudi, da velja $$\norm{T^*y}_X^2 = \Sp{T^*y}{T^*y}_X = \Sp{TT^*y}{y}_Y \leq \norm{TT^*y}_Y\cdot\norm{y}_Y \leq \norm{T}\cdot\norm{T^*y}_X\cdot\norm{y}_Y$$ za vse $y\in Y$.
+	Če je $\norm{T^*y}_X \neq 0$, dobljeno neenakost delimo z $\norm{T^*y}_X$ ter tako dobimo oceno $\norm{T^*y}_X \leq \norm{T}\cdot\norm{y}_Y$. V primeru, ko je $\norm{T^*y}_X = 0$, prejšnja ocena velja trivialno. Posledično je $$\norm{T^*y}_X \leq \norm{T}\cdot\norm{y}_Y$$ za vse $y\in Y$.
+	Preslikava $T^*$ je torej omejen linearen operator in velja, da je $\norm{T^*}\leq \norm{T}$. Za konec še pokažimo, da je $T^*$ enolično določen. Denimo, da imamo $U_1, U_2 \in B(Y, X)$, za katera velja, da je $\Sp{Tx}{y}_Y = \Sp{x}{U_1 y}_X = \Sp{x}{U_2 y}_X$ za vse $x\in X$ in vse $y\in Y$. Tedaj velja, da je $U_1y = U_2y$ za vse $y\in Y$, torej je $U_1 = U_2$. To pomeni, da je $T^*$ res enolično določen.
 \end{dokaz}
 Izrek \ref{izr:Adjexist} nas motivira, da vpeljemo naslednjo definicijo.
 
@@ -598,54 +608,69 @@ Izrek \ref{izr:Adjexist} nas motivira, da vpeljemo naslednjo definicijo.
 	\label{def:adjop}
 	Naj bosta $X$ in $Y$ kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$. Tedaj operatorju $T^*$ iz izreka \ref{izr:Adjexist} pravimo \pojem{adjungiran operator} operatorja $T$.
 \end{definicija}
-
+Začnimo z dvema enostavnima primeroma adjungiranih operatorjev. 
 \begin{primer}
-	\label{prim:adjop1} Spomnimo se operatorja $D\in B(l^2)$, imenovanega ">desni premik"<, s predpisom $D(x_1, x_2, x_3, \ldots) = (0, x_1, x_2, \ldots);~\forall \bar{x}\in l^2$ in določimo predpis njegovega adjungiranega operatorja $D^*$. Naj bosta $\bar{x}, \bar{y}\in l^2$ poljubna ter označimo $\bar{z} = D^*y$. Tedaj po definiciji adjungiranega operatorja velja, da je $\Sp{Dx}{y} = \Sp{x}{D^*y} = \Sp{x}{z}$ oziroma $$\Sp{(0, x_1, x_2, \ldots)}{(y_1, y_2, y_3, \ldots)}=\Sp{(x_1, x_2, x_3, \ldots)}{(z_1, z_2, z_3, \ldots)}$$
-	Ko to enakost razpišemo, dobimo: $$x_1\overline{y_2}+x_2\overline{y_3} + \ldots = x_1\overline{z_1} + x_2\overline{z_2}+x_3\overline{z_3} + \ldots$$
-	Opazimo, da če velja $z_1 = y_2, z_2 = y_3, \ldots z_i = y_{i+1}\forall i\in \N$, potem bo naša enačba veljavna za poljuben $\bar{x}$. Enoličnost adjungiranega operatorja nam posledično da predpis: $D^*(y_1, y_2, y_3 \ldots) = (y_2, y_3, y_4, \ldots)$; $\forall \bar{y}\in l^2$. Še več, prepoznamo, da je dobljeni operator ravno t.~i.~ ">levi premik"<, ki ga tipično označimo z $L$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. 
+	\begin{enumerate}[a)]
+		\item Določimo adjunigiran operator ničelnega operatorja $\map{\hat{0}}{X}{X}$. Vidimo, da za poljubna elementa $x, y\in X$ velja: $$\Sp{\hat{0}x}{y} = \Sp{0}{y} = 0 = \Sp{x}{0} = \Sp{x}{\hat{0}y}.$$ Posledično je $\hat{0}^* = \hat{0}$.
+		\item Določimo sedaj še adjungiran operator identičnega operatorja $\map{I}{X}{X}$. Opazimo, da velja: $$\Sp{Ix}{y} = \Sp{x}{y} = \Sp{x}{Iy}$$ za vse elemente $x, y\in X$. Posledično je $I^* = I$.
+	\end{enumerate}
+\end{primer}
+Sedaj poglejmo malenkost zahtevnejša primera.
+\begin{primer}
+	\label{prim:adjop1} Spomnimo se operatorja $D\in B(l^2)$, imenovanega ">desni premik"<, s predpisom $D(x_1, x_2, x_3, \ldots) = (0, x_1, x_2, \ldots)$ in določimo predpis njegovega adjungiranega operatorja $D^*$. Naj bosta $x, y\in l^2$ poljubna elementa ter označimo $z = D^*y$. Tedaj po definiciji adjungiranega operatorja velja, da je $\Sp{Dx}{y} = \Sp{x}{D^*y} = \Sp{x}{z}$ oziroma $$\Sp{(0, x_1, x_2, \ldots)}{(y_1, y_2, y_3, \ldots)}=\Sp{(x_1, x_2, x_3, \ldots)}{(z_1, z_2, z_3, \ldots)}.$$
+	Ko to enakost razpišemo, dobimo: $$x_1\overline{y_2}+x_2\overline{y_3} + \ldots = x_1\overline{z_1} + x_2\overline{z_2}+x_3\overline{z_3} + \ldots.$$
+	Opazimo, da če velja $z_i = y_{i+1}$ za vse $i\in \N$, potem bo naša enačba veljavna za poljubno zaporedje $x$. Enoličnost adjungiranega operatorja nam posledično da predpis $$D^*y = D^*(y_1, y_2, y_3 \ldots) = (y_2, y_3, y_4, \ldots)$$ za vse $y\in l^2$. Še več, prepoznamo, da je dobljeni operator ravno t.~i.~ ">levi premik"<, ki ga tipično označimo z $L$.
 \end{primer}
 
 \begin{primer}
-	\label{prim:adjop2} Za vsak $k\in \mathcal{C}([0, 1])$ definiramo operator $T_k\in B(\mathcal{L}^2([0, 1]))$ (skupaj s skalarnim produktom iz primera \ref{prim:Hilbert}) s predpisom $(T_kg)(t) = k(t)g(t);~\forall t\in [0, 1]$ (oziroma $T_kg = kg$), $\forall g\in \mathcal{L}^2([0, 1])$. Določimo predpis adjungiranega operatorja $(T_k)^*$.
+	\label{prim:adjop2} 
 	
-	Naj bosta $f, g \in \mathcal{L}^2([0, 1])$ poljubna ter naj bo $h = (T_k)^*g$. Tedaj, po definiciji adjungiranega operatorja, velja: $$\Sp{T_kf}{g} = \Sp{f}{(T_k)^*g} = \Sp{f}{h}$$
-	V skladu z opombo \ref{opomb:Hilbert} potem sledi: $$\int_{0}^{1}k(t)f(t)\overline{g(t)}dt = \int_{0}^{1}f(t)\overline{h(t)}dt$$
-	Ta enačba bo držala, če je $\overline{h(t)} = k(t)\overline{g(t)};~\forall t\in [0, 1]$ oziroma $h(t) = \overline{k(t)}g(t);~\forall t\in [0, 1]$. Drugače povedano, enačba velja, če je $h = T_{\overline{k}}g$. Ker sta bila $f$ in $g$ poljubna, sledi, da sklep velja za vsak par elementov $\mathcal{L}^2([0, 1])$. Ker je adjungirani operator enolično določen, sledi, da je $(T_k)^* = T_{\overline{k}}$.
+	Iz primera \ref{prim:Tkop} vemo, da je operator $T_k$ omejen linearen operator na kompleksnem Hilbertovem prostoru $\mathcal{L}^2([0, 1])$. Sedaj bomo določili predpis njegovega adjungiranega operatorja $(T_k)^*$.
+	
+	Naj bosta $f, g \in \mathcal{L}^2([0, 1])$ poljubni funkciji ter naj bo $h = (T_k)^*g$. Tedaj po definiciji adjungiranega operatorja velja: $$\Sp{T_kf}{g} = \Sp{f}{(T_k)^*g} = \Sp{f}{h}.$$
+	V skladu z opombo \ref{opomb:Hilbert} potem velja: $$\int_{0}^{1}k(t)f(t)\overline{g(t)}dt = \int_{0}^{1}f(t)\overline{h(t)}dt.$$
+	Ta enačba bo držala, če je $\overline{h(t)} = k(t)\overline{g(t)}$ za vse $t\in [0, 1]$ oziroma $h(t) = \overline{k(t)}g(t)$ za vse $t\in [0, 1]$. Drugače povedano, enačba velja, če je $h = T_{\overline{k}}g$. Ker sta bili funkciji $f$ in $g$ poljubni, to pomeni, da sklep velja za vsak par funkcij iz $\mathcal{L}^2([0, 1])$. Ker je adjungirani operator enolično določen, sledi, da je $(T_k)^* = T_{\overline{k}}$.
 \end{primer}
 
 Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 
 \begin{izrek}
 	\label{izr:adjlast}
-	Naj bodo $(X, \Sp{.}{.}_X)$, $(Y, \Sp{.}{.}_Y)$ in $(Z, \Sp{.}{.}_Z)$ poljubni kompleksni Hilbertovi prostori ter naj bodo $U, V \in B(X, Y)$ ter $T \in B(Y, Z)$ poljubni omejeni linearni operatorji. Tedaj velja: \begin{enumerate}[a)]
-		\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*; \forall \alpha, \beta \in \C$.
-		\item $(TU)^* = U^*T^*$.
-		\item $(U^*)^* = U$.
-		\item $\norm{U^*} = \norm{U}$.
-		\item Preslikava $\map{f}{B(X, Y)}{B(Y, X)}$, definirana s predpisom $f(U) = U^*$ je zvezna.
-		\item $\norm{U^*U} = \norm{U}^2$.
+	Naj bodo $(X, \Sp{.}{.}_X)$, $(Y, \Sp{.}{.}_Y)$ in $(Z, \Sp{.}{.}_Z)$ poljubni kompleksni Hilbertovi prostori, naj bodo $U, V \in B(X, Y)$ ter $T \in B(Y, Z)$ poljubni operatorji ter naj bosta $\alpha, \beta \in \C$ poljubna skalarja. Tedaj velja: \begin{enumerate}[a)]
+		\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*$,
+		\item $(TU)^* = U^*T^*$,
+		\item $(U^*)^* = U$,
+		\item $\norm{U^*} = \norm{U}$,
+		\item $\norm{U^*U} = \norm{U}^2$,
+		\item preslikava $\map{f}{B(X, Y)}{B(Y, X)}$, definirana s predpisom $f(U) = U^*$ je zvezna.
 	\end{enumerate}
 \end{izrek}
 
 \begin{dokaz}
 	\begin{enumerate}[a)]
-		\item Naj bodo $U, V \in B(X, Y)$ in $\alpha, \beta \in \C$ poljubni. Tedaj $\forall x\in X, \forall y\in Y$ velja: \begin{align*}
-			\Sp{x}{(\alpha U + \beta V)^*y}_X &= \Sp{(\alpha U + \beta V)x}{y}_Y \\
-			&= \alpha \Sp{Ux}{y}_Y + \beta \Sp{Vx}{y}_Y \\
-			&= \alpha \Sp{x}{U^*y}_X + \beta\Sp{x}{V^*y}_X \\
-			&= \Sp{x}{\bar{\alpha}U^*y}_X + \Sp{x}{\bar{\beta}V^*y}_X \\
-			&= \Sp{x}{(\bar{\alpha} U^* + \bar{\beta} V^*)y}_X
+		\item Vzemimo poljubna operatorja $U, V \in B(X, Y)$ in naj bosta $\alpha, \beta \in \C$ poljubna skalarja. Tedaj za vsak $x\in X$ in vsak $y\in Y$ velja: \begin{align*}
+			\Sp{x}{(\alpha U + \beta V)^*y}_X &= \Sp{(\alpha U + \beta V)x}{y}_Y
+			= \alpha \Sp{Ux}{y}_Y + \beta \Sp{Vx}{y}_Y \\
+			&= \alpha \Sp{x}{U^*y}_X + \beta\Sp{x}{V^*y}_X
+			= \Sp{x}{\bar{\alpha}U^*y}_X + \Sp{x}{\bar{\beta}V^*y}_X \\
+			&= \Sp{x}{(\bar{\alpha} U^* + \bar{\beta} V^*)y}_X.
 		\end{align*} 
-		Sledi, da je $(\alpha U + \beta V)^* = (\bar{\alpha} U^* + \bar{\beta} V^*)$.
-		\item Naj bosta $U\in B(X, Y)$ in $T\in B(Y, Z)$ poljubna. Tedaj $\forall x\in X, \forall z\in Z$ velja: $$\Sp{x}{(TU)^*z}_X = \Sp{(TU)x}{z}_Z = \Sp{T(Ux)}{z}_Z = \Sp{Ux}{T^*z}_Y = \Sp{x}{U^*T^*z}_X$$
+		To pomeni, da je $(\alpha U + \beta V)^* = (\bar{\alpha} U^* + \bar{\beta} V^*)$.
+		
+		\item Naj bosta $U\in B(X, Y)$ in $T\in B(Y, Z)$ poljubna operatorja. Tedaj za vsak $x\in X$ in vsak $z\in Z$ velja: $$\Sp{x}{(TU)^*z}_X = \Sp{(TU)x}{z}_Z = \Sp{T(Ux)}{z}_Z = \Sp{Ux}{T^*z}_Y = \Sp{x}{U^*T^*z}_X.$$
 		Posledično je res $(TU)^* = U^*T^*$.
-		\item Naj bo $U\in B(X, Y)$ poljuben. Tedaj $\forall x\in X, \forall y\in Y$ velja: $$\Sp{y}{(U^*)^*x}_Y = \Sp{U^*y}{x}_X = \overline{\Sp{x}{U^*y}_X} = \overline{\Sp{Ux}{y}_Y} = \Sp{y}{Ux}_Y$$
+		
+		\item Vzemimo poljuben operator $U\in B(X, Y)$. Tedaj za vsak $x\in X$ in vsak $y\in Y$ velja: $$\Sp{y}{(U^*)^*x}_Y = \Sp{U^*y}{x}_X = \overline{\Sp{x}{U^*y}_X} = \overline{\Sp{Ux}{y}_Y} = \Sp{y}{Ux}_Y.$$
 		Posledično je $(U^*)^* = U$.
-		\item V dokazu izreka \ref{izr:Adjexist} smo že pokazali, da je $\norm{U^*} \leq \norm{U}$. Ko upoštevamo prejšnjo točko, vidimo, da velja: $$\norm{U} = \norm{(U^*)^*} \leq \norm{U^*} \leq \norm{U}$$
-		Posledično sledi, da je $\norm{U^*} = \norm{U}$.
-		\item Naj bodo $U, V \in B(X, Y)$ $\varepsilon > 0$ poljubni in izberemo $\delta = \varepsilon$. Denimo, da je $\norm{U - V} < \delta$. Tedaj je $\norm{f(U) - f(V)} = \norm{U^* - V^*} = \norm{(U - V)^*}$. Po prejšnji točki je $\norm{(U-V)^*} = \norm{U - V} < \delta = \varepsilon$, torej je $f$ zvezna.
-		\item Naj bo $U\in B(X, Y)$ poljuben. Ker že vemo, da je $\norm{U^*} = \norm{U}$, hitro vidimo, da je $\norm{U^*U}\leq\norm{U^*}\norm{U} = \norm{U}^2$.
-		Hkrati vidimo, da za $\forall x\in X$ velja $\norm{Ux}_Y^2 = \Sp{Ux}{Ux}_Y = \Sp{U^*Ux}{x}_X$. Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo oceno $\Sp{U^*Ux}{x}_X \leq \norm{U^*Ux}_X\norm{x}_X \leq \norm{U^*U}\norm{x}_X^2$. Sledi ocena: $\norm{Ux}_Y^2 \leq \norm{U^*U}\norm{x}_X^2 \forall x\in X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Posledično velja iskana enakost.
+		
+		\item Naj bo $U\in B(X, Y)$ poljuben operator. V dokazu izreka \ref{izr:Adjexist} smo že pokazali, da je $\norm{U^*} \leq \norm{U}$. Ko upoštevamo prejšnjo točko, vidimo, da velja: $$\norm{U} = \norm{(U^*)^*} \leq \norm{U^*} \leq \norm{U}.$$
+		Posledično je $\norm{U^*} = \norm{U}$.
+		
+		\item Vzemimo poljuben operator $U\in B(X, Y)$. Zaradi prejšnje točke tega dokaza vemo, da je $\norm{U^*} = \norm{U}$, hitro vidimo, da je $\norm{U^*U}\leq\norm{U^*}\cdot\norm{U} = \norm{U}^2$.
+		Naj bo $x\in X$ poljuben element. Opazimo, da velja: $$\norm{Ux}_Y^2 = \Sp{Ux}{Ux}_Y = \Sp{U^*Ux}{x}_X.$$ Ko upoštevamo neenakost Cauchy-Schwarz-Bunyakowsky, dobimo naslednjo oceno: $$\Sp{U^*Ux}{x}_X \leq \norm{U^*Ux}_X\cdot\norm{x}_X \leq \norm{U^*U}\cdot\norm{x}_X^2.$$ Posledično je $\norm{Ux}_Y^2 \leq \norm{U^*U}\cdot\norm{x}_X^2$. Ker je bil element $x$ poljuben, sklep velja za vse elemente prostora $X$, torej je $\norm{U}^2 \leq \norm{U^* U}$. Od tod sledi iskana enakost.
+		
+		\item Naj bosta $U, V \in B(X, Y)$ poljubna operatorja in vzemimo poljubno število $\varepsilon > 0$. Izberemo $\delta = \varepsilon$ in denimo, da je $\norm{U - V} < \delta$. Tedaj je: $$\norm{f(U) - f(V)} = \norm{U^* - V^*} = \norm{(U - V)^*}.$$ Po točki $d)$ tega dokaza je $\norm{(U-V)^*} = \norm{U - V} < \delta = \varepsilon$, torej je preslikava $f$ zvezna.
 	\end{enumerate}
 \end{dokaz}
 
@@ -653,57 +678,59 @@ Pri obravnavi adjungiranih operatorjev bomo potrebovali naslednji pomožni rezul
 
 \begin{lema}
 	\label{lem:adjlast2}
-	Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora ter naj bo $T\in B(X, Y)$ poljuben. Tedaj velja: \begin{enumerate}[a)]
-		\item $KerT = (ImT^*)^{\bot}$.
-		\item $KerT^* = (ImT)^{\bot}$.
-		\item $KerT^* = \{0\} \iff ImT$ je gosta v $Y$.
+	Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora. Tedaj za vsak operator $T\in B(X, Y)$ velja: \begin{enumerate}[a)]
+		\item $\operatorname{Ker}T = (\operatorname{Im}T^*)^{\bot}$,
+		\item $\operatorname{Ker}T^* = (\operatorname{Im}T)^{\bot}$,
+		\item $\operatorname{Ker}^* = \{0\} \iff \operatorname{Im}T$ je gosta množica v $Y$.
 	\end{enumerate}
 \end{lema}
 
 \begin{dokaz}
 	\begin{enumerate}[a)]
-		\item Najprej pokažimo, da je $KerT \subseteq (ImT^*)^\bot$. Naj bo $x\in KerT$ poljuben ter izberemo poljuben $z\in ImT^*$. Potem za $z$ obstaja $y\in Y$, da je $T^*y = z$. Posledično, je $$\Sp{x}{z}_X = \Sp{x}{T^*y}_X = \Sp{Tx}{y}_Y = \Sp{0}{y}_Y = 0$$
-		Sledi, da je $x\in (ImT^*)^\bot$. Ker je $x$ bil poljuben, premislek velja za vsak $x\in KerT$, torej je $KerT \subseteq (ImT^*)^\bot$.
-		Naj bo sedaj $x\in (ImT^*)^\bot$ poljuben. Ker je $T^*Tx \in ImT^*$, velja: $$\norm{Tx}^2 = \Sp{Tx}{Tx}_Y = \Sp{x}{T^*Tx}_X= 0$$
-		Sledi, da je $Tx = 0$ oz. $x\in KerT$. Ker je bil $x$ poljuben, sledi $(ImT^*)^\bot \subseteq KerT$. Posledično velja enakost.
-		\item Da dokažemo ta rezultat, upoštevamo prejšnjo točko tega dokaza za $T^*$ ter točko $c)$ izreka \ref{izr:adjlast}. Posledično je $KerT^* = (Im(T^*)^*)^\bot = (ImT)^\bot$.
-		\item Da dokažemo ta rezultat bomo dokazali, da veljata implikaciji v obe smeri. \begin{itemize}
-			\item[$\Rightarrow)$] Denimo, da je $KerT^* = \{0\}$. Potem vidimo, upoštevajoč posledico \ref{posl:ortoggost} ter točko $a)$ tega dokaza, da velja: $$\overline{ImT} = ((ImT)^\bot)^\bot = (KerT^*)^\bot = \{0\}^\bot = Y$$
-			Sledi, da je $ImT$ gosta v $Y$ po definiciji.
-			\item[$\Leftarrow)$] Denimo, da je $ImT$ gosta v $Y$. Potem po posledici \ref{posl:ortoggost} velja, da je $$((ImT)^{\bot})^\bot = \overline{ImT} = Y$$ Po točki $b)$ tega dokaza velja $KerT^* = (ImT)^\bot$. Ker je $ImT\subseteq Y$ neprazna podmnožica, velja, da je $(ImT)^\bot$ zaprti podprostor v $Y$. Po posledici \ref{posl:zaportoggost} potem sledi: $$KerT^* = (ImT)^\bot =(((ImT)^\bot)^\bot)^\bot = Y^\bot = \{0\}$$
-		\end{itemize} 
+		\item Najprej pokažimo, da je $\operatorname{Ker}T \subseteq (\operatorname{Im}T^*)^\bot$. Vzemimo poljubna elementa $x\in \operatorname{Ker}T$ in $z\in \operatorname{Im}T^*$. Potem za $z$ obstaja tak $y\in Y$, da je $T^*y = z$. Posledično je $$\Sp{x}{z}_X = \Sp{x}{T^*y}_X = \Sp{Tx}{y}_Y = \Sp{0}{y}_Y = 0.$$
+		Element $z\in\operatorname{Im}T^*$ je bil poljuben, torej je $x\in (\operatorname{Im}T^*)^\bot$. Ker je bil $x$ poljuben element $\operatorname{Ker}T$, je $\operatorname{Ker}T \subseteq (\operatorname{Im}T^*)^\bot$.
+		Sedaj pokažimo še obratno inkluzijo. Naj bo $x\in (\operatorname{Im}T^*)^\bot$ poljuben element. Ker je $T^*Tx \in ImT^*$, velja: $$\norm{Tx}^2 = \Sp{Tx}{Tx}_Y = \Sp{x}{T^*Tx}_X= 0.$$
+		To pomeni, da je $Tx = 0$ oz. $x\in \operatorname{Ker}T$. Ker je bil $x$ poljuben, je $(\operatorname{Im}T^*)^\bot \subseteq \operatorname{Ker}T$, od tod pa sledi iskana enakost.
+		
+		\item Da dokažemo ta rezultat, upoštevamo prejšnjo točko tega dokaza za $T^*$ ter točko $c)$ izreka \ref{izr:adjlast}. Posledično je $\operatorname{Ker}T^* = (\operatorname{Im}(T^*)^*)^\bot = (\operatorname{Im}T)^\bot$.
+		
+		\item Da dokažemo ta rezultat bomo dokazali, da veljata implikaciji v obe smeri.
+		Najprej predpostavimo, da je $\operatorname{Ker}T^* = \{0\}$. Potem vidimo, upoštevajoč posledico \ref{posl:ortoggost} ter točko $b)$ tega dokaza, da velja: $$\overline{\operatorname{Im}T} = ((\operatorname{Im}T)^\bot)^\bot = (\operatorname{Ker}T^*)^\bot = \{0\}^\bot = Y.$$ To pomeni, da je $\operatorname{Im}T$ gosta podmnožica v $Y$.
+		Dokažimo sedaj še obratno implikacijo. Denimo, da je $\operatorname{Im}T$ gosta podmnožica v $Y$. Potem po posledici \ref{posl:ortoggost} velja, da je $$((\operatorname{Im}T)^{\bot})^\bot = \overline{\operatorname{Im}T} = Y.$$ Po točki $b)$ tega dokaza velja tudi, da je $\operatorname{Ker}T^* = (\operatorname{Im}T)^\bot$. Ker je $\operatorname{Im}T\subseteq Y$ neprazna podmnožica, velja, da je $(\operatorname{Im}T)^\bot$ zaprti podprostor v $Y$. Po posledici \ref{posl:zaportoggost} potem sledi: $$\operatorname{Ker}T^* = (\operatorname{Im}T)^\bot =(((\operatorname{Im}T)^\bot)^\bot)^\bot = Y^\bot = \{0\}.$$
 		
 	\end{enumerate}
 \end{dokaz}
-
+S pomočjo lem \ref{lem:invnorm}, \ref{lem:banzap} in \ref{lem:adjlast2} dokažemo naslednjo posledico.
 \begin{posledica}
 	\label{posl:adjinv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$. Tedaj je operator $T$ obrnljiv natanko tedaj, ko je $KerT^* = \{0\}$ in obstaja tak $r > 0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$. Naslednji trditvi sta ekvivalentni: \begin{enumerate}[a)]
+		\item Operator $T$ je obrnljiv,
+		\item $\operatorname{Ker}T^* = \{0\}$ in obstaja tako število $r > 0$, da je $\norm{Tx} \geq r\norm{x}$ za vse $x\in X$.
+	\end{enumerate} 
 \end{posledica}
 
 \begin{dokaz}
 	Dokazali bomo obe implikaciji.
-	\begin{itemize}
-		\item[$\Rightarrow)$] Denimo, da je $T$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$, pripada $B(X)$. Posledično je $ImT = Y$. Ker je $X$ Hilbertov prostor, je tudi normiran prostor, torej po lemi \ref{lem:invnorm} velja, da je $\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x};~\forall x\in X$. Določimo $r = \norm{T^{-1}}^{-1}$. Ker je $X$ tudi Banachov prostor, po lemi \ref{lem:banzap} velja, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$, torej je $ImT$ gost v $Y$. Po lemi \ref{lem:adjlast2} je potem $KerT^* = \{0\}$.
-		\item[$\Leftarrow)$] Denimo sedaj, da je $KerT^* = \{0\}$ in da obstaja tak $r>0$, da za $\forall x\in X$ velja $\norm{Tx} \geq r\norm{x}$. Po lemi \ref{lem:adjlast2} potem sledi, da je $ImT$ gost v $Y$. Lema \ref{lem:banzap} nam tudi pove, da je $ImT$ zaprti podprostor v $Y$. Sledi, da je $ImT = \overline{ImT} = Y$.
-		Naj bo sedaj $x\in KerT$ poljuben. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. To je pa možno le, kadar je $x = 0$. Sledi, da je $KerT = \{0\}$, torej je $T$ bijektiven endomorfizem nad Banachovim prostorom $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
-	\end{itemize}
+	Predpostavimo najprej, da je operator $T\in B(X)$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$, pripada $B(X)$. Posledično je $\operatorname{Im}T = X$. Zato je $\operatorname{Im}T$ gosta podmnožica v $X$ in tako nam lema \ref{lem:adjlast2} pove, da je $\operatorname{Ker}T^* = \{0\}$. Ker je $X$ Hilbertov prostor, zadošča tudi pogojem leme \ref{lem:invnorm}, ki nam pove, da velja $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}$$ za vse $x\in X$. S tem smo dokazali prvo implikacijo, saj lahko za iskano število $r$ vzamemo kar $r = \norm{T^{-1}}^{-1}$.
+	
+	Denimo sedaj, da je $\operatorname{Ker}T^* = \{0\}$ in da obstaja tak $r>0$, da za vsak $x\in X$ velja ocena $\norm{Tx} \geq r\norm{x}$. Lema \ref{lem:adjlast2} nam potem pove, da je $\operatorname{Im}T$ gosta podmnožica v $X$, lema \ref{lem:banzap} pa, da je $\operatorname{Im}T$ zaprti podprostor v $X$. To pomeni, da je $X = \overline{\operatorname{Im}T} = \operatorname{Im}T$.
+	Vzemimo sedaj poljuben element $x\in \operatorname{Ker}T$. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. Slednje je lahko res le, kadar je $x = 0$. To pomeni, da je $\operatorname{Ker}T = \{0\}$, torej je $T$ bijektiven endomorfizem Banachovega prostora $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
 \end{dokaz}
 
 \begin{primer}
 	\label{prim:adjinv}
-	Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop2}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = \bar{0}$. Sledi, da $KerD^* = KerL \neq \{0\}$, torej $D$ ni obrnljiv.
+	Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop2}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = \bar{0}$. Sledi, da $\operatorname{Ker}D^* = \operatorname{Ker}L \neq \{0\}$, torej $D$ ni obrnljiv.
 \end{primer}
 
 Za konec tega podpoglavja premislimo, v sledeči lemi, kako sta povezani operaciji invertiranja in adjungiranja.
 
 \begin{lema}
 	\label{lem:adjinv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Če je $T$ obrnljiv, je obrnljiv tudi $T^*$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Če je operator $T\in B(X)$ obrnljiv, tedaj je obrnljiv tudi operator $T^*$. V tem primeru je $(T^*)^{-1} = (T^{-1})^*$.
 \end{lema}
 
 \begin{dokaz}
-	Naj bo $T\in B(X)$ poljuben obrnljiv operator. Tedaj velja, da je $TT^{-1} = T^{-1}T = I$. Enačbo adjungiramo ter tako dobimo $(TT^{-1})^* = (T^{-1}T)^* = I^*$. Ko upoštevamo točko $b)$ izreka \ref{izr:adjlast}, se enačba poenostavi v: $$(T^{-1})^*T^* = T^*(T^{-1})^* = I$$
+	Naj bo $T\in B(X)$ poljuben obrnljiv operator. Tedaj je $TT^{-1} = T^{-1}T = I$. Enačbo adjungiramo ter tako dobimo $(TT^{-1})^* = (T^{-1}T)^* = I^*$. Ko upoštevamo točko $b)$ izreka \ref{izr:adjlast}, se enačba poenostavi v: $$(T^{-1})^*T^* = T^*(T^{-1})^* = I.$$
 	Posledično je $T^*$ obrnljiv ter $(T^*)^{-1} = (T^{-1})^*$.
 \end{dokaz}
 
@@ -718,10 +745,11 @@ Sedaj se bomo posvetili, glede na adjungiranje, posebnim primerom operatorjev. P
 
 \begin{primer}
 	\label{prim:normalop}
-	Enostavno je videti, da je operator $T_k$, kot je bil definiran v primeru \ref{prim:adjop2}, normalen operator. Naj bo $f\in \mathcal{L}^2([0, 1])$ poljuben.
+	Enostavno je videti, da je operator $T_k$, kot je bil definiran v primeru \ref{prim:adjop2}, normalen operator. Naj bo $f\in \mathcal{L}^2([0, 1])$ poljuben. Velja:
 	\begin{align*}
 		(T_k(T_k)^*)f &= (T_kT_{\overline{k}})f =T_k(\overline{k}f) = k\overline{k}f \\
-		((T_k)^*T_k)f &= (T_{\overline{k}}T_k)f = T_{\overline{k}}(kf)=\overline{k}kf = k\overline{k}f
+		&\text{in} \\
+		((T_k)^*T_k)f &= (T_{\overline{k}}T_k)f = T_{\overline{k}}(kf)=\overline{k}kf = k\overline{k}f.
 	\end{align*}
 	Ker je bil $f$ poljuben, sklep velja za vse elemente $\mathcal{L}^2([0, 1])$. Sledi, da je $T_k(T_k)^* = (T_k)^*T_k$, torej je operator $T_k$ res normalen.
 \end{primer}
@@ -729,8 +757,8 @@ Sedaj se bomo posvetili, glede na adjungiranje, posebnim primerom operatorjev. P
 \begin{lema}
 	\label{lem:normalnorm}
 	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben normalen operator ter $r > 0$ poljuben. Velja: \begin{enumerate}[a)]
-		\item $\norm{Tx} = \norm{T^*x};~\forall x\in X$.
-		\item Če je $\norm{Tx} \geq r\norm{x};~\forall x\in X$, je $KerT^* = \{0\}$.
+		\item $\norm{Tx} = \norm{T^*x};~\forall x\in X$,
+		\item če je $\norm{Tx} \geq r\norm{x};~\forall x\in X$, je $\operatorname{Ker}T^* = \{0\}$.
 	\end{enumerate}
 \end{lema}
 
@@ -738,11 +766,11 @@ Sedaj se bomo posvetili, glede na adjungiranje, posebnim primerom operatorjev. P
 	\begin{enumerate}[a)]
 		\item Naj bo $x\in X$ poljuben. Potem je \begin{align*}
 			\norm{Tx}^2 - \norm{T^*x}^2 &= \Sp{Tx}{Tx} - \Sp{T^*x}{T^*x} = \Sp{T^*Tx}{x} - \Sp{TT^*x}{x}\\
-			&= \Sp{T^*Tx - TT^*x}{x} = \Sp{(T^*T - TT^*)x}{x}
+			&= \Sp{T^*Tx - TT^*x}{x} = \Sp{(T^*T - TT^*)x}{x}.
 		\end{align*}
-		Ker je $T$ normalen, je $TT^* = T^*T$, torej je $$\norm{Tx}^2 - \norm{T^*x}^2 = \Sp{(T^*T - TT^*)x}{x} = \Sp{0}{x} = 0 $$
+		Ker je $T$ normalen, je $TT^* = T^*T$, torej je $$\norm{Tx}^2 - \norm{T^*x}^2 = \Sp{(T^*T - TT^*)x}{x} = \Sp{0}{x} = 0.$$
 		Posledično je $\norm{Tx} - \norm{T^*x}$. Ker je bil $x$ poljuben, enakost velja za $\forall x\in X$.
-		\item Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x};~\forall x\in X$. Naj bo $x\in KerT^*$ poljuben. Po točki $a)$ tega dokaza je potem $0 = \norm{T^*x} = \norm{Tx} \geq r\norm{x}$. Sledi, da je $\norm{x} = 0$ oz. $x = 0$. Posledično je $KerT^* = \{0\}$.
+		\item Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x};~\forall x\in X$. Naj bo $x\in \operatorname{Ker}T^*$ poljuben. Po točki $a)$ tega dokaza je potem $0 = \norm{T^*x} = \norm{Tx} \geq r\norm{x}$. Sledi, da je $\norm{x} = 0$ oz. $x = 0$. Posledično je $\operatorname{Ker}T^* = \{0\}$.
 	\end{enumerate}
 \end{dokaz}
 
@@ -757,7 +785,7 @@ Na podlagi posledice \ref{posl:adjinv} in leme \ref{lem:normalnorm} sledi nasled
 	Da dokažemo ekvivalenco, bomo dokazali implikaciji v obe smeri.
 	\begin{itemize}
 		\item[$\Rightarrow)$] Velja direktno po posledici \ref{posl:adjinv}.
-		\item[$\Leftarrow)$] Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$. Po lemi \ref{lem:normalnorm} je potem $KerT^* = \{0\}$. Po posledici \ref{posl:adjinv} je potem $T$ obrnljiv.
+		\item[$\Leftarrow)$] Denimo, da obstaja tak $r>0$, da je $\norm{Tx} \geq r\norm{x}~\forall x\in X$. Po lemi \ref{lem:normalnorm} je potem $\operatorname{Ker}T^* = \{0\}$. Po posledici \ref{posl:adjinv} je potem $T$ obrnljiv.
 	\end{itemize}
 \end{dokaz}
 
@@ -772,7 +800,7 @@ Pri obravnavi preslikav nas pogosto zanimajo t.~i.~ ">fiksne točke"< - točke, 
 
 \begin{opomba}
 	\label{opomb:sebiadjsonormal}
-	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. Enostavno je videti, da je potem $T$ tudi normalen operator: $$T^*T = TT = TT^*$$
+	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. Enostavno je videti, da je potem $T$ tudi normalen operator: $$T^*T = TT = TT^*.$$
 \end{opomba}
 
 \begin{primer}
@@ -787,9 +815,9 @@ V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operato
 	\label{lem:sebiadjlast}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $\mathcal{S}(X)$ množica vseh sebi-adjungiranih operatorjev znotraj $B(X)$ in naj bo $T\in B(X)$ poljuben. Velja:
 	\begin{enumerate}[a)]
-		\item Za poljubni $\alpha, \beta \in \R$ in poljubna $T_1, T_2 \in \mathcal{S}(X)$ velja: $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
-		\item Množica $\mathcal{S}(X)$ je zaprta podmnožica $B(X)$.
-		\item Operatorja $TT^*$ in $T^*T$ sta sebi-adjungirana.
+		\item Za poljubni $\alpha, \beta \in \R$ in poljubna $T_1, T_2 \in \mathcal{S}(X)$ velja: $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$,
+		\item množica $\mathcal{S}(X)$ je zaprta podmnožica $B(X)$,
+		\item operatorja $TT^*$ in $T^*T$ sta sebi-adjungirana,
 		\item $T = R + iS$, za neka sebi-adjungirana operatorja $R, S \in \mathcal{S}(X)$.
 	\end{enumerate}
 \end{lema}
@@ -797,13 +825,14 @@ V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operato
 \begin{dokaz}
 	\begin{enumerate}[a)]
 		\item Naj bosta $T_1, T_2 \in \mathcal{S}(X)$ poljubna. Ker sta operatorja sebi-adjungirana, po prvi točki izreka \ref{izr:adjlast} velja: $(\alpha T_1 + \beta T_2)^* = \alpha T_1^* + \beta T_2^* = \alpha T_1 + \beta T_2$. Posledično je $\alpha T_1 + \beta T_2 \in \mathcal{S}(X)$.
-		\item Naj bo $\{T_n\}_{n\in\N}$ konvergentno zaporedje s členi v $\mathcal{S}(X)$ in limito $T\in B(X)$. Predzadnja točka izreka \ref{izr:adjlast} nam pove, da je adjungiranje zvezno, torej je tudi zaporedje $\{T_n^*\}_{n\in\N}$ konvergentno z limito $T^* \in B(X)$. Ker so $T_n \in \mathcal{S}(X)~ \forall n\in \N$, velja $T_n^* = T_n~\forall n\in \N$, torej je $T^* = T$. Posledično je tudi $T\in \mathcal{S}(X)$. Sledi, da je $\mathcal{S}(X)$ zaprta.
+		\item Naj bo $\{T_n\}_{n\in\N}$ konvergentno zaporedje s členi v $\mathcal{S}(X)$ in limito $T\in B(X)$. Zadnja točka izreka \ref{izr:adjlast} nam pove, da je adjungiranje zvezno, torej je tudi zaporedje $\{T_n^*\}_{n\in\N}$ konvergentno z limito $T^* \in B(X)$. Ker so $T_n \in \mathcal{S}(X)~ \forall n\in \N$, velja $T_n^* = T_n~\forall n\in \N$, torej je $T^* = T$. Posledično je tudi $T\in \mathcal{S}(X)$. Sledi, da je $\mathcal{S}(X)$ zaprta.
 		\item Naj bo $T\in B(X)$ poljuben. Tedaj je, upoštevajoč točko $c)$ izreka \ref{izr:adjlast}, $(T^*T)^* = T^*T^{**} = T^*T$. Sledi, da je $T^*T\in \mathcal{S}(X)$ in na enak način premislimo, da enako velja za $TT^*$.
-		\item Naj bo $T\in B(X)$ poljuben. Definiramo operatorja $R$ in $S$ na naslednji način: $$R = \frac{1}{2}(T + T^*),~ S=\frac{1}{2i}(T - T^*)$$
-		Očitno velja, da je $T = R + iS$. Preverimo še, da sta $R$ in $S$ res sebi-adjungirana.
+		\item Naj bo $T\in B(X)$ poljuben. Definiramo operatorja $R$ in $S$ na naslednji način: $$R = \frac{1}{2}(T + T^*),~ S=\frac{1}{2i}(T - T^*).$$
+		Očitno velja, da je $T = R + iS$. Preverimo še, da sta $R$ in $S$ res sebi-adjungirana:
 		\begin{align*}
 			R^* &= (\frac{1}{2}(T + T^*))^* = \frac{1}{2}(T^* + T^{**}) = \frac{1}{2}(T^* + T) = R \\
-			S^* &= (\frac{1}{2i}(T - T^*))^* = \frac{-1}{2i}(T - T^*)^* = \frac{-1}{2i}(T^* - T^{**}) =\frac{1}{2i}(T - T^*) = S
+			&\text{in} \\
+			S^* &= (\frac{1}{2i}(T - T^*))^* = \frac{-1}{2i}(T - T^*)^* = \frac{-1}{2i}(T^* - T^{**}) =\frac{1}{2i}(T - T^*) = S.
 		\end{align*}
 	\end{enumerate}
 \end{dokaz}
@@ -817,11 +846,11 @@ V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operato
 	Dokazali bomo implikaciji v obe smeri.
 	\begin{itemize}
 		\item[$\Rightarrow)$] Denimo, da je $T$ sebi-adjungiran in naj bo $x\in X$ poljuben. Tedaj je $\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}$, torej je $\Sp{Tx}{x}\in \R$. Ker je bil $x$ poljuben, sklep velja za vse elemente $X$.
-		\item[$\Leftarrow)$] Denimo, da je $\Sp{Tx}{x}\in\R;~\forall x\in X$. Tedaj za poljubne $\alpha\in\C, x, y\in X$ velja, da je $\Sp{T(x + \alpha y)}{x + \alpha y}\in \R$ oziroma $$\Sp{Tx}{x} + \alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} + \alpha\overline{\alpha}\Sp{Ty}{y}\in\R$$
-		Prvi in zadnji člen sta, po predpostavki, avtomatsko elementa $\R$. Sledi torej, da je tudi $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}\in\R$. Velja: $$\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} = \overline{\alpha}\overline{\Sp{Ty}{x}} + \overline{\overline{\alpha}}\overline{\Sp{Tx}{y}} = \overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx}$$
+		\item[$\Leftarrow)$] Denimo, da je $\Sp{Tx}{x}\in\R;~\forall x\in X$. Tedaj za poljubne $\alpha\in\C, x, y\in X$ velja, da je $\Sp{T(x + \alpha y)}{x + \alpha y}\in \R$ oziroma $$\Sp{Tx}{x} + \alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} + \alpha\overline{\alpha}\Sp{Ty}{y}\in\R.$$
+		Prvi in zadnji člen sta, po predpostavki, avtomatsko elementa $\R$. Sledi torej, da je tudi $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}\in\R$. Velja: $$\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y} = \overline{\alpha}\overline{\Sp{Ty}{x}} + \overline{\overline{\alpha}}\overline{\Sp{Tx}{y}} = \overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx}.$$
 		Dodatno upoštevamo, da je $\overline{\alpha}\Sp{x}{Ty} + \alpha\Sp{y}{Tx} = \overline{\alpha}\Sp{T^*x}{y} + \alpha\Sp{T^*y}{x}$. Sklepamo torej, da je $\alpha\Sp{Ty}{x} + \overline{\alpha}\Sp{Tx}{y}=\overline{\alpha}\Sp{T^*x}{y} + \alpha\Sp{T^*y}{x}$ za vsak $\alpha\in\C$. Če vstavimo $\alpha = 1$ in $\alpha = i$, dobimo naslednji sistem enačb: \begin{align*}
 			\alpha = 1&:\Sp{Tx}{y} + \Sp{Ty}{x} = \Sp{T^*x}{y} + \Sp{T^*y}{x} \\
-			\alpha = i&:-i\Sp{Tx}{y} + i\Sp{Ty}{x} = -i\Sp{T^*x}{y} + i\Sp{T^*y}{x}
+			\alpha = i&:-i\Sp{Tx}{y} + i\Sp{Ty}{x} = -i\Sp{T^*x}{y} + i\Sp{T^*y}{x}.
 		\end{align*}
 		Prvo enačbo pomnožimo z $i$, jo odštejemo od druge, ter tako dobimo enakost $\Sp{Tx}{y} = \Sp{T^*x}{y}$. Ker sta bila $x$ in $y$ poljubna, ta sklep velja za vse pare $x, y \in X$, torej po lemi \ref{lem:scalprodopenak} sledi, da je $T = T^*$.
 	\end{itemize}	
@@ -848,8 +877,8 @@ Naslednji izrek nam pove, da so unitarni operatorji hkrati tudi izometrije.
 \begin{izrek}
 	\label{izr:uniizo}
 	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Naj bosta $T, U\in B(X)$ poljubna. Velja: \begin{enumerate}[a)]
-		\item $T^*T = I \iff T$~je izometrija.
-		\item $U$ je unitaren $\iff U$~je surjektivna izometrija na $X$.
+		\item $T^*T = I \iff T$~je izometrija,
+		\item $U$ je unitaren operator $\iff U$~je surjektivna izometrija na $X$.
 	\end{enumerate}
 \end{izrek}
 
@@ -857,14 +886,14 @@ Naslednji izrek nam pove, da so unitarni operatorji hkrati tudi izometrije.
 	Obe ekvivalenci bomo dokazali tako, da bomo pokazali, da veljata implikaciji v obe smeri.
 	\begin{enumerate}[a)]
 		\item Pri dokazu si bomo pomagali z lemo \ref{lem:scalprodopenak}. \begin{itemize}
-			\item[$\Rightarrow)$] Denimo, da je $T^*T = I$ in naj bo $x\in X$ poljuben. Tedaj je: $$\norm{Tx}^2=\Sp{Tx}{Tx} = \Sp{T^*Tx}{x}= \Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2$$
+			\item[$\Rightarrow)$] Denimo, da je $T^*T = I$ in naj bo $x\in X$ poljuben. Tedaj je: $$\norm{Tx}^2=\Sp{Tx}{Tx} = \Sp{T^*Tx}{x}= \Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2.$$
 			Ker je bil $x$ poljuben, zgornja enakost velja za vse elemente $X$, torej je $T$ res izometrija.
-			\item[$\Leftarrow)$] Denimo, da je $T$ izometrija. Naj bo $x\in X$ poljuben. Tedaj velja $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 = \norm{x}^2 = \Sp{Ix}{x}$$
+			\item[$\Leftarrow)$] Denimo, da je $T$ izometrija. Naj bo $x\in X$ poljuben. Tedaj velja $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 = \norm{x}^2 = \Sp{Ix}{x}.$$
 			Ker je $x$ poljuben, sklep velja za vse elemente $X$, torej po lemi \ref{lem:scalprodopenak} sledi, da je $T^*T = I$.
 		\end{itemize}
 		\item Pri dokazu te ekvivalence, si bomo pomagali s prejšnjo točko dokaza.  \begin{itemize}
-			\item[$\Rightarrow)$] Denimo, da je $U$ unitaren. Potem sledi, da je $UU^*=U^*U = I$ in po točki $a)$ je potem $U$ izometrija. Dodatno, naj bo $x\in X$ poljuben. Potem je $x = U(U^*x)$, torej je $x\in ImU$. Sledi, da je $ImU = X$ oz. $U$ je surjektiven.
-			\item[$\Leftarrow)$] Denimo, da je $U$ surjektivna izometrija na $X$. Ker je $U$ izometrija, po točki $a)$ tega dokaza sledi, da je $U^*U = I$. Naj bo sedaj $y\in X$ poljuben. Ker je $U$ surjektiven operator na $X$, obstaja tak $x\in X$, da je $Ux = y$. Posledično velja naslednje: $$UU^*y = UU^*(Ux) = U(U^*Ux) = U(Ix) = Ux = y$$
+			\item[$\Rightarrow)$] Denimo, da je $U$ unitaren. Potem sledi, da je $UU^*=U^*U = I$ in po točki $a)$ je potem $U$ izometrija. Dodatno, naj bo $x\in X$ poljuben. Potem je $x = U(U^*x)$, torej je $x\in \operatorname{Im}U$. Sledi, da je $\operatorname{Im}U = X$ oz. $U$ je surjektiven.
+			\item[$\Leftarrow)$] Denimo, da je $U$ surjektivna izometrija na $X$. Ker je $U$ izometrija, po točki $a)$ tega dokaza sledi, da je $U^*U = I$. Naj bo sedaj $y\in X$ poljuben. Ker je $U$ surjektiven operator na $X$, obstaja tak $x\in X$, da je $Ux = y$. Posledično velja naslednje: $$UU^*y = UU^*(Ux) = U(U^*Ux) = U(Ix) = Ux = y.$$
 			Ker je bil $y$ poljuben, prejšnji sklep velja za vsak element $X$. Sledi, da je $UU^* = I$, torej je $U$ unitaren operator.
 		\end{itemize}
 	\end{enumerate}
@@ -876,8 +905,8 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 	\label{lem:unitarset}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $\mathcal{U}(X)$ množica vseh unitarnih operatorjev na $X$. Velja:
 	\begin{enumerate}[a)]
-		\item Če je $U\in \mathcal{U}(X)$, je tudi $U^*\in \mathcal{U}(X)$, ter $\norm{U} = \norm{U^*} = 1$.
-		\item Če sta $U_1, U_2 \in \mathcal{U}(X)$, sta tudi $U_1U_2$ in $U_1^{-1}$.
+		\item Če je $U\in \mathcal{U}(X)$, je tudi $U^*\in \mathcal{U}(X)$, ter $\norm{U} = \norm{U^*} = 1$,
+		\item če sta $U_1, U_2 \in \mathcal{U}(X)$, sta tudi $U_1U_2$ in $U_1^{-1}$,
 		\item $\mathcal{U}(X)$ je zaprta podmnožica $B(X)$.
 	\end{enumerate}
 \end{lema}
@@ -887,10 +916,12 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 		\item Naj bo $U$ poljuben unitaren operator na $X$. Tedaj je $U^*(U^*)^* = U^*U = I$ in $(U^*)^*U^* = UU^* = I$, torej je tudi $U^*\in B(X)$ unitaren. Po izreku \ref{izr:adjlast} že vemo, da je $\norm{U} = \norm{U^*}$. Dodatno nam izrek \ref{izr:uniizo} pove, da je $U$ tudi izometrija, torej je $\norm{U} = 1$.
 		\item Naj bosta $U_1$ in $U_2$ poljubna unitarna operatorja na $X$. S pomočjo izreka \ref{izr:adjlast} vidimo, da je: \begin{align*}
 			U_1U_2(U_1U_2)^* &= U_1U_2U_2^*U_1^* = U_1IU_1^* = I \\
+			&\text{in} \\
 			(U_1U_2)^*U_1U_2 &= U_2^*U_1^*U_1U_2 = U_2^*IU_2 = I 
 		\end{align*} torej je tudi $U_1U_2 \in \mathcal{U}(X)$.
 		Ker je $U_1$ unitaren, je omejen in po izreku \ref{izr:uniizo} bijektiven, je po posledici izreka o odprti preslikavi tudi obrnljiv (znotraj $B(X)$). Dodatno, upoštevamo lemo \ref{lem:adjinv} in tako dobimo: \begin{align*}
 			(U_1^{-1})^*U_1^{-1} &= (U_1^*)^{-1}U_1^{-1} = (U_1U_1^*)^{-1} = I^{-1} = I \\
+			&\text{in} \\
 			U_1^{-1}(U_1^{-1})^* &= U_1^{-1}(U_1^*)^{-1} = (U_1^*U_1)^{-1} = I^{-1} = I
 		\end{align*}
 		Sledi, da je $U_1^{-1}$ unitaren.
@@ -903,7 +934,7 @@ Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omej
 
 \begin{definicija}
 	\label{def:specter}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. \pojem{Spekter} operatorja $T$ je množica, definirana na naslednji način: $$\sigma(T) = \{\lambda\in\C~|~T-\lambda I~\text{ni obrnljiv}\}$$
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. \pojem{Spekter} operatorja $T$ je množica, definirana na naslednji način: $$\sigma(T) = \{\lambda\in\C~|~T-\lambda I~\text{ni obrnljiv}\}.$$
 \end{definicija}
 
 V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
@@ -914,12 +945,12 @@ V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
 \end{lema}
 
 \begin{dokaz}
-	Naj bo $T\in B(X)$ poljuben ter naj bo $\lambda$ njegova lastna vrednost. Tedaj po definiciji obstaja nek neničelni vektor $x\in X$, za katerega velja: $Tx = \lambda x$. Posledično, je $x\in Ker(T-\lambda I)$, torej operator $T - \lambda I$ ni injektiven in posledično ni obrnljiv.
+	Naj bo $T\in B(X)$ poljuben ter naj bo $\lambda$ njegova lastna vrednost. Tedaj po definiciji obstaja nek neničelni vektor $x\in X$, za katerega velja: $Tx = \lambda x$. Posledično, je $x\in \operatorname{Ker}(T-\lambda I)$, torej operator $T - \lambda I$ ni injektiven in posledično ni obrnljiv.
 \end{dokaz}
 
 \begin{opomba}
 	\label{opomb:eigeninspecter}
-	V končno-razsežnih vektorskih prostorih vemo, da je injektivnost linearne preslikave ekvivalentna surjektivnosti. Posledično, je spekter linearne preslikave nad končno-razsežnem kompleksnem Hilbertovem prostoru natanko množica njegovih lastnih vrednosti. V splošnem to ni res - obstajajo omejeni linearni operatorji na kompleksnih Hilbertovih prostorih, ki ne premorejo nobene lastne vrednosti. Primer tega je desni premik $D\in B(l^2)$.
+	V končno-razsežnih vektorskih prostorih vemo, da je injektivnost linearne preslikave ekvivalentna surjektivnosti. Posledično, je spekter linearne preslikave na končno-razsežnem kompleksnem Hilbertovem prostoru natanko množica njegovih lastnih vrednosti. V splošnem to ni res - obstajajo omejeni linearni operatorji na kompleksnih Hilbertovih prostorih, ki ne premorejo nobene lastne vrednosti. Primer tega je desni premik $D\in B(l^2)$.
 \end{opomba}
 
 Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvilleovega izreka iz kompleksne analize.
@@ -932,8 +963,8 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 \begin{izrek}
 	\label{izr:specter}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za vsak $T\in B(X)$ velja: \begin{enumerate}[a)]
-		\item $\lambda\in\sigma(T) \Rightarrow \abs{\lambda}\leq\norm{T}$.
-		\item $\sigma(T)$ je kompaktna množica v $B(X)$.
+		\item $\lambda\in\sigma(T) \Rightarrow \abs{\lambda}\leq\norm{T}$,
+		\item $\sigma(T)$ je kompaktna množica v $B(X)$,
 		\item $\sigma(T)\neq \emptyset$.
 	\end{enumerate}
 \end{izrek}
@@ -943,7 +974,7 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 	\begin{enumerate}[a)]
 		\item Denimo, da je $\lambda > \norm{T}$. Tedaj je $\norm{\lambda^{-1}T} < 1$ in posledično je po izreku \ref{izr:Hilbertopinv} operator $I - \lambda^{-1}T$ obrnljiv. Sledi, da je tudi operator $-\lambda(I - \lambda^{-1}T)= T - \lambda I$ obrnljiv. Sledi, da $\lambda\notin\sigma(T)$.
 		\item Ker smo v točki $a)$ pokazali, da je spekter omejena množica, za dokaz te točke zadošča, da pokažemo, da je tudi zaprta. Naj bo torej $T\in B(X)$ poljuben in definirajmo preslikavo $\map{f}{\C}{B(X)}$ s predpisom $f(\lambda) = T - \lambda I$. Opazimo: Za poljubna $\mu, \lambda \in \C$ je $\norm{f(\mu) - f(\lambda)} = \abs{\mu - \lambda}\cdot\norm{I}$.
-		Naj bo sedaj $\varepsilon>0$ poljuben in naj bo $\delta = \frac{\varepsilon}{\norm{I}}$. Velja: Če je $\abs{\mu - \lambda}<\delta$, je $\norm{f(\mu) - f(\lambda)} < \frac{\varepsilon}{\norm{I}}\norm{I} = \varepsilon$. Sledi, da je naša funkcija $f$ enakomerno zvezna. Opazimo še naslednje: $$\lambda\in\sigma(T) \iff T-\lambda I \in \mathcal{G}^{c}\iff f(\lambda)\in\mathcal{G}^{c} \iff \lambda\in f^{-1}(\mathcal{G}^{c})$$
+		Naj bo sedaj $\varepsilon>0$ poljuben in naj bo $\delta = \frac{\varepsilon}{\norm{I}}$. Velja: Če je $\abs{\mu - \lambda}<\delta$, je $\norm{f(\mu) - f(\lambda)} < \frac{\varepsilon}{\norm{I}}\norm{I} = \varepsilon$. Sledi, da je naša funkcija $f$ enakomerno zvezna. Opazimo še naslednje: $$\lambda\in\sigma(T) \iff T-\lambda I \in \mathcal{G}^{c}\iff f(\lambda)\in\mathcal{G}^{c} \iff \lambda\in f^{-1}(\mathcal{G}^{c}).$$
 		Posledično je $f^{-1}(\mathcal{G}^{c}) = \sigma(T)$. Ker je $f$ zvezna in $\mathcal{G}^{c}$ zaprta ($\mathcal{G}$ je po izreku \ref{izr:Hilbertinvset} odprta), je $f^{-1}(\mathcal{G}^{c})$ zaprta, torej je tudi $\sigma(T)$ zaprta. Po izreku Heine-Borel-Lebesgue je potem $\sigma(T)$ kompakt.
 		\item Dokaz bomo izvedli s protislovjem. Naj bo $\sigma(T)=\emptyset$ za nek $T\in B(X)$. Sledi, da je za vsak $\lambda\in\C$ operator $T - \lambda I$ obrnljiv in označimo njegov inverz z $(T - \lambda I)^{-1}$. Naj bo $\map{f}{X}{\C}$ poljuben omejen linearen funkcional na $X$. Sedaj  definiramo funkcijo $\map{\varphi}{\C}{\C}$ s predpisom $\varphi(\lambda)= f((T-\lambda I)^{-1})$. V nadaljevanju bomo pokazali, da je $\varphi$ cela omejena funkcija.
 		Premislimo najprej, da je cela: Naj bo $\lambda_0\in\C$ poljuben. Opazimo: \begin{align*}
@@ -951,18 +982,18 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 			&= \frac{1}{\lambda - \lambda_0}f((T-\lambda I)^{-1} - (T-\lambda_0 I)^{-1}) \\
 			&= \frac{1}{\lambda - \lambda_0}f((T-\lambda_0 I)^{-1}\left((T-\lambda_0 I) - (T-\lambda I)\right)(T-\lambda I)^{-1}) \\
 			&= \frac{1}{\lambda - \lambda_0}f((\lambda - \lambda_0)(T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}) \\
-			&= f((T-\lambda_0 I)^{-1}(T-\lambda I)^{-1})
+			&= f((T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}).
 		\end{align*}
 		Posledično je \begin{align*}
 			\lim_{\lambda\to \lambda_0}\frac{\varphi(\lambda)-\varphi(\lambda_0)}{\lambda - \lambda_0} &= \lim_{\lambda\to\lambda_0}f((T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}) \\
 			&= f(\lim_{\lambda\to \lambda_0}(T-\lambda_0 I)^{-1}(T-\lambda I)^{-1}) \\
 			&= f((T-\lambda_0 I)^{-1}\lim_{\lambda\to \lambda_0}(T-\lambda I)^{-1}) \\
-			&= f(((T-\lambda_0 I)^{-1})^2)
+			&= f(((T-\lambda_0 I)^{-1})^2).
 		\end{align*}
 		Ker ta limita obstaja za vsak $\lambda_0\in\C$, je $\varphi$ holomorfna na $\C$, torej cela. Premislimo še, da je $\varphi$ omejena.
-		Naj bo $\lambda\in\C$ in naj bo $\abs{\lambda}>\norm{T}$. Tedaj je $(T- \lambda I)^{-1} = (-\lambda)(I - \lambda^{-1}T)^{-1}$. Opazimo, da je $\norm{\lambda^{-1}T}<1$. Po izreku \ref{izr:Hilbertopinv}, je potem $(T- \lambda I)^{-1} = (-\lambda)\sum_{n = 1}^{\infty}(\lambda^{-1}T)^n$. Sledi: $$\norm{(T- \lambda I)^{-1}} \leq\frac{1}{\abs{\lambda}}\sum_{n = 1}^{\infty}\abs{\lambda}^{-n}\norm{T}^n = \frac{1}{\abs{\lambda}}\sum_{n=1}^{\infty}\left(\frac{\norm{T}}{\abs{\lambda}}\right)^n = \frac{1}{\abs{\lambda}}\frac{1}{1-\frac{\norm{T}}{\abs{\lambda}}}=\frac{1}{\abs{\lambda}-\norm{T}}$$
+		Naj bo $\lambda\in\C$ in naj bo $\abs{\lambda}>\norm{T}$. Tedaj je $(T- \lambda I)^{-1} = (-\lambda)(I - \lambda^{-1}T)^{-1}$. Opazimo, da je $\norm{\lambda^{-1}T}<1$. Po izreku \ref{izr:Hilbertopinv}, je potem $(T- \lambda I)^{-1} = (-\lambda)\sum_{n = 1}^{\infty}(\lambda^{-1}T)^n$. Sledi: $$\norm{(T- \lambda I)^{-1}} \leq\frac{1}{\abs{\lambda}}\sum_{n = 1}^{\infty}\abs{\lambda}^{-n}\norm{T}^n = \frac{1}{\abs{\lambda}}\sum_{n=1}^{\infty}\left(\frac{\norm{T}}{\abs{\lambda}}\right)^n = \frac{1}{\abs{\lambda}}\frac{1}{1-\frac{\norm{T}}{\abs{\lambda}}}=\frac{1}{\abs{\lambda}-\norm{T}}.$$
 		V limiti, ko pošljemo $\abs{\lambda}$ proti $\infty$, gre $\frac{1}{\abs{\lambda} - \norm{T}}$ proti $0$. Posledično sklepamo, da je $\lim_{\abs{\lambda}\to\infty}\norm{(T- \lambda I)^{-1}} = 0$. Z dobljeno limito obravnavamo obnašanje $\varphi$ daleč od izhodišča: Za vsak $\lambda\in\C$ velja ocena: $\abs{\varphi(\lambda)} = \abs{f((T-\lambda I)^{-1})} \leq \norm{f}\norm{(T-\lambda I)^{-1}}$. Ko pošljemo $\abs{\lambda}$ proti $\infty$, gre izraz na desni proti $0$, torej bo enako veljalo za $\abs{\varphi(\lambda)}$ in posledično je $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda)=0$. Sledi, da obstaja tak $R>0$, da je $\abs{\varphi(\lambda)}\leq 1$ za vsak $\lambda\in \overline{K_R(0)}^c$. Hkrati je $\varphi$ zvezna na $\overline{K_R(0)}$, torej je tam tudi omejena. Posledično je $\varphi$ omejena na celem $\C$.
-		Po Liouvilleovem izreku \ref{izr:Liouville} je potem $\varphi$ konstantna funkcija, limita $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda) = 0$ pa nam pove, da je $\varphi\equiv 0$. Sledi, da je $f((T - \lambda I)^{-1})=0;~\forall \lambda\in\C$. Ker je $f$ bil poljuben omejen linearen funkcional na $X$, sklep velja za vse omejene linearne funkcionale na $X$. Sedaj se spomnimo posledice Hahn-Banachovega izreka, ki nam pove, da obstaja tak omejen linearen funkcional $f$ nad $X$, da je $f((T- \lambda I)^{-1})=\norm{(T- \lambda I)^{-1}}=0;~\forall \lambda\in\C$ oziroma $(T- \lambda I)^{-1} = 0;~ \forall \lambda\in\C$. To nas pa privede v protislovje, saj ničelni operator ni obrnljiv.
+		Po Liouvilleovem izreku \ref{izr:Liouville} je potem $\varphi$ konstantna funkcija, limita $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda) = 0$ pa nam pove, da je $\varphi\equiv 0$. Sledi, da je $f((T - \lambda I)^{-1})=0;~\forall \lambda\in\C$. Ker je $f$ bil poljuben omejen linearen funkcional na $X$, sklep velja za vse omejene linearne funkcionale na $X$. Sedaj se spomnimo posledice Hahn-Banachovega izreka, ki nam pove, da obstaja tak omejen linearen funkcional $f$ na $X$, da je $f((T- \lambda I)^{-1})=\norm{(T- \lambda I)^{-1}}=0;~\forall \lambda\in\C$ oziroma $(T- \lambda I)^{-1} = 0;~ \forall \lambda\in\C$. To nas pa privede v protislovje, saj ničelni operator ni obrnljiv.
 	\end{enumerate}
 \end{dokaz}
 
@@ -984,8 +1015,8 @@ Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom nje
 \begin{izrek}
 	\label{izr:polyspec}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben. Naj bo $p\in\C[X]$ poljuben nekonstanten polinom. Velja: \begin{enumerate}[a)]
-		\item $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$.
-		\item Če je $T$ obrnljiv, je $\sigma(T^{-1})=\{\lambda^{-1}~|~\lambda\in\sigma(T)\}$.
+		\item $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$,
+		\item če je $T$ obrnljiv, je $\sigma(T^{-1})=\{\lambda^{-1}~|~\lambda\in\sigma(T)\}$.
 	\end{enumerate}
 \end{izrek}
 
@@ -997,13 +1028,13 @@ Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom nje
 			&\iff a(T-\lambda_1 I)(T-\lambda_2 I)\ldots(T-\lambda_n I)~\text{je obrnljiv} \\
 			&\iff (T-\lambda_i I)~\text{je obrnljiv za}~\forall i\in \{1, 2, \ldots, n\}\\
 			&\iff \text{Nobena ničla polinoma}~q~\text{ni vsebovana v}~\sigma(T) \\
-			&\iff q(z)\neq 0;~\forall z\in\sigma(T) \iff \lambda \neq p(z);~\forall z\in\sigma(T)
+			&\iff q(z)\neq 0;~\forall z\in\sigma(T) \iff \lambda \neq p(z);~\forall z\in\sigma(T).
 		\end{align*}
 		Posledično sledi: $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$.
 		\item Naj bo $T\in B(X)$ obrnljiv. Posledično $0\notin\sigma(T)$ in zato lahko vsak element $\sigma(T^{-1})$ zapišemo kot inverz nekega $\mu\in\C$. Opazimo, da je $\mu^{-1}I - T^{-1} = -\mu^{-1}T^{-1}(\mu I - T)$ in da je operator $\mu^{-1}T^{-1}$ obrnljiv. Sledi: \begin{align*}
 			\mu^{-1}\in\sigma(T^{-1}) &\iff \mu^{-1}I - T^{-1}~\text{ni obrnljiv} \\
 			&\iff -\mu^{-1}T^{-1}(\mu I - T)~\text{ni obrnljiv} \\
-			&\iff (\mu I - T)~\text{ni obrnljiv} \iff \mu\in\sigma(T) \\
+			&\iff (\mu I - T)~\text{ni obrnljiv} \iff \mu\in\sigma(T).
 		\end{align*}
 		Sledi, da je $\sigma(T^{-1})=\{\mu^{-1}~|~\mu\in\sigma(T)\}$.
 	\end{enumerate}
@@ -1014,9 +1045,9 @@ S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih po
 \begin{lema}
 	\label{lem:idenilunispec}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Velja: \begin{enumerate}[a)]
-		\item Če je $T\in B(X)\setminus\{0, I\}$ idempotent (torej, če je $T^2 = T$), je $\sigma(T) = \{0, 1\}$.
-		\item Če je $T\in B(X)$ nilpotent (torej, če obstaja tak $n\in \N$, da je $T^n = 0$), je $\sigma(T) = \{0\}$.
-		\item Če je $T\in B(X)$ unitaren, je $\sigma(T) \subseteq \{\lambda\in\C~|~ \abs{\lambda}=1\}$.
+		\item Če je $T\in B(X)\setminus\{0, I\}$ idempotent (torej, če je $T^2 = T$), je $\sigma(T) = \{0, 1\}$,
+		\item če je $T\in B(X)$ nilpotent (torej, če obstaja tak $n\in \N$, da je $T^n = 0$), je $\sigma(T) = \{0\}$,
+		\item če je $T\in B(X)$ unitaren, je $\sigma(T) \subseteq \{\lambda\in\C~|~ \abs{\lambda}=1\}$.
 	\end{enumerate}
 \end{lema}
 
@@ -1039,8 +1070,8 @@ Pred obravnavo spektrov normalnih in sebi-adjungiranih operatorjev vpeljimo nasl
 \begin{definicija}
 	\label{def:specrad}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. \begin{enumerate}[a)]
-		\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda}~|~\lambda\in\sigma(T)\}$$
-		\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}$$
+		\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda}~|~\lambda\in\sigma(T)\}.$$
+		\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}.$$
 	\end{enumerate}
 \end{definicija}
 
@@ -1056,11 +1087,12 @@ V primeru normalnih operatorjev velja naslednja zveza med spektrom in numerični
 		(T-\lambda I)(T - \lambda I)^* &= (T-\lambda I)(T^*-\bar{\lambda} I) \\
 		&= TT^* - \bar{\lambda}T -\lambda T^* + \lambda\bar{\lambda} I \\
 		&= T^*T -\lambda T^* -\bar{\lambda}T + \bar{\lambda}\lambda I \\
+		&\text{in} \\
 		(T-\lambda I)^*(T - \lambda I) &= (T^*-\bar{\lambda} I)(T-\lambda I) \\
-		&= T^*T -\lambda T^* -\bar{\lambda}T + \bar{\lambda}\lambda I \\
+		&= T^*T -\lambda T^* -\bar{\lambda}T + \bar{\lambda}\lambda I.
 	\end{align*}
 	Sledi, da je $(T-\lambda I)(T - \lambda I)^* = (T-\lambda I)^*(T - \lambda I)$, torej je $(T-\lambda I)$ normalen. Ker operator $(T - \lambda I)$ ni obrnljiv, po posledici \ref{posl:normalinv} za vsak $r>0$ obstaja nek $x_r$, taki, da je $\norm{(T-\lambda I)x_r}< r\norm{x_r}$. Posledično v $X$ obstaja zaporedje $\{x_n\}_{n\in\N};~\norm{x_n} = 1;~\forall n\in\N$, za katero je $\lim_{n\to\infty}\norm{(T-\lambda I)x_n} = 0$.
-	Po neenakosti Cauchy-Schwarz-Bunyakowsky je $\forall n\in\N \abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}$. Posledično sledi, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v $\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0$ in upoštevamo, da je $\Sp{x_n}{x_n} = 1;~\forall n\in\N$. Tako dobimo, da je $\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda$. Sledi, da je $\lambda \in \overline{V(T)}$.
+	Po neenakosti Cauchy-Schwarz-Bunyakowsky je $\forall n\in\N \abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}$. Posledično sledi, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v $\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0$ in upoštevamo, da je $\Sp{x_n}{x_n} = 1;~\forall n\in\N$. Tako dobimo, da je $$\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda.$$ Sledi, da je $\lambda \in \overline{V(T)}$.
 \end{dokaz}
 
 Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungiranih operatorjev.
@@ -1068,10 +1100,10 @@ Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungira
 \begin{izrek}
 	\label{izr:sebiadjnumraz}
 	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in \mathcal{S}(X)$ poljuben. Velja: \begin{enumerate}[a)]
-		\item $V(T)\subseteq \R$.
-		\item $\sigma(T)\subseteq \R$.
-		\item $\norm{T}\in\sigma(T)\lor (-\norm{T})\in\sigma(T)$.
-		\item $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
+		\item $V(T)\subseteq \R$,
+		\item $\sigma(T)\subseteq \R$,
+		\item $\norm{T}\in\sigma(T)\lor (-\norm{T})\in\sigma(T)$,
+		\item $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$,
 		\item $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t \leq \sup\{\lambda~|~\lambda\in\sigma(T)\};~\forall t\in V(T)$.
 	\end{enumerate}
 \end{izrek}
@@ -1084,20 +1116,20 @@ Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungira
 		\item Če je $T=0$, je po opombi \ref{opomb:specprimeri} $\sigma(T) = \sigma(0)=\{0\}$ in trditev v tem primeru očitno velja. Denimo torej, da je $T\neq 0$. Označimo $\norm{T} = a$ Po definiciji norme operatorja v $X$ obstaja zaporedje $\{x_n\}_{n\in\N};~\norm{x_n}=1~\forall n\in\N$, tako, da je $\lim_{n\to\infty}\norm{Tx_n} = \norm{T} = a$. Posledično je za $\forall n\in\N$: \begin{align*}
 			\norm{(a^2I - T^2)x_n}^2 &= \Sp{(a^2I - T^2)x_n}{(a^2I - T^2)x_n} \\
 			&= \Sp{a^2x_n}{a^2x_n} - \Sp{T^2x_n}{a^2x_n} - \Sp{a^2x_n}{T^2x_n} + \Sp{T^2x_n}{T^2x_n} \\
-			&= \norm{a^2x_n}^2 - a^2\Sp{T^2x_n}{x_n} - a^2\Sp{x_n}{T^2x_n} + \norm{T^2x_n}^2 \\
+			&= \norm{a^2x_n}^2 - a^2\Sp{T^2x_n}{x_n} - a^2\Sp{x_n}{T^2x_n} + \norm{T^2x_n}^2.
 		\end{align*}
 		Ker je $T$ sebi-adjungiran je $\Sp{T^2x}{x} = \Sp{x}{T^2x};~\forall x\in X$. To upoštevamo v našem računu in tako $\forall n\in\N$ dobimo: 
 		\begin{align*}
 			\norm{(a^2I - T^2)x_n}^2 &= \norm{a^2x_n}^2 - 2a^2\Sp{T^2x_n}{x_n} + \norm{T^2x_n}^2 \\
 			&\leq a^4\norm{x_n}^2 + \norm{T^2}^2\norm{x_n}^2 - 2a^2\Sp{T^2x_n}{x_n}  \\
 			&\leq a^4 + a^4\norm{x_n}^2 - 2a^2\Sp{Tx_n}{Tx_n}  \\
-			&= 2a^4 - 2a^2\norm{Tx_n}^2 = 2a^2(a^2 - \norm{Tx_n}^2)
+			&= 2a^4 - 2a^2\norm{Tx_n}^2 = 2a^2(a^2 - \norm{Tx_n}^2).
 		\end{align*}
 		Upoštevamo, da je $\lim_{n\to\infty}\norm{Tx_n} = a$, ter da je kvadriranje zvezna preslikava na $\R$. Posledično je $\lim_{n\to\infty}\norm{Tx_n}^2 = a^2$, torej je $\lim_{n\to\infty}\norm{(a^2I - T^2)x_n}^2 = 0$. Sledi, da operator $a^2I - T^2$ ni obrnljiv, torej je $a^2 \in \sigma(T^2)$. Po prvi točki izreka \ref{izr:polyspec} je potem $a^2\in \{\lambda^2~|~\lambda\in \sigma(T)\}$, torej je vsaj eden izmed $a$ in $-a$ vsebovan v $\sigma(T)$.
-		\item Po prejšnji točki in definiciji spektralnega radija velja, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, je $r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}$. Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
-		\item Vpeljemo oznaki $\alpha=\inf\{\lambda~|~\lambda\in\sigma(T)\}$ in $\beta=\sup\{\lambda~|~ \lambda\in\sigma(T)\}$. Naj bo sedaj $t\in V(T)$ in naj bo $x\in X$ tak, da je $\norm{x}=1$ in $\Sp{Tx}{x}=t$. Denimo sedaj, da je $t < \alpha$. Tedaj ima operator $\beta I - T$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(\beta I - T)=\{\beta - \lambda~|~\lambda\in\sigma(T)\}$ in leži znotraj intervala $[0, \beta - \alpha]$. Sledi, da je $r_\sigma(\beta I - T) \leq \beta - \alpha$. Opazimo tudi, da je $(\beta I - T)^* = \bar{\beta}I - T^* = \beta I - T$, saj je $\beta\in\R$, torej je operator $\beta I - T$ sebi-adjungiran. Dodatno je: $$\Sp{(\beta I - T)x}{x} = \beta\Sp{x}{x} - \Sp{Tx}{x} = \beta - t > \beta - \alpha$$ Po prejšnji točki tega izreka za operator $\beta I - T$ pa velja: $$\beta - \alpha \geq r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}\geq\Sp{(\beta I - T)x}{x}>\beta - \alpha$$ Prišli smo v protislovje. Sledi, da je $\alpha \leq t$.
-		Denimo sedaj, da je $\beta < t$. Tedaj opazimo, da ima operator $T - \alpha I$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(T - \alpha I)=\{\lambda - \alpha~|~ \lambda \in \sigma(T)\}$, ki leži znotraj intervala $[0, \beta - \alpha]$. Posledično velja, da je $r_\sigma(T - \alpha I)\leq \beta - \alpha$. Opazimo tudi, da je operator $T - \alpha I$ sebi-adjungiran, torej po prejšnji točki tega izreka velja, da je $r_\sigma(T - \alpha I) = \sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}$. Velja torej, da je $$\Sp{(T - \alpha I)x}{x} = \Sp{Tx}{x} - \alpha\Sp{x}{x} = t - \alpha > \beta - \alpha$$
-		Posledično je $$\beta - \alpha \geq r_\sigma(T - \alpha I) =\sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}\geq \Sp{(T - \alpha I)x}{x} > \beta - \alpha$$
+		\item Po prejšnji točki in definiciji spektralnega radija velja, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, je $r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}$. Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}.$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}.$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
+		\item Vpeljemo oznaki $\alpha=\inf\{\lambda~|~\lambda\in\sigma(T)\}$ in $\beta=\sup\{\lambda~|~ \lambda\in\sigma(T)\}$. Naj bo sedaj $t\in V(T)$ in naj bo $x\in X$ tak, da je $\norm{x}=1$ in $\Sp{Tx}{x}=t$. Denimo sedaj, da je $t < \alpha$. Tedaj ima operator $\beta I - T$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(\beta I - T)=\{\beta - \lambda~|~\lambda\in\sigma(T)\}$ in leži znotraj intervala $[0, \beta - \alpha]$. Sledi, da je $r_\sigma(\beta I - T) \leq \beta - \alpha$. Opazimo tudi, da je $(\beta I - T)^* = \bar{\beta}I - T^* = \beta I - T$, saj je $\beta\in\R$, torej je operator $\beta I - T$ sebi-adjungiran. Dodatno je: $$\Sp{(\beta I - T)x}{x} = \beta\Sp{x}{x} - \Sp{Tx}{x} = \beta - t > \beta - \alpha.$$ Po prejšnji točki tega izreka za operator $\beta I - T$ pa velja: $$\beta - \alpha \geq r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}\geq\Sp{(\beta I - T)x}{x}>\beta - \alpha.$$ Prišli smo v protislovje. Sledi, da je $\alpha \leq t$.
+		Denimo sedaj, da je $\beta < t$. Tedaj opazimo, da ima operator $T - \alpha I$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(T - \alpha I)=\{\lambda - \alpha~|~ \lambda \in \sigma(T)\}$, ki leži znotraj intervala $[0, \beta - \alpha]$. Posledično velja, da je $r_\sigma(T - \alpha I)\leq \beta - \alpha$. Opazimo tudi, da je operator $T - \alpha I$ sebi-adjungiran, torej po prejšnji točki tega izreka velja, da je $r_\sigma(T - \alpha I) = \sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}$. Velja torej, da je $$\Sp{(T - \alpha I)x}{x} = \Sp{Tx}{x} - \alpha\Sp{x}{x} = t - \alpha > \beta - \alpha.$$
+		Posledično je $$\beta - \alpha \geq r_\sigma(T - \alpha I) =\sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}\geq \Sp{(T - \alpha I)x}{x} > \beta - \alpha.$$
 		Ponovno smo prišli v protislovje. Sledi, da je $t \leq \beta$. Ko to združimo s prejšnjo ugotovitvijo, dobimo, da je $\alpha \leq t \leq \beta$. Ker je bil izbrani $t\in V(T)$ poljuben, ta sklep velja za vse elemente $V(T)$.
 	\end{enumerate}
 \end{dokaz}
