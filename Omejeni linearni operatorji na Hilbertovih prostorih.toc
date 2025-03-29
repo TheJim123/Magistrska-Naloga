@@ -5,10 +5,10 @@
 \contentsline {chapter}{\numberline {1}Hilbertovi prostori}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Osnovne definicije in primeri}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Ortogonalni komplement in Riezsov izrek}{5}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Omejeni linearni operatorji na Hilbertovih prostorih}{6}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Adjungiran operator}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Normalni operatorji}{13}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Sebi-adjungirani operatorji}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Unitarni operatorji}{16}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Spekter}{20}{chapter.3}%
-\contentsline {chapter}{\numberline {}Literatura}{29}{Item.78}%
+\contentsline {chapter}{\numberline {2}Omejeni linearni operatorji na Hilbertovih prostorih}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Adjungiran operator}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Normalni operatorji}{14}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Sebi-adjungirani operatorji}{16}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unitarni operatorji}{18}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Spekter}{22}{chapter.3}%
+\contentsline {chapter}{\numberline {}Literatura}{31}{Item.80}%
