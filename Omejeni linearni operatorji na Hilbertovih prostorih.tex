@@ -864,7 +864,10 @@ Na podlagi posledice \ref{posl:adjinv} in leme \ref{lem:normalnorm} sledi nasled
 
 \begin{posledica}
 	\label{posl:normalinv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Operator $T$ je obrnljiv natanko tedaj, ko obstaja tako realno število $r > 0$, da je $\norm{Tx} \geq r\norm{x}$ za vsak $x\in X$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Naslednji trditvi sta ekvivalentni: \begin{enumerate}[a)]
+		\item Operator $T$ je obrnljiv.
+		\item Obstaja tako realno število $r > 0$, da je $\norm{Tx} \geq r\norm{x}$ za vsak $x\in X$.
+	\end{enumerate}
 \end{posledica}
 
 \begin{dokaz}
@@ -1026,6 +1029,12 @@ Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omej
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben operator. \pojem{Spekter} operatorja $T$ je množica, definirana na naslednji način: $$\sigma(T) = \{\lambda\in\C~|~\text{operator}~T-\lambda I~\text{ni obrnljiv}\}.$$
 \end{definicija}
 
+\begin{primer}
+	\label{prim:trivspec}
+	Določimo spekter za operatorja $0$ in $I$. Naj bo $\lambda\in\C$ poljuben. Določimo najprej spekter za $0$. Denimo, da je $\lambda\neq 0$. Potem je operator $0-\lambda I = -\lambda I$ obrnljiv in njegov inverz je $-\lambda^{-1}I$. Če je pa $\lambda = 0$, operator $-\lambda I = 0$ ni obrnljiv. Posledično je $\sigma(0)=\{0\}$. 
+	Določimo sedaj še spekter za $I$. Operator $I - \lambda I = (1-\lambda)I$ je obrnljiv v primeru, ko je $1-\lambda \neq 0$ oz. ko je $\lambda \neq 1$. Res, tedaj je njegov inverz ravno operator $(1-\lambda)^{-1}I$. V primeru, ko je $\lambda=1$, operator $(1-\lambda)I = 0$ ni obrnljiv. To pomeni, da je $\sigma(I) = \{1\}$.
+\end{primer}
+
 V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
 
 \begin{lema}
@@ -1117,35 +1126,57 @@ Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom nje
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben operator.
 	\begin{enumerate}[a)]
 		\item Vzemimo poljuben nekonstanten polinom $p\in\C[X]$ in poljubno število $\lambda\in\C$. Definiramo polinom $q$ s predpisom $q(z) = \lambda - p(z)$. Po osnovnem izreku algebre lahko polinom $q$ zapišemo kot produkt linearnih faktorjev: $q(z) = a(z-\lambda_1)(z-\lambda_2)\ldots(z-\lambda_n)$, kjer so $\lambda_1, \lambda_2,\ldots, \lambda_n\in\C$ (ne nujno različne) ničle polinoma in $a\in\C\setminus\{0\}$.
-		Velja, da $\lambda\notin \sigma(p(T))$ natanko tedaj, ko je operator $\lambda I - p(T)$ obrnljiv. Ta pogoj je ekvivalenten temu, da je polinom $q(T)=a(T-\lambda_1 I)(T-\lambda_2 I)\ldots(T-\lambda_n I)$ obrnljiv. Slednje bo res natanko tedaj, ko bo operator $(T-\lambda_i I)$ obrnljiv za vsak $i\in\{1, 2, \ldots, n\}$ oziroma ko nobena ničla polinoma $q$ ne bo vsebovana v $\sigma(T)$. Ta pogoj je ekvivalenten temu, da je $q(z)\neq 0$ za vsak $z\in\sigma(T)$, ta pa je ekvivalenten pogoju, da je $\lambda\neq p(z)$ za vsak $z\in\sigma(T)$.
+		Velja: \begin{align*}
+			\lambda\notin \sigma(p(T)) &\iff~\text{Operator}~\lambda I - p(T)~ \text{je obrnljiv.} \\
+			&\iff q(T)=a(T-\lambda_1 I)(T-\lambda_2 I)\ldots(T-\lambda_n I)~\text{je obrnljiv.} \\
+			&\iff~\text{Operator}~(T-\lambda_i I)~\text{je obrnljiv za vsak }~i\in\{1, 2, \ldots, n\}. \\
+			&\iff~\text{nobena ničla polinoma}~q~\text{ni vsebovana v}~\sigma(T). \\
+			&\iff q(z)\neq 0~\text{za vsak}~z\in\sigma(T). \\
+			&\iff \lambda\neq p(z)~\text{za vsak}~z\in\sigma(T).			
+		\end{align*}
 		Če povzamemo: Število $\lambda$ ni vsebovano v spektru $\sigma(p(T))$ natanko tedaj, ko je $p(z)\neq \lambda$ za vsak $z\in\sigma(T)$. Ko to negiramo, dobimo naslednjo ekvivalenco: $$\lambda\in\sigma(p(T))~\text{natanko tedaj, ko obstaja tak}~z\in\sigma(T),~\text{da je}~p(z) = \lambda.$$ To pomeni, da je $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$.
-		\item Predpostavimo, da je operator $T$ obrnljiv. Posledično $0$ ni vsebovana niti v $\sigma(T)$ niti v $\sigma(T^{-1})$ in zato lahko vsak element $\sigma(T^{-1})$ zapišemo kot inverz nekega $\mu\in\C$. Opazimo da je $\mu^{-1}I - T^{-1} = -\mu^{-1}T^{-1}(\mu I - T)$ in da je operator $\mu^{-1}T^{-1}$ obrnljiv. Sledi, da je $\mu^{-1}\in\sigma(T^{-1})$ natanko tedaj, ko operator $\mu^{-1}I - T^{-1}$ ni obrnljiv. Slednje bo res, če in samo če operator $-\mu^{-1}T^{-1}(\mu I - T)$ ni obrnljiv. Ta pogoj pa je, glede na prejšnjo opazko, ekvivalenten pogoju, da operator $(\mu I - T)$ ni obrnljiv.
-		Torej je $\mu^{-1}\in\sigma(T^{-1})$ natanko tedaj, ko je $\mu\in\sigma(T)$. To pomeni, da je $\sigma(T^{-1})=\{\mu^{-1}~|~\mu\in\sigma(T)\}$.
+		\item Predpostavimo, da je operator $T$ obrnljiv. Posledično $0$ ni vsebovana niti v $\sigma(T)$ niti v $\sigma(T^{-1})$ in zato lahko vsak element $\sigma(T^{-1})$ zapišemo kot inverz nekega $\mu\in\C$. Opazimo da je $\mu^{-1}I - T^{-1} = -\mu^{-1}T^{-1}(\mu I - T)$ in da je operator $\mu^{-1}T^{-1}$ obrnljiv. Sledi: \begin{align*}
+			\mu^{-1}\in\sigma(T^{-1}) &\iff~\text{Operator}~\mu^{-1}I - T^{-1}~\text{ni obrnljiv.} \\
+			&\iff~\text{Operator}~-\mu^{-1}T^{-1}(\mu I - T)~\text{ni obrnljiv.}\\
+			&\iff~\text{Operator}~(\mu I - T)~\text{ni obrnljiv.} \\
+			&\iff \mu\in\sigma(T).
+		\end{align*}
+		To pomeni, da je $\sigma(T^{-1})=\{\mu^{-1}~|~\mu\in\sigma(T)\}$.
 	\end{enumerate}
 \end{dokaz}
 
-S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih posebnih tipov operatorjev. V naslednji lemi bomo to storili za idempotentne, nilpotentne in unitarne operatorje.
+S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih posebnih tipov operatorjev. Definirajmo dva izmed teh posebnih tipov.
+
+\begin{definicija}
+	\label{def:idemnilop}
+	Naj bosta $U$ in $V$ poljubna vektorska prostora nad poljem $\F$. Za linearen operator $\map{A}{U}{V}$ pravimo, da je: \begin{enumerate}[a)]
+		\item \pojem{Idempotent}, če je $A^2 = A$. Operatorja $0$ in $I$ imenujemo \pojem{trivialna idempotenta}.
+		
+		\item \pojem{Nilpotent}, če obstaja tako število $n\in\N$, da je $A^n = 0$.
+	\end{enumerate}
+\end{definicija}
 
 \begin{lema}
 	\label{lem:idenilunispec}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za operator $T\in B(X)$ velja: \begin{enumerate}[a)]
-		\item Če je $T\in B(X)\setminus\{0, I\}$ idempotent (torej, če je $T^2 = T$), je $\sigma(T) = \{0, 1\}$.
-		\item Če je $T\in B(X)$ nilpotent (torej, če obstaja tak $n\in \N$, da je $T^n = 0$), je $\sigma(T) = \{0\}$.
-		\item Če je $T\in B(X)$ unitaren, je $\sigma(T) \subseteq \{\lambda\in\C~|~ \abs{\lambda}=1\}$.
+		\item Če je $T$ netrivialen idempotent, je $\sigma(T) = \{0, 1\}$.
+		\item Če je $T$ nilpotent, je $\sigma(T) = \{0\}$.
+		\item Če je $T\in \mathcal{U}(X)$, je $\sigma(T) \subseteq \{\lambda\in\C~|~ \abs{\lambda}=1\}$.
 	\end{enumerate}
 \end{lema}
 
 \begin{dokaz}
-	Ključni del dokaza vseh trditev bo uporaba izreka \ref{izr:polyspec}.\begin{enumerate}[a)]
-		\item Naj bo $T\in B(X)\setminus\{0, I\}$ idempotent. Ker je $T$ idempotent, zadošča enačbi $T^2 - T = 0$. Označimo polinom $p(z) = z^2 - z$ in opazimo, da potem operator $T$ zadošča enačbi $p(z) = 0$. Kot smo že omenili v opombi \ref{opomb:specprimeri}, je $\sigma(0) = \{0\}$. Po prvi točki izreka \ref{izr:polyspec} je potem $\{0\}=\sigma(0)=\sigma(p(T))=\sigma(T^2 - T) = \{\lambda^2 - \lambda~|~\lambda\in\sigma(T)\}$. Za vsak $\lambda\in\sigma(T)$ torej velja, da je $\lambda^2 - \lambda = 0$. Ta enačba ima dve rešitvi: $\lambda=0$ in $\lambda=1$. Sledi, da je $\sigma(T)\subseteq\{0, 1\}$. Hkrati po tretji točki izreka \ref{izr:specter} vemo, da $\sigma(T)\neq\emptyset$.
-		Obravnavajmo naslednji možnosti: \begin{enumerate}[i)]
-			\item Denimo, da $1\notin\sigma(T)$. Tedaj je operator $T- I$ obrnljiv, torej lahko enačbo $(T-I)T = T^2 - T = 0$ z leve pomnožimo z $(T-I)^{-1}$. Tako dobimo enačbo $T = 0$, kar pa nas privede v protislovje z začetno predpostavko, da je $T\in B(X\setminus\{0, I\})$. Sledi, da je $1\in\sigma(T)$
-			\item Denimo sedaj, da $0\notin\sigma(T)$. Tedaj je $T$ obrnljiv, torej lahko enačbo $(T-I)T = T^2 - T = 0$ z leve pomnožimo z $T^{-1}$. Tako dobimo enačbo $T-I = 0$ oziroma $T=I$. Tudi to nas privede v protislovje z isto začetno predpostavko, kot v prejšnji točki. Sledi, da je $0\in\sigma(T)$.
-		\end{enumerate}
-		Sledi, da je $\sigma(T) = \{0, 1\}$.
-		\item Naj bo sedaj $T\in B(X)$ nilpotent in naj bo $n\in\N$ najmanjši taki, da je $T^n = 0$. Označimo polinom $q(z)=z^n$. Tedaj operator $T$ zadošča enačbi $q(T) = 0$. Po prvi točki izreka \ref{izr:polyspec} je potem $\{0\}=\sigma(0)=\sigma(q(T))=\sigma(T^n)=\{\lambda^n~|~\lambda\in\sigma(T)\}$. Sledi, da za vsak $\lambda\in\sigma(T)$ velja, da je $\lambda^n = 0$. Ta enačba ima edino rešitev $\lambda=0$, torej je $\sigma(T)\subseteq\{0\}$. Ker po tretji točki izreka \ref{izr:specter} spekter ne more biti prazna množica, sledi, da je $\sigma(T)=0$.
-		\item Naj bo sedaj $T\in \mathcal{U}(X)$. Po prvi točki leme \ref{lem:unitarset} vemo, da je $\norm{T}=1$. Posledično je $\sigma(T)\subseteq \overline{K_1(0)} = \{\lambda\in\C~|~\abs{\lambda}\leq 1\}$. Hkrati opazimo, da je tudi $\sigma(T^*) \subseteq \overline{K_1(0)}$. Sedaj upoštevamo, da je $T$ unitaren operator, torej je $U^* = U^{-1}$. Po drugi točki izreka \ref{izr:polyspec} je potem $\sigma(T) =
-		\{\lambda^{-1}~|~\lambda\in\sigma(T^*)\}\subseteq \{\lambda\in\C~|~\abs{\lambda}\geq 1\}$. Ker je $\sigma(T)$ hkrati podmnožica $\overline{K_1(0)} in K_1^c(0)$, sledi, da je $\sigma(T)$ vsebovana v robu enotske krogle $K_1(0)$, torej je $\sigma(T)\subseteq\{\lambda\in\C~|~\abs{\lambda}=1\}$.
+	Ključni del dokaza vseh trditev bo uporaba izreka \ref{izr:polyspec}. Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben operator $T\in B(X)$. \begin{enumerate}[a)]
+		\item Denimo, da je operator $T\in B(X)\setminus\{0, I\}$ idempotent. Potem operator $T$ zadošča enačbi $T^2 - T = 0$. Označimo polinom $p(z) = z^2 - z$. Tedaj operator $T$ zadošča enačbi $p(T) = 0$. Kot smo že omenili v opombi \ref{opomb:specprimeri}, je $\sigma(0) = \{0\}$. Prva točka izreka \ref{izr:polyspec} nam pove: $$\{0\}=\sigma(0)=\sigma(p(T))=\sigma(T^2 - T) = \{\lambda^2 - \lambda~|~\lambda\in\sigma(T)\}.$$ Za vsak $\lambda\in\sigma(T)$ torej velja, da je $\lambda^2 - \lambda = 0$. Ta enačba ima dve rešitvi: $\lambda=0$ in $\lambda=1$. To pomeni, da je $\sigma(T)\subseteq\{0, 1\}$. Hkrati nam tretja točka izreka \ref{izr:specter} pove, da je $\sigma(T)\neq\emptyset$. Premislimo sedaj, da je $\{0, 1\}\subseteq\sigma(T)$.
+		
+		Denimo najprej, da $1\notin\sigma(T)$. Tedaj je operator $T- I$ obrnljiv, torej lahko enačbo $$(T-I)T = P(T) = 0$$ z leve pomnožimo z inverznim operatorjem $(T-I)^{-1}$. Če to storimo, dobimo enakost $T = 0$. To nas privede v protislovje z začetno predpostavko, da je $T\in B(X)\setminus\{0, I\}$. Sledi, da je $1\in\sigma(T)$.
+		
+		Denimo sedaj, da $0\notin\sigma(T)$. Tedaj je operator $T$ obrnljiv, torej lahko enačbo $$(T-I)T = P(T) = 0$$ z desne pomnožimo z inverznim operatorjem $T^{-1}$. Tako dobimo enakost $T-I = 0$ oziroma $T=I$. Tudi to nas privede v protislovje z enako začetno predpostavko, kot v prejšnji točki. To pomeni, da je $0\in\sigma(T)$. Sledi, da je $\sigma(T) = \{0, 1\}$.
+		
+		\item Naj bo sedaj operator $T\in B(X)$ nilpotent in naj bo $n$ najmanjše tako naravno število, za katerega je $T^n = 0$. Označimo polinom $q(z)=z^n$. Tedaj operator $T$ zadošča enačbi $q(T) = 0$. Po prvi točki izreka \ref{izr:polyspec} je potem: $$\{0\}=\sigma(0)=\sigma(q(T))=\sigma(T^n)=\{\lambda^n~|~\lambda\in\sigma(T)\}.$$ Sledi, da za vsak $\lambda\in\sigma(T)$ velja, da je $\lambda^n = 0$. Ta enačba ima le eno rešitev $\lambda=0$. To pomeni, da je $\sigma(T)\subseteq\{0\}$. Ker po tretji točki izreka \ref{izr:specter} spekter ne more biti prazna množica, sledi, da je $\sigma(T)=\{0\}$.
+		
+		\item Naj bo sedaj $T\in \mathcal{U}(X)$. Prva točka leme \ref{lem:unitarset} nam pove, da je $\norm{T}=1$. Posledično je: $$\sigma(T)\subseteq \overline{K_1(0)} = \{\lambda\in\C~|~\abs{\lambda}\leq 1\}.$$ Istočasno opazimo, da je po enakem argumentu tudi $\sigma(T^*) \subseteq \overline{K_1(0)}$. Sedaj upoštevamo, da je $T$ unitaren operator, torej je $T^* = T^{-1}$. Po drugi točki izreka \ref{izr:polyspec} potem velja: $$\sigma(T) =
+		\{\lambda^{-1}~|~\lambda\in\sigma(T^*)\}\subseteq \{\lambda\in\C~|~\abs{\lambda}\geq 1\}.$$ Ker je $\sigma(T)$ hkrati podmnožica $\overline{K_1(0)}$ in $K_1^c(0)$, je vsebovana tudi v njunem preseku $\overline{K_1(0)}\cap K_1^c(0)$. Ta je ravno rob enotske krogle $K_1(0)$. To pomeni, da je: $$\sigma(T)\subseteq\{\lambda\in\C~|~\abs{\lambda}=1\}.$$
 	\end{enumerate}
 \end{dokaz}
 
@@ -1153,7 +1184,7 @@ Pred obravnavo spektrov normalnih in sebi-adjungiranih operatorjev vpeljimo nasl
 
 \begin{definicija}
 	\label{def:specrad}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. \begin{enumerate}[a)]
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben operator. \begin{enumerate}[a)]
 		\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda}~|~\lambda\in\sigma(T)\}.$$
 		\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}.$$
 	\end{enumerate}
@@ -1163,50 +1194,53 @@ V primeru normalnih operatorjev velja naslednja zveza med spektrom in numerični
 
 \begin{lema}
 	\label{lem:normalnumrazspec}
-	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben. Če je $T$ normalen, je $\sigma(T)\subseteq \overline{V(T)}$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Če je operator $T\in B(X)$ normalen, je $\sigma(T)\subseteq \overline{V(T)}$.
 \end{lema}
 
 \begin{dokaz}
-	Naj bo $\lambda\in\sigma(T)$ poljuben. V primeru \ref{prim:Tminlamnorm} smo že premislili, da je operator $(T-\lambda I)$ normalen. Ker operator $(T - \lambda I)$ ni obrnljiv, po posledici \ref{posl:normalinv} za vsak $r>0$ obstaja nek $x_r$, taki, da je $\norm{(T-\lambda I)x_r}< r\norm{x_r}$. Posledično v $X$ obstaja zaporedje $\{x_n\}_{n\in\N};~\norm{x_n} = 1;~\forall n\in\N$, za katero je $\lim_{n\to\infty}\norm{(T-\lambda I)x_n} = 0$.
-	Po neenakosti Cauchy-Schwarz-Bunyakowsky je $\forall n\in\N \abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}$. Posledično sledi, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v $\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0$ in upoštevamo, da je $\Sp{x_n}{x_n} = 1;~\forall n\in\N$. Tako dobimo, da je $$\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda.$$ Sledi, da je $\lambda \in \overline{V(T)}$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben normalen operator. Vzemimo poljubno število $\lambda\in\sigma(T)$. V primeru \ref{prim:Tminlamnorm} smo že premislili, da je operator $(T-\lambda I)$ normalen. Ker operator $(T - \lambda I)$ ni obrnljiv, po posledici \ref{posl:normalinv} za vsak $r>0$ obstaja nek element $x_r\in X$, taki, da je $$\norm{(T-\lambda I)x_r}< r\norm{x_r}.$$ Posledično v $X$ obstaja tako zaporedje $\{x_n\}_{n\in\N}$, da je $\norm{x_n} = 1$ za vse $n\in\N$ in za katero je: $$\lim_{n\to\infty}\norm{(T-\lambda I)x_n} = 0.$$
+	Po neenakosti Cauchy-Schwarz-Bunyakowsky za vsako število $n\in\N$ velja: $$0\leq\abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}.$$ Izrek o sendviču nam sedaj pove, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v: $$\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0.$$ Ko upoštevamo, da je $\Sp{x_n}{x_n} = 1$ za vsak $n\in\N$, dobimo, da je: $$\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda.$$ Sledi, da je $\lambda \in \overline{V(T)}$.
 \end{dokaz}
 
 Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungiranih operatorjev.
 
 \begin{izrek}
 	\label{izr:sebiadjnumraz}
-	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor in naj bo $T\in \mathcal{S}(X)$ poljuben. Velja: \begin{enumerate}[a)]
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Velja: \begin{enumerate}[a)]
 		\item $V(T)\subseteq \R$,
 		\item $\sigma(T)\subseteq \R$,
 		\item $\norm{T}\in\sigma(T)\lor (-\norm{T})\in\sigma(T)$,
 		\item $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$,
-		\item $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t \leq \sup\{\lambda~|~\lambda\in\sigma(T)\};~\forall t\in V(T)$.
+		\item $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t \leq \sup\{\lambda~|~\lambda\in\sigma(T)\}$ za vsak $t\in V(T)$.
 	\end{enumerate}
 \end{izrek}
 
 \begin{dokaz}
-	Naj bo $T\in \mathcal{S}(X)$ poljuben.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator.
 	\begin{enumerate}[a)]
-		\item Naj bo $x\in X$ poljuben. Ker je $T$ po predpostavki sebi-adjungiran, je $\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}$. Posledično je $\Sp{Tx}{x}\in \R$. Ker to velja za poljuben element $X$, v posebnem primeru velja za vse elemente katerih norma je $1$. Sledi, da je $V(T)=\{\Sp{Tx}{x}~|~\norm{x}=1\}\subseteq \R$.
-		\item Po prejšnji točki vemo, da je $V(T)\subseteq \R$. Posledično je tudi $\overline{V(T)}\subseteq\R$. Ker je po opombi \ref{opomb:sebiadjsonormal} vsak sebi-adjungiran operator tudi normalen, po lemi \ref{lem:normalnumrazspec} sledi, da je $\sigma(T)\subseteq\overline{V(T)}\subseteq \R$.
-		\item Če je $T=0$, je po opombi \ref{opomb:specprimeri} $\sigma(T) = \sigma(0)=\{0\}$ in trditev v tem primeru očitno velja. Denimo torej, da je $T\neq 0$. Označimo $\norm{T} = a$ Po definiciji norme operatorja v $X$ obstaja zaporedje $\{x_n\}_{n\in\N};~\norm{x_n}=1~\forall n\in\N$, tako, da je $\lim_{n\to\infty}\norm{Tx_n} = \norm{T} = a$. Posledično je za $\forall n\in\N$: \begin{align*}
+		\item Vzemimo poljuben element $x\in X$. Ker je operator $T$ sebi-adjungiran, zanj velja: $$\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}.$$ Posledično je $\Sp{Tx}{x}\in \R$. Ker to velja za poljuben element $X$, v posebnem primeru velja za vse elemente katerih norma je $1$. Sledi, da je $V(T)=\{\Sp{Tx}{x}~|~\norm{x}=1\}\subseteq \R$.
+		\item Po prejšnji točki vemo, da je $V(T)\subseteq \R$. Posledično je tudi $\overline{V(T)}\subseteq\R$. Spomnimo se opombe \ref{opomb:sebiadjsonormal}, ki nam pove, da je vsak sebi-adjungiran operator tudi normalen. Na koncu nam lema \ref{lem:normalnumrazspec} pove, da je $\sigma(T)\subseteq\overline{V(T)}\subseteq \R$.
+		\item Če je $T=0$, je po opombi \ref{opomb:specprimeri} $\sigma(T) = \sigma(0)=\{0\}$. V tem primeru trditev očitno velja. Denimo torej, da je $T\neq 0$ in označimo $\norm{T} = a$. Pokazali bomo, da je $a^2\in\sigma(T^2)$. Po definiciji norme operatorja v $X$ obstaja tako zaporedje $\{x_n\}_{n\in\N}$, da je $\norm{x_n}=1$ za vsak $n\in\N$, za katerega je $\lim_{n\to\infty}\norm{Tx_n} = \norm{T} = a$. Posledično za vsak $n\in\N$ velja: \begin{align*}
 			\norm{(a^2I - T^2)x_n}^2 &= \Sp{(a^2I - T^2)x_n}{(a^2I - T^2)x_n} \\
 			&= \Sp{a^2x_n}{a^2x_n} - \Sp{T^2x_n}{a^2x_n} - \Sp{a^2x_n}{T^2x_n} + \Sp{T^2x_n}{T^2x_n} \\
 			&= \norm{a^2x_n}^2 - a^2\Sp{T^2x_n}{x_n} - a^2\Sp{x_n}{T^2x_n} + \norm{T^2x_n}^2.
 		\end{align*}
-		Ker je $T$ sebi-adjungiran je $\Sp{T^2x}{x} = \Sp{x}{T^2x};~\forall x\in X$. To upoštevamo v našem računu in tako $\forall n\in\N$ dobimo: 
+		Ker je $T$ sebi-adjungiran je $\Sp{T^2x}{x} = \Sp{x}{T^2x}$za vsak $x\in X$. To upoštevamo v našem računu in tako za vsak $n\in\N$ dobimo: 
 		\begin{align*}
 			\norm{(a^2I - T^2)x_n}^2 &= \norm{a^2x_n}^2 - 2a^2\Sp{T^2x_n}{x_n} + \norm{T^2x_n}^2 \\
 			&\leq a^4\norm{x_n}^2 + \norm{T^2}^2\norm{x_n}^2 - 2a^2\Sp{T^2x_n}{x_n}  \\
 			&\leq a^4 + a^4\norm{x_n}^2 - 2a^2\Sp{Tx_n}{Tx_n}  \\
 			&= 2a^4 - 2a^2\norm{Tx_n}^2 = 2a^2(a^2 - \norm{Tx_n}^2).
 		\end{align*}
-		Upoštevamo, da je $\lim_{n\to\infty}\norm{Tx_n} = a$, ter da je kvadriranje zvezna preslikava na $\R$. Posledično je $\lim_{n\to\infty}\norm{Tx_n}^2 = a^2$, torej je $\lim_{n\to\infty}\norm{(a^2I - T^2)x_n}^2 = 0$. Sledi, da operator $a^2I - T^2$ ni obrnljiv, torej je $a^2 \in \sigma(T^2)$. Po prvi točki izreka \ref{izr:polyspec} je potem $a^2\in \{\lambda^2~|~\lambda\in \sigma(T)\}$, torej je vsaj eden izmed $a$ in $-a$ vsebovan v $\sigma(T)$.
-		\item Po prejšnji točki in definiciji spektralnega radija velja, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, je $r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}$. Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}.$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}.$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
-		\item Vpeljemo oznaki $\alpha=\inf\{\lambda~|~\lambda\in\sigma(T)\}$ in $\beta=\sup\{\lambda~|~ \lambda\in\sigma(T)\}$. Naj bo sedaj $t\in V(T)$ in naj bo $x\in X$ tak, da je $\norm{x}=1$ in $\Sp{Tx}{x}=t$. Denimo sedaj, da je $t < \alpha$. Tedaj ima operator $\beta I - T$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(\beta I - T)=\{\beta - \lambda~|~\lambda\in\sigma(T)\}$ in leži znotraj intervala $[0, \beta - \alpha]$. Sledi, da je $r_\sigma(\beta I - T) \leq \beta - \alpha$. Opazimo tudi, da je $(\beta I - T)^* = \bar{\beta}I - T^* = \beta I - T$, saj je $\beta\in\R$, torej je operator $\beta I - T$ sebi-adjungiran. Dodatno je: $$\Sp{(\beta I - T)x}{x} = \beta\Sp{x}{x} - \Sp{Tx}{x} = \beta - t > \beta - \alpha.$$ Po prejšnji točki tega izreka za operator $\beta I - T$ pa velja: $$\beta - \alpha \geq r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}\geq\Sp{(\beta I - T)x}{x}>\beta - \alpha.$$ Prišli smo v protislovje. Sledi, da je $\alpha \leq t$.
-		Denimo sedaj, da je $\beta < t$. Tedaj opazimo, da ima operator $T - \alpha I$ po prvi točki izreka \ref{izr:polyspec} spekter $\sigma(T - \alpha I)=\{\lambda - \alpha~|~ \lambda \in \sigma(T)\}$, ki leži znotraj intervala $[0, \beta - \alpha]$. Posledično velja, da je $r_\sigma(T - \alpha I)\leq \beta - \alpha$. Opazimo tudi, da je operator $T - \alpha I$ sebi-adjungiran, torej po prejšnji točki tega izreka velja, da je $r_\sigma(T - \alpha I) = \sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}$. Velja torej, da je $$\Sp{(T - \alpha I)x}{x} = \Sp{Tx}{x} - \alpha\Sp{x}{x} = t - \alpha > \beta - \alpha.$$
-		Posledično je $$\beta - \alpha \geq r_\sigma(T - \alpha I) =\sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}\geq \Sp{(T - \alpha I)x}{x} > \beta - \alpha.$$
-		Ponovno smo prišli v protislovje. Sledi, da je $t \leq \beta$. Ko to združimo s prejšnjo ugotovitvijo, dobimo, da je $\alpha \leq t \leq \beta$. Ker je bil izbrani $t\in V(T)$ poljuben, ta sklep velja za vse elemente $V(T)$.
+		Ko upoštevamo, da je $\lim_{n\to\infty}\norm{Tx_n} = a$, ter da je kvadriranje zvezna preslikava, vidimo, da je je $\lim_{n\to\infty}\norm{Tx_n}^2 = a^2$. To pomeni, da je: $$\lim_{n\to\infty}\norm{(a^2I - T^2)x_n}^2 = 0.$$ Sledi, da za vsako število $r>0$ obstaja tak $n\in \N$, da je $\norm{(a^2I-T^2)x_n} < r$. Zato po posledici \ref{posl:normalinv} operator $a^2I - T^2$ ni obrnljiv. To pomeni, da je $a^2 \in \sigma(T^2)$. 
+		Prva točka izreka \ref{izr:polyspec} nam pove, da je $a^2\in \{\lambda^2~|~\lambda\in \sigma(T)\}$. Posledično je vsaj eno izmed števil $a=\norm{T}$ in $-a$ vsebovano v $\sigma(T)$.
+		\item Upoštevajoč prejšnjo točko in definicijo spektralnega radija vidimo, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, velja: $$r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}.$$ Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po neenakosti Cauchy-Schwarz-Bunyakowsky potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}.$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}.$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
+		\item Vpeljimo oznaki $\alpha=\inf\{\lambda~|~\lambda\in\sigma(T)\}$ in $\beta=\sup\{\lambda~|~ \lambda\in\sigma(T)\}$. Vzemimo sedaj poljubno število $t\in V(T)$ in naj bo $x\in X$ tak, da je $\norm{x}=1$ in $\Sp{Tx}{x}=t$. 
+		Denimo najprej, da je $t < \alpha$. Tedaj ima operator $\beta I - T$ po prvi točki izreka \ref{izr:polyspec} spekter $$\sigma(\beta I - T)=\{\beta - \lambda~|~\lambda\in\sigma(T)\},$$ ki leži znotraj intervala $[0, \beta - \alpha]$. Sledi, da je $r_\sigma(\beta I - T) \leq \beta - \alpha$. Ker je $\beta\in\R$ opazimo tudi, da je: $$(\beta I - T)^* = \bar{\beta}I - T^* = \beta I - T.$$ To pomeni, da je operator $\beta I - T$ sebi-adjungiran. Dodatno, ker je $t<\alpha$, je: $$\Sp{(\beta I - T)x}{x} = \beta\Sp{x}{x} - \Sp{Tx}{x} = \beta - t > \beta - \alpha.$$ Toda po točki $d)$ tega izreka je $r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}$. Zato za operator $\beta I - T$ velja: $$\beta - \alpha \geq r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}\geq\Sp{(\beta I - T)x}{x}>\beta - \alpha.$$ Prišli smo v protislovje. Sledi, da je $\alpha \leq t$.
+		
+		Denimo sedaj, da je $\beta < t$. Tedaj opazimo, da ima operator $T - \alpha I$ po prvi točki izreka \ref{izr:polyspec} spekter $$\sigma(T - \alpha I)=\{\lambda - \alpha~|~ \lambda \in \sigma(T)\},$$ ki leži znotraj intervala $[0, \beta - \alpha]$. Posledično velja, da je $r_\sigma(T - \alpha I)\leq \beta - \alpha$. Ker je $\alpha\in\R$ opazimo, na enak način kot za operator $\beta I - T$, da je tudi $T - \alpha I$ sebi-adjungiran operator. Dodatno nam točka $d)$ tega izreka pove, da je: $$r_\sigma(T - \alpha I) = \sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}.$$ Ker je $\beta < t$ zato velja: $$\Sp{(T - \alpha I)x}{x} = \Sp{Tx}{x} - \alpha\Sp{x}{x} = t - \alpha > \beta - \alpha.$$
+		To pomeni, da je: $$\beta - \alpha \geq r_\sigma(T - \alpha I) =\sup\{\abs{\lambda}~|~\lambda\in V(T - \alpha I)\}\geq \Sp{(T - \alpha I)x}{x} > \beta - \alpha.$$
+		Ponovno smo prišli v protislovje. Sledi, da je $t \leq \beta$. Ko to ugotovitev združimo s prejšnjo ugotovitvijo o $\alpha$, dobimo: $$\alpha \leq t \leq \beta.$$ Ker je bil izbrani $t\in V(T)$ poljuben, ta sklep velja za vse elemente $V(T)$.
 	\end{enumerate}
 \end{dokaz}
 
