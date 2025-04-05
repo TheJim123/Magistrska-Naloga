@@ -472,7 +472,7 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 \end{definicija}
 
 \begin{opomba}
-	\label{op:izometrija}
+	\label{opomb:izometrija}
 	Kratek premislek nam pove, da je vsaka izometrija tudi omejen linearen operator.
 \end{opomba}
 
@@ -547,7 +547,7 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 \end{primer}
 
 \begin{opomba}
-	\label{op:ScalProd}
+	\label{opomb:ScalProd}
 	Naj bo $(V, +, \cdot, \Sp{.}{.})$ prostor s skalarnim produktom nad poljem $\F$. Enostavno je preveriti, da je s predpisom $\norm{x} = \sqrt{\Sp{x}{x}}$ definirana norma na $V$. Za tako normo pravimo, da je \pojem{porojena s skalarnim produktom} $\Sp{.}{.}$.
 \end{opomba}
 
@@ -932,6 +932,11 @@ V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operato
 	\end{enumerate}
 \end{dokaz}
 
+\begin{opomba}
+	\label{opomb:sebiadjlast}
+	Ko upoštevamo, da je vsak zaprti podprostor Banachovega prostora tudi sam Banachov prostor, nam točki $a)$ in $b)$ leme \ref{lem:sebiadjlast} poveta, da je $\mathcal{S}(X)$ realen Banachov prostor.
+\end{opomba}
+
 \begin{trditev}
 	\label{trd:sebiadjop}
 	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Operator $T\in B(X)$ je sebi-adjungiran natanko tedaj, ko je $\Sp{Tx}{x}\in\R$ za vsak $x\in X$.
@@ -1021,6 +1026,61 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 	\end{enumerate}
 \end{dokaz}
 
+\section[Ortogonalni projektorji]{Ortogonalni projektorji}
+
+\begin{definicija}
+	\label{def:ortproj}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $P\in B(X)$ \pojem{ortogonalen projektor}, če je: $$P^2 = P = P^*.$$
+\end{definicija}
+
+\begin{izrek}
+	\label{izr:ortogprojdekomp}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Velja: \begin{enumerate}
+		\item Za poljuben zaprt podprostor $Y$ v $X$ obstaja tak ortogonalen projektor $P_Y\in B(X)$, da je $\operatorname{Im}P_Y = Y$, $\operatorname{Ker}P_Y = Y^\bot$ in $\norm{P_Y} \leq 1$.
+		\item Za poljuben ortogonalen projektor $Q\in B(X)$ je $\operatorname{Im}Q$ zaprt podprostor v $X$ in velja: $$Q = P_{\operatorname{Im}Q}.$$
+	\end{enumerate}
+\end{izrek}
+
+\begin{dokaz}
+	TBD
+\end{dokaz}
+
+\begin{lema}
+	\label{lem:ortogproj2}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Če je $P\in B(X)$ ortogonalen projektor prostora $X$ na $Y$, potem je operator $I - P$ ortogonalen projektor prostora $X$ na $Y^\bot$.
+\end{lema}
+
+\begin{dokaz}
+	TBD
+\end{dokaz}
+
+\begin{posledica}
+	\label{posl:ortprojsum}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Naj bo $B$ poljubna baza prostora $Y$. Tedaj za ortogonalen projektor $P\in B(X)$ prostora $X$ na $Y$ velja: $$Px = \sum_{e\in B}\Sp{x}{e}\cdot e$$ za vsak $x\in X$.
+\end{posledica}
+
+\begin{dokaz}
+	TBD
+\end{dokaz}
+
+\begin{definicija}
+	\label{def:opkoren}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben operator. \pojem{Kvadratni koren} operatorja $T$ je tak operator $U\in B(X)$, da je $U^2 = T$.
+\end{definicija}
+
+\begin{lema}
+	\label{lem:sebiadjPhi}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
+		\item $\Phi(p) = p(T)$ za vsak polinom $p\in\mathcal{C}_\R(\sigma(T))$,
+		\item $\Phi(f\cdot g) = \Phi(f)\cdot\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
+	\end{enumerate}
+\end{lema}
+
+\begin{dokaz}
+	TBD
+\end{dokaz}
+
+
 \chapter{Spekter}
 Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omejen le na matrike - na enak način jih lahko definiramo tudi za operatorje na poljubnih prostorih. V tem poglavju bomo obravnavali t.~i.~ spekter operatorja na kompleksnem Hilbertovem prostoru.
 
@@ -1061,8 +1121,8 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 \begin{izrek}
 	\label{izr:specter}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za vsak operator $T\in B(X)$ velja: \begin{enumerate}[a)]
-		\item $\lambda\in\sigma(T) \Rightarrow \abs{\lambda}\leq\norm{T}$,
-		\item $\sigma(T)$ je kompaktna množica v $\C$,
+		\item Če je $\lambda\in\sigma(T)$, je $\abs{\lambda}\leq\norm{T}$.
+		\item $\sigma(T)$ je kompaktna množica v $\C$.
 		\item $\sigma(T)\neq \emptyset$.
 	\end{enumerate}
 \end{izrek}
@@ -1145,13 +1205,14 @@ Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom nje
 	\end{enumerate}
 \end{dokaz}
 
-S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih posebnih tipov operatorjev. Definirajmo dva izmed teh posebnih tipov.
+\section[Spektri posebnih tipov operatorjev]{Spektri posebnih tipov operatorjev}
+
+S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih posebnih tipov operatorjev. Definirajmo še dva izmed teh posebnih tipov.
 
 \begin{definicija}
 	\label{def:idemnilop}
 	Naj bosta $U$ in $V$ poljubna vektorska prostora nad poljem $\F$. Za linearen operator $\map{A}{U}{V}$ pravimo, da je: \begin{enumerate}[a)]
 		\item \pojem{Idempotent}, če je $A^2 = A$. Operatorja $0$ in $I$ imenujemo \pojem{trivialna idempotenta}.
-		
 		\item \pojem{Nilpotent}, če obstaja tako število $n\in\N$, da je $A^n = 0$.
 	\end{enumerate}
 \end{definicija}
@@ -1179,6 +1240,11 @@ S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih po
 		\{\lambda^{-1}~|~\lambda\in\sigma(T^*)\}\subseteq \{\lambda\in\C~|~\abs{\lambda}\geq 1\}.$$ Ker je $\sigma(T)$ hkrati podmnožica $\overline{K_1(0)}$ in $K_1^c(0)$, je vsebovana tudi v njunem preseku $\overline{K_1(0)}\cap K_1^c(0)$. Ta je ravno rob enotske krogle $K_1(0)$. To pomeni, da je: $$\sigma(T)\subseteq\{\lambda\in\C~|~\abs{\lambda}=1\}.$$
 	\end{enumerate}
 \end{dokaz}
+
+\begin{opomba}
+	\label{opomb:ortprojspec}
+	Ker so ortogonalni projektorji posebni tipi idempotentov, nam lema \ref{lem:idenilunispec} pove, da je spekter vsakega ortogonalnega projektorja na kompleksnem Hilbertovem prostoru natanko množica $\{0, 1\}$.
+\end{opomba}
 
 Pred obravnavo spektrov normalnih in sebi-adjungiranih operatorjev vpeljimo naslednja pojma.
 
@@ -1218,7 +1284,7 @@ Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungira
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator.
 	\begin{enumerate}[a)]
-		\item Vzemimo poljuben element $x\in X$. Ker je operator $T$ sebi-adjungiran, zanj velja: $$\Sp{Tx}{x} = \Sp{x}{Tx} = \overline{\Sp{Tx}{x}}.$$ Posledično je $\Sp{Tx}{x}\in \R$. Ker to velja za poljuben element $X$, v posebnem primeru velja za vse elemente katerih norma je $1$. Sledi, da je $V(T)=\{\Sp{Tx}{x}~|~\norm{x}=1\}\subseteq \R$.
+		\item Ta trditev je direktna posledica trditve \ref{trd:sebiadjop}.
 		\item Po prejšnji točki vemo, da je $V(T)\subseteq \R$. Posledično je tudi $\overline{V(T)}\subseteq\R$. Spomnimo se opombe \ref{opomb:sebiadjsonormal}, ki nam pove, da je vsak sebi-adjungiran operator tudi normalen. Na koncu nam lema \ref{lem:normalnumrazspec} pove, da je $\sigma(T)\subseteq\overline{V(T)}\subseteq \R$.
 		\item Če je $T=0$, je po opombi \ref{opomb:specprimeri} $\sigma(T) = \sigma(0)=\{0\}$. V tem primeru trditev očitno velja. Denimo torej, da je $T\neq 0$ in označimo $\norm{T} = a$. Pokazali bomo, da je $a^2\in\sigma(T^2)$. Po definiciji norme operatorja v $X$ obstaja tako zaporedje $\{x_n\}_{n\in\N}$, da je $\norm{x_n}=1$ za vsak $n\in\N$, za katerega je $\lim_{n\to\infty}\norm{Tx_n} = \norm{T} = a$. Posledično za vsak $n\in\N$ velja: \begin{align*}
 			\norm{(a^2I - T^2)x_n}^2 &= \Sp{(a^2I - T^2)x_n}{(a^2I - T^2)x_n} \\
@@ -1244,6 +1310,45 @@ Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungira
 	\end{enumerate}
 \end{dokaz}
 
+S pomočjo pojma numeričnega razpona operatorja sedaj definiramo še en poseben tip operatorjev.
+
+\begin{definicija}
+	\label{def:pozop}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven}, če je sebi-adjungiran in za vsak $x\in X$ velja: $$0 \leq \Sp{Tx}{x}.$$
+\end{definicija}
+
+S pomočjo izreka \ref{izr:sebiadjnumraz} podamo karakterizacijo pozitivnih operatorjev.
+
+\begin{trditev}
+	\label{trd:pozopkar}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Operator je $T$ pozitiven natanko tedaj, ko je $\sigma(T)\subseteq [0, \infty)$.
+\end{trditev}
+
+\begin{dokaz}
+	Dokazali bomo obe implikaciji. 
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Denimo najprej, da je operator $T$ pozitiven. Tedaj za vsak element $x\in X$ velja $0\leq\Sp{Tx}{x}$. To pomeni, da je $V(T)\subseteq [0, \infty)$. Ko upoštevamo lemo \ref{lem:normalnumrazspec}, opazimo naslednje: $$\sigma(T)\subseteq\overline{V(T)}\subseteq [0, \infty).$$ S tem smo dokazali prvo implikacijo.
+	
+	Denimo sedaj, da je $\sigma(T)\subseteq [0, \infty)$. Uporabili bomo točki $a)$ in $e)$ izreka \ref{izr:sebiadjnumraz}, ki nam poveta, da je $V(T)\subseteq\R$ in $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t$ za vsak $t\in V(T)$. Ker je $\sigma(T)\subseteq [0, \infty)$ zato sledi, da je $0 \leq t$ za vsak $t\in V(T)$. To pomeni, da je $0\leq\Sp{Tx}{x}$ za vsak $x\in X$, torej je $T$ pozitiven operator.
+\end{dokaz}
+
+Navedimo sedaj nekaj primerov pozitivnih operatorjev.
+
+\begin{primer}
+	\label{prim:pozoptriv}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Preverimo, da sta operatorja $0$ in $I$ pozitivna operatorja. Vzemimo poljuben element $x\in X$. Tedaj je $$\Sp{0x}{x} = \Sp{0}{x} = 0 \geq 0$$ in $$\Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2 \geq 0.$$ To pomeni, da sta oba operatorja res pozitivna.
+\end{primer}
+
+\begin{primer}
+	\label{prim:pozoptriv}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben sebi-adjungiran operatorj. Dodatno, naj bosta $U, V\in B(X)$ poljubna pozitivna operatorja in $\lambda\in \C$ poljuben skalar. Preverimo, da so operatorji $T^*T$, $U+V$ in $\lambda U$ pozitivni operatorji. 
+	V lemi \ref{lem:sebiadjlast} smo že premislili, da so operatorji $T^*T$, $U+V$ in $\lambda U$ sebi-adjungirani. Vzemimo poljuben element $x\in X$. 
+	Za operator $T^*T$ tedaj velja: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ To pomeni, da je $T^*T$ res pozitiven operator.
+	Istočasno velja: $$\Sp{(U+V)x}{x} = \Sp{Ux}{x} + \Sp{Vx}{x} \geq 0$$
+	in $$\Sp{\lambda Ux}{x} = \lambda\Sp{Ux}{x} \geq 0.$$
+	Torej sta tudi $U+V$ in $\lambda U$ pozitivna operatorja.
+	
+	
+\end{primer}
 
 %\subsection{Predstavitev magistrskega dela}
 %

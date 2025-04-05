@@ -10,5 +10,7 @@
 \contentsline {section}{\numberline {2.2}Normalni operatorji}{15}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Sebi-adjungirani operatorji}{17}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Unitarni operatorji}{20}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Spekter}{24}{chapter.3}%
-\contentsline {chapter}{\numberline {}Literatura}{36}{Item.84}%
+\contentsline {section}{\numberline {2.5}Ortogonalni projektorji}{23}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Spekter}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Spektri posebnih tipov operatorjev}{30}{section.3.1}%
+\contentsline {chapter}{\numberline {}Literatura}{38}{izrek.3.19}%
