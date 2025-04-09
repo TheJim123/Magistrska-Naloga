@@ -1042,7 +1042,27 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 \end{izrek}
 
 \begin{dokaz}
-	TBD
+	\begin{enumerate}
+		\item Naj bo $Y$ poljuben zaprti podprostor v $X$. Spomnimo se, da lahko tedaj $X$ zapišemo kot direktno vsoto podprostorov: $$X = Y + Y^\bot.$$ Vzemimo torej poljuben element $x\in X$. Vemo, da tedaj obstajata enolično določena elementa $y\in Y$ in $z\in Y^\bot$, da je $x = y + z$. Sedaj definiramo preslikavo $\map{P_Y}{X}{X}$ s predpisom $P_Y(x) = y$. Pokazali bomo, da je ta preslikava zadošča vsem pogojem trditve.
+		
+		Premislimo najprej, da je preslikava $P_Y$ linearna. Vzemimo poljubna elementa $x_1, x_2\in X$ in poljubna skalarja $\lambda_1, \lambda_2\in \C$. Naj bodo $y_1, y_2\in Y$ in $z_1, z_2\in Y^\bot$ tisti elementi, za katere je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Izberemo take elemente $y_1, y_2, z_1$ in $z_2$. Tedaj je $$\lambda_1x_1 + \lambda_2x_2 = \lambda_1(y_1 + z_1) + \lambda_2(y_2 + z_2) = (\lambda_1y_1 + \lambda_2y_2) + (\lambda_1z_1 + \lambda_2z_2).$$ Ker sta $Y$ in $Y^\bot$ oba vektorska prostora sledi: $$\lambda_1y_1 + \lambda_2y_2\in Y~\text{in}~\lambda_1z_1 + \lambda_2z_2\in Y^\bot.$$ Posledično je $$P_Y(\lambda_1x_1 + \lambda_2x_2)= \lambda_1y_1 + \lambda_2y_2 = \lambda_1P_Y(x_1) + \lambda_2P_Y(x_2).$$ To pomeni, da je $P_Y$ res linearen operator na prostoru $X$.
+		
+		Kratek račun pokaže, da je operator $P_Y$ tudi omejen. Vzemimo spet poljuben element $x\in X$ in naj bosta elementa $y\in Y$ ter $z\in Y^\bot$ tista, za katera je $x = y + z$. Tedaj je $$\norm{P_Y(x)} = \norm{y} \leq \norm{x}.$$ To pomeni, da je opertor $P_Y$ omejen in da je $\norm{P_Y}\leq 1$.
+		
+		Premislimo sedaj, da je operator $P_Y$ sebi-adjungiran. Naj bosta $x_1, x_2\in X$ poljubna elementa. Naj bodo $y_1, y_2\in Y$ ter $z_1, z_2\in Y^\bot$ tisti elementi, za katere je je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Potem je $$\Sp{P_Y(x_1)}{x_2} = \Sp{y_1}{y_2 + z_2} = \Sp{y_1}{y_2}$$ in $$\Sp{x_1}{P_Y(x_2)} = \Sp{y_1+ z_1}{y_2} = \Sp{y_1}{y_2}.$$ Sledi, da je $\Sp{P_Y(x_1)}{x_2} = \Sp{x_1}{P_Y(x_2)}$ za vsaka elementa $x_1, x_2 \in X$. To pomeni, da je operator $P_Y$ sebi-adjungiran.
+		
+		Sedaj preverimo, da je $\operatorname{Im}P_Y = Y$. Naj bo $y\in Y$ poljuben element. Tedaj je ortogonalni razcep tega elementa enak $y = y + 0$, torej je $P_Y(y) = y$. To pomeni, da je $Y\subseteq \operatorname{Im}P_Y$. Hkrati nam predpis operatorja $P_Y$ pove, da je $\operatorname{Im}P_Y \subseteq Y$. Torej je $\operatorname{Im}P_Y = Y$. Točka $a)$ leme \ref{lem:adjlast2} nam tudi pove, da je: $$\operatorname{Ker}P_Y = (\operatorname{Im}(P_Y)^*)^\bot = (\operatorname{Im}P_Y)^\bot = Y^\bot.$$
+		
+		Za konec preverimo, da je operator $P_Y$ ortogonalen projektor. Naj bo $x\in X$ poljuben element in naj bosta elementa $y\in Y$ in $z\in Y^\bot$ tista, za katera je $x = y + z$. Tedaj je: $$P_Y^2(x)=P_Y(P_Y(x))=P_Y(y)=y=P_Y(x).$$ To pomeni, da je $P_Y^2 = P_Y$ in ker je operator $P_Y$ sebi-adjungiran, sledi, da je tudi ortogonalen projektor.
+		
+		\item Naj bo $Q\in B(X)$ poljuben ortogonalen projektor in označimo $H = \operatorname{Im}Q$. Ker je $Q$ linearen operator na $X$, je $H$ linearen podprostor prostora $X$. Naj bo sedaj $\{y_n\}_{n\in\N}$ poljubno konvergentno zaporedje v $H$, ki konvergira k točki $y\in X$. Ker je za vsak $n\in\N$ element $y_n\in \operatorname{Im}Q$, sledi, da obstajajo taki elementi $x_n\in X$, da je $Q(x_n) = y_n$ za vsak $n\in\N$. Ko dodatno upoštevamo, da je operator $Q$ omejen in da je $Q^2 = Q$, vidimo naslednje:
+		$$y = \lim_{n\to \infty}Q(x_n) = \lim_{n\to \infty}Q^2(x_n) = Q(\lim_{n\to \infty}Q(x_n)) = Q(\lim_{n\to \infty}y_n) = Q(y).$$ To pomeni, da je $y\in H$ oz. podprostor $H$ je zaprt v $X$.
+		
+		Pokažimo sedaj, da je $Q = P_{\operatorname{Im}Q}$. Vzemimo najprej poljuben element $y\in H$. Tedaj obstaja tak element $x\in X$, da je $y = Q(x)$. To pomeni, da je: $$Q(y) = Q(Q(x)) = Q^2(x) = Q(x).$$
+		Vzemimo sedaj poljuben element $z\in H^\bot$. Spomnimo se, da je operator $Q$ sebi-adjungiran in velja, da je $Q^2(z)\in H$. Zato sledi, da je: $$\norm{Q(z)}^2 = \Sp{Q(z)}{Q(z)} = \Sp{z}{Q^2(z)} = 0.$$
+		
+		Vzemimo sedaj poljuben element $x\in X$ ter naj bosta $y\in H$ in $z\in H^\bot$ tista elementa, za katera je $x = y + z$. Potem je $x = Q(y) + z$. Na enak način kot v točki $a)$ tega dokaza definiramo ortogonalni projektor $P_H$. Ker je $Q(z)=0$, je $P_H(x) = Q(y) = Q(x)$. Ker je bil element $x\in X$ poljuben, to pomeni, da je $P_H = Q$ oziroma $P_{\operatorname{Im}Q} = Q$.
+	\end{enumerate}
 \end{dokaz}
 
 \begin{lema}
@@ -1051,7 +1071,8 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 \end{lema}
 
 \begin{dokaz}
-	TBD
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Naj bo $P\in B(X)$ poljuben ortogonalen projektor prostora $X$ na $Y$. Ker sta identični operator $I$ in operator $P$ oba sebi-adjungirana, je tudi operator $I-P$. Dodatno, ker je $P^2 = P$, velja: $$(I-P)^2 = (I-P)(I-P) = I^2 - 2P + P^2 = I - 2P + P = I-P.$$ To pomeni, da je operator $I-P$ ortogonalni projektor.
+	Vzemimo sedaj poljuben element $x\in X$. Naj bosta elementa $y\in Y$ in $z\in Y^\bot$ tista, za katera je $x = y + z$. Tedaj je $P(x) = y$ in $(I-P)(x) = x - y = z$. To pomeni, da je operator $I-P$ ortogonalni projektor prostora $X$ na $Y^\bot$.
 \end{dokaz}
 
 \begin{posledica}
