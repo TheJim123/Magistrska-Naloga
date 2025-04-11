@@ -13,4 +13,5 @@
 \contentsline {section}{\numberline {2.5}Ortogonalni projektorji}{23}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Spekter}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Spektri posebnih tipov operatorjev}{32}{section.3.1}%
-\contentsline {chapter}{\numberline {}Literatura}{40}{izrek.3.19}%
+\contentsline {subsection}{\numberline {3.1.1}Koren pozitivnega operatorja}{39}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {}Literatura}{42}{izrek.3.21}%

@@ -511,10 +511,18 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 
 \begin{izrek}
 	\label{izr:HB} 
-	Naj bo $(X, \norm{.})$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljuben podprostor prostora $X$. Za poljuben omejen linearen funkcional $\map{f}{Y}{\F}$, obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da velja: \begin{itemize}
+	Naj bo $(X, \norm{.})$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljuben podprostor prostora $X$. Za poljuben omejen linearen funkcional $\map{f}{Y}{\F}$, obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da velja: \begin{enumerate}[a)]
 		\item $F_{|_Y} = f$,
 		\item $\norm{F} = \norm{f}$.
-	\end{itemize}
+	\end{enumerate}
+\end{izrek}
+
+\begin{izrek}
+	\label{izr:opHB} 
+	Naj bo $(X, \norm{.})$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
+		\item Naj bo $x\in X$ poljuben element in $\{x_n\}_{n\in\N},\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k elementu $x$: $$\lim_{n\to \infty}x_n = x = \lim_{n\to \infty}y_n.$$ Tedaj sta tudi zaporedji $\{T(x_n)\}_{n\in\N}$ in $\{T(y_n)\}_{n\in\N}$ konvergentni in imata isto limito: $$\lim_{n\to \infty}Tx_n = \lim_{n\to \infty}Ty_n.$$
+		\item Obstaja tak operator $U\in B(X, Z)$, da je $\norm{U} = \norm{T}$ in $Ux = Tx$ za vsak $x\in Y$.
+	\end{enumerate}
 \end{izrek}
 
 \begin{posledica}
@@ -539,9 +547,9 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 \begin{primer}
 	\label{prim:ScalProd}
 	Spomnimo se nekaj znanih primerov vektorskih prostorov s skalarnim produktom: \begin{itemize}
-		\item V prostoru $\R^n$ je s predpisom $\Sp{x}{y} = \sum_{i = 1}^{n}x_iy_i$ definiran skalarni produkt.
-		\item V prostoru $\C^n$ je s predpisom $\Sp{z}{w} = \sum_{i = 1}^{n}z_i\overline{w_i}$ definiran skalarni produkt.
-		\item V prostoru zaporedij $l^2$ je s predpisom $\Sp{\bar{x}}{\bar{y}} = \sum_{i = 1}^{\infty}x_i\overline{y_i}$ definiran skalarni produkt.
+		\item V prostoru $\R^n$ je s predpisom $\Sp{x}{y} = \displaystyle\sum_{i = 1}^{n}x_iy_i$ definiran skalarni produkt.
+		\item V prostoru $\C^n$ je s predpisom $\Sp{z}{w} = \displaystyle\sum_{i = 1}^{n}z_i\overline{w_i}$ definiran skalarni produkt.
+		\item V prostoru zaporedij $l^2$ je s predpisom $\Sp{\bar{x}}{\bar{y}} = \displaystyle\sum_{i = 1}^{\infty}x_i\overline{y_i}$ definiran skalarni produkt.
 		\item V prostoru zveznih funkcij na zaprtem intervalu $[a, b]$, z oznako $\mathcal{C}([a, b])$, je s predpisom $\Sp{f}{g} = \int_{a}^{b}f(x)g(x)dx$ definiran skalarni produkt.
 	\end{itemize}
 \end{primer}
@@ -570,8 +578,8 @@ Tukaj bom povedal osnovno o Hilbertovih prostorih: \begin{itemize}
 	\begin{itemize}
 		\item prostori $\R^n$ s standardno Evklidsko normo;
 		\item prostori $\C^n$ s standardno Evklidsko normo;
-		\item prostor $l^2$ skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$;
-		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
+		\item prostor $l^2$ skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\displaystyle\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$;
+		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\displaystyle\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
 	\end{itemize}
 \end{primer}
 
@@ -588,7 +596,7 @@ Sedaj definirajmo Hilbertove prostore.
 		\item prostori $\R^n$ skupaj s standardnim skalarnim produktom;
 		\item prostori $\C^n$ skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd};
 		\item prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd};
-		\item prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \int_{[a, b]}(f\cdot \bar{g}) d\mu$.
+		\item prostor $\mathcal{L}^2(X, \mu)$ iz primera \ref{prim:PolnMP}, skupaj s skalarnim produktom, definiranim s predpisom $\Sp{f}{g}= \displaystyle\int_{[a, b]}(f\cdot \bar{g}) d\mu$.
 	\end{itemize}
 \end{primer}
 
@@ -607,15 +615,26 @@ Sedaj definirajmo Hilbertove prostore.
 \end{primer}
 
 \section[Ortogonalni komplement in Riezsov izrek]{Ortogonalni komplement in Riezsov izrek}
+
+\begin{izrek}
+	\label{izr:ortogdecomp}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je: $$X = Y \oplus Y^\bot.$$
+\end{izrek}
+
 \begin{posledica}
 	\label{posl:zaportoggost}
-	Za poljuben zaprti podprostor $Y$ poljubnega Hilbertovega prostora $X$ velja, da je $Y^{\bot\bot} = Y$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je $Y^{\bot\bot} = Y$.
 \end{posledica}
 
 \begin{posledica}
 	\label{posl:ortoggost}
-	Za poljuben podprostor $Y$ poljubnega Hilbertovega prostora $X$ velja, da je $Y^{\bot\bot} = \overline{Y}$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben podprostor $Y$ velja, da je $Y^{\bot\bot} = \overline{Y}$.
 \end{posledica}
+
+\begin{izrek}
+	\label{izr:Riesz}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Potem za vsak linearen funkcional $\map{f}{X}{\F}$ obstaja natanko en tak element $a\in X$, da je $f(x) = \Sp{x}{a}$ za vsak $x\in X$. Dodatno velja še, da je $\norm{f} = \norm{a}$.
+\end{izrek}
 
 \begin{lema}
 	\label{lem:scalprodopenak}
@@ -633,6 +652,20 @@ Sedaj definirajmo Hilbertove prostore.
 		\item $(\mathcal{G}, \cdot)$ je grupa.
 		\item Množica $\mathcal{G}$ je odprta v $B(X)$.
 		\item Preslikava invertiranja, $\map{^{-1}}{\mathcal{G}}{\mathcal{G}}$, s predpisom $^{-1}(T) = T^{-1}$ je zvezna.
+	\end{enumerate}
+\end{izrek}
+
+\begin{izrek}
+	\label{izr:ortogbaza}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Vsaka ortonormirana podmnožica prostora $X$ je vsebovana v neki maksimalni ortonormirani podmnožici prostora $X$.
+\end{izrek}
+
+\begin{izrek}
+	\label{izr:fouriervrsta}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$ in naj bo $M$ poljubna ortonormirana podmnožica v $X$. Tedaj za vsak $x\in X$ velja: \begin{enumerate}[a)]
+		\item Množica $M_x = \{e\in M~|~ \Sp{x}{e}\neq 0\}$ je števna;
+		\item $x = \displaystyle\sum_{e\in M_x} \Sp{x}{e}e$;
+		\item $\norm{x}^2 = \displaystyle\sum_{e\in M_x}\abs{\Sp{x}{e}}^2$.
 	\end{enumerate}
 \end{izrek}
 
@@ -1043,7 +1076,7 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 
 \begin{dokaz}
 	\begin{enumerate}
-		\item Naj bo $Y$ poljuben zaprti podprostor v $X$. Spomnimo se, da lahko tedaj $X$ zapišemo kot direktno vsoto podprostorov: $$X = Y + Y^\bot.$$ Vzemimo torej poljuben element $x\in X$. Vemo, da tedaj obstajata enolično določena elementa $y\in Y$ in $z\in Y^\bot$, da je $x = y + z$. Sedaj definiramo preslikavo $\map{P_Y}{X}{X}$ s predpisom $P_Y(x) = y$. Pokazali bomo, da je ta preslikava zadošča vsem pogojem trditve.
+		\item Naj bo $Y$ poljuben zaprti podprostor v $X$. Spomnimo se, da lahko tedaj $X$ zapišemo kot direktno vsoto podprostorov: $$X = Y \oplus Y^\bot.$$ Vzemimo torej poljuben element $x\in X$. Vemo, da tedaj obstajata enolično določena elementa $y\in Y$ in $z\in Y^\bot$, da je $x = y + z$. Sedaj definiramo preslikavo $\map{P_Y}{X}{X}$ s predpisom $P_Y(x) = y$. Pokazali bomo, da je ta preslikava zadošča vsem pogojem trditve.
 		
 		Premislimo najprej, da je preslikava $P_Y$ linearna. Vzemimo poljubna elementa $x_1, x_2\in X$ in poljubna skalarja $\lambda_1, \lambda_2\in \C$. Naj bodo $y_1, y_2\in Y$ in $z_1, z_2\in Y^\bot$ tisti elementi, za katere je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Izberemo take elemente $y_1, y_2, z_1$ in $z_2$. Tedaj je $$\lambda_1x_1 + \lambda_2x_2 = \lambda_1(y_1 + z_1) + \lambda_2(y_2 + z_2) = (\lambda_1y_1 + \lambda_2y_2) + (\lambda_1z_1 + \lambda_2z_2).$$ Ker sta $Y$ in $Y^\bot$ oba vektorska prostora sledi: $$\lambda_1y_1 + \lambda_2y_2\in Y~\text{in}~\lambda_1z_1 + \lambda_2z_2\in Y^\bot.$$ Posledično je $$P_Y(\lambda_1x_1 + \lambda_2x_2)= \lambda_1y_1 + \lambda_2y_2 = \lambda_1P_Y(x_1) + \lambda_2P_Y(x_2).$$ To pomeni, da je $P_Y$ res linearen operator na prostoru $X$.
 		
@@ -1077,30 +1110,22 @@ Da dopolnimo znanje o unitarnih operatorjih, premislimo še naslednjo lemo.
 
 \begin{posledica}
 	\label{posl:ortprojsum}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Naj bo $B$ poljubna baza prostora $Y$. Tedaj za ortogonalen projektor $P\in B(X)$ prostora $X$ na $Y$ velja: $$Px = \sum_{e\in B}\Sp{x}{e}\cdot e$$ za vsak $x\in X$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Naj bo $B$ poljubna ortonormirana baza podprostora $Y$. Tedaj za ortogonalen projektor $P\in B(X)$ prostora $X$ na $Y$ velja: $$Px = \sum_{e\in B}\Sp{x}{e}\cdot e$$ za vsak $x\in X$.
 \end{posledica}
 
 \begin{dokaz}
-	TBD
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Vzemimo poljubno ortonormirano bazo $B$ podprostora $Y$. Bazo $B$ lahko razširimo do ortonormirane baze $B' = B \cup B''$ celotnega prostora $X$. Ker je $B$ baza za $Y$ in je $X = Y \oplus Y^\bot$ sledi, da bo $B''$ tvorila bazo za podprostor $Y^\bot$. Naj bo sedaj $P\in B(X)$ poljuben ortogonalen projektor prostora $X$ na $Y$ in vzemimo poljuben element $x\in X$. Naj bosta $y\in Y$ in $z\in Y^\bot$ tista elementa, za katera je $x = y + z$. Velja, da je $\Sp{y}{e''} = 0$ za vsak $e'' \in B''$ ter da je $\Sp{z}{e}=0$ za vsak $e\in B$. Sedaj elementa $y$ in $z$ razvijemo po bazi $B'$: $$y = \sum_{e\in B'}\Sp{y}{e}e=\sum_{e\in B}\Sp{y}{e}e = \sum_{e\in B}\Sp{y+z}{e}e = \sum_{e\in B}\Sp{x}{e}e$$ in $$z = \sum_{e\in B'}\Sp{z}{e}e=\sum_{e\in B''}\Sp{z}{e}e = \sum_{e\in B''}\Sp{y+z}{e}e = \sum_{e\in B''}\Sp{x}{e}e.$$
+	Od tod sledi, da je: $$P(x) = P(y + z) = y = \sum_{e\in B}\Sp{x}{e}e.$$
 \end{dokaz}
+
+Ortogonalni projektorji na Hilbertovih prostorih nas motivirajo tudi, da začnemo obravnavati vprašanje, ali za vsak izbran pozitiven operator $T$ na poljubnem Hilbertovem prostoru obstaja tak operator $U$ na istem prostoru, da je $U^2 = T$. 
 
 \begin{definicija}
 	\label{def:opkoren}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben operator. \pojem{Kvadratni koren} operatorja $T$ je tak operator $U\in B(X)$, da je $U^2 = T$.
 \end{definicija}
 
-\begin{lema}
-	\label{lem:sebiadjPhi}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
-		\item $\Phi(p) = p(T)$ za vsak polinom $p\in\mathcal{C}_\R(\sigma(T))$,
-		\item $\Phi(f\cdot g) = \Phi(f)\cdot\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
-	\end{enumerate}
-\end{lema}
-
-\begin{dokaz}
-	TBD
-\end{dokaz}
-
+Da bi povedali kaj več na to temo, moramo najprej uvesti pojem spektra operatorja. To bomo storili v naslednjem poglavju.
 
 \chapter{Spekter}
 Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omejen le na matrike - na enak način jih lahko definiramo tudi za operatorje na poljubnih prostorih. V tem poglavju bomo obravnavali t.~i.~ spekter operatorja na kompleksnem Hilbertovem prostoru.
@@ -1366,11 +1391,40 @@ Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 	Za operator $T^*T$ tedaj velja: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ To pomeni, da je $T^*T$ res pozitiven operator.
 	Istočasno velja: $$\Sp{(U+V)x}{x} = \Sp{Ux}{x} + \Sp{Vx}{x} \geq 0$$
 	in $$\Sp{\lambda Ux}{x} = \lambda\Sp{Ux}{x} \geq 0.$$
-	Torej sta tudi $U+V$ in $\lambda U$ pozitivna operatorja.
-	
-	
+	Torej sta tudi $U+V$ in $\lambda U$ pozitivna operatorja.	
 \end{primer}
 
+\subsection{Koren pozitivnega operatorja}
+Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomožen rezultat.
+
+\begin{lema}
+	\label{lem:sebiadjPhi}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
+		\item $\Phi(p) = p(T)$ za vsak polinom $p\in\mathcal{C}_\R(\sigma(T))$,
+		\item $\Phi(f\cdot g) = \Phi(f)\cdot\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
+	\end{enumerate}
+\end{lema}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben sebi-adjungiran operator $T\in\mathcal{S}(X)$. \begin{enumerate}
+		\item Označimo s $P$ vektorski podprostor vseh polinomov v prostoru $\mathcal{C}_\R(\sigma(T))$ in definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
+		To pomeni, da je preslikava $\varphi$ linearna. Še več, za poljubna polinoma $p, q\in P$ je: $$\varphi(p\cdot q) = (p\cdot q)(T) = p(T)\cdot q(T) = \varphi(p)\cdot \varphi(q).$$ Naj bo sedaj $p\in P$ poljuben polinom. V naslednjem premisleku bomo uporabili točko $d)$ izreka \ref{izr:sebiadjnumraz} in izrek \ref{izr:polyspec}: \begin{align*}
+			\norm{\varphi(p)} &= \norm{p(T)} = r_\sigma(p(T)) \\
+			&= \sup\{\abs{\lambda}~|~\lambda\in\sigma(p(T))\} \\ &= \sup\{\abs{p(\lambda)}~|~\lambda\in\sigma(T)\} = \norm{p}.
+		\end{align*}
+		To pomeni, da je preslikava $\varphi$ linearna izometrija. Ker je podprostor $P$ gosta podmnožica prostora $\mathcal{C}_\R(\sigma(T))$ ter ker je $\mathcal{S}(X)$ realen Banachov prostor, po točki $b)$ izreka \ref{izr:opHB} sledi, da obstaja tak operator $\Phi\in B(\mathcal{C}_\R(\sigma(T)))$, za katerega je $\Phi(p) = \varphi(p)$ za vsak polinom $p\in P$. Naj bosta sedaj $f, g\in \mathcal{C}_\R(\sigma(T))$ poljubni funkciji. Ker je $P$ gosta podmnožica $\mathcal{C}_\R(\sigma(T))$, obstajata taki zaporedji $\{p_n\}_{n\in\N}$ in $\{q_n\}_{n\in\N}$, da je $\lim_{n\to\infty}p_n = f$ in $\lim_{n\to\infty}q_n = g$. Zato velja: \begin{align*}
+			\Phi(f\cdot g) &= \Phi\left(\lim_{n\to \infty}p_n \cdot \lim_{n\to\infty}q_n\right) = \Phi\left(\lim_{n\to \infty}(p_n \cdot q_n)\right) \\ &= \lim_{n\to \infty}\Phi(p_n\cdot q_n) = \lim_{n\to \infty}(\Phi(p_n)\cdot \Phi(q_n)) \\ &= \lim_{n\to \infty}\Phi(p_n) \cdot \lim_{n\to \infty}\Phi(q_n) = \Phi\left(\lim_{n\to \infty}p_n\right) \cdot \Phi\left(\lim_{n\to \infty}q_n\right) \\ &= \Phi(f) \cdot \Phi(g).
+		\end{align*}
+	\end{enumerate}
+\end{dokaz}
+
+\begin{izrek}
+	\label{izr:pozroot}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za pozitiven operator $T\in\mathcal{S}(X)$ velja, da obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
+\end{izrek}
+\begin{dokaz}
+	TBD
+\end{dokaz}
 %\subsection{Predstavitev magistrskega dela}
 %
 %Potem, ko smo kon\v cali z oblikovanjem besedila lahko na precej preprost in hiter na\v cin pripravimo predstavitev s pomo\v cjo paketa {\bf Beamer}\footnote{\v ze vklju\v cen v kompletno distribucijo MikTeX-a ali TeXlive-a}:
