@@ -1135,6 +1135,11 @@ Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omej
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben operator. \pojem{Spekter} operatorja $T$ je množica, definirana na naslednji način: $$\sigma(T) = \{\lambda\in\C~|~\text{operator}~T-\lambda I~\text{ni obrnljiv}\}.$$
 \end{definicija}
 
+\begin{opomba}
+	\label{opomb:specter}
+	Direktno iz definicije spektra sledi naslednja opazka: Operator $T\in B(X)$ ni obrnljiv natanko tedaj, ko je $0\in\sigma(T)$.
+\end{opomba}
+
 \begin{primer}
 	\label{prim:trivspec}
 	Določimo spekter za operatorja $0$ in $I$. Naj bo $\lambda\in\C$ poljuben. Določimo najprej spekter za $0$. Denimo, da je $\lambda\neq 0$. Potem je operator $0-\lambda I = -\lambda I$ obrnljiv in njegov inverz je $-\lambda^{-1}I$. Če je pa $\lambda = 0$, operator $-\lambda I = 0$ ni obrnljiv. Posledično je $\sigma(0)=\{0\}$. 
@@ -1356,11 +1361,15 @@ Naslednji izrek opiše lastnosti spektrov in numeričnih razponov sebi-adjungira
 	\end{enumerate}
 \end{dokaz}
 
-S pomočjo pojma numeričnega razpona operatorja sedaj definiramo še en poseben tip operatorjev.
+S pomočjo pojma numeričnega razpona operatorja sedaj obravnavamo še en poseben tip operatorjev.
+
+\subsection{Koren pozitivno semidefinitnih operatorjev}
+
+Na koncu poglavja o omejenih linearnih operatorjih smo definirali t.~i.~ ">koren operatorja"< in povedali, da za nadaljni študij potrebujemo znanje o spektru. Sedaj, ko smo zadostili omenjenemu pogoju, se lahko lotimo obravnave tega vprašanja na posebnem tipu sebi-adjungiranih operatorjev. Podajmo najprej definicijo le teh.
 
 \begin{definicija}
 	\label{def:pozop}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven}, če je sebi-adjungiran in za vsak $x\in X$ velja: $$0 \leq \Sp{Tx}{x}.$$
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven} operator, če je sebi-adjungiran in pozitivno semidefiniten. Za vsak $x\in X$ torej velja: $$0 \leq \Sp{Tx}{x}.$$
 \end{definicija}
 
 S pomočjo izreka \ref{izr:sebiadjnumraz} podamo karakterizacijo pozitivnih operatorjev.
@@ -1381,12 +1390,12 @@ Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 
 \begin{primer}
 	\label{prim:pozoptriv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Preverimo, da sta operatorja $0$ in $I$ pozitivna operatorja. Vzemimo poljuben element $x\in X$. Tedaj je $$\Sp{0x}{x} = \Sp{0}{x} = 0 \geq 0$$ in $$\Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2 \geq 0.$$ To pomeni, da sta oba operatorja res pozitivna.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Preverimo, da sta $0$ in $I$ pozitivna operatorja. Vzemimo poljuben element $x\in X$. Tedaj je $$\Sp{0x}{x} = \Sp{0}{x} = 0 \geq 0$$ in $$\Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2 \geq 0.$$ To pomeni, da sta oba operatorja res pozitivna.
 \end{primer}
 
 \begin{primer}
 	\label{prim:pozoptriv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben sebi-adjungiran operatorj. Dodatno, naj bosta $U, V\in B(X)$ poljubna pozitivna operatorja in $\lambda\in \C$ poljuben skalar. Preverimo, da so operatorji $T^*T$, $U+V$ in $\lambda U$ pozitivni operatorji. 
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben sebi-adjungiran operator. Dodatno, naj bosta $U, V\in B(X)$ poljubna pozitivna operatorja in $\lambda\in \C$ poljuben skalar. Preverimo, da so operatorji $T^*T$, $U+V$ in $\lambda U$ pozitivni operatorji. 
 	V lemi \ref{lem:sebiadjlast} smo že premislili, da so operatorji $T^*T$, $U+V$ in $\lambda U$ sebi-adjungirani. Vzemimo poljuben element $x\in X$. 
 	Za operator $T^*T$ tedaj velja: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ To pomeni, da je $T^*T$ res pozitiven operator.
 	Istočasno velja: $$\Sp{(U+V)x}{x} = \Sp{Ux}{x} + \Sp{Vx}{x} \geq 0$$
@@ -1394,7 +1403,6 @@ Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 	Torej sta tudi $U+V$ in $\lambda U$ pozitivna operatorja.	
 \end{primer}
 
-\subsection{Koren pozitivnega operatorja}
 Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomožen rezultat.
 
 \begin{lema}
@@ -1423,7 +1431,26 @@ Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomo�
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za pozitiven operator $T\in\mathcal{S}(X)$ velja, da obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
 \end{izrek}
 \begin{dokaz}
-	TBD
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben pozitiven operator $T\in\mathcal{S}(X)$. Najprej bomo premislili obstoj, nato pa enoličnost korena.
+	Naj bo $P$ vektorski podprostor prostora $\mathcal{C}_\R(\sigma(T))$, ki vsebuje vse polinome. Trditvev \ref{trd:pozopkar} nam pove, da je $\sigma(T)\subseteq [0, \infty)$. Posledično lahko na $\sigma(T)$ dobro definiramo funkciji $\map{f, g, }{\sigma(T)}{\R}$ s predpisoma $f(t) = t^{\frac{1}{4}}$ in $g(t)=t^{\frac{1}{2}}$. Opazimo, da sta $f$ in $g$ zvezni realni funkciji na $\sigma(T)$. Vzemimo sedaj omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$ iz leme \ref{lem:sebiadjPhi} in z njegovo pomočjo definiramo operatorja $U = \Phi(g)=g(T)$ in $V = \Phi(f)=f(T)$. Operatorja $V$ in $U$ sta seveda oba sebi-adjungirana. Še več, ker je prostor polinomov na $\sigma(T)$ gosta podmnožica v $\mathcal{C}_\R(\sigma(T))$, je funkcija $g$ limita nekega zaporedja polinomov $\{p_n\}_{n\in\N}$ iz $P$. Posledično je operator $U=g(T)$ limita zaporedja teh istih polinomov, izračunana v $T$: $$g(T)=\Phi(g)=\Phi\left(\lim_{n\to \infty}p_n\right)=\lim_{n\to \infty}\Phi(p_n)=\lim_{n\to \infty}p_n(T).$$ Hkrati velja tudi, da je: $$U^2 = (g(T))^2 = id(T) = T.$$ To pomeni, da je operator $U$ koren operatorja $T$. Premislimo še, da je operator $U$ pozitiven. Opazimo: $$V^2 = (f(T))^2 = g(T) = U.$$ Vzemimo sedaj poljuben element $x\in X$. Ker je operator $V$ sebi adjungiran velja naslednje: $$\Sp{Ux}{x} = \Sp{V^2x}{x} = \Sp{Vx}{Vx} = \norm{Vx}^2 \geq 0.$$
+	Ker to velja za vsak element $x\in X$ sledi, da je operator $U$ res pozitiven.
+	
+	Denimo sedaj, da operator $T$ premore še en pozitiven koren, ki ga označimo z $Q$. Tedaj je $$QT = QQ^2 = Q^2Q = TQ.$$ Še več, hitro vidimo, da je za vsak $n\in\N$ tudi $QT^n = T^nQ$. Vzemimo sedaj poljuben polinom $p\in P$ s predpisom $p(x) = a_0 + a_1x + \ldots + a_nx^n$. Tedaj velja: $$Qp(T) = Q(a_0I + a_1T + \ldots + a_nT^n) = (a_0I + a_1T + \ldots + a_nT^n)Q = p(T)Q.$$ Ker je operator $U$ limita zaporedja $\{p_n(T)\}_{n\in\N}$, sledi, da je tudi $QU = UQ$. Ker je operator $Q$ pozitiven, po prejšnjem premisleku, premore pozitiven koren, ki ga označimo z $R$. Vsemimo sedaj poljuben element $x\in X$ in naj bo $y = (U-Q)x$. Ker je $U^2 = Q^2 = T$, sledi naslednje: \begin{align*}
+		\norm{Vy}^2 + \norm{Ry}^2 &= \Sp{V^2y}{y} + \Sp{R^2y}{y} = \Sp{(U+Q)y}{y} \\
+		&= \Sp{(U + Q)(U-Q)x}{y} = \Sp{(U^2 + QU - UQ - Q^2)x}{y} \\
+		&= \Sp{(U^2 - Q^2)x}{y} = 0.
+	\end{align*}
+	To pomeni, da sta $\norm{Vy}=0$ in $\norm{Ry}=0$ oziroma $Vy = 0$ in $Ry = 0$. Posledično je tudi $Uy = V^2y = 0$ in $Qy = R^2y = 0$. Od tod sledi naslednje: $$\norm{(U-Q)x}^2=\Sp{(U-Q)^2x}{x} = \Sp{(U-Q)y}{x} =0.$$ Zato je $(U-Q)x=0$ oziroma $Ux = Qx$. Ker ta sklep velja za vsak element $x\in X$, sledi, da je $U=Q$.
+\end{dokaz}
+
+Za konec tega pogljavja pokažimo, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. Dekompozicijo obrnljivega operatorja na taka faktorja imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
+
+\begin{izrek}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Tedaj za vsak obrnjiv operator $T\in B(X)$ obstajata tak unitaren operator $U$ na $X$ in tak pozitiven operator $R$ na $X$, da je $T = UR$.
+\end{izrek}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben obrnljiv operator $T\in B(X)$. Ker je operator $T$ obrnjiv, nam lema \ref{lem:adjinv} pove, da je tudi $T^*$ obrnljiv operator. Posledično je tudi operator $T^*T$ obrnjiv. Še več, lema \ref{lem:sebiadjlast} nam pove, da je operator $T^*T$ sebi-adjungiran. Vzemimo sedaj poljuben element $x\in X$. Tedaj je: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ Ker sklep velja za poljuben element $x\in X$, sledi, da je operator $T^*T$ pozitivno semidefiniten. To pomeni, da je operator $T^*T$ pozitiven. Izrek \ref{izr:pozroot} nam sedaj pove, da operator $T^*T$ premore enolično določen pozitiven koren, ki ga označimo z $R$. Ker je operator $T^*T$ obrnljiv, nam opomba \ref{opomb:specter} pove, da je $0\neq\sigma(T^*T)$. Dodatno nam izrek \ref{izr:polyspec} pove, da je: $$\sigma(T^*T) = \{\lambda^2~|~\lambda\in\sigma(R)\}.$$ To pomeni, da $0\neq \sigma(R)$, torej je operator $R$ obrnljiv. Označimo sedaj operator $U = TR^{-1}$ in opazimo, da je obrnljiv. To pomeni, da je $\operatorname{Im}U = X$. Hkrati velja: $$U^*U = (R^{-1})^*T^*TR^{-1} = (R^*)^{-1}R^2R^{-1}= R^{-1}R = I.$$ Po točki $a)$ izreka \ref{izr:uniizo} je potem operator $U$ izometrija. Še več, operator $U$ je surjektivna izometrija. Zato je po točki $b)$ izreka \ref{izr:uniizo} opertor $U$ unitaren. 
 \end{dokaz}
 %\subsection{Predstavitev magistrskega dela}
 %
