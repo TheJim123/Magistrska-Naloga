@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {2.3}Sebi-adjungirani operatorji}{17}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Unitarni operatorji}{20}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Ortogonalni projektorji}{23}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Spekter}{27}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Spektri posebnih tipov operatorjev}{32}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Koren pozitivno semidefinitnih operatorjev}{38}{subsection.3.1.1}%
-\contentsline {chapter}{\numberline {}Literatura}{44}{izrek.3.23}%
+\contentsline {chapter}{\numberline {3}Spekter}{28}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Spektri posebnih tipov operatorjev}{34}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Koren pozitivno semidefinitnih operatorjev}{39}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {}Literatura}{45}{izrek.3.23}%

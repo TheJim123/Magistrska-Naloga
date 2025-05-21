@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  12 APR 2025 13:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  13 APR 2025 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1178,18 +1178,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 Poglavje 1.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-63.
-(C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+
 
 [2
 
-{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc
-}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit
-.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ma
-thsy.enc}]
+{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
+enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mat
+hsy.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+16.
+
+(C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1198,8 +1199,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[3]
-Overfull \hbox (12.45383pt too wide) in paragraph at lines 544--545
+[3{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.e
+nc}]
+Overfull \hbox (12.45383pt too wide) in paragraph at lines 537--538
 []\OT1/lmr/m/it/10.95 Ce je $\OML/lmm/m/it/10.95 V$ \OT1/lmr/m/it/10.95 vek-tor
 -ski pro-stor (nad $\U/msb/m/n/10.95 F$\OT1/lmr/m/it/10.95 ) in $[]$ ska-larni 
 pro-dukt na njem, pra-vimo, da je $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 V; \
@@ -1260,7 +1262,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [9]
-Overfull \hbox (30.46169pt too wide) in paragraph at lines 710--710
+Overfull \hbox (30.46169pt too wide) in paragraph at lines 718--718
 [][]\OT1/lmr/bx/n/10.95 Primer 2.4. []\OT1/lmr/m/it/10.95 De-fi-ni-ramo ope-ra-
 tor $\OML/lmm/m/it/10.95 D$ \OT1/lmr/m/it/10.95 na pro-storu $\OML/lmm/m/it/10.
 95 l[]$\OT1/lmr/m/it/10.95 , s pred-pi-som $\OML/lmm/m/it/10.95 D\OT1/lmr/m/n/1
@@ -1269,7 +1271,7 @@ it/10.95 ; x[]; x[]; []\OT1/lmr/m/n/10.95 )$\OT1/lmr/m/it/10.95 .
  []
 
 
-Overfull \hbox (4.673pt too wide) detected at line 712
+Overfull \hbox (4.673pt too wide) detected at line 720
 []
  []
 
@@ -1391,7 +1393,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
-Overfull \hbox (0.99739pt too wide) in paragraph at lines 1081--1081
+Overfull \hbox (0.99739pt too wide) in paragraph at lines 1088--1088
 []\OT1/lmr/m/n/10.95 Premislimo naj-prej, da je pre-sli-kava $\OML/lmm/m/it/10.
 95 P[]$ \OT1/lmr/m/n/10.95 li-ne-arna. Vze-mimo po-ljubna ele-menta $\OML/lmm/m
 /it/10.95 x[]; x[] \OMS/lmsy/m/n/10.95 2
@@ -1434,12 +1436,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-Poglavje 3.
-
-
-[27
-
-]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1448,7 +1444,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28]
+[27]
+Poglavje 3.
+
+
+[28
+
+]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1512,11 +1514,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
-Overfull \hbox (1.31659pt too wide) detected at line 1344
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1526,6 +1523,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [36]
+Overfull \hbox (1.31659pt too wide) detected at line 1351
+[]
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1589,23 +1591,26 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43]
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-1496.
- (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-[44
 
 
-{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.en
-c}]
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[44]
 
 [45
+
 
 ]
 
 [46
+
+]
+
+[47
 
 ] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
@@ -1621,36 +1626,36 @@ prostorih".out' has not changed.
 (rerunfilecheck)             Checksum: DF830DDF5E226A8072A23F304AEBDDEC;2587.
  ) 
 Here is how much of TeX's memory you used:
- 29370 strings out of 473522
- 592510 string characters out of 5712673
- 1026981 words of memory out of 5000000
- 51841 multiletter control sequences out of 15000+600000
- 618041 words of font info for 80 fonts, out of 8000000 for 9000
+ 29332 strings out of 473522
+ 591797 string characters out of 5712673
+ 1027130 words of memory out of 5000000
+ 51805 multiletter control sequences out of 15000+600000
+ 617730 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,1472b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,1504b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmex10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmmi10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/lm/lmmi6.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/lm/lmmi8.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/lm/lmr10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/lm/lmr12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/lm/lmr17.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Uporabnik/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Uporabnik/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Uporabnik/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Uporabnik/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Uporabnik/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Uporabnik/
+/public/lm/lmmi12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmmi6.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/font
+s/type1/public/lm/lmmi8.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmr10.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmr12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Uporabnik/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Uporabnik/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Uporabnik/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Uporabnik/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Uporabnik/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Uporabnik/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (5
-6 pages, 535908 bytes).
+7 pages, 521289 bytes).
 PDF statistics:
- 765 PDF objects out of 1000 (max. 8388607)
- 261 named destinations out of 1000 (max. 500000)
+ 779 PDF objects out of 1000 (max. 8388607)
+ 264 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
