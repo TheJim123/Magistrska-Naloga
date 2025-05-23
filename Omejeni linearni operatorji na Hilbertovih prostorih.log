@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  13 APR 2025 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  23 MAY 2025 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1022,6 +1022,9 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: Label `prim:pozoptriv' multiply defined.
 
+
+LaTeX Warning: Label `posl:pozprod' multiply defined.
+
 )
 \openout1 = `"Omejeni linearni operatorji na Hilbertovih prostorih.aux"'.
 
@@ -1601,16 +1604,43 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [44]
 
-[45
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[45]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47]
+
+[48
 
 
 ]
 
-[46
+[49
 
 ]
 
-[47
+[50
 
 ] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
@@ -1623,16 +1653,16 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Omejeni linearni operatorji na Hilbertovih 
 prostorih".out' has not changed.
-(rerunfilecheck)             Checksum: DF830DDF5E226A8072A23F304AEBDDEC;2587.
+(rerunfilecheck)             Checksum: 9B187C702D48E5E0782D9D36EB24FC14;2587.
  ) 
 Here is how much of TeX's memory you used:
- 29332 strings out of 473522
- 591797 string characters out of 5712673
- 1027130 words of memory out of 5000000
- 51805 multiletter control sequences out of 15000+600000
+ 29348 strings out of 473522
+ 591989 string characters out of 5712673
+ 1027298 words of memory out of 5000000
+ 51811 multiletter control sequences out of 15000+600000
  617730 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,1504b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,1472b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1652,10 +1682,10 @@ cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Uporabnik/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (5
-7 pages, 521289 bytes).
+Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (6
+0 pages, 534620 bytes).
 PDF statistics:
- 779 PDF objects out of 1000 (max. 8388607)
- 264 named destinations out of 1000 (max. 500000)
+ 809 PDF objects out of 1000 (max. 8388607)
+ 274 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

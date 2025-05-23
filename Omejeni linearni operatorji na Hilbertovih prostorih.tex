@@ -1410,11 +1410,26 @@ Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 	Torej sta tudi $U+V$ in $\lambda U$ pozitivna operatorja.	
 \end{primer}
 
+\begin{primer}
+	\label{prim:ortogprojsopoz}
+	S pomočjo primera \ref{prim:pozoptriv} hitro vidimo, da so ortogonalni projektorji pozitivni operatorji. Res, naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $P\in B(X)$ poljuben ortogonalen projektor na $X$. Ker je $P$ sebi-adjungiran, je $P^* = P$. Upoštevajoč primer \ref{prim:pozoptriv}, je potem operator $P^*P = P^2 = P$ pozitiven.
+\end{primer}
+
+Primer \ref{prim:pozoptriv} nam je med drugim pokazal tudi, da seštevanje in množenje s skalarjem ohranja pozitivnost. Premislimo sedaj, da enako velja tudi za invertiranje.
+\begin{trditev}
+	\label{trd:pozinv}
+	Naj bo $X$ poljuben Hilbertov prostor in naj bo $T\in B(X)$ poljuben obrnljiv pozitiven operator. Tedaj je operator $T^{-1}$ pozitiven.
+\end{trditev}
+\begin{dokaz}
+	Naj bo $X$ poljuben Hilbertov prostor in naj bo $T\in B(X)$ poljuben obrnljiv pozitiven operator. V lemi \ref{lem:adjinv} smo že premislili, da je $(T^{-1})^* = (T^*)^{-1}$. Ker je operator $T$ sebi-adjungiran sledi, da je $(T^{-1})^* = T^{-1}$. To pomeni, da je tudi operator $T^{-1}$ sebi-adjungiran. Preverimo sedaj, da je tudi pozitivno semidefiniten. Naj bo $x\in X$ poljuben element. Tedaj obstaja tak element $y\in X$, da je $Ty = x$ oziroma $T^{-1}x = y$. Izberemo tak element $y$. Tedaj je $$\Sp{T^{-1}x}{x} = \Sp{T^{-1}x}{TT^{-1}x}= \Sp{y}{Ty}\geq 0.$$
+	To pomeni, da je tudi operator $T^{-1}$ pozitivno semidefiniten, s tem pa smo pokazali tudi, da je pozitiven.
+\end{dokaz}
+
 Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomožni rezultat, s pomočjo katerega bomo opisali, kako lahko definiramo nepolinomske funkcije na operatorjih.
 
 \begin{lema}
 	\label{lem:sebiadjPhi}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Dodatno s $\mathcal{C}_\R(\sigma(T))$ označimo prostor vseh zveznih funkcij, ki slikajo iz $\R$ v $\sigma(T)$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
 		\item $\Phi(p) = p(T)$ za vsak polinom $p\in\mathcal{C}_\R(\sigma(T))$,
 		\item $\Phi(f\cdot g) = \Phi(f)\cdot\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
 	\end{enumerate}
@@ -1422,7 +1437,7 @@ Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomo�
 
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben sebi-adjungiran operator $T\in\mathcal{S}(X)$. \begin{enumerate}
-		\item Označimo s $P$ vektorski podprostor vseh polinomov v prostoru $\mathcal{C}_\R(\sigma(T))$ in definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
+		\item Označimo s $P$ realen vektorski podprostor vseh polinomov v prostoru $\mathcal{C}_\R(\sigma(T))$ in definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Ker je operator $T$ sebi-adjungiran je po izreku \ref{izr:sebiadjnumraz} $\sigma(T)\subseteq\R$, torej so vsi elementi v $P$ realni polinomi z realnimi koeficienti. Posledično, je preslikava $\Phi$ na $P$ dobro definirana. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
 		To pomeni, da je preslikava $\varphi$ linearna. Še več, za poljubna polinoma $p, q\in P$ je: $$\varphi(p\cdot q) = (p\cdot q)(T) = p(T)\cdot q(T) = \varphi(p)\cdot \varphi(q).$$ Naj bo sedaj $p\in P$ poljuben polinom. V naslednjem premisleku bomo uporabili točko $d)$ izreka \ref{izr:sebiadjnumraz} in izrek \ref{izr:polyspec}: \begin{align*}
 			\norm{\varphi(p)} &= \norm{p(T)} = r_\sigma(p(T)) \\
 			&= \sup\{\abs{\lambda}~|~\lambda\in\sigma(p(T))\} \\ &= \sup\{\abs{p(\lambda)}~|~\lambda\in\sigma(T)\} = \norm{p}.
@@ -1450,7 +1465,55 @@ Lema \ref{lem:sebiadjPhi} nam zagotovi obstoj zvezne linearne preslikave, ki dan
 	To pomeni, da sta $\norm{Vy}=0$ in $\norm{Ry}=0$ oziroma $Vy = 0$ in $Ry = 0$. Posledično je tudi $Uy = V^2y = 0$ in $Qy = R^2y = 0$. Od tod sledi naslednje: $$\norm{(U-Q)x}^2=\Sp{(U-Q)^2x}{x} = \Sp{(U-Q)y}{x} =0.$$ Zato je $(U-Q)x=0$ oziroma $Ux = Qx$. Ker ta sklep velja za vsak element $x\in X$, sledi, da je $U=Q$.
 \end{dokaz}
 
-Za konec tega pogljavja pokažimo, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. Dekompozicijo obrnljivega operatorja na taka faktorja imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
+Iz vira \cite{bib:Kurepa} povzemimo nekaj posledic izreka \ref{izr:pozroot}.
+
+\begin{posledica}
+	\label{posl:pozopkvadrat} 
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja. Če je $S^2 = T^2$, je $S=T$.
+\end{posledica}
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja. Denimo, da je $S^2 = T^2$. Tedaj sta $S$ in $T$ oba (pozitivna) korena pozitivnega operatorja $T^2$. Ker je koren pozitivnega operatorja enolično določen zato sledi, da je $S=T$.
+\end{dokaz}
+
+\begin{posledica}
+	\label{posl:pozprod} 
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Če pozitivna operatorja $S, T\in B(X)$ komutirata, je tudi operator $ST$ pozitiven.
+\end{posledica}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja, ki komutirata. Označimo s $\hat{S}$ koren operatorja $S$, s $\hat{T}$ pa koren operatorja $T$. Tedaj iz $ST = TS$ sledi, da je operator $ST$ sebi-adjungiran, saj je $$(ST)^*=T^*S^*=TS=ST.$$ Še več, sledi tudi, da operator $S$ komutira z operatorjem $\hat{T}$. Namreč, ker operator $S$ komutira z operatorjem $T$, bo komutiral tudi z vsakim polinomom v $T$. Posledično bo operator $S$ komutiral tudi z vsako limito polinomov v $T$, torej tudi s $\hat{T}$. To dejstvo bomo uporabili, da preverimo, da je operator $ST$ res pozitivno semidefiniten. Vzemimo poljuben element $x\in X$ in označimo $y=\hat{T}x$. Tedaj je $$\Sp{STx}{x} = \Sp{S\hat{T}^2x}{x} = \Sp{\hat{T}S\hat{T}x}{x} = \Sp{S\hat{T}x}{\hat{T}x}=\Sp{Sy}{y}\geq 0.$$
+	To pomeni, da je operator $ST$ res pozitivno semidefiniten, torej je pozitiven.
+\end{dokaz}
+
+\begin{posledica}
+	\label{posl:pozprod} Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bodo $S, T, U\in B(X)$ poljubni sebi-adjungirani operatorji, ki medseboj paroma komutirajo. Če sta operatorja $T-S$ in $U$ pozitivno semidefinitna, je tudi operator $(T-S)U$ pozitivno semidefiniten.
+\end{posledica}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bodo $S, T, U\in B(X)$ poljubni sebi-adjungirani operatorji, ki medseboj paroma komutirajo. Denimo, da sta operatorja $T-S$ in $U$ pozitivno semidefinitna. $S$, $T$ in $U$ medseboj paroma komutirajo, sledi, da operatorja $T-S$ in $U$ komutirata. Po posledici \ref{posl:pozprod} je potem tudi $(T-S)U$ pozitivno semidefiniten (celo pozitiven) operator.
+\end{dokaz}
+
+Sedaj, ko smo se prepričali, da so koreni pozitivnih operatorjev dobro definirani in enolično določeni, uporabimo to znanje za dokaz naslednje trditve.
+
+\begin{trditev}
+	\label{trd:razlpozinuni}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator, za katerega je $\norm{T}\leq 1$. Tedaj je operator $I - T^2$ pozitiven, operatorja $T + i(I-T^2)^{\frac{1}{2}}$ in $T - i(I-T^2)^{\frac{1}{2}}$ pa sta unitarna.
+\end{trditev}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator, za katerega je $\norm{S}\leq 1$. Premislimo najprej, da je operator $I-T^2$ pozitiven. Ker sta operatorja $I$ in $T$ oba sebi-adjungirana, nam lema \ref{lem:sebiadjlast} pove, da je tudi operator $I-T^2$ sebi-adjungiran. Preverimo še, da je pozitivno semidefiniten. Naj bo $x\in X$ poljuben element. Tedaj je \begin{align*}
+		\Sp{(I-T^2)x}{x} &= \Sp{x}{x} - \Sp{T^2x}{x} = \norm{x}^2 - \Sp{Tx}{Tx} = \norm{x}^2 - \norm{Tx}^2 \\ &\geq \norm{x}^2 - \norm{T}^2\cdot\norm{x}^2 \geq (1-\norm{T}^2)\norm{x}^2.
+	\end{align*}
+	Ker je $\norm{T}\leq 1$, je tudi $\norm{T}^2 \leq 1$, torej je izraz $1-\norm{T}^2\geq 0$. To pomeni, da je $$\Sp{(I-T^2)x}{x}\geq(1-\norm{T}^2)\norm{x}^2 \geq 0.$$ Posledično je operator $I-T^2$ pozitivno semidefiniten, torej je tudi pozitiven.
+	Premislimo sedaj, da sta operatorja $T + i(I-T^2)^{\frac{1}{2}}$ in $T - i(I-T^2)^{\frac{1}{2}}$ res unitarna. Najprej opazimo, da je operator $(I-T^2)^{\frac{1}{2}}$ pozitiven, torej tudi sebi-adjungiran. To pomeni, da je $$(T + i(I-T^2)^{\frac{1}{2}})^*= T^* + \overline{i}((I-T^2)^{\frac{1}{2}})^* = T - i(I-T^2)^{\frac{1}{2}}.$$ Posledično je \begin{align*}
+		(T + i(I-T^2)^{\frac{1}{2}})(T + i(I-T^2)^{\frac{1}{2}})^*&= (T + i(I-T^2)^{\frac{1}{2}})(T - i(I-T^2)^{\frac{1}{2}}) \\
+		&=T^2 - iT(I-T^2)^{\frac{1}{2}} + iT(I-T^2)^{\frac{1}{2}} -i^2(I-T^2) \\
+		&= T^2 + I - T^2 = I.
+	\end{align*}
+	Na enak način preverimo, da je tudi $(T + i(I-T^2)^{\frac{1}{2}})^*(T + i(I-T^2)^{\frac{1}{2}})=I$ in s tem vidimo, da je operator $(T + i(I-T^2)^{\frac{1}{2}})$ res unitaren. Opazimo tudi, da smo istočasno preverili, da je operator $(T - i(I-T^2)^{\frac{1}{2}})$ unitaren.
+\end{dokaz}
+
+Za konec tega poglavja pokažimo, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. Dekompozicijo obrnljivega operatorja na taka faktorja imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
 
 \begin{izrek}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Tedaj za vsak obrnjiv operator $T\in B(X)$ obstajata tak unitaren operator $U$ na $X$ in tak pozitiven operator $R$ na $X$, da je $T = UR$.
@@ -1497,8 +1560,9 @@ Za konec tega pogljavja pokažimo, da je vsak obrnljiv operator na kompleksnem H
 %\def\refname{\sffamily Literatura}
 %\rhead{}
 \begin{thebibliography}{99}
-	\bibitem{bib:Rynne} B.~P.~Rynne,~M.~A.~Youngson, \emph{Linear functional analysis},~Springer-Verlag London,~Ltd.,~London,~2008.
-
+	\bibitem{bib:Rynne} B.~P.~Rynne,~M.~A.~Youngson, \emph{Linear functional analysis},~Springer-Verlag London~Ltd.,~London,~2008.
+	
+	\bibitem{bib:Kurepa} S.~Kurepa, \emph{Funkcionalna analiza: elementi teorije operatora.},~Školska knjiga,~Zagreb,~1981.
 
 	%\bibitem{oznakaPovezave}  Avtor (\v ce je znan,) Naslov/tema povezave (Npr. Wikipedia.) (online). (citirano xx. xx. 2012 (*datum dostopa*)). Dostopno na naslovu: \texttt{spletni naslov povezave}. OPOMBA: Na mnogih spletnih straneh je napisano, kako \v zelijo biti citirane. 
 
