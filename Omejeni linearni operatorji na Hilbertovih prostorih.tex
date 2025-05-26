@@ -471,7 +471,24 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 		\item $d(x, y) = d(y, x)$;
 		\item $d(x, z) \leq d(x, y) + d(y, z)$.
 	\end{itemize}
+	Neprazno množico $M$, opremljeno z metriko $d$ imenujemo \pojem{metrični prostor}.
 \end{definicija}
+
+\begin{definicija}
+	\label{def:PolnMP}
+	Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ konvergentno v $M$.
+\end{definicija}
+
+\begin{primer}
+	\label{prim:PolnMP}
+	Navedimo nekaj klasičnih primerov polnih metričnih prostorov:
+	\begin{itemize}
+		\item prostori $\R^n$ s standardno Evklidsko normo;
+		\item prostori $\C^n$ s standardno Evklidsko normo;
+		\item prostor $l^2$ skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\displaystyle\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$;
+		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\displaystyle\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
+	\end{itemize}
+\end{primer}
 
 \begin{definicija}
 	\label{def:norm}
@@ -518,22 +535,6 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	\label{lem:invnorm}
 	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}.$$
 \end{lema}
-
-\begin{definicija}
-	\label{def:PolnMP}
-	Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ konvergentno v $M$.
-\end{definicija}
-
-\begin{primer}
-	\label{prim:PolnMP}
-	Navedimo nekaj klasičnih primerov polnih metričnih prostorov:
-	\begin{itemize}
-		\item prostori $\R^n$ s standardno Evklidsko normo;
-		\item prostori $\C^n$ s standardno Evklidsko normo;
-		\item prostor $l^2$ skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\displaystyle\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$;
-		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\displaystyle\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
-	\end{itemize}
-\end{primer}
 
 \begin{definicija}
 	\label{def:porojmetr}
@@ -675,6 +676,12 @@ Sedaj definirajmo Hilbertove prostore.
 	Naj bo $(X, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Naj bo $A$ poljubna neprazna podmnožica prostora $X$. \pojem{Ortogonalni komplement} množice $A$ je množica $$A^\bot = \{x\in X~|~\Sp{x}{a}=0~\text{za vsak}~a\in A\}.$$
 \end{definicija}
 
+\begin{opomba}
+	\label{opomb:zaprtortogkompl}
+	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$ in naj bo $A$ poljubna neprazna podmnožica prostora $X$. Enostavno je videti, da je potem $A^\bot$ zaprta podmnožica v $X$. Res, vzemimo poljubno konvergentno zaporedje $\{x_n\}_{n\in\N}\subseteq A^\bot$ z limito $x\in X$. Naj bo $a\in A$ poljuben. Ker je skalarni produkt zvezna preslikava, je $$\Sp{a}{x} = \Sp{a}{\lim_{n\to \infty}x_n} = \lim_{n\to\infty}\Sp{a}{x_n} =0.$$
+	Posledično je $x\in A^\bot$, torej je $A^\bot$ zaprta podmnožica v $X$.
+\end{opomba}
+
 \begin{izrek}
 	\label{izr:ortogdecomp}
 	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je: $$X = Y \oplus Y^\bot.$$
@@ -692,7 +699,7 @@ Sedaj definirajmo Hilbertove prostore.
 
 \begin{izrek}[Riesz]
 	\label{izr:Riesz}
-	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Potem za vsak linearen funkcional $\map{f}{X}{\F}$ obstaja enolično določen element $a\in X$, da je $f(x) = \Sp{x}{a}$ za vsak $x\in X$. Dodatno velja še, da je $\norm{f} = \norm{a}$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Potem za vsak omejen linearen funkcional $\map{f}{X}{\F}$ obstaja enolično določen element $a\in X$, da je $f(x) = \Sp{x}{a}$ za vsak $x\in X$. Dodatno velja še, da je $\norm{f} = \norm{a}$.
 \end{izrek}
 
 \begin{lema}
@@ -730,7 +737,7 @@ Sedaj definirajmo Hilbertove prostore.
 
 \begin{definicija}
 	\label{def:ortogbaz}
-	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Maksimalno ortonormirano podmnožico v $X$ imenujemo \pojem{baza} prostora $X$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Maksimalno ortonormirano podmnožico v $X$ imenujemo \pojem{ortonormirana baza} prostora $X$.
 \end{definicija}
 
 \chapter{Omejeni linearni operatorji na Hilbertovih prostorih}
@@ -1430,7 +1437,7 @@ V naslednjem izreku so opisane lastnosti spektrov in numeričnih razponov sebi-a
 
 S pomočjo pojma numeričnega razpona operatorja lahko sedaj obravnavamo še en poseben tip sebi-adjungiranih operatorjev.
 
-\subsection{Koren pozitivno semidefinitnih operatorjev}
+\subsection{Koren pozitivnih operatorjev}
 
 Na koncu poglavja o omejenih linearnih operatorjih smo definirali t.~i.~">koren operatorja"< in povedali, da za nadaljni študij potrebujemo znanje o spektru. Sedaj, ko smo zadostili omenjenemu pogoju, se lahko lotimo obravnave tega vprašanja na posebnem tipu sebi-adjungiranih operatorjev. Podajmo najprej definicijo le teh.
 
@@ -1462,7 +1469,7 @@ Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 
 \begin{primer}
 	\label{prim:pozoptriv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben sebi-adjungiran operator. Dodatno, naj bosta $U, V\in B(X)$ poljubna pozitivna operatorja in $\lambda\in \C$ poljuben skalar. Preverimo, da so operatorji $T^*T$, $U+V$ in $\lambda U$ pozitivni operatorji. 
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben. Dodatno, naj bosta $U, V\in B(X)$ poljubna pozitivna operatorja in $\lambda\in \R$ poljuben nenegativen skalar. Preverimo, da so operatorji $T^*T$, $U+V$ in $\lambda U$ pozitivni operatorji. 
 	V lemi \ref{lem:sebiadjlast} smo že premislili, da so operatorji $T^*T$, $U+V$ in $\lambda U$ sebi-adjungirani. Vzemimo poljuben element $x\in X$. 
 	Za operator $T^*T$ tedaj velja: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ To pomeni, da je $T^*T$ res pozitiven operator.
 	Istočasno velja: $$\Sp{(U+V)x}{x} = \Sp{Ux}{x} + \Sp{Vx}{x} \geq 0$$
@@ -1475,7 +1482,7 @@ Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 	S pomočjo primera \ref{prim:pozoptriv} hitro vidimo, da so ortogonalni projektorji pozitivni operatorji. Res, naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $P\in B(X)$ poljuben ortogonalen projektor na $X$. Ker je $P$ sebi-adjungiran, je $P^* = P$. Upoštevajoč primer \ref{prim:pozoptriv}, je potem operator $P^*P = P^2 = P$ pozitiven.
 \end{primer}
 
-Primer \ref{prim:pozoptriv} nam je med drugim pokazal tudi, da seštevanje in množenje s skalarjem ohranja pozitivnost. Premislimo sedaj, da enako velja tudi za invertiranje.
+Primer \ref{prim:pozoptriv} nam je med drugim pokazal tudi, da seštevanje in množenje z nenegativnim skalarjem ohranjata pozitivnost. Premislimo sedaj, da enako velja tudi za invertiranje.
 \begin{trditev}
 	\label{trd:pozinv}
 	Naj bo $X$ poljuben Hilbertov prostor in naj bo $T\in B(X)$ poljuben obrnljiv pozitiven operator. Tedaj je operator $T^{-1}$ pozitiven.
@@ -1497,7 +1504,7 @@ Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomo�
 
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben sebi-adjungiran operator $T\in\mathcal{S}(X)$. \begin{enumerate}
-		\item Označimo s $P$ realen vektorski podprostor vseh polinomov v prostoru $\mathcal{C}_\R(\sigma(T))$ in definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Ker je operator $T$ sebi-adjungiran je po izreku \ref{izr:sebiadjnumraz} $\sigma(T)\subseteq\R$, torej so vsi elementi v $P$ realni polinomi z realnimi koeficienti. Posledično, je preslikava $\Phi$ na $P$ dobro definirana. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
+		\item Označimo s $P$ realen vektorski podprostor vseh polinomov v prostoru $\mathcal{C}_\R(\sigma(T))$ in definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Ker je operator $T$ sebi-adjungiran, nam izrek \ref{izr:sebiadjnumraz} pove, da je $\sigma(T)\subseteq\R$. Zato so vsi elementi v $P$ realni polinomi z realnimi koeficienti. Posledično je $(p(T))^* = p(T^*) = p(T)$ za vsak $p\in P$, torej je preslikava $\Phi$ na $P$ dobro definirana. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
 		To pomeni, da je preslikava $\varphi$ linearna. Še več, za poljubna polinoma $p, q\in P$ je: $$\varphi(p\cdot q) = (p\cdot q)(T) = p(T)\cdot q(T) = \varphi(p)\cdot \varphi(q).$$ Naj bo sedaj $p\in P$ poljuben polinom. V naslednjem premisleku bomo uporabili točko $d)$ izreka \ref{izr:sebiadjnumraz} in izrek \ref{izr:polyspec}: \begin{align*}
 			\norm{\varphi(p)} &= \norm{p(T)} = r_\sigma(p(T)) \\
 			&= \sup\{\abs{\lambda}~|~\lambda\in\sigma(p(T))\} \\ &= \sup\{\abs{p(\lambda)}~|~\lambda\in\sigma(T)\} = \norm{p}.
@@ -1553,6 +1560,11 @@ Iz vira \cite{bib:Kurepa} povzemimo nekaj posledic izreka \ref{izr:pozroot}.
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bodo $S, T, U\in B(X)$ poljubni sebi-adjungirani operatorji, ki medseboj paroma komutirajo. Denimo, da sta operatorja $T-S$ in $U$ pozitivno semidefinitna. $S$, $T$ in $U$ medseboj paroma komutirajo, sledi, da operatorja $T-S$ in $U$ komutirata. Po posledici \ref{posl:pozprod} je potem tudi $(T-S)U$ pozitivno semidefiniten (celo pozitiven) operator.
 \end{dokaz}
 
+\begin{opomba}
+	\label{opomb:pozkorenozn}
+	Naj bo $X$ kompleksen Hilbertov prostor in $T\in B(X)$ poljuben pozitiven operator. Za koren operatorja $T$ vpeljemo oznako $\sqrt{T}$ oziroma $T^{\frac{1}{2}}$.
+\end{opomba}
+
 Sedaj, ko smo se prepričali, da so koreni pozitivnih operatorjev dobro definirani in enolično določeni, uporabimo to znanje za dokaz naslednje trditve.
 
 \begin{trditev}
@@ -1573,7 +1585,7 @@ Sedaj, ko smo se prepričali, da so koreni pozitivnih operatorjev dobro definira
 	Na enak način preverimo, da je tudi $(T + i(I-T^2)^{\frac{1}{2}})^*(T + i(I-T^2)^{\frac{1}{2}})=I$ in s tem vidimo, da je operator $(T + i(I-T^2)^{\frac{1}{2}})$ res unitaren. Opazimo tudi, da smo istočasno preverili, da je operator $(T - i(I-T^2)^{\frac{1}{2}})$ unitaren.
 \end{dokaz}
 
-Za konec tega poglavja pokažimo, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. Dekompozicijo obrnljivega operatorja na taka faktorja imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
+Sedaj bomo pokazali, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. Dekompozicijo obrnljivega operatorja na taka faktorja imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
 
 \begin{izrek}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Tedaj za vsak obrnjiv operator $T\in B(X)$ obstajata tak unitaren operator $U$ na $X$ in tak pozitiven operator $R$ na $X$, da je $T = UR$.
@@ -1582,6 +1594,71 @@ Za konec tega poglavja pokažimo, da je vsak obrnljiv operator na kompleksnem Hi
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben obrnljiv operator $T\in B(X)$. Ker je operator $T$ obrnjiv, nam lema \ref{lem:adjinv} pove, da je tudi $T^*$ obrnljiv operator. Posledično je tudi operator $T^*T$ obrnjiv. Še več, lema \ref{lem:sebiadjlast} nam pove, da je operator $T^*T$ sebi-adjungiran. Vzemimo sedaj poljuben element $x\in X$. Tedaj je: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ Ker sklep velja za poljuben element $x\in X$, sledi, da je operator $T^*T$ pozitivno semidefiniten. To pomeni, da je operator $T^*T$ pozitiven. Izrek \ref{izr:pozroot} nam sedaj pove, da operator $T^*T$ premore enolično določen pozitiven koren, ki ga označimo z $R$. Ker je operator $T^*T$ obrnljiv, nam opomba \ref{opomb:specter} pove, da je $0\neq\sigma(T^*T)$. Dodatno nam izrek \ref{izr:polyspec} pove, da je: $$\sigma(T^*T) = \{\lambda^2~|~\lambda\in\sigma(R)\}.$$ To pomeni, da $0\neq \sigma(R)$, torej je operator $R$ obrnljiv. Označimo sedaj operator $U = TR^{-1}$ in opazimo, da je obrnljiv. To pomeni, da je $\operatorname{Im}U = X$. Hkrati velja: $$U^*U = (R^{-1})^*T^*TR^{-1} = (R^*)^{-1}R^2R^{-1}= R^{-1}R = I.$$ Po točki $a)$ izreka \ref{izr:uniizo} je potem operator $U$ izometrija. Še več, operator $U$ je surjektivna izometrija. Zato je po točki $b)$ izreka \ref{izr:uniizo} opertor $U$ unitaren. 
 \end{dokaz}
+
+Za konec tega poglavja pokažimo, da je vsak sebi-adjungiran operator razlika nekih pozitivnih operatorjev. Za to bomo potrebovali naslednjo lemo. Tako lemo kot tudi izrek črpamo iz vira \cite{bib:Kurepa}.
+
+\begin{lema}
+	\label{lem:sebiadjrazlpoz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna sebi-adjungirana operatorja na $X$, za katera je $T^2 = S^2$. Če operatorja $T$ in $S$ komutirata, tedaj za ortogonalni projektor $P$ prostora $X$ na jedro operatorja $S-T$ velja: \begin{enumerate}[a)]
+		\item Če operator $V\in B(X)$ komutira z operatorjem $S-T$, potem komutira tudi z operatorjem $P$;
+		\item Če je $Sx=0$, je $Px=x$;
+		\item $S = (2P-I)T$.
+	\end{enumerate}
+\end{lema}
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna sebi-adjungirana operatorja na $X$, za katera je $T^2 = S^2$. Dodatno denimo, da operatorja $S$ in $T$ komutirata in naj bo $P$ ortogonalen projektor prostora $X$ na $\operatorname{Ker}(S-T)$.
+	\begin{enumerate}[a)]
+		\item Označimo najprej $Y = \operatorname{Ker}(S-T)=\operatorname{Im}(P)$ in naj bo $V\in B(X)$ poljuben opertor, ki komutira z operatorjem $S-T$. Naj bo $y\in Y$ poljuben element. Tedaj je $$(S-T)Vy=V(S-T)y=0.$$ To pomeni, da je $Vy\in Y$. Posledično je $VPx\in Y$ za vsak $x\in X$. Iz tega sledi, da je $P(VPx)= VP^2x=VPx$ za vsak $x\in X$, torej je $PVP = VP$ . Hkrati je tudi $$(S-T)V^*=(V(S-T)^*)^*=(V(S-T))^*=((S-T)V)^*=V^*(S-T)^*=V^*(S-T),$$ torej tudi operator $V^*$ komutira z operatorjem $S-T$. To pomeni, da je $V^*P = PV^*P$. Posledično je $$PV=(V^*P^*)^*=(V^*P)^*=(PV^*P)^*=P^*VP^*=PVP=VP.$$
+		\item Denimo, da je $Sx =0$. Potem je $$\norm{Tx}^2=\Sp{Tx}{Tx}=\Sp{T^2x}{x}=\Sp{S^2x}{x}=0.$$ To pomeni, da je $Tx = 0$, od tod pa sledi, da je $x\in\operatorname{Ker}(S-T)=Y$. Sledi, da je $Px=x$.
+		\item Najprej opazimo, da je $$(S-T)(S+T)=S^2-TS+ST-T^2=S^2-T^2=0,$$ torej je $(S+T)x\in Y$ za vsak $x\in X$. Že dokazana točka $b)$ te leme nam sedaj pove, da je $P(S+T)x = (S+T)x$ za vsak $x\in X$. To pomeni, da je $P(S+T)=(S+T)$. Dodatno, ker vsak operator komutira sam s seboj, nam že dokazana točka $a)$ te leme pove, da je $P(S-T)=(S-T)P=0$. Ko od enačbe $P(S+T)=S+T$ odštejemo enačbo $P(S-T)=0$, dobimo $2PT = S+T$, od tod pa sledi, da je $S=(2P -I)T$.
+	\end{enumerate}
+\end{dokaz}
+
+\begin{opomba}
+	\label{opomb:sebiadjrazlpoz}
+	Točki $b)$ in $c)$ prejšnje leme bi lahko zapisali tudi z ekvivalentnimi pogoji:
+	\begin{itemize}
+		\item Točko $b)$ bi lahko ekvivalentno zapisali tudi kot $$\text{Če je}~Tx=0,~\text{je}~Px=x.$$
+		Namreč, če je $Tx=0$ za nek $x\in X$, potem na enak način kot v dokazu leme pokažemo, da je tudi $Sx=0$ in po enakem postopku pridemo do sklepa, da je $Px=x$.
+		\item Točko $c)$ bi lahko ekvivalentno zapisali kot $T=(2P-I)S$. Do te enakosti pridemo na enak način kot za dokazano enakost, le da na koncu enačbi $P(S+T)=S+T$ in $P(S-T)=0$ seštejemo.
+	\end{itemize}
+\end{opomba}
+
+Sedaj se lahko lotimo obljubljenega izreka.
+
+\begin{izrek}
+	\label{izr:sebiadjrazlpoz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. Velja: \begin{enumerate}[a)]
+		\item Operatorja $$ T_+ = \frac{1}{2}(\sqrt{T^2}+T)~\text{in}~T_-=\frac{1}{2}(\sqrt{T^2}-T)$$ sta pozitivna in $$T = T_+ - T_-.$$
+		\item Obstaja tak ortogonalen projektor $P_+\in B(X)$, da je $P_+T=T_+$, $(P_+ - I)T=T_-$ in za katerega velja, da če je $Tx=0$, je $P_+x=x$.
+		\item Za vsak omejen linearnen operator $V\in B(X)$ velja: Operatorja $V$ in $T$ komutirata natanko tedaj, ko operator $V$ komutira z operatorji $T_+$, $T_-$ in $P_+$.
+	\end{enumerate}
+\end{izrek}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. 
+	Ker je operator $T$ sebi-adjungiran, je $T^2 = T^*T$. Zato nam razmislek v primeru \ref{prim:pozoptriv} pove, da je $T^2$ (oziroma $T^*T$) pozitiven operator. To pomeni, da premore enolično določen koren, ki ga označimo z $U = \sqrt{T^2}$. 
+	
+	Naj bosta $T_+=\frac{1}{2}(U+T)$ in $T_-=\frac{1}{2}(U-T)$. Lema \ref{lem:sebiadjlast} nam pove, da sta operatorja $T_+$ in $T_-$ sebi-adjungirana. Opazimo tudi, da je $T=T_+ - T_-$. Ker operator $T$ komutira z operatorjem $T^2$, komutira tudi z njegovim korenom, torej z $U$. Označimo sedaj s $P$ ortogonalen projektor prostora $X$ na $\operatorname{Ker}(T_-)$. Najprej bomo premislili, da ortogonalni projektor $P$ ustreza pogojem v točki $b)$. Ker je $U^2 = T^2$ in operatorja $U$ in $T$ komutirata, nam
+	lema \ref{lem:sebiadjrazlpoz} pove, da je $U = (2P-I)T = 2PT - T$. Posledično je $$PT=\frac{1}{2}(U+T)=T_+.$$
+	Velja tudi, da je $$(P-I)T = PT-T=\frac{1}{2}(U+T)-T=\frac{1}{2}(U-T)=T_-.$$ Upoštevajoč prvo točko opombe \ref{opomb:sebiadjrazlpoz} vidimo, da za operator $P$ velja tudi pogoj, da če je $Tx=0$, je $Px=x$. Posledično ortogonalni projektor $P$ ustreza vsem pogojem točke $b)$, torej je $P_+=P$. S tem smo dokazali točko $b)$.
+	
+	Naj bo sedaj $V\in B(X)$ poljuben operator. Če operator $V$ komutira z operatorjem $T$, potem komutira tudi z operatorjem $U$ in posledično tudi z operatorjema $T_+$ in $T_-$. Ker operator $V$ komutira z operatorjem $T_-$, nam točka $a)$ leme \ref{lem:sebiadjrazlpoz} pove, da operator $V$ komutira tudi z operatorjem $P$. Po drugi strani, če operator $V$ komutira z operatorji $T_+$, $T_-$ in $P$, komutira tudi z operatorjem $T=T_+ - T_-$. S tem smo dokazali točko $c)$.
+	
+	Dokažimo sedaj še točko $a)$ tega izreka. Upoštevajoč drugo točko opombe \ref{opomb:sebiadjrazlpoz} vidimo, da velja tudi $T=(2P - I)U$. Posledično velja \begin{align*}
+		PU &= \frac{1}{2}(T+U)=T_+ \\
+		(I-P)U &= U - PU = U-T_+ =U-\frac{1}{2}(T+U)=\frac{1}{2}(U-T).
+	\end{align*}
+	Ker sta operatorja $P$ in $I-P$ oba ortogonalna projektorja, nam premislek v primeru \ref{prim:ortogprojsopoz} pove, da sta pozitivna operatorja. Tudi operator $U$ je pozitiven. Ker operator $U$ komutira z operatorjem $P$ in posledično tudi z operatorjem $I-P$, nam posledica \ref{posl:pozprod} pove, da sta operatorja $T_+=PU$ in $T_-=(I-P)U$ pozitivna.
+	%Premislimo najprej, da operatorja $T_+$ in $T_-$ komutirata: \begin{align*}
+	%	T_+T_- &=\frac{1}{4}(U+T)(U-T)=\frac{1}{4}(U^2-UT+TU-T^2) = \frac{1}{4}(U^2-T^2)=0, \\
+	%	T_-T_+ &=\frac{1}{4}(U-T)(U+T)=\frac{1}{4}(U^2-TU+UT-T^2) = \frac{1}{4}(U^2-T^2)=0.
+	%\end{align*}
+\end{dokaz}
+
+\begin{definicija}
+	\label{def:pozinnegdelsebiadj} Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Naj bodo $T_+$, $T_-$ in $P_+$ operatorji iz izreka \ref{izr:sebiadjrazlpoz}. Operator $T_+$ imenujemo \pojem{pozitiven del} operatorja $T$, operator $T_-$ \pojem{negativen del} operatorja $T$, operator $P_+$ pa \pojem{pozitiven projektor} operatorja $T$.
+\end{definicija}
 %\subsection{Predstavitev magistrskega dela}
 %
 %Potem, ko smo kon\v cali z oblikovanjem besedila lahko na precej preprost in hiter na\v cin pripravimo predstavitev s pomo\v cjo paketa {\bf Beamer}\footnote{\v ze vklju\v cen v kompletno distribucijo MikTeX-a ali TeXlive-a}:
@@ -1635,12 +1712,17 @@ Za konec tega poglavja pokažimo, da je vsak obrnljiv operator na kompleksnem Hi
 \chapter*{Seznam uporabljenih kratic in simbolov (NEOBVEZNO!)}
 \begin{table}[!ht]
 		\begin{tabular}{r l}
-			$\N$ & množica naravnih števil\\
-			$\R$ & množica realnih števil\\
-			$\C$ & množica kompleksnih števil\\
-			$\F$ & polje, bodisi $\R$ bodisi $\C$\\
-			$\mathcal{U}(X)$ & Množica vseh unitarnih operatorjev na Hilbertovem prostoru $X$\\
-			$\mathcal{S}(X)$ & Množica vseh sebi-adjungiranih operatorjev na Hilbertovem prostoru $X$\\
+			$\N$ & množica naravnih števil,\\
+			$\R$ & množica realnih števil,\\
+			$\C$ & množica kompleksnih števil,\\
+			$\F$ & polje, bodisi $\R$ bodisi $\C$,\\
+			$l^2$ & Prostor vseh zaporedij $\{x_n\}_{n\in\N}$ nad $\F$, za katera je $\sum_{n = 1}^\infty\abs{x_n}^2 \leq \infty$,\\
+			$L(X, Y)$ & Množica vseh linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
+			$B(X, Y)$ & Množica vseh omejenih linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
+			$L(X)$ & Množica vseh linearnih operatorjev na vektorskem prostoru $X$,\\
+			$B(X)$ & Množica vseh omejenih linearnih operatorjev na vektorskem prostoru $X$,\\
+			$\mathcal{U}(X)$ & Množica vseh unitarnih operatorjev na Hilbertovem prostoru $X$,\\
+			$\mathcal{S}(X)$ & Množica vseh sebi-adjungiranih operatorjev na Hilbertovem prostoru $X$,\\
 		\end{tabular}
 \end{table}
 
