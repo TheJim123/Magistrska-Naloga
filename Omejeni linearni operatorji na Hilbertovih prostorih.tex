@@ -471,7 +471,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 		\item $d(x, y) = d(y, x)$;
 		\item $d(x, z) \leq d(x, y) + d(y, z)$.
 	\end{itemize}
-	Neprazno množico $M$, opremljeno z metriko $d$ imenujemo \pojem{metrični prostor}.
+	Če je $M$ neprazno množica in $d$ metrika na $M$, par $(M, d)$ imenujemo \pojem{metrični prostor}.
 \end{definicija}
 
 \begin{definicija}
@@ -493,9 +493,9 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 \begin{definicija}
 	\label{def:norm}
 	Naj bo $V$ poljuben vektorski prostor nad poljem $\F$. Preslikavi $\map{\norm{.}}{V}{\R}$ pravimo \pojem{norma} na $V$, če za poljubna elementa $x, y\in V$ ter poljuben skalar $\alpha\in \F$ velja: \begin{itemize}
-		\item $\norm{x} \geq 0$,
-		\item $\norm{x} = 0 \iff x = 0$,
-		\item $\norm{\alpha x} = \abs{\alpha}\cdot\norm{x}$,
+		\item $\norm{x} \geq 0$;
+		\item $\norm{x} = 0 \iff x = 0$;
+		\item $\norm{\alpha x} = \abs{\alpha}\cdot\norm{x}$;
 		\item $\norm{x + y} \leq \norm{x} + \norm{y}$.
 	\end{itemize}
 	Če je $V$ vektorski prostor (nad $\F$) in $\norm{.}$ norma na njem, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor}.
@@ -503,13 +503,14 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{definicija}
 	\label{def:linop}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad poljem $\F$. \begin{enumerate}[a)]
+	Naj bosta $X$ ter $Y$ poljubna vektorska prostora nad poljem $\F$. \begin{enumerate}[a)]
 		\item Pravimo, da je preslikava $\map{T}{X}{Y}$ \pojem{linearen operator}, če velja: \begin{itemize}
 			\item Za vsaka elementa $x, y\in X$ je $T(x+y) = T(x) + T(y)$.
 			\item Za vsak element $x\in X$ in vsak skalar $\alpha\in\F$ je $T(\alpha x)=\alpha T(x)$.
 		\end{itemize} V tem primeru namesto $T(x)$ uporabimo oznako $Tx$. 
-		\item Pravimo, da je linearen operator $T$ \pojem{omejen}, če obstaja tako pozitivno število $M>0$, da za vsak $x\in X$ velja $$\norm{Tx}\leq M\norm{x}.$$
+		\item Naj bosta $(X, \norm{.}_X)$ in $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Pravimo, da je linearen operator $\map{T}{X}{Y}$ \pojem{omejen}, če obstaja tako pozitivno število $M>0$, da za vsak $x\in X$ velja $$\norm{Tx}_Y\leq M\cdot\norm{x}_X.$$
 		\item Z $L(X, Y)$ označimo prostor vseh linearnih operatorjev iz $X$ v $Y$, z $B(X, Y)$ pa prostor vseh omejenih linearnih operatorjev iz $X$ v $Y$. Kadar je $X=Y$, uporabimo oznaki $L(X)$ in $B(X)$.
+		\item Naj bo $X$ poljuben vektorski prostor. Elementom prostora $L(X, \F)$ pravimo \pojem{linearni funkcionali}, elementom prostora $B(X, \F)$ pa \pojem{omejeni linearni funkcionali}. Za množico $B(X, \F)$ pogosto uporabimo oznako $X^*$.
 	\end{enumerate}
 \end{definicija}
 
@@ -533,12 +534,12 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{lema}
 	\label{lem:invnorm}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}.$$
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je operator $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}.$$
 \end{lema}
 
 \begin{definicija}
 	\label{def:porojmetr}
-	Naj bo $(V, \norm{.})$ poljuben normiran prostor nad poljem $\F$. Preslikavo $\map{d}{V\times V}{\R}$ s predpisom $d(x, y) = \norm{x-y}$ imenujemo \pojem{metrika porojena z $\norm{.}$}.
+	Naj bo $V$ poljuben normiran prostor nad $\F$ z normo $\norm{.}$. Preslikavo $\map{d}{V\times V}{\R}$ s predpisom $d(x, y) = \norm{x-y}$ imenujemo \pojem{metrika porojena z $\norm{.}$}.
 \end{definicija}
 
 \begin{opomba}
@@ -547,7 +548,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{definicija}
 	\label{def:Banach}
-	Naj bo $(V, \norm{.})$ poljuben normiran prostor nad poljem $\F$. Naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Banachov prostor} nad $\F$. 
+	Naj bo $V$ poljuben normiran prostor nad poljem $\F$ z normo $\norm{.}$. Naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $V$ \pojem{Banachov prostor} nad $\F$. 
 \end{definicija}
 
 \begin{lema}
@@ -588,7 +589,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{izrek}
 	\label{izr:opHB} 
-	Naj bo $(X, \norm{.})$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
+	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
 		\item Naj bo $x\in X$ poljuben element in $\{x_n\}_{n\in\N},\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k elementu $x$: $$\lim_{n\to \infty}x_n = x = \lim_{n\to \infty}y_n.$$ Tedaj sta tudi zaporedji $\{T(x_n)\}_{n\in\N}$ in $\{T(y_n)\}_{n\in\N}$ konvergentni in imata isto limito: $$\lim_{n\to \infty}Tx_n = \lim_{n\to \infty}Ty_n.$$
 		\item Obstaja tak operator $U\in B(X, Z)$, da je $\norm{U} = \norm{T}$ in $Ux = Tx$ za vsak $x\in Y$.
 	\end{enumerate}
@@ -596,10 +597,10 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{definicija}
 	\label{def:ScalProd}
-	Naj bo $V$ vektorski prostor nad poljem $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\F}$ pravimo \pojem{skalarni produkt} na $V$, če za poljubne elemente $x, x_1, x_2, y\in V$ ter poljubna skalarja $\alpha_1, \alpha_2\in \F$ velja: \begin{itemize}
-		\item $\Sp{x}{x} \geq 0$,
-		\item $\Sp{x}{x} = 0 \iff x = 0$,
-		\item $\Sp{x}{y} = \overline{\Sp{y}{x}}$,
+	Naj bo $V$ poljuben vektorski prostor nad poljem $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\F}$ pravimo \pojem{skalarni produkt} na $V$, če za poljubne elemente $x, x_1, x_2, y\in V$ ter poljubna skalarja $\alpha_1, \alpha_2\in \F$ velja: \begin{itemize}
+		\item $\Sp{x}{x} \geq 0$;
+		\item $\Sp{x}{x} = 0 \iff x = 0$;
+		\item $\Sp{x}{y} = \overline{\Sp{y}{x}}$;
 		\item $\Sp{\alpha_1\cdot x_1 + \alpha_2\cdot x_2}{y} = \alpha_1\Sp{x_1}{y} +\alpha_2\Sp{x_2}{y}$.
 	\end{itemize}
 	Če je $V$ vektorski prostor (nad $\F$) in $\Sp{.}{.}$ skalarni produkt na njem, pravimo, da je $(V, +, \cdot, \Sp{.}{.})$ \pojem{prostor s skalarnim produktom}.
@@ -627,7 +628,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{opomba}
 	\label{opomb:CSB}
-	Če definiramo normo $\norm{.}$ tako, kot je v opombi \ref{opomb:ScalProd}, lahko neenakost v izreku \ref{izr:CSB} zapišemo tudi tako: $$\abs{\Sp{x}{y}} \leq \norm{x}\cdot\norm{y}.$$
+	Če definiramo normo $\norm{.}$ tako, kot je v opombi \ref{opomb:ScalProd}, lahko neenakost v izreku \ref{izr:CSB} zapišemo tudi v naslednji obliki: $$\abs{\Sp{x}{y}} \leq \norm{x}\cdot\norm{y}.$$
 \end{opomba}
 
 \begin{trditev}
@@ -678,7 +679,7 @@ Sedaj definirajmo Hilbertove prostore.
 
 \begin{opomba}
 	\label{opomb:zaprtortogkompl}
-	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$ in naj bo $A$ poljubna neprazna podmnožica prostora $X$. Enostavno je videti, da je potem $A^\bot$ zaprta podmnožica v $X$. Res, vzemimo poljubno konvergentno zaporedje $\{x_n\}_{n\in\N}\subseteq A^\bot$ z limito $x\in X$. Naj bo $a\in A$ poljuben. Ker je skalarni produkt zvezna preslikava, je $$\Sp{a}{x} = \Sp{a}{\lim_{n\to \infty}x_n} = \lim_{n\to\infty}\Sp{a}{x_n} =0.$$
+	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$ in naj bo $A$ poljubna neprazna podmnožica prostora $X$. Enostavno je videti, da je potem $A^\bot$ zaprta podmnožica v $X$. Res, vzemimo poljubno konvergentno zaporedje $\{x_n\}_{n\in\N}\subseteq A^\bot$ z limito $x\in X$. Naj bo $a\in A$ poljuben. Ker je po trditvi \ref{trd:spzvez} skalarni produkt zvezna preslikava, je $$\Sp{a}{x} = \Sp{a}{\lim_{n\to \infty}x_n} = \lim_{n\to\infty}\Sp{a}{x_n} =0.$$
 	Posledično je $x\in A^\bot$, torej je $A^\bot$ zaprta podmnožica v $X$.
 \end{opomba}
 
@@ -751,7 +752,7 @@ V tem poglavju bomo obravnavali lastnosti omejenih linearnih operatorjev na Hilb
 
 \begin{dokaz}
 	Naj bo $y\in Y$ poljuben element ter naj bo $\map{f_y}{X}{\C}$ preslikava definirana s predpisom $f_y(x) = \Sp{Tx}{y}_Y$. Opazimo, da je $f_y$ linearen funkcional na $X$. Po izreku \ref{izr:CSB} potem za vsak element $x\in X$ velja: $$\abs{f_y(x)} = \abs{\Sp{Tx}{y}_Y} \leq \norm{Tx}_Y \cdot \norm{y}_Y \leq \norm{T}\cdot\norm{x}_X\cdot\norm{y}_Y.$$ To pomeni, da je $f_y$ omejen linearen funkcional na $X$. Posledično po Riezsovem izreku obstaja tak enolično določen $z\in X$, da je $f_y(x) = \Sp{x}{z}_X$ za vsak $x\in X$. Sedaj definiramo preslikavo $\map{T^*}{Y}{X}$, ki vsakemu $y\in Y$ priredi tisti enolično določen element $z\in X$, za katerega je $f_y(x) = \Sp{x}{z}_X$ za vsak $x\in X$. Posledično za vsak $x\in X$ in vsak $y\in Y$ velja: $$\Sp{Tx}{y}_Y=\Sp{x}{T^*y}_X .$$
-	Sedaj preverimo, da je $T^*$ omejen linearen operator. Naj bodo $y_1, y_2 \in Y$ in $x\in X$ poljubni elementi ter $\alpha, \beta \in \C$ poljubna skalarja. Tedaj je \begin{align*}
+	V nadaljevanju preverimo, da je $T^*$ omejen linearen operator. Naj bodo $y_1, y_2 \in Y$ in $x\in X$ poljubni elementi ter $\alpha, \beta \in \C$ poljubna skalarja. Tedaj je \begin{align*}
 		\Sp{x}{T^*(\alpha y_1 + \beta y_2)}_X &= \Sp{Tx}{\alpha y_1 + \beta y_2}_Y \\
 		&= \bar{\alpha}\Sp{Tx}{y_1}_Y + \bar{\beta}\Sp{Tx}{y_2}_Y \\
 		&= \bar{\alpha}\Sp{x}{T^*y_1}_X + \bar{\beta}\Sp{x}{T^*y_2}_X \\
@@ -778,12 +779,12 @@ Začnimo z dvema enostavnima primeroma adjungiranih operatorjev.
 \end{primer}
 Sedaj poglejmo malenkost zahtevnejša primera.
 \begin{primer}
-	\label{prim:adjop1} Definiramo operator $D$ na prostoru $l^2$, s predpisom $$D(x_1, x_2, x_3, \ldots) = (0, x_1, x_2, \ldots).$$ Ta operator imenujemo ">desni premik"<. Preverimo najprej, da je $D$ res omejen linearen operator na $l^2$. Vzemimo poljubni zaporedji $x, y\in l^2$ in poljubna skalarja $\alpha_1, \alpha_2\in\C$. Tedaj je: \begin{align*}
+	\label{prim:adjop1} Definiramo operator $\map{D}{l^2}{l^2}$ na kompleksnem Hilbertovem prostoru $l^2$ iz primera $\ref{prim:Hilbert}$, s predpisom $$D(x_1, x_2, x_3, \ldots) = (0, x_1, x_2, \ldots).$$ Ta operator imenujemo ">desni premik"<. Preverimo najprej, da je $D$ res omejen linearen operator na $l^2$. Vzemimo poljubni zaporedji $x, y\in l^2$ in poljubna skalarja $\alpha_1, \alpha_2\in\C$. Tedaj je: \begin{align*}
 		D(\alpha_1 x + \alpha_2 y) &= D(\alpha_1 x_1 + \alpha_2 y_1 , \alpha_1 x_2 + \alpha_2 y_2, \ldots) = (0, \alpha_1 x_1 + \alpha_2 y_1 , \alpha_1 x_2 + \alpha_2 y_2, \ldots) \\ &= \alpha_1(0, x_1, x_2, \ldots) + \alpha_2(0, y_1, y_2, \ldots) = \alpha_1 Dx + \alpha_2 Dy.
 	\end{align*}
 	
-	To pomeni, da je $D$ res linearen operator na $l^2$. Hitro opazimo tudi, da je operator $D$ izometrija. Vzemimo poljuben $x\in l^2$. Tedaj je: $$\norm{Dx} = \left(\sum_{i = 1}^{\infty}\abs{(Dx)_i}^2\right)^{\frac{1}{2}}=\left(0 + \abs{x_1}^2 + \abs{x_2}^2 +\ldots \right)^{\frac{1}{2}}=\norm{x}.$$
-	To pomeni, da je $D$ omejen.
+	To pomeni, da je $D$ res linearen operator na $l^2$. Hitro opazimo tudi, da je operator $D$ izometrija. Vzemimo poljubno zaporedje $x\in l^2$. Tedaj je: $$\norm{Dx} = \left(\sum_{i = 1}^{\infty}\abs{(Dx)_i}^2\right)^{\frac{1}{2}}=\left(0 + \abs{x_1}^2 + \abs{x_2}^2 +\ldots \right)^{\frac{1}{2}}=\norm{x}.$$
+	To pomeni, da je operator $D$ omejen.
 	
 	Sedaj, ko vemo, da je $D\in B(l^2)$, določimo predpis njegovega adjungiranega operatorja $D^*$. Naj bosta $x, y\in l^2$ poljubna elementa ter označimo $z = D^*y$. Tedaj po definiciji adjungiranega operatorja velja, da je $\Sp{Dx}{y} = \Sp{x}{D^*y} = \Sp{x}{z}$ oziroma $$\Sp{(0, x_1, x_2, \ldots)}{(y_1, y_2, y_3, \ldots)}=\Sp{(x_1, x_2, x_3, \ldots)}{(z_1, z_2, z_3, \ldots)}.$$
 	Ko to enakost razpišemo, dobimo: $$x_1\overline{y_2}+x_2\overline{y_3} + \ldots = x_1\overline{z_1} + x_2\overline{z_2}+x_3\overline{z_3} + \ldots.$$
@@ -804,7 +805,7 @@ Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 
 \begin{izrek}
 	\label{izr:adjlast}
-	Naj bodo $(X, \Sp{.}{.}_X)$, $(Y, \Sp{.}{.}_Y)$ in $(Z, \Sp{.}{.}_Z)$ poljubni kompleksni Hilbertovi prostori, naj bodo $U, V \in B(X, Y)$ ter $T \in B(Y, Z)$ poljubni operatorji ter naj bosta $\alpha, \beta \in \C$ poljubna skalarja. Tedaj velja: \begin{enumerate}[a)]
+	Naj bodo $(X, \Sp{.}{.}_X)$, $(Y, \Sp{.}{.}_Y)$ in $(Z, \Sp{.}{.}_Z)$ poljubni kompleksni Hilbertovi prostori, naj bodo $U, V \in B(X, Y)$ in $T \in B(Y, Z)$ poljubni operatorji ter naj bosta $\alpha, \beta \in \C$ poljubna skalarja. Tedaj velja: \begin{enumerate}[a)]
 		\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*$,
 		\item $(TU)^* = U^*T^*$,
 		\item $(U^*)^* = U$,
@@ -835,7 +836,7 @@ Sedaj bomo navedli in dokazali nekatere pomembne lastnosti adjungiranja.
 		Posledično je $\norm{U^*} = \norm{U}$.
 		
 		\item Vzemimo poljuben operator $U\in B(X, Y)$. Zaradi prejšnje točke tega dokaza vemo, da je $\norm{U^*} = \norm{U}$, hitro vidimo, da je $\norm{U^*U}\leq\norm{U^*}\cdot\norm{U} = \norm{U}^2$.
-		Naj bo $x\in X$ poljuben element. Opazimo, da velja: $$\norm{Ux}_Y^2 = \Sp{Ux}{Ux}_Y = \Sp{U^*Ux}{x}_X.$$ Ko upoštevamo neenakost izrek \ref{izr:CSB}, dobimo naslednjo oceno: $$\Sp{U^*Ux}{x}_X \leq \norm{U^*Ux}_X\cdot\norm{x}_X \leq \norm{U^*U}\cdot\norm{x}_X^2.$$ Posledično je $\norm{Ux}_Y^2 \leq \norm{U^*U}\cdot\norm{x}_X^2$ za vsak $x\in X$. To pomeni, da je $\norm{U}^2 \leq \norm{U^* U}$. Od tod sledi iskana enakost.
+		Naj bo $x\in X$ poljuben element. Opazimo, da velja: $$\norm{Ux}_Y^2 = \Sp{Ux}{Ux}_Y = \Sp{U^*Ux}{x}_X.$$ Upoštevajoč izrek \ref{izr:CSB} dobimo naslednjo oceno: $$\Sp{U^*Ux}{x}_X \leq \norm{U^*Ux}_X\cdot\norm{x}_X \leq \norm{U^*U}\cdot\norm{x}_X^2.$$ Posledično je $\norm{Ux}_Y^2 \leq \norm{U^*U}\cdot\norm{x}_X^2$ za vsak $x\in X$. To pomeni, da je $\norm{U}^2 \leq \norm{U^* U}$. Od tod sledi iskana enakost.
 		
 		\item Naj bosta $U, V \in B(X, Y)$ poljubna operatorja in vzemimo poljubno število $\varepsilon > 0$. Izberemo $\delta = \varepsilon$ in denimo, da je $\norm{U - V} < \delta$. Tedaj je: $$\norm{f(U) - f(V)} = \norm{U^* - V^*} = \norm{(U - V)^*}.$$ Po točki $d)$ tega dokaza je $\norm{(U-V)^*} = \norm{U - V} < \delta = \varepsilon$, torej je preslikava $f$ zvezna.
 	\end{enumerate}
@@ -881,15 +882,15 @@ S pomočjo lem \ref{lem:invnorm}, \ref{lem:banzap} in \ref{lem:adjlast2} dokaže
 	Predpostavimo najprej, da je operator $T\in B(X)$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$, pripada $B(X)$. Posledično je $\operatorname{Im}T = X$. Zato je $\operatorname{Im}T$ gosta podmnožica v $X$ in tako nam lema \ref{lem:adjlast2} pove, da je $\operatorname{Ker}T^* = \{0\}$. Ker je $X$ Hilbertov prostor, zadošča tudi pogojem leme \ref{lem:invnorm}, ki nam pove, da velja $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}$$ za vsak $x\in X$. S tem smo dokazali prvo implikacijo, saj lahko za iskano število $r$ vzamemo kar $r = \norm{T^{-1}}^{-1}$.
 	
 	Sedaj pokažimo še obratno implikacijo. Denimo, da je $\operatorname{Ker}T^* = \{0\}$ in da obstaja tak $r>0$, da za vsak $x\in X$ velja ocena $\norm{Tx} \geq r\norm{x}$. Lema \ref{lem:adjlast2} nam potem pove, da je $\operatorname{Im}T$ gosta podmnožica v $X$, lema \ref{lem:banzap} pa, da je $\operatorname{Im}T$ zaprti podprostor v $X$. To pomeni, da je $X = \overline{\operatorname{Im}T} = \operatorname{Im}T$.
-	Vzemimo sedaj poljuben element $x\in \operatorname{Ker}T$. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. Slednje je lahko res le, kadar je $x = 0$. To pomeni, da je $\operatorname{Ker}T = \{0\}$, torej je $T$ bijektiven endomorfizem Banachovega prostora $X$. Po izreku o odprti preslikavi sledi, da je $T$ obrnljiv.
+	Vzemimo sedaj poljuben element $x\in \operatorname{Ker}T$. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. Slednje je lahko res le, kadar je $x = 0$. To pomeni, da je $\operatorname{Ker}T = \{0\}$, torej je $T$ bijektiven endomorfizem Banachovega prostora $X$. Zato je po posledici \ref{posl:odppresl} operator $T$ obrnljiv.
 \end{dokaz}
 
 \begin{primer}
 	\label{prim:adjinv}
-	Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop2}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = \bar{0}$. Sledi, da $\operatorname{Ker}D^* = \operatorname{Ker}L \neq \{0\}$, torej $D$ ni obrnljiv.
+	Primer neobrnljivega operatorja najdemo v desnem premiku $D\in B(l^2)$. Kot smo premislili v primeru \ref{prim:adjop1}, je njegov adjungirani operator ravno levi premik $L\in B(l^2)$, za katerega pa velja, da je $L(1, 0, 0, \ldots) = 0$. To pomeni, da $\operatorname{Ker}D^* = \operatorname{Ker}L \neq \{0\}$, torej operator $D$ ni obrnljiv.
 \end{primer}
 
-Za konec tega podpoglavja premislimo, v sledeči lemi, kako sta povezani operaciji invertiranja in adjungiranja.
+Za konec tega podpoglavja bomo v naslednji lemi premislili zvezo med operacijama invertiranja in adjungiranja.
 
 \begin{lema}
 	\label{lem:adjinv}
@@ -1056,7 +1057,7 @@ V naslednji lemi so povzete nekatere osnovne lastnosti sebi-adjungiranih operato
 			\alpha = 1&:\Sp{Tx}{y} + \Sp{Ty}{x} = \Sp{T^*x}{y} + \Sp{T^*y}{x}, \\
 			\alpha = i&:-i\Sp{Tx}{y} + i\Sp{Ty}{x} = -i\Sp{T^*x}{y} + i\Sp{T^*y}{x}.
 		\end{align*}
-		Prvo enačbo pomnožimo z $i$, jo odštejemo od druge, ter tako dobimo enakost $\Sp{Tx}{y} = \Sp{T^*x}{y}$. Ker sta bila $x$ in $y$ poljubna, ta sklep velja za vse pare $x, y \in X$. Zato po lemi \ref{lem:scalprodopenak} sledi, da je $T = T^*$.
+		Prvo enačbo pomnožimo z $i$, jo odštejemo od druge, ter tako dobimo enakost $$\Sp{Tx}{y} = \Sp{T^*x}{y}.$$ Ker sta bila $x$ in $y$ poljubna, ta sklep velja za vse pare $x, y \in X$. Zato po lemi \ref{lem:scalprodopenak} sledi, da je $T = T^*$.
 \end{dokaz}
 
 \section[Unitarni operatorji]{Unitarni operatorji}
@@ -1146,7 +1147,7 @@ Izkaže se, da imajo ortogonalni projektorji zanimivo zvezo z zaprtimi podprosto
 
 \begin{dokaz}
 	\begin{enumerate}
-		\item Naj bo $Y$ poljuben zaprti podprostor v $X$. Spomnimo se, da lahko tedaj $X$ zapišemo kot direktno vsoto podprostorov: $$X = Y \oplus Y^\bot.$$ Vzemimo torej poljuben element $x\in X$. Vemo, da tedaj obstajata enolično določena elementa $y\in Y$ in $z\in Y^\bot$, da je $x = y + z$. Sedaj definiramo preslikavo $\map{P_Y}{X}{X}$ s predpisom $P_Y(x) = y$. Pokazali bomo, da ta preslikava zadošča vsem pogojem trditve.
+		\item Naj bo $Y$ poljuben zaprti podprostor v $X$. Spomnimo se izreka \ref{izr:ortogdecomp}, ki nam pove, da lahko prostor $X$ zapišemo kot direktno vsoto podprostorov: $$X = Y \oplus Y^\bot.$$ Vzemimo torej poljuben element $x\in X$. Vemo, da tedaj obstajata enolično določena elementa $y\in Y$ in $z\in Y^\bot$, da je $x = y + z$. Sedaj definiramo preslikavo $\map{P_Y}{X}{X}$ s predpisom $P_Y(x) = y$. Pokazali bomo, da ta preslikava zadošča vsem pogojem trditve.
 		
 		Premislimo najprej, da je preslikava $P_Y$ linearna. Vzemimo poljubna elementa $x_1, x_2\in X$ in poljubna skalarja $\lambda_1, \lambda_2\in \C$. Naj bodo $y_1, y_2\in Y$ in $z_1, z_2\in Y^\bot$ tisti elementi, za katere je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Tedaj je $$\lambda_1x_1 + \lambda_2x_2 = \lambda_1(y_1 + z_1) + \lambda_2(y_2 + z_2) = (\lambda_1y_1 + \lambda_2y_2) + (\lambda_1z_1 + \lambda_2z_2).$$ Ker sta $Y$ in $Y^\bot$ oba vektorska prostora sledi: $$\lambda_1y_1 + \lambda_2y_2\in Y~\text{in}~\lambda_1z_1 + \lambda_2z_2\in Y^\bot.$$ Posledično je $$P_Y(\lambda_1x_1 + \lambda_2x_2)= \lambda_1y_1 + \lambda_2y_2 = \lambda_1P_Y(x_1) + \lambda_2P_Y(x_2).$$ To pomeni, da je $P_Y$ res linearen operator na prostoru $X$.
 		

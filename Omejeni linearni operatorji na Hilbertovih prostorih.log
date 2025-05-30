@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  26 MAY 2025 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  30 MAY 2025 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1193,6 +1193,14 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mat
 hsy.enc}{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm
 -ts1.enc}]
+Overfull \hbox (28.03287pt too wide) in paragraph at lines 513--514
+[]\OT1/lmr/m/it/10.95 Naj bo $\OML/lmm/m/it/10.95 X$ \OT1/lmr/m/it/10.95 po-lju
+-ben vek-tor-ski pro-stor. Ele-men-tom pro-stora $\OML/lmm/m/it/10.95 L\OT1/lmr
+/m/n/10.95 (\OML/lmm/m/it/10.95 X; \U/msb/m/n/10.95 F\OT1/lmr/m/n/10.95 )$ \OT1
+/lmr/m/it/10.95 pra-vimo $[]$,
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1212,7 +1220,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4]
-Overfull \hbox (12.45383pt too wide) in paragraph at lines 605--606
+Overfull \hbox (12.45383pt too wide) in paragraph at lines 606--607
 []\OT1/lmr/m/it/10.95 Ce je $\OML/lmm/m/it/10.95 V$ \OT1/lmr/m/it/10.95 vek-tor
 -ski pro-stor (nad $\U/msb/m/n/10.95 F$\OT1/lmr/m/it/10.95 ) in $[]$ ska-larni 
 pro-dukt na njem, pra-vimo, da je $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 V; \
@@ -1281,7 +1289,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [11]
-Overfull \hbox (4.673pt too wide) detected at line 783
+Overfull \hbox (4.673pt too wide) detected at line 784
 []
  []
 
@@ -1403,7 +1411,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [24]
-Overfull \hbox (0.99739pt too wide) in paragraph at lines 1151--1151
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+Overfull \hbox (0.99739pt too wide) in paragraph at lines 1152--1152
 []\OT1/lmr/m/n/10.95 Premislimo naj-prej, da je pre-sli-kava $\OML/lmm/m/it/10.
 95 P[]$ \OT1/lmr/m/n/10.95 li-ne-arna. Vze-mimo po-ljubna ele-menta $\OML/lmm/m
 /it/10.95 x[]; x[] \OMS/lmsy/m/n/10.95 2
@@ -1418,23 +1435,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
 [26]
-Overfull \hbox (1.24532pt too wide) in paragraph at lines 1172--1173
-\OT1/lmr/m/it/10.95 pro-stor v $\OML/lmm/m/it/10.95 X$\OT1/lmr/m/it/10.95 . Ope
--ra-tor $\OML/lmm/m/it/10.95 P[]$ \OT1/lmr/m/it/10.95 iz iz-reka []2.29[] ime-n
-u-jemo $[]$. 
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1444,6 +1445,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [27]
+Overfull \hbox (1.24532pt too wide) in paragraph at lines 1173--1174
+\OT1/lmr/m/it/10.95 pro-stor v $\OML/lmm/m/it/10.95 X$\OT1/lmr/m/it/10.95 . Ope
+-ra-tor $\OML/lmm/m/it/10.95 P[]$ \OT1/lmr/m/it/10.95 iz iz-reka []2.29[] ime-n
+u-jemo $[]$. 
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1540,7 +1548,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [38]
-Overfull \hbox (1.31659pt too wide) detected at line 1418
+Overfull \hbox (1.31659pt too wide) detected at line 1419
 []
  []
 
@@ -1676,7 +1684,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Overfull \hbox (28.14119pt too wide) in paragraph at lines 1714--1727
+Overfull \hbox (28.14119pt too wide) in paragraph at lines 1715--1728
 [][] 
  []
 
@@ -1702,8 +1710,8 @@ prostorih".out' has not changed.
 (rerunfilecheck)             Checksum: 1648AC10910459340F7342E8EC1EFFA2;2514.
  ) 
 Here is how much of TeX's memory you used:
- 29409 strings out of 473522
- 592657 string characters out of 5712673
+ 29410 strings out of 473522
+ 592665 string characters out of 5712673
  1027712 words of memory out of 5000000
  51834 multiletter control sequences out of 15000+600000
  622097 words of font info for 86 fonts, out of 8000000 for 9000
@@ -1729,9 +1737,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (6
-5 pages, 559350 bytes).
+5 pages, 561006 bytes).
 PDF statistics:
- 876 PDF objects out of 1000 (max. 8388607)
- 306 named destinations out of 1000 (max. 500000)
+ 882 PDF objects out of 1000 (max. 8388607)
+ 307 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
