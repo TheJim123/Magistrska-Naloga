@@ -590,7 +590,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 \begin{izrek}
 	\label{izr:opHB} 
 	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
-		\item Naj bo $x\in X$ poljuben element in $\{x_n\}_{n\in\N},\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k elementu $x$: $$\lim_{n\to \infty}x_n = x = \lim_{n\to \infty}y_n.$$ Tedaj sta tudi zaporedji $\{T(x_n)\}_{n\in\N}$ in $\{T(y_n)\}_{n\in\N}$ konvergentni in imata isto limito: $$\lim_{n\to \infty}Tx_n = \lim_{n\to \infty}Ty_n.$$
+		\item Naj bo $x\in X$ poljuben element in $\{x_n\}_{n\in\N},\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k elementu $x$: $$\lim_{n\to \infty}x_n = x = \lim_{n\to \infty}y_n.$$ Tedaj sta tudi zaporedji $\{T(x_n)\}_{n\in\N}$ in $\{T(y_n)\}_{n\in\N}$ konvergentni in imata isto limito: $$\lim_{n\to \infty}T(x_n) = \lim_{n\to \infty}T(y_n).$$
 		\item Obstaja tak operator $U\in B(X, Z)$, da je $\norm{U} = \norm{T}$ in $Ux = Tx$ za vsak $x\in Y$.
 	\end{enumerate}
 \end{izrek}
@@ -1214,14 +1214,14 @@ Problem lastnih vrednosti matrik nam je znan že iz linearne algebre, ni pa omej
 	\label{opomb:specter}
 	Direktno iz definicije spektra sledi naslednja opazka: Operator $T\in B(X)$ ni obrnljiv natanko tedaj, ko je $0\in\sigma(T)$.
 \end{opomba}
-
+Začnimo s trivialnim primerom ničelnega in identičnega operatorja.
 \begin{primer}
 	\label{prim:trivspec}
 	Določimo spekter za operatorja $0$ in $I$. Naj bo $\lambda\in\C$ poljuben. Določimo najprej spekter za $0$. Denimo, da je $\lambda\neq 0$. Potem je operator $0-\lambda I = -\lambda I$ obrnljiv in njegov inverz je $-\lambda^{-1}I$. Če je pa $\lambda = 0$, operator $-\lambda I = 0$ ni obrnljiv. Posledično je $\sigma(0)=\{0\}$. 
 	Določimo sedaj še spekter za $I$. Operator $I - \lambda I = (1-\lambda)I$ je obrnljiv v primeru, ko je $1-\lambda \neq 0$ oz. ko je $\lambda \neq 1$. Res, tedaj je njegov inverz ravno operator $(1-\lambda)^{-1}I$. V primeru, ko je $\lambda=1$, operator $(1-\lambda)I = 0$ ni obrnljiv. To pomeni, da je $\sigma(I) = \{1\}$.
 \end{primer}
 
-V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
+Spomnimo se, da se v linearni algebri množica vseh lastnih vrednosti dane kompleksne kvadratne matrike imenuje ">spekter"< matrike. V naslednji lemi bomo premislili, da to ni naključje. Bolj natančno, lastne vrednosti operatorja so vsebovane v njegovem spektru.
 
 \begin{lema}
 	\label{lem:eigeninspecter}
@@ -1234,7 +1234,7 @@ V naslednji lemi preverimo, da spekter vsebuje vse lastne vrednosti operatorja.
 
 \begin{opomba}
 	\label{opomb:eigeninspecter}
-	V primeru končno razsežnih vektorskih prostorih vemo, da je linearna preslikava injektivna natanko teda, ko je surjektivna. Posledično, je spekter linearne preslikave na končno razsežnem kompleksnem Hilbertovem prostoru natanko množica njenih lastnih vrednosti. V splošnem to ni res. Obstajajo namreč omejeni linearni operatorji na (neskončno razsežnih) kompleksnih Hilbertovih prostorih, ki imajo neprazen spekter, a hkrati ne premorejo nobene lastne vrednosti. Primer takega operatorja je ravno desni premik $D\in B(l^2)$ iz primera \ref{prim:adjop1}. Da je spekter vedno neprazna množica, bomo premislili v izreku \ref{izr:specter}.
+	V primeru končno razsežnih vektorskih prostorih vemo, da je linearna preslikava injektivna natanko tedaj, ko je surjektivna. Posledično, je spekter linearne preslikave na končno razsežnem kompleksnem Hilbertovem prostoru natanko množica njenih lastnih vrednosti. V splošnem to ni res. Obstajajo namreč omejeni linearni operatorji na (neskončno razsežnih) kompleksnih Hilbertovih prostorih, ki imajo neprazen spekter, a hkrati ne premorejo nobene lastne vrednosti. Primer takega operatorja je ravno desni premik $D\in B(l^2)$ iz primera \ref{prim:adjop1}. Da je spekter vedno neprazna množica, bomo premislili v izreku \ref{izr:specter}.
 \end{opomba}
 
 Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvilleovega izreka iz kompleksne analize.
@@ -1256,7 +1256,7 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 \begin{dokaz}
 	Tekom dokaza se bomo sklicali na izreke \ref{izr:Hilbertopinv}, \ref{izr:Hilbertinvset} in \ref{izr:Liouville}. Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben operator $T\in B(X)$.
 	\begin{enumerate}[a)]
-		\item Vzemimo poljuben element spektra $\lambda\in\sigma(T)$ in denimo, da je $\norm{T} < \abs{\lambda}$. Tedaj je $\norm{\lambda^{-1}T} < 1$ in po izreku \ref{izr:Hilbertopinv} sledi, da je operator $I - \lambda^{-1}T$ obrnljiv. To pomeni, da je tudi operator $-\lambda(I - \lambda^{-1}T)= T - \lambda I$ obrnljiv. Sledi, da $\lambda\notin\sigma(T)$. Posledično, če je $\lambda\in \sigma(T)$, nujno velja, da je $\abs{\lambda}\leq \norm{T}$.
+		\item Vzemimo poljuben element spektra $\lambda\in\sigma(T)$ in denimo, da je $\norm{T} < \abs{\lambda}$. Tedaj je $\norm{\lambda^{-1}T} < 1$ in po izreku \ref{izr:Hilbertopinv} sledi, da je operator $I - \lambda^{-1}T$ obrnljiv. To pomeni, da je tudi operator $-\lambda(I - \lambda^{-1}T)= T - \lambda I$ obrnljiv. Sledi, da $\lambda\notin\sigma(T)$, kar je v protislovju z začetno predpostavko. Posledično, če je $\lambda\in \sigma(T)$, nujno velja, da je $\abs{\lambda}\leq \norm{T}$.
 		
 		\item Opazimo, da smo v točki $a)$ hkrati tudi pokazali, da je spekter omejena podmnožica v $\C$. Zato za dokaz te točke zadošča, da pokažemo, da je tudi zaprta podmnožica v $\C$. Definiramo preslikavo $\map{f}{\C}{B(X)}$ s predpisom $f(\nu) = T - \nu I$ in opazimo: $$\norm{f(\mu) - f(\lambda)} = \abs{\mu - \lambda}\cdot\norm{I}$$ za vsaka $\mu, \lambda \in \C$.
 		Vzemimo sedaj poljubno število $\varepsilon>0$ in izberimo $\delta = \frac{\varepsilon}{\norm{I}}$. Če je $\abs{\mu - \lambda}<\delta$, je: $$\norm{f(\mu) - f(\lambda)} < \frac{\varepsilon}{\norm{I}}\norm{I} = \varepsilon.$$ To pomeni, da je preslikava $f$ enakomerno zvezna. 
@@ -1438,13 +1438,13 @@ V naslednjem izreku so opisane lastnosti spektrov in numeričnih razponov sebi-a
 
 S pomočjo pojma numeričnega razpona operatorja lahko sedaj obravnavamo še en poseben tip sebi-adjungiranih operatorjev.
 
-\subsection{Koren pozitivnih operatorjev}
+\section{Koren pozitivnih operatorjev}
 
 Na koncu poglavja o omejenih linearnih operatorjih smo definirali t.~i.~">koren operatorja"< in povedali, da za nadaljni študij potrebujemo znanje o spektru. Sedaj, ko smo zadostili omenjenemu pogoju, se lahko lotimo obravnave tega vprašanja na posebnem tipu sebi-adjungiranih operatorjev. Podajmo najprej definicijo le teh.
 
 \begin{definicija}
 	\label{def:pozop}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven} operator, če je sebi-adjungiran in pozitivno semidefiniten. Za vsak $x\in X$ torej velja: $$0 \leq \Sp{Tx}{x}.$$
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven} operator, če je sebi-adjungiran in pozitivno semidefiniten. Velja torej, da je $T=T^*$, ter da je za vsak $x\in X$: $$0 \leq \Sp{Tx}{x}.$$
 \end{definicija}
 
 S pomočjo izreka \ref{izr:sebiadjnumraz} podamo karakterizacijo pozitivnih operatorjev.
@@ -1510,15 +1510,15 @@ Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomo�
 			\norm{\varphi(p)} &= \norm{p(T)} = r_\sigma(p(T)) \\
 			&= \sup\{\abs{\lambda}~|~\lambda\in\sigma(p(T))\} \\ &= \sup\{\abs{p(\lambda)}~|~\lambda\in\sigma(T)\} = \norm{p}.
 		\end{align*}
-		To pomeni, da je preslikava $\varphi$ linearna izometrija. Ker je podprostor $P$ gosta podmnožica prostora $\mathcal{C}_\R(\sigma(T))$ ter ker je $\mathcal{S}(X)$ realen Banachov prostor, po točki $b)$ izreka \ref{izr:opHB} sledi, da obstaja tak operator $\Phi\in B(\mathcal{C}_\R(\sigma(T)))$, za katerega je $\Phi(p) = \varphi(p)$ za vsak polinom $p\in P$. Naj bosta sedaj $f, g\in \mathcal{C}_\R(\sigma(T))$ poljubni funkciji. Ker je $P$ gosta podmnožica $\mathcal{C}_\R(\sigma(T))$, obstajata taki zaporedji $\{p_n\}_{n\in\N}$ in $\{q_n\}_{n\in\N}$, da je $\lim_{n\to\infty}p_n = f$ in $\lim_{n\to\infty}q_n = g$. Zato velja: \begin{align*}
+		To pomeni, da je preslikava $\varphi$ linearna izometrija na $P$. Ker je podprostor $P$ gosta podmnožica prostora $\mathcal{C}_\R(\sigma(T))$ ter ker je $\mathcal{S}(X)$ realen Banachov prostor, po točki $b)$ izreka \ref{izr:opHB} sledi, da obstaja tak operator $\Phi\in B(\mathcal{C}_\R(\sigma(T)))$, za katerega je $\Phi(p) = \varphi(p)$ za vsak polinom $p\in P$. Naj bosta sedaj $f, g\in \mathcal{C}_\R(\sigma(T))$ poljubni funkciji. Ker je $P$ gosta podmnožica $\mathcal{C}_\R(\sigma(T))$, obstajata taki zaporedji $\{p_n\}_{n\in\N}$ in $\{q_n\}_{n\in\N}$, da je $\lim_{n\to\infty}p_n = f$ in $\lim_{n\to\infty}q_n = g$. Zato velja: \begin{align*}
 			\Phi(f\cdot g) &= \Phi\left(\lim_{n\to \infty}p_n \cdot \lim_{n\to\infty}q_n\right) = \Phi\left(\lim_{n\to \infty}(p_n \cdot q_n)\right) \\ &= \lim_{n\to \infty}\Phi(p_n\cdot q_n) = \lim_{n\to \infty}(\Phi(p_n)\cdot \Phi(q_n)) \\ &= \lim_{n\to \infty}\Phi(p_n) \cdot \lim_{n\to \infty}\Phi(q_n) = \Phi\left(\lim_{n\to \infty}p_n\right) \cdot \Phi\left(\lim_{n\to \infty}q_n\right) \\ &= \Phi(f) \cdot \Phi(g).
 		\end{align*}
 	\end{enumerate}
 \end{dokaz}
-Lema \ref{lem:sebiadjPhi} nam zagotovi obstoj zvezne linearne preslikave, ki danemu opeatorju $T\in\mathcal{S}(X)$ in dani zvezni realni funkciji na $\sigma(T)$ določi operator $\Phi(f)$. Le tega pogosto označimo kar z oznako $f(T)$. S pomočjo tega rezultata lahko torej obravnavamo funkcije v operatorjih. V naslednjem izreku se bomo posebej zanimali za funkciji kvadratnega in četrtega korena na $[0, \infty)$.
+Lema \ref{lem:sebiadjPhi} nam zagotovi obstoj zvezne linearne preslikave, ki danemu operatorju $T\in\mathcal{S}(X)$ in dani zvezni realni funkciji na $\sigma(T)$ določi operator $\Phi(f)$. Le tega pogosto označimo kar z oznako $f(T)$. S pomočjo tega rezultata lahko torej obravnavamo funkcije v operatorjih. V naslednjem izreku se bomo posebej zanimali za funkciji kvadratnega in četrtega korena na $[0, \infty)$.
 \begin{izrek}
 	\label{izr:pozroot}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za pozitiven operator $T\in\mathcal{S}(X)$ velja, da obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za poljuben pozitiven operator $T\in\mathcal{S}(X)$ velja, da obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
 \end{izrek}
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben pozitiven operator $T\in\mathcal{S}(X)$. Najprej bomo premislili obstoj, nato pa enoličnost korena.
@@ -1717,13 +1717,14 @@ Sedaj se lahko lotimo obljubljenega izreka.
 			$\R$ & množica realnih števil,\\
 			$\C$ & množica kompleksnih števil,\\
 			$\F$ & polje, bodisi $\R$ bodisi $\C$,\\
-			$l^2$ & Prostor vseh zaporedij $\{x_n\}_{n\in\N}$ nad $\F$, za katera je $\sum_{n = 1}^\infty\abs{x_n}^2 \leq \infty$,\\
-			$L(X, Y)$ & Množica vseh linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
-			$B(X, Y)$ & Množica vseh omejenih linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
-			$L(X)$ & Množica vseh linearnih operatorjev na vektorskem prostoru $X$,\\
-			$B(X)$ & Množica vseh omejenih linearnih operatorjev na vektorskem prostoru $X$,\\
-			$\mathcal{U}(X)$ & Množica vseh unitarnih operatorjev na Hilbertovem prostoru $X$,\\
-			$\mathcal{S}(X)$ & Množica vseh sebi-adjungiranih operatorjev na Hilbertovem prostoru $X$,\\
+			$l^2$ & prostor vseh zaporedij $\{x_n\}_{n\in\N}$ nad $\F$, za katera je $\sum_{n = 1}^\infty\abs{x_n}^2 \leq \infty$,\\
+			$L(X, Y)$ & množica vseh linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
+			$B(X, Y)$ & množica vseh omejenih linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
+			$L(X)$ & množica vseh linearnih operatorjev na vektorskem prostoru $X$,\\
+			$B(X)$ & množica vseh omejenih linearnih operatorjev na vektorskem prostoru $X$,\\
+			$\mathcal{U}(X)$ & množica vseh unitarnih operatorjev na Hilbertovem prostoru $X$,\\
+			$\mathcal{S}(X)$ & množica vseh sebi-adjungiranih operatorjev na Hilbertovem prostoru $X$,\\
+			$\sigma(T)$ & spekter operatorja $T$,\\
 		\end{tabular}
 \end{table}
 

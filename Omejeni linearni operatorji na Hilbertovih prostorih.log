@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  30 MAY 2025 15:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  2 JUN 2025 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1684,7 +1684,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Overfull \hbox (28.14119pt too wide) in paragraph at lines 1715--1728
+Overfull \hbox (27.1662pt too wide) in paragraph at lines 1715--1729
 [][] 
  []
 
@@ -1707,16 +1707,16 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Omejeni linearni operatorji na Hilbertovih 
 prostorih".out' has not changed.
-(rerunfilecheck)             Checksum: 1648AC10910459340F7342E8EC1EFFA2;2514.
+(rerunfilecheck)             Checksum: 5412FBBD6B9EDB1A8EFEB3806A5DDCEB;2507.
  ) 
 Here is how much of TeX's memory you used:
- 29410 strings out of 473522
- 592665 string characters out of 5712673
- 1027712 words of memory out of 5000000
- 51834 multiletter control sequences out of 15000+600000
- 622097 words of font info for 86 fonts, out of 8000000 for 9000
+ 29409 strings out of 473522
+ 592638 string characters out of 5712673
+ 1027709 words of memory out of 5000000
+ 51833 multiletter control sequences out of 15000+600000
+ 619151 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,1472b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,1504b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1737,7 +1737,7 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (6
-5 pages, 561006 bytes).
+5 pages, 561541 bytes).
 PDF statistics:
  882 PDF objects out of 1000 (max. 8388607)
  307 named destinations out of 1000 (max. 500000)
