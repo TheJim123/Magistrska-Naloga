@@ -526,7 +526,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{izrek}[Heine-Borel-Lebesgue]
 	\label{izr:HBL}
-	Naj bo $\F^n$ poljuben metrični prostor, opremljen s standardno evklidsko metriko $d$. Za neprazno podmnožico $A\subseteq \F^n$ sta naslednji trditvi ekvivalentni: \begin{enumerate}[a)]
+	Naj bo $n\in\N$ poljubno naravno število in naj bo $\F^n$ metrični prostor, opremljen s standardno evklidsko metriko $d$. Za neprazno podmnožico $A\subseteq \F^n$ sta naslednji trditvi ekvivalentni: \begin{enumerate}[a)]
 		\item $A$ je kompaktna,
 		\item $A$ je zaprta in omejena.
 	\end{enumerate}
@@ -710,7 +710,7 @@ Sedaj definirajmo Hilbertove prostore.
 
 \begin{izrek}
 	\label{izr:Hilbertopinv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben omejen linearen operator. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $$(I-T)^{-1} = \sum_{n = 1}^{\infty}T^n.$$
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben omejen linearen operator. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $$(I-T)^{-1} = \sum_{n = 0}^{\infty}T^n.$$
 \end{izrek}
 
 \begin{izrek}
@@ -1190,7 +1190,7 @@ S pomočjo izreka \ref{izr:ortogprojdekomp} premislimo naslednjo posledico.
 \end{posledica}
 
 \begin{dokaz}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Vzemimo poljubno ortonormirano bazo $B$ podprostora $Y$. Naj bo sedaj $P\in B(X)$ poljuben ortogonalen projektor prostora $X$ na $Y$ in vzemimo poljuben element $x\in X$. Naj bosta $y\in Y$ in $z\in Y^\bot$ tista elementa, za katera je $x = y + z$. Ker je $\Sp{y}{e'} = 0$ za vsak $e' \in Y\bot$, sledi, da je $\Sp{z}{e}=0$ za vsak $e\in B$. Sedaj nam izrek \ref{izr:fouriervrsta} pove: $$y = \sum_{e\in B}\Sp{y}{e}e = \sum_{e\in B}\Sp{y+z}{e}e = \sum_{e\in B}\Sp{x}{e}e.$$	Od tod sledi, da je: $$P(x) = P(y + z) = y = \sum_{e\in B}\Sp{x}{e}e.$$
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Vzemimo poljubno ortonormirano bazo $B$ podprostora $Y$. Naj bo sedaj $P\in B(X)$ poljuben ortogonalen projektor prostora $X$ na $Y$ in vzemimo poljuben element $x\in X$. Naj bosta $y\in Y$ in $z\in Y^\bot$ tista elementa, za katera je $x = y + z$. Ker je $z\in Y^{\bot}$ in $B \subseteq Y$, sledi, da je $\Sp{z}{e}=0$ za vsak $e\in B$. Sedaj nam izrek \ref{izr:fouriervrsta} pove: $$y = \sum_{e\in B}\Sp{y}{e}e = \sum_{e\in B}\Sp{y+z}{e}e = \sum_{e\in B}\Sp{x}{e}e.$$	Od tod sledi, da je: $$P(x) = P(y + z) = y = \sum_{e\in B}\Sp{x}{e}e.$$
 \end{dokaz}
 
 Ortogonalni projektorji na Hilbertovih prostorih nas motivirajo tudi, da začnemo obravnavati vprašanje, ali za vsak izbran pozitiven operator $T$ na poljubnem Hilbertovem prostoru obstaja tak operator $U$ na istem prostoru, da je $U^2 = T$. 
@@ -1234,7 +1234,7 @@ Spomnimo se, da se v linearni algebri množica vseh lastnih vrednosti dane kompl
 
 \begin{opomba}
 	\label{opomb:eigeninspecter}
-	V primeru končno razsežnih vektorskih prostorih vemo, da je linearna preslikava injektivna natanko tedaj, ko je surjektivna. Posledično, je spekter linearne preslikave na končno razsežnem kompleksnem Hilbertovem prostoru natanko množica njenih lastnih vrednosti. V splošnem to ni res. Obstajajo namreč omejeni linearni operatorji na (neskončno razsežnih) kompleksnih Hilbertovih prostorih, ki imajo neprazen spekter, a hkrati ne premorejo nobene lastne vrednosti. Primer takega operatorja je ravno desni premik $D\in B(l^2)$ iz primera \ref{prim:adjop1}. Da je spekter vedno neprazna množica, bomo premislili v izreku \ref{izr:specter}.
+	Naj bosta $X$ in $Y$ poljubna vektorska prostora nad poljem $\F$, ki imata enako razsežnost. Tedaj velja, da je linearna preslikava $\map{T}{X}{Y}$ injektivna natanko tedaj, ko je surjektivna. Analogen rezultat velja tudi, ko je linearna preslikava $\map{T}{X}{X}$ endomorfizem. Posledično, je spekter linearne preslikave na končno razsežnem kompleksnem Hilbertovem prostoru natanko množica njenih lastnih vrednosti. V splošnem to ni res. Obstajajo namreč omejeni linearni operatorji na (neskončno razsežnih) kompleksnih Hilbertovih prostorih, ki imajo neprazen spekter, a hkrati ne premorejo nobene lastne vrednosti. Primer takega operatorja je ravno desni premik $D\in B(l^2)$ iz primera \ref{prim:adjop1}. Da je spekter vedno neprazna množica, bomo premislili v izreku \ref{izr:specter}.
 \end{opomba}
 
 Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvilleovega izreka iz kompleksne analize.
@@ -1278,7 +1278,7 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 			&= f(((T-\lambda_0 I)^{-1})^2).
 		\end{align*}
 		Ker ta limita obstaja za vsak $\lambda_0\in\C$, je funkcija $\varphi$ kompleksno odvedljiva na celotni kompleksni ravnini $\C$. Premislimo še, da je $\varphi$ omejena.
-		Vzemimo najprej poljubno kompleksno število $\lambda\in\C$, za katerega je $\abs{\lambda}>\norm{T}$. Tedaj je: $$(T- \lambda I)^{-1} = (-\lambda)^{-1}(I - \lambda^{-1}T)^{-1}.$$ Opazimo, da je $\norm{\lambda^{-1}T}<1$. Izrek \ref{izr:Hilbertopinv} nam pove, da je potem: $$(T- \lambda I)^{-1} = (-\lambda)^{-1}\sum_{n = 1}^{\infty}(\lambda^{-1}T)^n.$$ Posledično je: $$\norm{(T- \lambda I)^{-1}} \leq\frac{1}{\abs{\lambda}}\sum_{n = 1}^{\infty}\abs{\lambda}^{-n}\norm{T}^n = \frac{1}{\abs{\lambda}}\sum_{n=1}^{\infty}\left(\frac{\norm{T}}{\abs{\lambda}}\right)^n = \frac{1}{\abs{\lambda}}\frac{1}{1-\frac{\norm{T}}{\abs{\lambda}}}=\frac{1}{\abs{\lambda}-\norm{T}}.$$
+		Vzemimo najprej poljubno kompleksno število $\lambda\in\C$, za katerega je $\abs{\lambda}>\norm{T}$. Tedaj je: $$(T- \lambda I)^{-1} = (-\lambda)^{-1}(I - \lambda^{-1}T)^{-1}.$$ Opazimo, da je $\norm{\lambda^{-1}T}<1$. Izrek \ref{izr:Hilbertopinv} nam pove, da je potem: $$(T- \lambda I)^{-1} = (-\lambda)^{-1}\sum_{n = 0}^{\infty}(\lambda^{-1}T)^n.$$ Posledično je: $$\norm{(T- \lambda I)^{-1}} \leq\frac{1}{\abs{\lambda}}\sum_{n = 0}^{\infty}\abs{\lambda}^{-n}\norm{T}^n = \frac{1}{\abs{\lambda}}\sum_{n=0}^{\infty}\left(\frac{\norm{T}}{\abs{\lambda}}\right)^n = \frac{1}{\abs{\lambda}}\frac{1}{1-\frac{\norm{T}}{\abs{\lambda}}}=\frac{1}{\abs{\lambda}-\norm{T}}.$$
 		Ker je $0 \leq \norm{(T- \lambda I)^{-1}}$ za vsako število $\lambda\in\C$ in ker je $$\lim_{\abs{\lambda}\to\infty}\frac{1}{\abs{\lambda} - \norm{T}}=0$$ po t.~i.~izreku o sendviču sklepamo, da je: $$\lim_{\abs{\lambda}\to\infty}\norm{(T- \lambda I)^{-1}} = 0.$$ Z dobljeno limito bomo obravnavali obnašanje funkcije $\varphi$ daleč od izhodišča. Za vsako kompleksno število $\nu\in\C$ velja naslednja ocena: $$0 \leq\abs{\varphi(\nu)} = \abs{f((T-\nu I)^{-1})} \leq \norm{f}\cdot\norm{(T-\nu I)^{-1}}.$$ Z uporabo prej izračunane limite in ponovno uporabo izreka o sendviču vidimo, da je $\lim_{\abs{\lambda}\to\infty}\abs{\varphi(\lambda)}=0$. Posledično je: $$\lim_{\abs{\lambda}\to\infty}\varphi(\lambda)=0.$$ To pomeni, da obstaja tako realno število $R>0$, da je $\abs{\varphi(\lambda)}\leq 1$ za vsako število $\lambda\in \overline{K_R(0)}^c$. Ker je $\varphi$ zvezna na $\overline{K_R(0)}$, je tam tudi omejena. To pomeni, da je $\varphi$ omejena na celi kompleksni ravnini $\C$.
 		Izrek \ref{izr:Liouville} nam pove, da je potem funkcija $\varphi$ konstantna. Ker je, $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda) = 0$ in je funkcija $\varphi$ zvezna, je potem $\varphi\equiv 0$. To pomeni, da je $f((T - \lambda I)^{-1})=0$ za vsak $\lambda\in\C$. Ker je $f$ bil poljuben omejen linearen funkcional na $B(X)$, sklep velja za vse omejene linearne funkcionale na $B(X)$. Vzemimo sedaj poljubno kompleksno število $\lambda\in\C$.
 		Posledica \ref{posl:HB} nam pove, da obstaja tak omejen linearen funkcional $\map{g}{B(X)}{\C}$, da je $0 = g((T- \lambda I)^{-1})=\norm{(T- \lambda I)^{-1}}$. To pa pomeni, da je $(T- \lambda I)^{-1} = 0$. Prišli smo v protislovje, saj ničelni operator ni obrnljiv.
@@ -1337,8 +1337,8 @@ S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih po
 
 \begin{definicija}
 	\label{def:idemnilop}
-	Naj bosta $U$ in $V$ poljubna vektorska prostora nad poljem $\F$. Za linearen operator $\map{A}{U}{V}$ pravimo, da je: \begin{enumerate}[a)]
-		\item \pojem{Idempotent}, če je $A^2 = A$. Operatorja $0$ in $I$ imenujemo \pojem{trivialna idempotenta}.
+	Naj bo $U$ poljuben vektorski prostor nad poljem $\F$. Za linearen operator $A\in L(U)$ pravimo, da je: \begin{enumerate}[a)]
+		\item \pojem{Idempotent} oziroma \pojem{projektor}, če je $A^2 = A$. Operatorja $0$ in $I$ imenujemo \pojem{trivialna idempotenta} oziroma \pojem{trivialna projektorja}.
 		\item \pojem{Nilpotent}, če obstaja tako število $n\in\N$, da je $A^n = 0$.
 	\end{enumerate}
 \end{definicija}
@@ -1356,9 +1356,9 @@ V naslednji lemi bomo premislili posebne lastnosti spektrov nilpotentnih, idempo
 	Ključni del dokaza vseh trditev bo uporaba izreka \ref{izr:polyspec}. Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben operator $T\in B(X)$. \begin{enumerate}[a)]
 		\item Denimo, da je operator $T\in B(X)\setminus\{0, I\}$ idempotent. Potem operator $T$ zadošča enačbi $T^2 - T = 0$. Označimo polinom $p(z) = z^2 - z$. Tedaj operator $T$ zadošča enačbi $p(T) = 0$. Kot smo že omenili v opombi \ref{opomb:specprimeri}, je $\sigma(0) = \{0\}$. Prva točka izreka \ref{izr:polyspec} nam pove: $$\{0\}=\sigma(0)=\sigma(p(T))=\sigma(T^2 - T) = \{\lambda^2 - \lambda~|~\lambda\in\sigma(T)\}.$$ Za vsak $\lambda\in\sigma(T)$ torej velja, da je $\lambda^2 - \lambda = 0$. Ta enačba ima dve rešitvi: $\lambda=0$ in $\lambda=1$. To pomeni, da je $\sigma(T)\subseteq\{0, 1\}$. Hkrati nam tretja točka izreka \ref{izr:specter} pove, da je $\sigma(T)\neq\emptyset$. Premislimo sedaj, da je $\{0, 1\}\subseteq\sigma(T)$.
 		
-		Denimo najprej, da $1\notin\sigma(T)$. Tedaj je operator $T- I$ obrnljiv, torej lahko enačbo $$(T-I)T = P(T) = 0$$ z leve pomnožimo z inverznim operatorjem $(T-I)^{-1}$. Če to storimo, dobimo enakost $T = 0$. To nas privede v protislovje z začetno predpostavko, da je $T\in B(X)\setminus\{0, I\}$. Sledi, da je $1\in\sigma(T)$.
+		Denimo najprej, da $1\notin\sigma(T)$. Tedaj je operator $T- I$ obrnljiv, torej lahko enačbo $$(T-I)T = p(T) = 0$$ z leve pomnožimo z inverznim operatorjem $(T-I)^{-1}$. Če to storimo, dobimo enakost $T = 0$. To nas privede v protislovje z začetno predpostavko, da je $T\in B(X)\setminus\{0, I\}$. Sledi, da je $1\in\sigma(T)$.
 		
-		Denimo sedaj, da $0\notin\sigma(T)$. Tedaj je operator $T$ obrnljiv, torej lahko enačbo $$(T-I)T = P(T) = 0$$ z desne pomnožimo z inverznim operatorjem $T^{-1}$. Tako dobimo enakost $T-I = 0$ oziroma $T=I$. Tudi to nas privede v protislovje z enako začetno predpostavko, kot v prejšnji točki. To pomeni, da je $0\in\sigma(T)$. Sledi, da je $\sigma(T) = \{0, 1\}$.
+		Denimo sedaj, da $0\notin\sigma(T)$. Tedaj je operator $T$ obrnljiv, torej lahko enačbo $$(T-I)T = p(T) = 0$$ z desne pomnožimo z inverznim operatorjem $T^{-1}$. Tako dobimo enakost $T-I = 0$ oziroma $T=I$. Tudi to nas privede v protislovje z enako začetno predpostavko, kot v prejšnji točki. To pomeni, da je $0\in\sigma(T)$. Sledi, da je $\sigma(T) = \{0, 1\}$.
 		
 		\item Naj bo sedaj operator $T\in B(X)$ nilpotent in naj bo $n$ najmanjše tako naravno število, za katerega je $T^n = 0$. Označimo polinom $q(z)=z^n$. Tedaj operator $T$ zadošča enačbi $q(T) = 0$. Po prvi točki izreka \ref{izr:polyspec} je potem: $$\{0\}=\sigma(0)=\sigma(q(T))=\sigma(T^n)=\{\lambda^n~|~\lambda\in\sigma(T)\}.$$ Sledi, da za vsak $\lambda\in\sigma(T)$ velja, da je $\lambda^n = 0$. Ta enačba ima le eno rešitev $\lambda=0$. To pomeni, da je $\sigma(T)\subseteq\{0\}$. Ker po tretji točki izreka \ref{izr:specter} spekter ne more biti prazna množica, sledi, da je $\sigma(T)=\{0\}$.
 		
@@ -1378,11 +1378,11 @@ Pri obravnavi spektrov normalnih in sebi-adjungiranih operatorjev nam bosta pri�
 	\label{def:specrad}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben operator. \begin{enumerate}[a)]
 		\item \pojem{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda}~|~\lambda\in\sigma(T)\}.$$
-		\item \pojem{Numerični razpon} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}.$$
+		\item \pojem{Numerični zaklad} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}.$$
 	\end{enumerate}
 \end{definicija}
 
-V primeru normalnih operatorjev velja naslednja zveza med spektrom in numeričnim razponom.
+V primeru normalnih operatorjev velja naslednja zveza med spektrom in numeričnim zakladom .
 
 \begin{lema}
 	\label{lem:normalnumrazspec}
@@ -1394,7 +1394,7 @@ V primeru normalnih operatorjev velja naslednja zveza med spektrom in numerični
 	Po izreku \ref{izr:CSB} za vsako število $n\in\N$ velja: $$0\leq\abs{\Sp{(T-\lambda I)x_n}{x_n}} \leq \norm{(T-\lambda I)x_n}\cdot\norm{x_n} = \norm{(T-\lambda I)x_n}.$$ Izrek o sendviču nam sedaj pove, da je $\lim_{n\to\infty}\Sp{(T-\lambda I)x_n}{x_n} = 0$. Slednjo enakost razpišemo v: $$\lim_{n\to\infty}(\Sp{Tx_n}{x_n}-\lambda\Sp{x_n}{x_n})=0.$$ Ko upoštevamo, da je $\Sp{x_n}{x_n} = 1$ za vsak $n\in\N$, dobimo, da je: $$\lim_{n\to\infty}\Sp{Tx_n}{x_n} = \lambda.$$ Sledi, da je $\lambda \in \overline{V(T)}$.
 \end{dokaz}
 
-V naslednjem izreku so opisane lastnosti spektrov in numeričnih razponov sebi-adjungiranih operatorjev.
+V naslednjem izreku so opisane lastnosti spektrov in numeričnih zakladov sebi-adjungiranih operatorjev.
 
 \begin{izrek}
 	\label{izr:sebiadjnumraz}
@@ -1436,15 +1436,20 @@ V naslednjem izreku so opisane lastnosti spektrov in numeričnih razponov sebi-a
 	\end{enumerate}
 \end{dokaz}
 
-S pomočjo pojma numeričnega razpona operatorja lahko sedaj obravnavamo še en poseben tip sebi-adjungiranih operatorjev.
+S pomočjo pojma numeričnega zaklada operatorja lahko sedaj obravnavamo še en poseben tip sebi-adjungiranih operatorjev.
 
 \section{Koren pozitivnih operatorjev}
 
 Na koncu poglavja o omejenih linearnih operatorjih smo definirali t.~i.~">koren operatorja"< in povedali, da za nadaljni študij potrebujemo znanje o spektru. Sedaj, ko smo zadostili omenjenemu pogoju, se lahko lotimo obravnave tega vprašanja na posebnem tipu sebi-adjungiranih operatorjev. Podajmo najprej definicijo le teh.
 
 \begin{definicija}
+	\label{def:pozsemiop}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitivno semidefiniten}, če za vsak $x\in X$ velja: $$0 \leq \Sp{Tx}{x}.$$
+\end{definicija}
+
+\begin{definicija}
 	\label{def:pozop}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven} operator, če je sebi-adjungiran in pozitivno semidefiniten. Velja torej, da je $T=T^*$, ter da je za vsak $x\in X$: $$0 \leq \Sp{Tx}{x}.$$
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \pojem{pozitiven}, če je sebi-adjungiran in pozitivno semidefiniten.
 \end{definicija}
 
 S pomočjo izreka \ref{izr:sebiadjnumraz} podamo karakterizacijo pozitivnih operatorjev.
@@ -1458,14 +1463,14 @@ S pomočjo izreka \ref{izr:sebiadjnumraz} podamo karakterizacijo pozitivnih oper
 	Dokazali bomo obe implikaciji. 
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Denimo najprej, da je operator $T$ pozitiven. Tedaj za vsak element $x\in X$ velja $0\leq\Sp{Tx}{x}$. To pomeni, da je $V(T)\subseteq [0, \infty)$. Ko upoštevamo lemo \ref{lem:normalnumrazspec}, opazimo naslednje: $$\sigma(T)\subseteq\overline{V(T)}\subseteq [0, \infty).$$ S tem smo dokazali prvo implikacijo.
 	
-	Denimo sedaj, da je $\sigma(T)\subseteq [0, \infty)$. Uporabili bomo točki $a)$ in $e)$ izreka \ref{izr:sebiadjnumraz}, ki nam poveta, da je $V(T)\subseteq\R$ in $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t$ za vsak $t\in V(T)$. Ker je $\sigma(T)\subseteq [0, \infty)$ zato sledi, da je $0 \leq t$ za vsak $t\in V(T)$. To pomeni, da je $0\leq\Sp{Tx}{x}$ za vsak $x\in X$, torej je $T$ pozitiven operator.
+	Denimo sedaj, da je $\sigma(T)\subseteq [0, \infty)$. Uporabili bomo točki $a)$ in $e)$ izreka \ref{izr:sebiadjnumraz}, ki nam povesta, da je $V(T)\subseteq\R$ in $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t$ za vsak $t\in V(T)$. Ker je $\sigma(T)\subseteq [0, \infty)$ zato sledi, da je $0 \leq t$ za vsak $t\in V(T)$. To pomeni, da je $0\leq\Sp{Tx}{x}$ za vsak $x\in X$, torej je $T$ pozitiven operator.
 \end{dokaz}
 
 Navedimo sedaj nekaj primerov pozitivnih operatorjev.
 
 \begin{primer}
 	\label{prim:pozoptriv}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Preverimo, da sta $0$ in $I$ pozitivna operatorja. Vzemimo poljuben element $x\in X$. Tedaj je $$\Sp{0x}{x} = \Sp{0}{x} = 0 \geq 0$$ in $$\Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2 \geq 0.$$ To pomeni, da sta oba operatorja res pozitivna.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Preverimo, da sta $0$ in $I$ pozitivna operatorja. Vzemimo poljuben element $x\in X$. Tedaj je $$\Sp{0x}{x} = \Sp{0}{x} = 0 \geq 0$$ in $$\Sp{Ix}{x} = \Sp{x}{x} = \norm{x}^2 \geq 0.$$ Ker sta poleg tega operatorja $0$ in $I$ sebi-adjungirana sledi, da sta oba operatorja res pozitivna.
 \end{primer}
 
 \begin{primer}
@@ -1497,20 +1502,21 @@ Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomo�
 
 \begin{lema}
 	\label{lem:sebiadjPhi}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Dodatno s $\mathcal{C}_\R(\sigma(T))$ označimo prostor vseh zveznih funkcij, ki slikajo iz $\R$ v $\sigma(T)$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Dodatno s $\mathcal{C}_\R(\sigma(T))$ označimo realen vektorski prostor vseh zveznih funkcij, ki slikajo iz $\sigma(T)$ v $\R$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
 		\item $\Phi(p) = p(T)$ za vsak polinom $p\in\mathcal{C}_\R(\sigma(T))$,
-		\item $\Phi(f\cdot g) = \Phi(f)\cdot\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
+		\item $\Phi(f\cdot g) = \Phi(f)\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
 	\end{enumerate}
 \end{lema}
 
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben sebi-adjungiran operator $T\in\mathcal{S}(X)$. \begin{enumerate}
-		\item Označimo s $P$ realen vektorski podprostor vseh polinomov v prostoru $\mathcal{C}_\R(\sigma(T))$ in definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Ker je operator $T$ sebi-adjungiran, nam izrek \ref{izr:sebiadjnumraz} pove, da je $\sigma(T)\subseteq\R$. Zato so vsi elementi v $P$ realni polinomi z realnimi koeficienti. Posledično je $(p(T))^* = p(T^*) = p(T)$ za vsak $p\in P$, torej je preslikava $\Phi$ na $P$ dobro definirana. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
-		To pomeni, da je preslikava $\varphi$ linearna. Še več, za poljubna polinoma $p, q\in P$ je: $$\varphi(p\cdot q) = (p\cdot q)(T) = p(T)\cdot q(T) = \varphi(p)\cdot \varphi(q).$$ Naj bo sedaj $p\in P$ poljuben polinom. V naslednjem premisleku bomo uporabili točko $d)$ izreka \ref{izr:sebiadjnumraz} in izrek \ref{izr:polyspec}: \begin{align*}
+		\item Ker je $\sigma(T)\subseteq\R$, lahko~$\mathcal{C}_\R(\sigma(T))$ obravnavamo kot realen vektorski prostor. Označimo s $P$ podprostor vektorskega prostora $\mathcal{C}_\R(\sigma(T))$, ki sestoji iz vseh polinomov z realnimi koeficienti. Definiramo preslikavo $\map{\varphi}{P}{\mathcal{S}(X)}$ s predpisom $\varphi(p) = p(T)$. Ker je operator $T$ sebi-adjungiran in ker imajo vsi polinomi iz $P$ realne koeficiente sledi, da je $(p(T))^* = p(T^*) = p(T)$ za vsak $p\in P$, torej je preslikava na $P$ dobro definirana. Preverimo najprej, da je $\varphi$ linearna transformacija. Vzemimo poljubna polinoma $p, q\in \mathcal{C}_\R(\sigma(T))$ ter poljubna skalarja $\alpha_1,\alpha_2\in\C$. Tedaj je: $$\varphi(\alpha_1p+\alpha_2q) =(\alpha_1p + \alpha_2q)(T) = \alpha_1p(T) + \alpha_2q(T) = \alpha_1\varphi(p) + \alpha_2\varphi(q).$$
+		To pomeni, da je preslikava $\varphi$ linearna. Še več, za poljubna polinoma $p, q\in P$ je: $$\varphi(p\cdot q) = (p\cdot q)(T) = p(T)q(T) = \varphi(p)\varphi(q).$$ Naj bo sedaj $p\in P$ poljuben polinom. V naslednjem premisleku bomo uporabili točko $d)$ izreka \ref{izr:sebiadjnumraz} in izrek \ref{izr:polyspec}: \begin{align*}
 			\norm{\varphi(p)} &= \norm{p(T)} = r_\sigma(p(T)) \\
 			&= \sup\{\abs{\lambda}~|~\lambda\in\sigma(p(T))\} \\ &= \sup\{\abs{p(\lambda)}~|~\lambda\in\sigma(T)\} = \norm{p}.
 		\end{align*}
-		To pomeni, da je preslikava $\varphi$ linearna izometrija na $P$. Ker je podprostor $P$ gosta podmnožica prostora $\mathcal{C}_\R(\sigma(T))$ ter ker je $\mathcal{S}(X)$ realen Banachov prostor, po točki $b)$ izreka \ref{izr:opHB} sledi, da obstaja tak operator $\Phi\in B(\mathcal{C}_\R(\sigma(T)))$, za katerega je $\Phi(p) = \varphi(p)$ za vsak polinom $p\in P$. Naj bosta sedaj $f, g\in \mathcal{C}_\R(\sigma(T))$ poljubni funkciji. Ker je $P$ gosta podmnožica $\mathcal{C}_\R(\sigma(T))$, obstajata taki zaporedji $\{p_n\}_{n\in\N}$ in $\{q_n\}_{n\in\N}$, da je $\lim_{n\to\infty}p_n = f$ in $\lim_{n\to\infty}q_n = g$. Zato velja: \begin{align*}
+		To pomeni, da je preslikava $\varphi$ linearna izometrija na $P$. 
+		\item Ker je podprostor $P$ gosta podmnožica prostora $\mathcal{C}_\R(\sigma(T))$ ter ker je $\mathcal{S}(X)$ realen Banachov prostor, po točki $b)$ izreka \ref{izr:opHB} sledi, da obstaja tak operator $\Phi\in B(\mathcal{C}_\R(\sigma(T)), \mathcal{S}(X))$, za katerega je $\Phi(p) = \varphi(p)$ za vsak polinom $p\in P$. Naj bosta sedaj $f, g\in \mathcal{C}_\R(\sigma(T))$ poljubni funkciji. Ker je $P$ gosta podmnožica $\mathcal{C}_\R(\sigma(T))$, obstajata taki zaporedji $\{p_n\}_{n\in\N}$ in $\{q_n\}_{n\in\N}$, da je $\lim_{n\to\infty}p_n = f$ in $\lim_{n\to\infty}q_n = g$. Zato velja: \begin{align*}
 			\Phi(f\cdot g) &= \Phi\left(\lim_{n\to \infty}p_n \cdot \lim_{n\to\infty}q_n\right) = \Phi\left(\lim_{n\to \infty}(p_n \cdot q_n)\right) \\ &= \lim_{n\to \infty}\Phi(p_n\cdot q_n) = \lim_{n\to \infty}(\Phi(p_n)\cdot \Phi(q_n)) \\ &= \lim_{n\to \infty}\Phi(p_n) \cdot \lim_{n\to \infty}\Phi(q_n) = \Phi\left(\lim_{n\to \infty}p_n\right) \cdot \Phi\left(\lim_{n\to \infty}q_n\right) \\ &= \Phi(f) \cdot \Phi(g).
 		\end{align*}
 	\end{enumerate}
@@ -1518,14 +1524,14 @@ Sedaj se vrnimo k vprašanju korena operatorja. Najprej bomo premislili en pomo�
 Lema \ref{lem:sebiadjPhi} nam zagotovi obstoj zvezne linearne preslikave, ki danemu operatorju $T\in\mathcal{S}(X)$ in dani zvezni realni funkciji na $\sigma(T)$ določi operator $\Phi(f)$. Le tega pogosto označimo kar z oznako $f(T)$. S pomočjo tega rezultata lahko torej obravnavamo funkcije v operatorjih. V naslednjem izreku se bomo posebej zanimali za funkciji kvadratnega in četrtega korena na $[0, \infty)$.
 \begin{izrek}
 	\label{izr:pozroot}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za poljuben pozitiven operator $T\in\mathcal{S}(X)$ velja, da obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za vsak pozitiven operator $T\in\mathcal{S}(X)$ obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
 \end{izrek}
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben pozitiven operator $T\in\mathcal{S}(X)$. Najprej bomo premislili obstoj, nato pa enoličnost korena.
-	Naj bo $P$ vektorski podprostor prostora $\mathcal{C}_\R(\sigma(T))$, ki vsebuje vse polinome. Trditvev \ref{trd:pozopkar} nam pove, da je $\sigma(T)\subseteq [0, \infty)$. Posledično lahko na $\sigma(T)$ dobro definiramo funkciji $\map{f, g, }{\sigma(T)}{\R}$ s predpisoma $f(t) = t^{\frac{1}{4}}$ in $g(t)=t^{\frac{1}{2}}$. Opazimo, da sta $f$ in $g$ zvezni realni funkciji na $\sigma(T)$. Vzemimo sedaj omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$ iz leme \ref{lem:sebiadjPhi} in z njegovo pomočjo definiramo operatorja $U = \Phi(g)=g(T)$ in $V = \Phi(f)=f(T)$. Operatorja $V$ in $U$ sta seveda oba sebi-adjungirana. Še več, ker je prostor polinomov na $\sigma(T)$ gosta podmnožica v $\mathcal{C}_\R(\sigma(T))$, je funkcija $g$ limita nekega zaporedja polinomov $\{p_n\}_{n\in\N}$ iz $P$. Posledično je operator $U=g(T)$ limita zaporedja teh istih polinomov, izračunana v $T$: $$g(T)=\Phi(g)=\Phi\left(\lim_{n\to \infty}p_n\right)=\lim_{n\to \infty}\Phi(p_n)=\lim_{n\to \infty}p_n(T).$$ Hkrati velja tudi, da je: $$U^2 = (g(T))^2 = id(T) = T.$$ To pomeni, da je operator $U$ koren operatorja $T$. Premislimo še, da je operator $U$ pozitiven. Opazimo: $$V^2 = (f(T))^2 = g(T) = U.$$ Vzemimo sedaj poljuben element $x\in X$. Ker je operator $V$ sebi adjungiran velja naslednje: $$\Sp{Ux}{x} = \Sp{V^2x}{x} = \Sp{Vx}{Vx} = \norm{Vx}^2 \geq 0.$$
+	Naj bo $P$ vektorski podprostor prostora $\mathcal{C}_\R(\sigma(T))$, ki vsebuje vse polinome. Trditvev \ref{trd:pozopkar} nam pove, da je $\sigma(T)\subseteq [0, \infty)$. Posledično lahko na $\sigma(T)$ dobro definiramo funkciji $\map{f, g, }{\sigma(T)}{\R}$ s predpisoma $f(t) = t^{\frac{1}{4}}$ in $g(t)=t^{\frac{1}{2}}$. Opazimo, da sta $f$ in $g$ zvezni realni funkciji na $\sigma(T)$. Vzemimo sedaj omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$ iz leme \ref{lem:sebiadjPhi} in z njegovo pomočjo definiramo operatorja $U = \Phi(g)=g(T)$ in $V = \Phi(f)=f(T)$. Operatorja $V$ in $U$ sta seveda oba sebi-adjungirana. Še več, ker je prostor polinomov na $\sigma(T)$ gosta podmnožica v $\mathcal{C}_\R(\sigma(T))$, je funkcija $g$ limita nekega zaporedja polinomov $\{p_n\}_{n\in\N}$ iz $P$. Posledično je operator $U=g(T)$ limita zaporedja teh istih polinomov, izračunana v $T$: $$g(T)=\Phi(g)=\Phi\left(\lim_{n\to \infty}p_n\right)=\lim_{n\to \infty}\Phi(p_n)=\lim_{n\to \infty}p_n(T).$$ Po lemi \ref{lem:sebiadjPhi} sledi tudi, da je: $$U^2 = (g(T))^2 = id(T) = T.$$ To pomeni, da je operator $U$ koren operatorja $T$. Premislimo še, da je operator $U$ pozitiven. Opazimo: $$V^2 = (f(T))^2 = g(T) = U.$$ Vzemimo sedaj poljuben element $x\in X$. Ker je operator $V$ sebi adjungiran velja naslednje: $$\Sp{Ux}{x} = \Sp{V^2x}{x} = \Sp{Vx}{Vx} = \norm{Vx}^2 \geq 0.$$
 	Ker to velja za vsak element $x\in X$ sledi, da je operator $U$ res pozitiven.
 	
-	Denimo sedaj, da operator $T$ premore še en pozitiven koren, ki ga označimo z $Q$. Tedaj je $$QT = QQ^2 = Q^2Q = TQ.$$ Še več, hitro vidimo, da je za vsak $n\in\N$ tudi $QT^n = T^nQ$. Vzemimo sedaj poljuben polinom $p\in P$ s predpisom $p(x) = a_0 + a_1x + \ldots + a_nx^n$. Tedaj velja: $$Qp(T) = Q(a_0I + a_1T + \ldots + a_nT^n) = (a_0I + a_1T + \ldots + a_nT^n)Q = p(T)Q.$$ Ker je operator $U$ limita zaporedja $\{p_n(T)\}_{n\in\N}$, sledi, da je tudi $QU = UQ$. Ker je operator $Q$ pozitiven, po prejšnjem premisleku, premore pozitiven koren, ki ga označimo z $R$. Vsemimo sedaj poljuben element $x\in X$ in naj bo $y = (U-Q)x$. Ker je $U^2 = Q^2 = T$, sledi naslednje: \begin{align*}
+	Denimo sedaj, da operator $T$ premore še en pozitiven koren, ki ga označimo z $Q$. Tedaj je $$QT = QQ^2 = Q^2Q = TQ.$$ Še več, hitro vidimo, da je za vsak $n\in\N$ tudi $QT^n = T^nQ$. Vzemimo sedaj poljuben polinom $p\in P$ s predpisom $p(x) = a_0 + a_1x + \ldots + a_nx^n$. Tedaj velja: $$Qp(T) = Q(a_0I + a_1T + \ldots + a_nT^n) = (a_0I + a_1T + \ldots + a_nT^n)Q = p(T)Q.$$ Ker je operator $U$ limita zaporedja $\{p_n(T)\}_{n\in\N}$, sledi, da je tudi $QU = UQ$. Ker je operator $Q$ pozitiven, po prejšnjem premisleku, premore pozitiven koren, ki ga označimo z $R$. Vzemimo sedaj poljuben element $x\in X$ in naj bo $y = (U-Q)x$. Ker je $U^2 = Q^2 = T$, sledi naslednje: \begin{align*}
 		\norm{Vy}^2 + \norm{Ry}^2 &= \Sp{V^2y}{y} + \Sp{R^2y}{y} = \Sp{(U+Q)y}{y} \\
 		&= \Sp{(U + Q)(U-Q)x}{y} = \Sp{(U^2 + QU - UQ - Q^2)x}{y} \\
 		&= \Sp{(U^2 - Q^2)x}{y} = 0.
@@ -1536,7 +1542,7 @@ Lema \ref{lem:sebiadjPhi} nam zagotovi obstoj zvezne linearne preslikave, ki dan
 Iz vira \cite{bib:Kurepa} povzemimo nekaj posledic izreka \ref{izr:pozroot}.
 
 \begin{posledica}
-	\label{posl:pozopkvadrat} 
+	\label{posl:pozopkvadrat}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja. Če je $S^2 = T^2$, je $S=T$.
 \end{posledica}
 \begin{dokaz}
@@ -1554,7 +1560,7 @@ Iz vira \cite{bib:Kurepa} povzemimo nekaj posledic izreka \ref{izr:pozroot}.
 \end{dokaz}
 
 \begin{posledica}
-	\label{posl:pozprod} Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bodo $S, T, U\in B(X)$ poljubni sebi-adjungirani operatorji, ki medseboj paroma komutirajo. Če sta operatorja $T-S$ in $U$ pozitivno semidefinitna, je tudi operator $(T-S)U$ pozitivno semidefiniten.
+	\label{posl:pozprod2} Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bodo $S, T, U\in B(X)$ poljubni sebi-adjungirani operatorji, ki medseboj paroma komutirajo. Če sta operatorja $T-S$ in $U$ pozitivno semidefinitna, je tudi operator $(T-S)U$ pozitivno semidefiniten.
 \end{posledica}
 
 \begin{dokaz}
@@ -1574,7 +1580,7 @@ Sedaj, ko smo se prepričali, da so koreni pozitivnih operatorjev dobro definira
 \end{trditev}
 
 \begin{dokaz}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator, za katerega je $\norm{S}\leq 1$. Premislimo najprej, da je operator $I-T^2$ pozitiven. Ker sta operatorja $I$ in $T$ oba sebi-adjungirana, nam lema \ref{lem:sebiadjlast} pove, da je tudi operator $I-T^2$ sebi-adjungiran. Preverimo še, da je pozitivno semidefiniten. Naj bo $x\in X$ poljuben element. Tedaj je \begin{align*}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator, za katerega je $\norm{T}\leq 1$. Premislimo najprej, da je operator $I-T^2$ pozitiven. Ker sta operatorja $I$ in $T$ oba sebi-adjungirana, nam lema \ref{lem:sebiadjlast} pove, da je tudi operator $I-T^2$ sebi-adjungiran. Preverimo še, da je pozitivno semidefiniten. Naj bo $x\in X$ poljuben element. Tedaj je \begin{align*}
 		\Sp{(I-T^2)x}{x} &= \Sp{x}{x} - \Sp{T^2x}{x} = \norm{x}^2 - \Sp{Tx}{Tx} = \norm{x}^2 - \norm{Tx}^2 \\ &\geq \norm{x}^2 - \norm{T}^2\cdot\norm{x}^2 \geq (1-\norm{T}^2)\norm{x}^2.
 	\end{align*}
 	Ker je $\norm{T}\leq 1$, je tudi $\norm{T}^2 \leq 1$, torej je izraz $1-\norm{T}^2\geq 0$. To pomeni, da je $$\Sp{(I-T^2)x}{x}\geq(1-\norm{T}^2)\norm{x}^2 \geq 0.$$ Posledično je operator $I-T^2$ pozitivno semidefiniten, torej je tudi pozitiven.
@@ -1593,7 +1599,7 @@ Sedaj bomo pokazali, da je vsak obrnljiv operator na kompleksnem Hilbertovem pro
 \end{izrek}
 
 \begin{dokaz}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben obrnljiv operator $T\in B(X)$. Ker je operator $T$ obrnjiv, nam lema \ref{lem:adjinv} pove, da je tudi $T^*$ obrnljiv operator. Posledično je tudi operator $T^*T$ obrnjiv. Še več, lema \ref{lem:sebiadjlast} nam pove, da je operator $T^*T$ sebi-adjungiran. Vzemimo sedaj poljuben element $x\in X$. Tedaj je: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ Ker sklep velja za poljuben element $x\in X$, sledi, da je operator $T^*T$ pozitivno semidefiniten. To pomeni, da je operator $T^*T$ pozitiven. Izrek \ref{izr:pozroot} nam sedaj pove, da operator $T^*T$ premore enolično določen pozitiven koren, ki ga označimo z $R$. Ker je operator $T^*T$ obrnljiv, nam opomba \ref{opomb:specter} pove, da je $0\neq\sigma(T^*T)$. Dodatno nam izrek \ref{izr:polyspec} pove, da je: $$\sigma(T^*T) = \{\lambda^2~|~\lambda\in\sigma(R)\}.$$ To pomeni, da $0\neq \sigma(R)$, torej je operator $R$ obrnljiv. Označimo sedaj operator $U = TR^{-1}$ in opazimo, da je obrnljiv. To pomeni, da je $\operatorname{Im}U = X$. Hkrati velja: $$U^*U = (R^{-1})^*T^*TR^{-1} = (R^*)^{-1}R^2R^{-1}= R^{-1}R = I.$$ Po točki $a)$ izreka \ref{izr:uniizo} je potem operator $U$ izometrija. Še več, operator $U$ je surjektivna izometrija. Zato je po točki $b)$ izreka \ref{izr:uniizo} opertor $U$ unitaren. 
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in vzemimo poljuben obrnljiv operator $T\in B(X)$. Ker je operator $T$ obrnjiv, nam lema \ref{lem:adjinv} pove, da je tudi $T^*$ obrnljiv operator. Posledično je tudi operator $T^*T$ obrnjiv. Še več, lema \ref{lem:sebiadjlast} nam pove, da je operator $T^*T$ sebi-adjungiran. Vzemimo sedaj poljuben element $x\in X$. Tedaj je: $$\Sp{T^*Tx}{x} = \Sp{Tx}{Tx} = \norm{Tx}^2 \geq 0.$$ Ker sklep velja za poljuben element $x\in X$, sledi, da je operator $T^*T$ pozitivno semidefiniten. To pomeni, da je operator $T^*T$ pozitiven. Izrek \ref{izr:pozroot} nam sedaj pove, da operator $T^*T$ premore enolično določen pozitiven koren, ki ga označimo z $R$. Ker je operator $T^*T$ obrnljiv, nam opomba \ref{opomb:specter} pove, da $0\notin\sigma(T^*T)$. Dodatno nam izrek \ref{izr:polyspec} pove, da je: $$\sigma(T^*T) = \{\lambda^2~|~\lambda\in\sigma(R)\}.$$ To pomeni, da $0\notin\sigma(R)$, torej je operator $R$ obrnljiv. Označimo sedaj operator $U = TR^{-1}$ in opazimo, da je obrnljiv. To pomeni, da je $\operatorname{Im}U = X$. Hkrati velja: $$U^*U = (R^{-1})^*T^*TR^{-1} = (R^*)^{-1}R^2R^{-1}= R^{-1}R = I.$$ Po točki $a)$ izreka \ref{izr:uniizo} je potem operator $U$ izometrija. Še več, operator $U$ je surjektivna izometrija. Zato je po točki $b)$ izreka \ref{izr:uniizo} opertor $U$ unitaren. 
 \end{dokaz}
 
 Za konec tega poglavja pokažimo, da je vsak sebi-adjungiran operator razlika nekih pozitivnih operatorjev. Za to bomo potrebovali naslednjo lemo. Tako lemo kot tudi izrek črpamo iz vira \cite{bib:Kurepa}.
@@ -1603,33 +1609,25 @@ Za konec tega poglavja pokažimo, da je vsak sebi-adjungiran operator razlika ne
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna sebi-adjungirana operatorja na $X$, za katera je $T^2 = S^2$. Če operatorja $T$ in $S$ komutirata, tedaj za ortogonalni projektor $P$ prostora $X$ na jedro operatorja $S-T$ velja: \begin{enumerate}[a)]
 		\item Če operator $V\in B(X)$ komutira z operatorjem $S-T$, potem komutira tudi z operatorjem $P$;
 		\item Če je $Sx=0$, je $Px=x$;
-		\item $S = (2P-I)T$.
+		\item Če je $Tx=0$, je $Px=x$;
+		\item $S = (2P-I)T$ in $T=(2P-I)S$.
 	\end{enumerate}
 \end{lema}
 \begin{dokaz}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna sebi-adjungirana operatorja na $X$, za katera je $T^2 = S^2$. Dodatno denimo, da operatorja $S$ in $T$ komutirata in naj bo $P$ ortogonalen projektor prostora $X$ na $\operatorname{Ker}(S-T)$.
 	\begin{enumerate}[a)]
-		\item Označimo najprej $Y = \operatorname{Ker}(S-T)=\operatorname{Im}(P)$ in naj bo $V\in B(X)$ poljuben opertor, ki komutira z operatorjem $S-T$. Naj bo $y\in Y$ poljuben element. Tedaj je $$(S-T)Vy=V(S-T)y=0.$$ To pomeni, da je $Vy\in Y$. Posledično je $VPx\in Y$ za vsak $x\in X$. Iz tega sledi, da je $P(VPx)= VP^2x=VPx$ za vsak $x\in X$, torej je $PVP = VP$ . Hkrati je tudi $$(S-T)V^*=(V(S-T)^*)^*=(V(S-T))^*=((S-T)V)^*=V^*(S-T)^*=V^*(S-T),$$ torej tudi operator $V^*$ komutira z operatorjem $S-T$. To pomeni, da je $V^*P = PV^*P$. Posledično je $$PV=(V^*P^*)^*=(V^*P)^*=(PV^*P)^*=P^*VP^*=PVP=VP.$$
+		\item Označimo najprej $Y = \operatorname{Ker}(S-T)=\operatorname{Im}(P)$ in naj bo $V\in B(X)$ poljuben opertor, ki komutira z operatorjem $S-T$. Naj bo $y\in Y$ poljuben element. Tedaj je $$(S-T)Vy=V(S-T)y=0.$$ To pomeni, da je $Vy\in Y$. Posledično je $VPx\in Y$ za vsak $x\in X$. Iz tega sledi, da je $P(VPx)= VPx$ za vsak $x\in X$, torej je $PVP = VP$ . Hkrati je tudi $$(S-T)V^*=(V(S-T)^*)^*=(V(S-T))^*=((S-T)V)^*=V^*(S-T)^*=V^*(S-T),$$ torej tudi operator $V^*$ komutira z operatorjem $S-T$. To pomeni, da je $V^*P = PV^*P$. Posledično je $$PV=(V^*P^*)^*=(V^*P)^*=(PV^*P)^*=P^*VP^*=PVP=VP.$$
 		\item Denimo, da je $Sx =0$. Potem je $$\norm{Tx}^2=\Sp{Tx}{Tx}=\Sp{T^2x}{x}=\Sp{S^2x}{x}=0.$$ To pomeni, da je $Tx = 0$, od tod pa sledi, da je $x\in\operatorname{Ker}(S-T)=Y$. Sledi, da je $Px=x$.
-		\item Najprej opazimo, da je $$(S-T)(S+T)=S^2-TS+ST-T^2=S^2-T^2=0,$$ torej je $(S+T)x\in Y$ za vsak $x\in X$. Že dokazana točka $b)$ te leme nam sedaj pove, da je $P(S+T)x = (S+T)x$ za vsak $x\in X$. To pomeni, da je $P(S+T)=(S+T)$. Dodatno, ker vsak operator komutira sam s seboj, nam že dokazana točka $a)$ te leme pove, da je $P(S-T)=(S-T)P=0$. Ko od enačbe $P(S+T)=S+T$ odštejemo enačbo $P(S-T)=0$, dobimo $2PT = S+T$, od tod pa sledi, da je $S=(2P -I)T$.
+		\item To točko dokažemo na enak način, kot točko $b)$.
+		\item Najprej opazimo, da je $$(S-T)(S+T)=S^2-TS+ST-T^2=S^2-T^2=0,$$ torej je $(S+T)x\in Y$ za vsak $x\in X$. Že dokazana točka $b)$ te leme nam sedaj pove, da je $P(S+T)x = (S+T)x$ za vsak $x\in X$. To pomeni, da je $P(S+T)=(S+T)$. Dodatno, ker vsak operator komutira sam s seboj, nam že dokazana točka $a)$ te leme pove, da je $P(S-T)=(S-T)P=0$. Ko od enačbe $P(S+T)=S+T$ odštejemo enačbo $P(S-T)=0$, dobimo $2PT = S+T$, od tod pa sledi, da je $S=(2P -I)T$. Če enačbi seštejemo, dobimo $2PS = S + T$, od tod pa sledi, da je $T = (2P-I)S$.
 	\end{enumerate}
 \end{dokaz}
-
-\begin{opomba}
-	\label{opomb:sebiadjrazlpoz}
-	Točki $b)$ in $c)$ prejšnje leme bi lahko zapisali tudi z ekvivalentnimi pogoji:
-	\begin{itemize}
-		\item Točko $b)$ bi lahko ekvivalentno zapisali tudi kot $$\text{Če je}~Tx=0,~\text{je}~Px=x.$$
-		Namreč, če je $Tx=0$ za nek $x\in X$, potem na enak način kot v dokazu leme pokažemo, da je tudi $Sx=0$ in po enakem postopku pridemo do sklepa, da je $Px=x$.
-		\item Točko $c)$ bi lahko ekvivalentno zapisali kot $T=(2P-I)S$. Do te enakosti pridemo na enak način kot za dokazano enakost, le da na koncu enačbi $P(S+T)=S+T$ in $P(S-T)=0$ seštejemo.
-	\end{itemize}
-\end{opomba}
 
 Sedaj se lahko lotimo obljubljenega izreka.
 
 \begin{izrek}
 	\label{izr:sebiadjrazlpoz}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. Velja: \begin{enumerate}[a)]
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. Velja: \begin{enumerate}[i)]
 		\item Operatorja $$ T_+ = \frac{1}{2}(\sqrt{T^2}+T)~\text{in}~T_-=\frac{1}{2}(\sqrt{T^2}-T)$$ sta pozitivna in $$T = T_+ - T_-.$$
 		\item Obstaja tak ortogonalen projektor $P_+\in B(X)$, da je $P_+T=T_+$, $(P_+ - I)T=T_-$ in za katerega velja, da če je $Tx=0$, je $P_+x=x$.
 		\item Za vsak omejen linearnen operator $V\in B(X)$ velja: Operatorja $V$ in $T$ komutirata natanko tedaj, ko operator $V$ komutira z operatorji $T_+$, $T_-$ in $P_+$.
@@ -1640,13 +1638,12 @@ Sedaj se lahko lotimo obljubljenega izreka.
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. 
 	Ker je operator $T$ sebi-adjungiran, je $T^2 = T^*T$. Zato nam razmislek v primeru \ref{prim:pozoptriv} pove, da je $T^2$ (oziroma $T^*T$) pozitiven operator. To pomeni, da premore enolično določen koren, ki ga označimo z $U = \sqrt{T^2}$. 
 	
-	Naj bosta $T_+=\frac{1}{2}(U+T)$ in $T_-=\frac{1}{2}(U-T)$. Lema \ref{lem:sebiadjlast} nam pove, da sta operatorja $T_+$ in $T_-$ sebi-adjungirana. Opazimo tudi, da je $T=T_+ - T_-$. Ker operator $T$ komutira z operatorjem $T^2$, komutira tudi z njegovim korenom, torej z $U$. Označimo sedaj s $P$ ortogonalen projektor prostora $X$ na $\operatorname{Ker}(T_-)$. Najprej bomo premislili, da ortogonalni projektor $P$ ustreza pogojem v točki $b)$. Ker je $U^2 = T^2$ in operatorja $U$ in $T$ komutirata, nam
-	lema \ref{lem:sebiadjrazlpoz} pove, da je $U = (2P-I)T = 2PT - T$. Posledično je $$PT=\frac{1}{2}(U+T)=T_+.$$
-	Velja tudi, da je $$(P-I)T = PT-T=\frac{1}{2}(U+T)-T=\frac{1}{2}(U-T)=T_-.$$ Upoštevajoč prvo točko opombe \ref{opomb:sebiadjrazlpoz} vidimo, da za operator $P$ velja tudi pogoj, da če je $Tx=0$, je $Px=x$. Posledično ortogonalni projektor $P$ ustreza vsem pogojem točke $b)$, torej je $P_+=P$. S tem smo dokazali točko $b)$.
+	Naj bosta $T_+=\frac{1}{2}(U+T)$ in $T_-=\frac{1}{2}(U-T)$. Lema \ref{lem:sebiadjlast} nam pove, da sta operatorja $T_+$ in $T_-$ sebi-adjungirana. Opazimo tudi, da je $T=T_+ - T_-$. Ker operator $T$ komutira z operatorjem $T^2$, komutira tudi z njegovim korenom, torej z $U$. Označimo sedaj s $P$ ortogonalen projektor prostora $X$ na $\operatorname{Ker}(T_-)$. Najprej bomo premislili, da ortogonalni projektor $P$ ustreza pogojem v točki $ii)$. Ker je $U^2 = T^2$ in operatorja $U$ in $T$ komutirata, nam točka $d)$ leme \ref{lem:sebiadjrazlpoz} pove, da je $U = (2P-I)T = 2PT - T$. Posledično je $$PT=\frac{1}{2}(U+T)=T_+.$$
+	Velja tudi, da je $$(P-I)T = PT-T=\frac{1}{2}(U+T)-T=\frac{1}{2}(U-T)=T_-.$$ Točka $c)$ leme \ref{lem:sebiadjrazlpoz} nam pove, da za operator $P$ velja, da če je $Tx=0$, je $Px=x$. Posledično ortogonalni projektor $P$ ustreza vsem pogojem točke $ii)$ tega izreka, torej je $P_+=P$. S tem smo dokazali točko $ii)$.
 	
-	Naj bo sedaj $V\in B(X)$ poljuben operator. Če operator $V$ komutira z operatorjem $T$, potem komutira tudi z operatorjem $U$ in posledično tudi z operatorjema $T_+$ in $T_-$. Ker operator $V$ komutira z operatorjem $T_-$, nam točka $a)$ leme \ref{lem:sebiadjrazlpoz} pove, da operator $V$ komutira tudi z operatorjem $P$. Po drugi strani, če operator $V$ komutira z operatorji $T_+$, $T_-$ in $P$, komutira tudi z operatorjem $T=T_+ - T_-$. S tem smo dokazali točko $c)$.
+	Naj bo sedaj $V\in B(X)$ poljuben operator. Če operator $V$ komutira z operatorjem $T$, potem komutira tudi z operatorjem $U$ in posledično tudi z operatorjema $T_+$ in $T_-$. Ker operator $V$ komutira z operatorjem $T_-$, nam točka $a)$ leme \ref{lem:sebiadjrazlpoz} pove, da operator $V$ komutira tudi z operatorjem $P$. Po drugi strani, če operator $V$ komutira z operatorji $T_+$, $T_-$ in $P$, komutira tudi z operatorjem $T=T_+ - T_-$. S tem smo dokazali točko $iii)$.
 	
-	Dokažimo sedaj še točko $a)$ tega izreka. Upoštevajoč drugo točko opombe \ref{opomb:sebiadjrazlpoz} vidimo, da velja tudi $T=(2P - I)U$. Posledično velja \begin{align*}
+	Dokažimo sedaj še točko $i)$ tega izreka. Po točki $d)$ leme \ref{lem:sebiadjrazlpoz} je $T=(2P - I)U$. Posledično je \begin{align*}
 		PU &= \frac{1}{2}(T+U)=T_+ \\
 		(I-P)U &= U - PU = U-T_+ =U-\frac{1}{2}(T+U)=\frac{1}{2}(U-T).
 	\end{align*}
@@ -1657,9 +1654,9 @@ Sedaj se lahko lotimo obljubljenega izreka.
 	%\end{align*}
 \end{dokaz}
 
-\begin{definicija}
-	\label{def:pozinnegdelsebiadj} Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Naj bodo $T_+$, $T_-$ in $P_+$ operatorji iz izreka \ref{izr:sebiadjrazlpoz}. Operator $T_+$ imenujemo \pojem{pozitiven del} operatorja $T$, operator $T_-$ \pojem{negativen del} operatorja $T$, operator $P_+$ pa \pojem{pozitiven projektor} operatorja $T$.
-\end{definicija}
+\begin{opomba}
+	\label{opomb:pozinnegdelsebiadj} Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Naj bodo $T_+$, $T_-$ in $P_+$ operatorji iz izreka \ref{izr:sebiadjrazlpoz}. Operator $T_+$ imenujemo \pojem{pozitiven del} operatorja $T$, operator $T_-$ \pojem{negativen del} operatorja $T$, operator $P_+$ pa \pojem{pozitiven projektor} operatorja $T$.
+\end{opomba}
 %\subsection{Predstavitev magistrskega dela}
 %
 %Potem, ko smo kon\v cali z oblikovanjem besedila lahko na precej preprost in hiter na\v cin pripravimo predstavitev s pomo\v cjo paketa {\bf Beamer}\footnote{\v ze vklju\v cen v kompletno distribucijo MikTeX-a ali TeXlive-a}:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  2 JUN 2025 12:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  4 JUN 2025 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1022,9 +1022,6 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: Label `prim:pozoptriv' multiply defined.
 
-
-LaTeX Warning: Label `posl:pozprod' multiply defined.
-
 )
 \openout1 = `"Omejeni linearni operatorji na Hilbertovih prostorih.aux"'.
 
@@ -1521,6 +1518,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
+Overfull \hbox (40.12825pt too wide) in paragraph at lines 1341--1342
+[]$[]$ \OT1/lmr/m/it/10.95 ozi-roma $[]$, ^^Tce je $\OML/lmm/m/it/10.95 A[] \OT
+1/lmr/m/n/10.95 = \OML/lmm/m/it/10.95 A$\OT1/lmr/m/it/10.95 . Ope-ra-torja $\OT
+1/lmr/m/n/10.95 0$ \OT1/lmr/m/it/10.95 in $\OML/lmm/m/it/10.95 I$ \OT1/lmr/m/it
+/10.95 ime-nu-jemo $[]$
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1598,6 +1603,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43]
+Overfull \hbox (1.16852pt too wide) in paragraph at lines 1513--1513
+[]\OT1/lmr/m/n/10.95 Ker je $\OML/lmm/m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lm
+m/m/it/10.95 T\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^R \U/msb/m/n/10.95 R$\
+OT1/lmr/m/n/10.95 , lahko $\OMS/lmsy/m/n/10.95 C[]\OT1/lmr/m/n/10.95 (\OML/lmm/
+m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 ))$ o
+brav-na-vamo kot re-a-len vek-tor-ski pro-stor. Ozna^^Tcimo
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1684,7 +1698,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Overfull \hbox (27.1662pt too wide) in paragraph at lines 1715--1729
+Overfull \hbox (27.1662pt too wide) in paragraph at lines 1712--1726
 [][] 
  []
 
@@ -1710,13 +1724,13 @@ prostorih".out' has not changed.
 (rerunfilecheck)             Checksum: 5412FBBD6B9EDB1A8EFEB3806A5DDCEB;2507.
  ) 
 Here is how much of TeX's memory you used:
- 29409 strings out of 473522
- 592638 string characters out of 5712673
- 1027709 words of memory out of 5000000
- 51833 multiletter control sequences out of 15000+600000
+ 29414 strings out of 473522
+ 592696 string characters out of 5712673
+ 1027739 words of memory out of 5000000
+ 51835 multiletter control sequences out of 15000+600000
  619151 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,1504b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,1526b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1737,9 +1751,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (6
-5 pages, 561541 bytes).
+5 pages, 561646 bytes).
 PDF statistics:
- 882 PDF objects out of 1000 (max. 8388607)
- 307 named destinations out of 1000 (max. 500000)
+ 885 PDF objects out of 1000 (max. 8388607)
+ 310 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
