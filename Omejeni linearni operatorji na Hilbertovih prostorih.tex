@@ -457,7 +457,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \section[Osnovne definicije in primeri]{Osnovne definicije in primeri}
 
-	V tem poglavju bomo najprej osvežili znanje o nekaterih pomembnih definicijah in rezultatih iz študije Banachovih in Hilbertovih prostorov. V nadaljevanju bomo pozornost posvetili t.~i.~ adjungiranim operatorjem, nato pa še njihovim posebnim primerom - normalnim, sebi-adjungiranim in unitarnim operatorjem. Pri tem se bomo primarno sklicevali na vir \cite{bib:Rynne}.
+	V tem poglavju bomo najprej osvežili znanje o nekaterih pomembnih definicijah in rezultatih iz študije Banachovih in Hilbertovih prostorov. V nadaljevanju bomo pozornost posvetili t.~i.~ adjungiranim operatorjem, nato pa še njihovim posebnim primerom - normalnim, sebi-adjungiranim in unitarnim operatorjem ter ortogonalnim projektorjem. Na koncu bomo obravnavali spektre teh posebnih tipov operatorjev in delo zaključili s študijem t.~i.~ pozitivnih operatorjev. Pri tem se bomo primarno sklicevali na vir \cite{bib:Rynne}.
 
 \begin{opomba}
 	\label{opomb:poljeF} Z oznako $\F$ označimo polje, ki je bodisi polje realnih števil $\R$ bodisi polje kompleksnih števil $\C$.
@@ -471,12 +471,12 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 		\item $d(x, y) = d(y, x)$;
 		\item $d(x, z) \leq d(x, y) + d(y, z)$.
 	\end{itemize}
-	Če je $M$ neprazno množica in $d$ metrika na $M$, par $(M, d)$ imenujemo \pojem{metrični prostor}.
+	Če je $M$ neprazna množica in $d$ metrika na $M$, par $(M, d)$ imenujemo \pojem{metrični prostor}.
 \end{definicija}
 
 \begin{definicija}
 	\label{def:PolnMP}
-	Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ konvergentno v $M$.
+	Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ tudi konvergentno v $M$.
 \end{definicija}
 
 \begin{primer}
@@ -500,7 +500,9 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	\end{itemize}
 	Če je $V$ vektorski prostor (nad $\F$) in $\norm{.}$ norma na njem, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor}.
 \end{definicija}
-
+\begin{opomba}
+	\label{opomb:normzv} Ni težko videti, da je vsaka norma tudi zvezna preslikava. Res, naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Izberemo poljubno pozitivno število $\varepsilon>0$ in naj bo $x\in X$ poljuben. Tedaj je $$\norm{x+h}_X - \norm{x}_X \leq (\norm{x}_X + \norm{h}_X) - \norm{x}_X = \norm{h}_X$$ in $$\norm{x}_X - \norm{x+h}_X \geq \norm{x}_X - (\norm{x}_X + \norm{h}_X) \geq q\norm{h}_X.$$ To pomeni, da je $$\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X.$$ Za $\delta=\varepsilon$ potem velja: Če je $\norm{h}_X<\delta$, je $\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X < \varepsilon$. Torej je norma $\norm{.}$ zvezna na $X$. Še več, opazimo da izbrani $\delta=\varepsilon$ zadošča vsakemu elementu $x\in X$. Posledično je norma $\norm{.}$ enakomerno zvezna na $X$.
+\end{opomba}
 \begin{definicija}
 	\label{def:linop}
 	Naj bosta $X$ ter $Y$ poljubna vektorska prostora nad poljem $\F$. \begin{enumerate}[a)]
@@ -509,14 +511,14 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 			\item Za vsak element $x\in X$ in vsak skalar $\alpha\in\F$ je $T(\alpha x)=\alpha T(x)$.
 		\end{itemize} V tem primeru namesto $T(x)$ uporabimo oznako $Tx$. 
 		\item Naj bosta $(X, \norm{.}_X)$ in $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Pravimo, da je linearen operator $\map{T}{X}{Y}$ \pojem{omejen}, če obstaja tako pozitivno število $M>0$, da za vsak $x\in X$ velja $$\norm{Tx}_Y\leq M\cdot\norm{x}_X.$$
-		\item Z $L(X, Y)$ označimo prostor vseh linearnih operatorjev iz $X$ v $Y$, z $B(X, Y)$ pa prostor vseh omejenih linearnih operatorjev iz $X$ v $Y$. Kadar je $X=Y$, uporabimo oznaki $L(X)$ in $B(X)$.
+		\item Z $L(X, Y)$ označimo vektorski prostor (nad $\F$) vseh linearnih operatorjev iz $X$ v $Y$, z $B(X, Y)$ pa podprostor od $L(X, Y)$, ki sestoji iz vseh omejenih linearnih operatorjev iz $X$ v $Y$. Kadar je $X=Y$, uporabimo oznaki $L(X)$ in $B(X)$.
 		\item Naj bo $X$ poljuben vektorski prostor. Elementom prostora $L(X, \F)$ pravimo \pojem{linearni funkcionali}, elementom prostora $B(X, \F)$ pa \pojem{omejeni linearni funkcionali}. Za množico $B(X, \F)$ pogosto uporabimo oznako $X^*$.
 	\end{enumerate}
 \end{definicija}
 
 \begin{definicija}
 	\label{def:izometrija}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad poljem $\F$ in naj bo $\map{T}{X}{Y}$ poljuben linearen operator. Pravimo, da je operator $T$ \pojem{izometrija}, če je $$\norm{Tx}_Y = \norm{x}_X$$ za vsak $x\in X$.
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Pravimo, da je operator $T$ \pojem{izometrija}, če je $$\norm{Tx}_Y = \norm{x}_X$$ za vsak $x\in X$.
 \end{definicija}
 
 \begin{opomba}
@@ -532,11 +534,37 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	\end{enumerate}
 \end{izrek}
 
+\begin{izrek}
+	\label{izr:opnorm} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Tedaj je vektorski prostor $B(X, Y)$ normiran prostor za normo s predpisom $$\norm{T}=\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}.$$ Dodatno, če je prostor $(Y, \norm{.}_Y)$ Banachov prostor, je tudi $(B(X, Y), \norm{.})$ Banachov prostor.
+\end{izrek}
+
+\begin{dokaz}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Preverili bomo, da preslikava $\norm{.}$ zadošča vsem pogojem norme. Naj bo najprej $T\in B(X, Y)$ poljuben operator. Lastnost, da je $\norm{T}\geq 0$, je trivialno izpolnjena, saj gre za supremum po množici, ki vsebuje same nenegativne elemente.
+	Velja: \begin{align*}
+		\norm{T}=0 &\iff \sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X} = 0 \iff \frac{\norm{Tx}_Y}{\norm{x}_X}=0~\text{za vsak}~x\in X\setminus\{0\} \\
+		&\iff \norm{Tx}_Y=0~\text{za vsak}~x\in X\setminus\{0\} \iff Tx = 0~\text{za vsak}~x\in X\\
+		&\iff T=0.
+	\end{align*} To pomeni, da je $\norm{T}=0$ natanko tedaj, ko je $T=0$.
+	Naj bo sedaj $\lambda\in \F$ poljuben skalar. Tedaj je $$\norm{\lambda T}= \sup_{x\neq 0}\frac{\norm{\lambda Tx}_Y}{\norm{x}_X}=\sup_{x\neq 0}\frac{\abs{\lambda}\norm{Tx}_Y}{\norm{x}_X}=\abs{\lambda}\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}=\abs{\lambda}\cdot\norm{T}.$$
+	Sedaj bomo preverili, da za $\norm{.}$ velja t.~i.~ trikotniška neenakost. Naj bosta $S, T\in B(X, Y)$ poljubna operatorja. Tedaj je $$\norm{S+T}= \sup_{x\neq 0}\frac{\norm{(S+T)x}_Y}{\norm{x}_X}=\sup_{x\neq 0}\frac{\norm{Sx+Tx}_Y}{\norm{x}_X}\leq \sup_{x\neq 0}\frac{\norm{Sx}_Y+\norm{Tx}_Y}{\norm{x}_X}.$$ Ker je $\norm{Sx}_Y \leq \norm{S}\cdot\norm{x}_X$ in $\norm{Tx}_Y \leq \norm{T}\cdot\norm{x}_X$ za vsak $x\in X$, je $$\sup_{x\neq 0}\frac{\norm{Sx}_Y+\norm{Tx}_Y}{\norm{x}_X}\leq \sup_{x\neq 0}\frac{(\norm{S}+\norm{T})\norm{x}_X}{\norm{x}_X}= \norm{S}+\norm{T}.$$ To pomeni, da je $\norm{S+T}\leq \norm{S} + \norm{T}$. S tem smo dokazali, da je $\norm{.}$ res norma na $B(X, Y)$. Denimo sedaj, da je $Y$ Banachov prostor nad $\F$. Naj bo $\{T_n\}_{n\in\N}$ poljubno Cauchyjevo zaporedje v $B(X, Y)$ in izberemo poljubno pozitivno število $\varepsilon>0$. Ker je zaporedje Cauchyjevo, obstaja tako naravno število $n_0\in\N$, da za vsaka $m, n\in \N$ velja naslednji sklep: Če sta $m, n\geq n_0$, je $\norm{T_m - T_n}<\varepsilon$. Izberemo in fiksiramo ta $n_0$. Sedaj izberemo in fiksiramo poljuben element $x\in X$ ter označimo novo zaporedje $\{y_n\}_{n\in\N}$, določeno s predpisom $y_n = T_nx$. Tedaj je vsaka $m,n \in \N$ velja: Če sta $m, n\geq n_0$, je $$\norm{y_m - y_n}_Y = \norm{T_mx - T_nx}_Y \leq \norm{T_m - T_n}\cdot\norm{x}_X<\varepsilon\norm{x}_X.$$ To pomeni, da je zaporedje $\{y_n\}_{n\in\N}$ Cauchyjevo zaporedje v $Y$. Ker je $Y$ Banachov prostor sledi, da je to zaporedje tudi konvergentno. Sedaj definiramo preslikavo $\map{T}{X}{Y}$ s predpisom $Tx = \lim_{n\to\infty}T_nx$. Najprej bomo premislili, da je preslikava $T$ linearen operator.
+	Naj bosta $x_1, x_2\in X$ poljubna elementa in $\lambda_1, \lambda_2\in \F$ poljubna skalarja. Tedaj je \begin{align*}
+		T(\lambda_1x_1 + \lambda_2x_2)&=\lim_{n\to \infty}T_n(\lambda_1x_1 + \lambda_2x_2)=\lim_{n\to \infty}(\lambda_1T_nx_1 + \lambda_2T_nx_2) \\ 
+		&= \lambda_1\lim_{n\to \infty}T_nx_1 + \lambda_2\lim_{n\to \infty}T_nx_2=\lambda_1Tx_1 + \lambda_2Tx_2.
+	\end{align*} To pomeni, da je $T\in L(X, Y)$. Premislimo sedaj, da je operator $T$ limita zaporedja operatorjev $\{T_n\}_{n\in\N}$. 
+	Naj bo $\varepsilon>0$ poljubno pozitivno število in, enako kot prej, fiksiramo tisto naravno število $n_0\in\N$, za katerega velja, da če sta naravni števili $m, n\geq n_0$, je potem $\norm{T_m - T_n} < \varepsilon$. Naj bo $x\in X$ poljuben element. Tedaj za vsako naravno število $n\geq n_0$ velja: $$\norm{T_nx - Tx}_Y=\norm{T_nx - \lim_{m\to \infty}T_mx}_Y = \norm{\lim_{m\to \infty}T_nx-T_mx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y.$$ Ker za vsaka $m, n\geq n_0$ velja $\norm{T_nx - T_mx}<\varepsilon\norm{x}_X$, je posledično $$\norm{T_nx - Tx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y\leq \varepsilon\norm{x}_X.$$ Ta sklep velja za vsak $x\in X$ in vsak $n\geq n_0$, torej je tudi $\frac{\norm{(T_n - T)x}_Y}{\norm{x}_X} \leq \varepsilon$ za vsak $x\in X\setminus\{0\}$ in vsak $n\geq 0$. Posledično je $\norm{T_n - T} \leq \varepsilon$ za vsak $n\geq n_0$. To pomeni, da je $T=\lim_{n\to \infty}T_n$.
+	Za konec premislimo še, da je operator $T$ omejen. Operator $T$ zapišemo na naslednji način: $T = (T-T_{n_0}) + T_{n_0}$. Ker je $\norm{T-T_{n_0}}\leq \varepsilon$, velja, da je $T-T_{n_0}\in B(X, Y)$. Hkrati je operator $T_{n_0}\in B(X, Y)$. Ker je $B(X, Y)$ vektorski prostor zato sledi, da je $T\in B(X, Y)$.
+\end{dokaz}
+
+\begin{definicija}
+ 	\label{def:opnorm} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Normo iz izreka \ref{izr:opnorm} imenujemo \pojem{operatorska norma} na prostoru $B(X, Y)$.
+\end{definicija}
 \begin{lema}
 	\label{lem:invnorm}
 	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je operator $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}.$$
 \end{lema}
-
+\begin{dokaz}
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben obrnljiv operator. Ker operator $T^{-1}$ obstaja in je tudi sam obrnljiv operator, je $\norm{T^{-1}}\neq 0$. Naj bo sedaj $x\in X$ poljuben element. Tedaj je $$\norm{x}=\norm{T^{-1}Tx} \leq \norm{T^{-1}}\cdot\norm{Tx}.$$ Od tod direktno sledi, da je $$\norm{Tx} \geq\norm{T^{-1}}^{-1}\norm{x}.$$
+\end{dokaz}
 \begin{definicija}
 	\label{def:porojmetr}
 	Naj bo $V$ poljuben normiran prostor nad $\F$ z normo $\norm{.}$. Preslikavo $\map{d}{V\times V}{\R}$ s predpisom $d(x, y) = \norm{x-y}$ imenujemo \pojem{metrika porojena z $\norm{.}$}.
@@ -553,9 +581,11 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{lema}
 	\label{lem:banzap}
-	Naj bo $X$ poljuben Banachov prostor nad poljem $\F$, $Y$ poljuben normiran prostor nad $\F$ ter $T\in B(X, Y)$ poljuben omejen linearen operator. Če obstaja tak $r>0$, da je $\norm{Tx}\geq r\norm{x}$ za vsak $x\in X$, je $\operatorname{Im}T$ zaprti podprostor v $Y$.
+	Naj bo $(X,\norm{.}_X)$ poljuben Banachov prostor nad poljem $\F$, $(Y,\norm{.}_Y)$ poljuben normiran prostor nad $\F$ ter $T\in B(X, Y)$ poljuben omejen linearen operator. Če obstaja tak $r>0$, da je $\norm{Tx}_Y\geq r\norm{x}_X$ za vsak $x\in X$, je $\operatorname{Im}T$ zaprti podprostor v $Y$.
 \end{lema}
-
+\begin{dokaz}
+	Naj bo $(X,\norm{.}_X)$ poljuben Banachov prostor nad poljem $\F$, $(Y,\norm{.}_Y)$ poljuben normiran prostor nad $\F$ ter $T\in B(X, Y)$ poljuben omejen linearen operator. Denimo, da obstaja tako pozitivno število $r>0$, da je $\norm{Tx}_Y\geq r\norm{x}_X$ za vsak $x\in X$. Naj bo sedaj $\{y_n\}_{n\in\N}$ poljubno konvergentno zaporedje z elementi iz $\operatorname{Im}T$ in naj bo $y\in Y$ njegova limita: $y = \lim_{n\to \infty}y_n$. Naj bo $n\in\N$ poljuben. Ker je $y_n\in \operatorname{Im}T$, obstaja tak element $x_n\in X$, da je $y_n = Tx_n$ Za vsak $n\in\N$ izberemo en tak $x_n$ in tako tvorimo zaporedje $\{x_n\}_{n\in\N}$. Ker je zaporedje $\{y_n\}_{n\in\N}$ konvergentno v $Y$, je tudi Cauchyjevo. Ker za poljubna $m, n\in\N$ velja $$\norm{y_n - y_m}_Y = \norm{Tx_n - Tx_m}_Y = \norm{T(x_n - x_m)}_y\geq r\norm{x_n - x_m},$$ sledi, da je zaporedje $\{x_n\}_{n\in\N}$ Cauchyjevo v $X$. Še več, zaporedje $\{x_n\}_{n\in\N}$ je konvergentno v $X$, ker je $X$ Banachov prostor. Označimo $x=\lim_{n\to\infty}x_n$. Ker je operator $T$ zvezen, velja: $$Tx = \lim_{n\to \infty}Tx_n = \lim_{n\to\infty}y_n = y.$$ To pomeni, da je $y\in\operatorname{Im}T$. Posledično je $\operatorname{Im}T$ zaprti podprostor v $Y$.
+\end{dokaz}
 \begin{definicija}
 	\label{def:odppresl}
 	Naj bosta $(X, d_X)$ in $(Y, d_Y)$ poljubna metrična prostora. Pravimo, da je preslikava ~$\map{f}{X}{Y}$ \pojem{odprta}, če je za vsako odprto podmnožico $U$ v $X$ njena slika, $f(U)$, odprta podmnožica v $Y$.
@@ -1426,7 +1456,7 @@ V naslednjem izreku so opisane lastnosti spektrov in numeričnih zakladov sebi-a
 		\end{align*}
 		Ko upoštevamo, da je $\lim_{n\to\infty}\norm{Tx_n} = a$, ter da je kvadriranje zvezna preslikava, vidimo, da je je $\lim_{n\to\infty}\norm{Tx_n}^2 = a^2$. To pomeni, da je: $$\lim_{n\to\infty}\norm{(a^2I - T^2)x_n}^2 = 0.$$ Sledi, da za vsako število $r>0$ obstaja tak $n\in \N$, da je $\norm{(a^2I-T^2)x_n} < r$. Zato po posledici \ref{posl:normalinv} operator $a^2I - T^2$ ni obrnljiv. To pomeni, da je $a^2 \in \sigma(T^2)$. 
 		Prva točka izreka \ref{izr:polyspec} nam pove, da je $a^2\in \{\lambda^2~|~\lambda\in \sigma(T)\}$. Posledično je vsaj eno izmed števil $a=\norm{T}$ in $-a$ vsebovano v $\sigma(T)$.
-		\item Upoštevajoč prejšnjo točko in definicijo spektralnega radija vidimo, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, velja: $$r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}.$$ Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po izreku \ref{izr:CSB} potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}.$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}.$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
+		\item Upoštevajoč prejšnjo točko in definicijo spektralnega radija vidimo, da je $\norm{T}\leq r_\sigma(T)$. Ker je po lemi \ref{lem:normalnumrazspec} ~$\sigma(T) \subseteq \overline{V(T)}$, velja: $$r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\}.$$ Vsak element množice $V(T)$ je po definiciji oblike $\Sp{Tx}{x}$, za nek $x\in X$ za katerega je $\norm{x}=1$. Po izreku \ref{izr:CSB} potem za vsak element $\abs{\Sp{Tx}{x}}\in \{\abs{\lambda}~|~\lambda\in V(T)\}$ velja: $$\abs{\Sp{Tx}{x}}\leq \norm{Tx}\cdot\norm{x} = \norm{Tx}\leq \norm{T}\cdot\norm{x}=\norm{T}.$$ Posledično je tudi supremum te množice navzgor omejen z $\norm{T}$. Velja torej: $$\norm{T} \leq r_\sigma(T) \leq \sup\{\abs{\lambda}~|~\lambda\in V(T)\} \leq \norm{T}.$$ Od tod sledi, da je $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$.
 		\item Vpeljimo oznaki $\alpha=\inf\{\lambda~|~\lambda\in\sigma(T)\}$ in $\beta=\sup\{\lambda~|~ \lambda\in\sigma(T)\}$. Vzemimo sedaj poljubno število $t\in V(T)$ in naj bo $x\in X$ tak, da je $\norm{x}=1$ in $\Sp{Tx}{x}=t$. 
 		Denimo najprej, da je $t < \alpha$. Tedaj ima operator $\beta I - T$ po prvi točki izreka \ref{izr:polyspec} spekter $$\sigma(\beta I - T)=\{\beta - \lambda~|~\lambda\in\sigma(T)\},$$ ki leži znotraj intervala $[0, \beta - \alpha]$. Sledi, da je $r_\sigma(\beta I - T) \leq \beta - \alpha$. Ker je $\beta\in\R$ opazimo tudi, da je: $$(\beta I - T)^* = \bar{\beta}I - T^* = \beta I - T.$$ To pomeni, da je operator $\beta I - T$ sebi-adjungiran. Dodatno, ker je $t<\alpha$, je: $$\Sp{(\beta I - T)x}{x} = \beta\Sp{x}{x} - \Sp{Tx}{x} = \beta - t > \beta - \alpha.$$ Toda po točki $d)$ tega izreka je $r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}$. Zato za operator $\beta I - T$ velja: $$\beta - \alpha \geq r_\sigma(\beta I - T) = \sup\{\abs{\lambda}~|~\lambda\in V(\beta I - T)\}\geq\Sp{(\beta I - T)x}{x}>\beta - \alpha.$$ Prišli smo v protislovje. Sledi, da je $\alpha \leq t$.
 		
