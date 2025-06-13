@@ -4,14 +4,14 @@
 \contentsline {chapter}{\numberline {}Uvod}{1}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Hilbertovi prostori}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Osnovne definicije in primeri}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Ortogonalni komplement in Riezsov izrek}{11}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Omejeni linearni operatorji na Hilbertovih prostorih}{13}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Adjungiran operator}{13}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Normalni operatorji}{20}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Sebi-adjungirani operatorji}{22}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Unitarni operatorji}{25}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Ortogonalni projektorji}{28}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Spekter}{33}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Spektri posebnih tipov operatorjev}{39}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Koren pozitivnih operatorjev}{44}{section.3.2}%
-\contentsline {chapter}{\numberline {}Literatura}{56}{izrek.3.34}%
+\contentsline {section}{\numberline {1.2}Ortogonalni komplement in Riezsov izrek}{13}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Omejeni linearni operatorji na Hilbertovih prostorih}{16}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Adjungiran operator}{16}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Normalni operatorji}{23}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Sebi-adjungirani operatorji}{25}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unitarni operatorji}{28}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Ortogonalni projektorji}{31}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Spekter}{36}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Spektri posebnih tipov operatorjev}{42}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Koren pozitivnih operatorjev}{47}{section.3.2}%
+\contentsline {chapter}{\numberline {}Literatura}{59}{izrek.3.34}%

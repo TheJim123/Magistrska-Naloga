@@ -161,7 +161,7 @@
 \newcommand{\Zap}[1]{\ensuremath{\left(#1_1, #1_2, \ldots \right)}}
 
 \newcommand{\map}[3]{\ensuremath{{#1}:{#2}\rightarrow{#3}}}
-\newcommand{\pra}[3]{{#1}{\ast}({#2}) = {#3}}
+\newcommand{\pra}[2]{{#1}^{\ast}({#2})}
 
 \newcommand{\Gen}[1]{\ensuremath{\left<{#1}\right>}}
 
@@ -517,6 +517,36 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 \end{definicija}
 
 \begin{definicija}
+	\label{zvop} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Pravimo, da je linearen operator $T\in L(X, Y)$ \pojem{zvezen} v točki $x_0\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako pozitivno število $\delta>0$, da za vsak element $x\in X$ velja sklep: $$\norm{x-x_0}_X<\delta \Rightarrow \norm{Ax - Ax_0}_Y<\varepsilon.$$ Če je operator $T$ zvezen v vsaki točki $x\in X$, pravimo, da je \pojem{zvezen} na $X$.
+\end{definicija}
+
+\begin{lema}
+	\label{lem:omopzv}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Naj bo $x_0 \in X$ poljuben element. Potem je operator $T$ zvezen v točki $x_0$ natanko tedaj, ko je operator $T$ zvezen na $X$.
+\end{lema}
+
+\begin{dokaz}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Izberimo poljuben element $x_0\in X$. Če predpostavimo, da je operator $T$ zvezen na $X$, je seveda zvezen tudi v izbrani točki $x_0$, zato ta implikacija velja trivialno. 
+	Denimo zato, da je operator $T$ zvezen v točki $x_0\in X$. To pomeni, da za vsako pozitivno število $\varepsilon>0$ obstaja tako pozitivno število $\delta>0$, da za vsak $x\in X$ velja, da je $\norm{Tx - Tx_0}_Y <\varepsilon$, čim je $\norm{x - x_0}_X<\delta$. Naj bo $x_1\in X$ poljuben element in $\varepsilon>0$ poljubno pozitivno število. Naj bo $\delta>0$ tisto pozitivno število, za katerega je $\norm{Tx - Tx_0}_Y <\varepsilon$, čim je $\norm{x - x_0}_X<\delta$, za vsak $x\in X$. Tedaj za vsak element $x\in K_\delta(x_1)$ velja: $$\norm{Tx_1-Tx}_Y = \norm{T(x-x_0+x_0-x_1)}_Y=\norm{Tx_0 - T(x_0+x_1-x)}_Y.$$ Sedaj vpeljemo oznako $y = x_0 + x_1 - x$ in opazimo, da je $$\norm{x_0 - y}_X = \norm{x_1 - x}_X < \delta.$$ Posledično je $$\norm{Tx_1 - Tx}_Y = \norm{Tx_0 - Ty}_Y < \varepsilon.$$ To pomeni, da je operator $T$ zvezen v elementu $x_1$. Ker je bil element $x_1\in X$ poljuben, je operator $T$ zvezen na $X$.
+\end{dokaz}
+
+\begin{izrek}
+	\label{izr:omopzv}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Potem je operator $T$ zvezen natanko tedaj, ko je omejen.
+\end{izrek}
+
+\begin{dokaz}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Dokazali bomo obe implikaciji.
+	Denimo najprej, da je operator $T$ omejen. Naj bo $M>0$ tisto pozitivno število, za katerega velja, da je $\norm{Tx}_Y\leq M\cdot\norm{x}_X$ za vsak $x\in X$. Naj bo $x\in X$ poljuben element. Vzemimo poljubno pozitivno število $\varepsilon>0$ in naj bo $\delta = \frac{\varepsilon}{M}$. Tedaj je $$\norm{Tx}_Y \leq M\cdot \norm{x}_X < M\frac{\varepsilon}{M}=\varepsilon,$$ čim je $\norm{x}_X < \delta$. Posledično je operator $T$ zvezen v elementu $0\in X$. Lema \ref{lem:omopzv} nam sedaj pove, da je operator $T$ zvezen na celotnem prostoru $X$. S tem smo dokazali prvo implikacijo. Dokažimo sedaj še drugo.
+	Denimo, da je operator $T$ zvezen na $X$. Tedaj je $T$ zvezen tudi v elementu $0\in X$. Vzemimo sedaj $\varepsilon=1$. Tedaj obstaja tako pozitivno število $\delta>0$, da za vsak $x\in X$ velja, da je $\norm{Tx}_Y<1$, čim je $\norm{x}_X < \delta$. Fiksirajmo ta $\delta$ in vzemimo poljuben $x\in X$. Tedaj velja: $$\norm{Tx}_Y = \norm{T(\frac{2\cdot\norm{x}_X}{\delta}\cdot\frac{\delta}{2\cdot\norm{x}_X}x)}_Y = \frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y .$$ Ker je $\norm{\frac{\delta}{2\cdot\norm{x}_X}x}_Y<\frac{\delta}{2}<\delta$, je $\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y<1$, torej je $$\norm{Tx}_Y=\frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y <\frac{2}{\delta}\norm{x}_X.$$ Naj bo sedaj $M=\frac{2}{\delta}$. Tedaj za vsak element $x\in X$ velja: $$\norm{Tx}_Y \leq M\cdot\norm{x}_X.$$ To pomeni, da je operator $T$ omejen.
+\end{dokaz}
+
+\begin{opomba}
+	 \label{opomb:omopzv}
+	 Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Izrek \ref{izr:omopzv} nam pove, da so vsi zvezni operatorji na $X$ natanko vsi omejeni operatorji na $X$. To pomeni, da je prostor $B(X, Y)$ ravno prostor vseh zveznih operatorjev iz $X$ v $Y$. V nadaljevanju te naloge bomo zato pojma omejenosti in zveznosti tretirali kot ekvivalentna.
+\end{opomba}
+
+\begin{definicija}
 	\label{def:izometrija}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Pravimo, da je operator $T$ \pojem{izometrija}, če je $$\norm{Tx}_Y = \norm{x}_X$$ za vsak $x\in X$.
 \end{definicija}
@@ -598,8 +628,12 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{posledica}
 	\label{posl:odppresl}
-	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$. Če je $T\in B(X, Y)$ bijektiven operator, je~$T^{-1}\in B(Y, X)$.
+	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$. Če je $T\in B(X, Y)$ izomorfizem, je~$T^{-1}\in B(Y, X)$.
 \end{posledica}
+
+\begin{dokaz}
+	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$ in naj bo $T\in B(X, Y)$ poljuben omejen izomorfizem. Označimo s $T^{-1}$ inverz operatorja $T$. Ker je operator $T$ zvezen, je vsaka praslika odprte množice v $Y$ tudi odprta v $X$. Posledično, lahko vsako odprto množico v $Y$ zapišemo kot sliko neke odprte množice v $X$. Naj bo $U\subseteq X$ poljubna odprta podmnožica prostora $X$. Ker je operator $T$ bijektiven, je $$T(U) = \pra{(T^{-1})}{U}.$$ Ker je operator $T$ poleg tega še omejen, nam izrek \ref{izr:odppresl} pove, da je množica $T(U)$ odprta. To pomeni, da je praslika preslikave $T^{-1}$ vsake odprte podmnožice v $Y$ odprta množica v $X$. Sledi, da je operator $T^{-1}$ zvezen oz. $T^{-1}\in B(Y, X)$.
+\end{dokaz}
 
 \begin{izrek}[Hahn-Banach]
 	\label{izr:HB} 
@@ -611,11 +645,15 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{posledica}
 	\label{posl:HB}
-	Naj bo $X$ poljuben normiran prostor nad poljem $\F$. Tedaj za vsak element $x_0\in X\setminus\{0\}$ obstaja tak omejen linearen funkcional $\map{f}{X}{\F}$, da je: \begin{itemize}
-		\item $f(x_0) = \norm{x_0}$,
-		\item $\norm{f} = 1$.
+	Naj bo $X$ poljuben normiran prostor nad poljem $\F$. Tedaj za vsak element $x_0\in X\setminus\{0\}$ obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da je: \begin{itemize}
+		\item $F(x_0) = \norm{x_0}$,
+		\item $\norm{F} = 1$.
 	\end{itemize}
 \end{posledica}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben normiran prostor nad poljem $\F$ in vzemimo poljuben element $x_0\in X\setminus\{0\}$. Označimo $\F_{x_0} = \{\lambda\cdot x_0~|~\lambda\in\F\}$ vektorski podprostor prostora $X$ in definiramo preslikavo $\map{f}{\F_{x_0}}{\F}$ s predpisom $f(\lambda\cdot x_0) = \lambda\cdot\norm{x_0}$. Premislimo najprej, da je preslikava $f$ linearen funkcional. Naj bosta $\lambda_1, \lambda_2\in\F$ poljubna skalarja. Tedaj je $$f(\lambda_1\cdot x_0 + \lambda_2\cdot x_0)= f((\lambda_1+\lambda_2)\cdot x_0)=(\lambda_1+\lambda_2)\cdot\norm{x_0} = \lambda_1\cdot f(x_0) + \lambda_2\cdot f(x_0).$$ Še več, za vsak $\lambda\in \F\setminus\{0\}$ je $$\frac{\abs{f(\lambda\cdot x_0)}}{\norm{\lambda\cdot x_0}} = \frac{\abs{\lambda}\cdot\norm{x_0}}{\abs{\lambda}\cdot\norm{x_0}}=1.$$ To pomeni, da je $f$ omejen linearen operator na $\F_{x_0}$ za katerega je $f(x_0) = \norm{x_0}$ in $\norm{f}=1$. Po izreku \ref{izr:HB} tedaj obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da je $F_{\substack{|\F_{x_0}}}=f$ in $\norm{F} = \norm{f}$. Posledično je $\norm{F} = 1$ in $F(x_0) = f(x_0) = \norm{x_0}$.
+\end{dokaz}
 
 \begin{izrek}
 	\label{izr:opHB} 
@@ -1744,6 +1782,8 @@ Sedaj se lahko lotimo obljubljenega izreka.
 			$\R$ & množica realnih števil,\\
 			$\C$ & množica kompleksnih števil,\\
 			$\F$ & polje, bodisi $\R$ bodisi $\C$,\\
+			$f^*(A)$ & praslika preslikave $f$ na množici $A$,\\
+			$K_r(a)$ & odprta krogla s polmerom $r$ in središčem v $a$,\\
 			$l^2$ & prostor vseh zaporedij $\{x_n\}_{n\in\N}$ nad $\F$, za katera je $\sum_{n = 1}^\infty\abs{x_n}^2 \leq \infty$,\\
 			$L(X, Y)$ & množica vseh linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
 			$B(X, Y)$ & množica vseh omejenih linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
