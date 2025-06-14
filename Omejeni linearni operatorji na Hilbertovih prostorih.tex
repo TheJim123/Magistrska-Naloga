@@ -500,8 +500,12 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	\end{itemize}
 	Če je $V$ vektorski prostor (nad $\F$) in $\norm{.}$ norma na njem, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor}.
 \end{definicija}
+
+V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili nad katerim prostorom je definirana dana norma. Norma nad normiranim prostorom $X$ bo torej označena z $\norm{.}_X$. To oznako bomo postopoma opustili, kateremu prostoru pripada dana norma, pa bomo razbrali iz konteksta.
+
 \begin{opomba}
-	\label{opomb:normzv} Ni težko videti, da je vsaka norma tudi zvezna preslikava. Res, naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Izberemo poljubno pozitivno število $\varepsilon>0$ in naj bo $x\in X$ poljuben. Tedaj je $$\norm{x+h}_X - \norm{x}_X \leq (\norm{x}_X + \norm{h}_X) - \norm{x}_X = \norm{h}_X$$ in $$\norm{x}_X - \norm{x+h}_X \geq \norm{x}_X - (\norm{x}_X + \norm{h}_X) \geq q\norm{h}_X.$$ To pomeni, da je $$\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X.$$ Za $\delta=\varepsilon$ potem velja: Če je $\norm{h}_X<\delta$, je $\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X < \varepsilon$. Torej je norma $\norm{.}$ zvezna na $X$. Še več, opazimo da izbrani $\delta=\varepsilon$ zadošča vsakemu elementu $x\in X$. Posledično je norma $\norm{.}$ enakomerno zvezna na $X$.
+	\label{opomb:normzv} 
+	Ni težko videti, da je vsaka norma tudi zvezna preslikava. Res, naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Izberemo poljubno pozitivno število $\varepsilon>0$ in naj bo $x\in X$ poljuben. Tedaj je $$\norm{x+h}_X - \norm{x}_X \leq (\norm{x}_X + \norm{h}_X) - \norm{x}_X = \norm{h}_X$$ in $$\norm{x}_X - \norm{x+h}_X \geq \norm{x}_X - (\norm{x}_X + \norm{h}_X) \geq q\norm{h}_X.$$ To pomeni, da je $$\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X.$$ Za $\delta=\varepsilon$ potem velja: Če je $\norm{h}_X<\delta$, je $\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X < \varepsilon$. Torej je norma $\norm{.}_X$ zvezna na $X$. Še več, opazimo da izbrani $\delta=\varepsilon$ zadošča vsakemu elementu $x\in X$. Posledično je norma $\norm{.}_X$ enakomerno zvezna na $X$.
 \end{opomba}
 \begin{definicija}
 	\label{def:linop}
@@ -538,12 +542,12 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 \begin{dokaz}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Dokazali bomo obe implikaciji.
 	Denimo najprej, da je operator $T$ omejen. Naj bo $M>0$ tisto pozitivno število, za katerega velja, da je $\norm{Tx}_Y\leq M\cdot\norm{x}_X$ za vsak $x\in X$. Naj bo $x\in X$ poljuben element. Vzemimo poljubno pozitivno število $\varepsilon>0$ in naj bo $\delta = \frac{\varepsilon}{M}$. Tedaj je $$\norm{Tx}_Y \leq M\cdot \norm{x}_X < M\frac{\varepsilon}{M}=\varepsilon,$$ čim je $\norm{x}_X < \delta$. Posledično je operator $T$ zvezen v elementu $0\in X$. Lema \ref{lem:omopzv} nam sedaj pove, da je operator $T$ zvezen na celotnem prostoru $X$. S tem smo dokazali prvo implikacijo. Dokažimo sedaj še drugo.
-	Denimo, da je operator $T$ zvezen na $X$. Tedaj je $T$ zvezen tudi v elementu $0\in X$. Vzemimo sedaj $\varepsilon=1$. Tedaj obstaja tako pozitivno število $\delta>0$, da za vsak $x\in X$ velja, da je $\norm{Tx}_Y<1$, čim je $\norm{x}_X < \delta$. Fiksirajmo ta $\delta$ in vzemimo poljuben $x\in X$. Tedaj velja: $$\norm{Tx}_Y = \norm{T(\frac{2\cdot\norm{x}_X}{\delta}\cdot\frac{\delta}{2\cdot\norm{x}_X}x)}_Y = \frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y .$$ Ker je $\norm{\frac{\delta}{2\cdot\norm{x}_X}x}_Y<\frac{\delta}{2}<\delta$, je $\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y<1$, torej je $$\norm{Tx}_Y=\frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y <\frac{2}{\delta}\norm{x}_X.$$ Naj bo sedaj $M=\frac{2}{\delta}$. Tedaj za vsak element $x\in X$ velja: $$\norm{Tx}_Y \leq M\cdot\norm{x}_X.$$ To pomeni, da je operator $T$ omejen.
+	Denimo, da je operator $T$ zvezen na $X$. Tedaj je $T$ zvezen tudi v elementu $0\in X$. Vzemimo sedaj $\varepsilon=1$. Tedaj obstaja tako pozitivno število $\delta>0$, da za vsak $x\in X$ velja, da je $\norm{Tx}_Y<1$, čim je $\norm{x}_X < \delta$. Fiksirajmo ta $\delta$ in vzemimo poljuben $x\in X$. Tedaj velja: $$\norm{Tx}_Y = \norm{T(\frac{2\cdot\norm{x}_X}{\delta}\cdot\frac{\delta}{2\cdot\norm{x}_X}x)}_Y = \frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y .$$ Ker je $\norm{\frac{\delta}{2\cdot\norm{x}_X}x}_Y<\frac{\delta}{2}<\delta$, je $\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y<1$. Posledično velja: $$\norm{Tx}_Y=\frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y <\frac{2}{\delta}\norm{x}_X.$$ Naj bo sedaj $M=\frac{2}{\delta}$. Tedaj za vsak element $x\in X$ velja: $$\norm{Tx}_Y \leq M\cdot\norm{x}_X.$$ To pomeni, da je operator $T$ omejen.
 \end{dokaz}
 
 \begin{opomba}
 	 \label{opomb:omopzv}
-	 Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Izrek \ref{izr:omopzv} nam pove, da so vsi zvezni operatorji na $X$ natanko vsi omejeni operatorji na $X$. To pomeni, da je prostor $B(X, Y)$ ravno prostor vseh zveznih operatorjev iz $X$ v $Y$. V nadaljevanju te naloge bomo zato pojma omejenosti in zveznosti tretirali kot ekvivalentna.
+	 Naj bosta $X$ ter $Y$ poljubna normirana prostora nad poljem $\F$. Izrek \ref{izr:omopzv} nam pove, da so vsi zvezni operatorji na $X$ natanko vsi omejeni operatorji na $X$. To pomeni, da je prostor $B(X, Y)$ ravno prostor vseh zveznih operatorjev iz $X$ v $Y$. V nadaljevanju te naloge bomo zato pojma omejenosti in zveznosti tretirali kot ekvivalentna.
 \end{opomba}
 
 \begin{definicija}
@@ -581,19 +585,27 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 		T(\lambda_1x_1 + \lambda_2x_2)&=\lim_{n\to \infty}T_n(\lambda_1x_1 + \lambda_2x_2)=\lim_{n\to \infty}(\lambda_1T_nx_1 + \lambda_2T_nx_2) \\ 
 		&= \lambda_1\lim_{n\to \infty}T_nx_1 + \lambda_2\lim_{n\to \infty}T_nx_2=\lambda_1Tx_1 + \lambda_2Tx_2.
 	\end{align*} To pomeni, da je $T\in L(X, Y)$. Premislimo sedaj, da je operator $T$ limita zaporedja operatorjev $\{T_n\}_{n\in\N}$. 
-	Naj bo $\varepsilon>0$ poljubno pozitivno število in, enako kot prej, fiksiramo tisto naravno število $n_0\in\N$, za katerega velja, da če sta naravni števili $m, n\geq n_0$, je potem $\norm{T_m - T_n} < \varepsilon$. Naj bo $x\in X$ poljuben element. Tedaj za vsako naravno število $n\geq n_0$ velja: $$\norm{T_nx - Tx}_Y=\norm{T_nx - \lim_{m\to \infty}T_mx}_Y = \norm{\lim_{m\to \infty}T_nx-T_mx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y.$$ Ker za vsaka $m, n\geq n_0$ velja $\norm{T_nx - T_mx}<\varepsilon\norm{x}_X$, je posledično $$\norm{T_nx - Tx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y\leq \varepsilon\norm{x}_X.$$ Ta sklep velja za vsak $x\in X$ in vsak $n\geq n_0$, torej je tudi $\frac{\norm{(T_n - T)x}_Y}{\norm{x}_X} \leq \varepsilon$ za vsak $x\in X\setminus\{0\}$ in vsak $n\geq 0$. Posledično je $\norm{T_n - T} \leq \varepsilon$ za vsak $n\geq n_0$. To pomeni, da je $T=\lim_{n\to \infty}T_n$.
+	Naj bo $\varepsilon>0$ poljubno pozitivno število in, enako kot prej, fiksiramo tisto naravno število $n_0\in\N$, za katerega velja, da če sta naravni števili $m, n\geq n_0$, je potem $\norm{T_m - T_n} < \varepsilon$. Naj bo $x\in X$ poljuben element. Tedaj za vsako naravno število $n\geq n_0$ velja: $$\norm{T_nx - Tx}_Y=\norm{T_nx - \lim_{m\to \infty}T_mx}_Y = \norm{\lim_{m\to \infty}T_nx-T_mx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y.$$ Ker za vsaka $m, n\geq n_0$ velja $\norm{T_nx - T_mx}_Y<\varepsilon\norm{x}_X$, je posledično $$\norm{T_nx - Tx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y\leq \varepsilon\norm{x}_X.$$ Ta sklep velja za vsak $x\in X$ in vsak $n\geq n_0$, torej je tudi $\frac{\norm{(T_n - T)x}_Y}{\norm{x}_X} \leq \varepsilon$ za vsak $x\in X\setminus\{0\}$ in vsak $n\geq 0$. Posledično je $\norm{T_n - T} \leq \varepsilon$ za vsak $n\geq n_0$. To pomeni, da je $T=\lim_{n\to \infty}T_n$.
 	Za konec premislimo še, da je operator $T$ omejen. Operator $T$ zapišemo na naslednji način: $T = (T-T_{n_0}) + T_{n_0}$. Ker je $\norm{T-T_{n_0}}\leq \varepsilon$, velja, da je $T-T_{n_0}\in B(X, Y)$. Hkrati je operator $T_{n_0}\in B(X, Y)$. Ker je $B(X, Y)$ vektorski prostor zato sledi, da je $T\in B(X, Y)$.
 \end{dokaz}
 
 \begin{definicija}
  	\label{def:opnorm} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Normo iz izreka \ref{izr:opnorm} imenujemo \pojem{operatorska norma} na prostoru $B(X, Y)$.
 \end{definicija}
+
+\begin{opomba}
+	\label{opomb:opnorm}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Potem za operator $T\in B(X, Y)$ velja: \begin{align*}
+		\norm{T}&=\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}=\inf\{M\in [0, \infty)~|~\norm{Tx}_Y \leq M\cdot\norm{x}_X~\text{za vse}~x\in X\} \\ &=\sup_{\norm{x}_X =1}\norm{Tx}_Y = \sup_{\norm{x}_X\leq 1}\norm{Tx}_Y.
+	\end{align*} Posledično bi lahko operatorsko normo ekvivalentno definirali preko katerekoli izmed omenjenih enakosti.
+\end{opomba}
+
 \begin{lema}
 	\label{lem:invnorm}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je operator $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}.$$
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je operator $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}_Y\geq \norm{T^{-1}}^{-1}\norm{x}_X.$$
 \end{lema}
 \begin{dokaz}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben obrnljiv operator. Ker operator $T^{-1}$ obstaja in je tudi sam obrnljiv operator, je $\norm{T^{-1}}\neq 0$. Naj bo sedaj $x\in X$ poljuben element. Tedaj je $$\norm{x}=\norm{T^{-1}Tx} \leq \norm{T^{-1}}\cdot\norm{Tx}.$$ Od tod direktno sledi, da je $$\norm{Tx} \geq\norm{T^{-1}}^{-1}\norm{x}.$$
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben obrnljiv operator. Ker operator $T^{-1}$ obstaja in je tudi sam obrnljiv operator, je $\norm{T^{-1}}\neq 0$. Naj bo sedaj $x\in X$ poljuben element. Tedaj je $$\norm{x}_X=\norm{T^{-1}Tx}_X \leq \norm{T^{-1}}\cdot\norm{Tx}_Y.$$ Od tod direktno sledi, da je $$\norm{Tx}_Y \geq\norm{T^{-1}}^{-1}\norm{x}_X.$$
 \end{dokaz}
 \begin{definicija}
 	\label{def:porojmetr}
@@ -637,7 +649,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
 \begin{izrek}[Hahn-Banach]
 	\label{izr:HB} 
-	Naj bo $(X, \norm{.})$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljuben podprostor prostora $X$. Za poljuben omejen linearen funkcional $\map{f}{Y}{\F}$, obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da velja: \begin{enumerate}[a)]
+	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljuben podprostor prostora $X$. Za poljuben omejen linearen funkcional $\map{f}{Y}{\F}$, obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da velja: \begin{enumerate}[a)]
 		\item $F_{|_Y} = f$,
 		\item $\norm{F} = \norm{f}$.
 	\end{enumerate}
@@ -662,6 +674,21 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 		\item Obstaja tak operator $U\in B(X, Z)$, da je $\norm{U} = \norm{T}$ in $Ux = Tx$ za vsak $x\in Y$.
 	\end{enumerate}
 \end{izrek}
+
+\begin{dokaz}
+	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$ in $T\in B(Y, Z)$ poljuben operator. Dokazali bomo obe točki izreka začenši s točko $a)$. \begin{enumerate}[a)]
+		\item Vzemimo poljuben element $x\in X$ in naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k $x$. Ker je zaporedje $\{x_n\}_{n\in\N}$ konvergentno, je tudi Cauchyjevo. Ko upoštevamo, da je operator $T$ omejen, vidimo, da je $$\norm{T(x_m) - T(x_n)} = \norm{T(x_m - x_n)}\leq \norm{T}\cdot\norm{x_m-x_n}.$$ To pomeni, da je tudi zaporedje $\{T(x_n)\}_{n\in\N}$ Cauchyjevo v $Z$. Ker je $Z$ Banachov prostor, sledi, da je $\{T(x_n)\}_{n\in\N}$ konvergentno zaporedje. Označimo njegovo limito s $T(x)$ in premislimo, da zaporedje $\{T(y_n)\}_{n\in\N}$ tudi konvergira k $T(x)$. Najprej opazimo, da je zaporedje $\{T(y_n)\}_{n\in\N}$ konvergentno v prostoru $Z$ po enakem argumentu kot zaporedje $\{T(x_n)\}_{n\in\N}$. Vzemimo sedaj poljubno pozitivno število $\varepsilon>0$ in naj bo $n_0\in\N$ tako naravno število, da je $\norm{x-y_n}< \frac{\varepsilon}{\norm{T}}$ za vsako naravno število $n\in\N$, ki je večje od $n_0$. Tedaj za vsak $n\geq n_0$ velja: $$\norm{T(x) - T(y_n)}=\norm{T(x - y_n)}\leq\norm{T}\cdot\norm{x-y_n}<\norm{T}\cdot\frac{\varepsilon}{\norm{T}}=\varepsilon.$$ To pomeni, da zaporedje $\{T(y_n)\}_{n\in\N}$ konvergira k $T(x)$, oziroma $$\lim_{n\to \infty}T(x_n) =\lim_{n\to \infty}T(y_n).$$
+		\item Ker je $Y$ gost podprostor prostora $X$, za vsak element $x\in X$ obstaja tako zaporedje $\{x_n\}_{n\in\N}$, da je $\lim_{n\to \infty}x_n = x$. Upoštevajoč to dejstvo definiramo preslikavo $\map{U}{X}{Z}$ s predpisom $$U(x)=\lim_{n\to \infty}T(x_n).$$ Točka $a)$ tega dokaza zagotovi, da je preslikava $U$ dobro definirana. Premislimo sedaj, da je $U$ linearen operator.
+		Naj bosta $x, y\in X$ poljubna elementa in naj bo $\lambda\in \F$ poljuben skalar. Dodatno, naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ taki zaporedji s členi v $Y$, da je $\lim_{n\to \infty}x_n = x$ in $\lim_{n\to \infty}y_n = y$. Pomnimo, da potem velja: $$\lim_{n\to\infty}(x_n + y_n) = x + y~\text{in}~\lim_{n\to \infty}(\lambda x_n)=\lambda x.$$ Premislimo najprej, da je preslikava $U$ aditivna: \begin{align*}
+			U(x + y) &= \lim_{n\to \infty}T(x_n + y_n) = \lim_{n\to \infty}(T(x_n) + (y_n))= \lim_{n\to \infty}T(x_n) + \lim_{n\to \infty}T(y_n) \\
+			&= U(x) + U(y).
+		\end{align*}
+		Sedaj preverimo še, da je preslikava $U$ homogena: $$U(\lambda x)= \lim_{n\to \infty}T(\lambda x_n)= \lim_{n\to \infty}\lambda T(x_n)=\lambda\lim_{n\to \infty}T(x_n)=\lambda U(x).$$ To pomeni, da je preslikava $U$ res linearen operator. Vzemimo sedaj poljuben element $x\in X$ za katerega velja, da je $\norm{x} = 1$. Naj bo $\{x_n\}_{n\in\N}$ poljubno zaporedje iz $Y$, ki konvergira k $X$. Sedaj definiramo novo zaporedje v $Y$, $\{y_n\}_{n\in\N}$, s predpisom $y_n = \frac{x_n}{\norm{x_n}}$. Ker je $\lim_{n\to \infty}\norm{x_n} = \norm{x} = 1$, tudi zaporedje $\{y_n\}_{n\in\N}$ konvergira k elementu $x$ in velja, da je $\norm{y_n} = \frac{\norm{x_n}}{\norm{x_n}}=1$ za vsak $n\in\N$. Hkrati velja: \begin{align*}
+			\norm{Ux} &=\norm{\lim_{n\to \infty}T(y_n)} =\lim_{n\to\infty}\norm{T(y_n)}\leq \sup\{\norm{T(y_n)}~|~n\in\N\} \\
+			&\leq \sup\{\norm{T}\cdot\norm{y_n}~|~n\in\N\} = \norm{T}\sup\{\norm{y_n}~|~n\in\N\} = \norm{T}.
+		\end{align*} To pomeni, da je operator $U$ omejen in $\norm{U}\leq \norm{T}$. Vzemimo sedaj poljuben element $y\in Y$. Tedaj je konstantno zaporedje $\{y\}$ zaporedje v $Y$, ki konvergira k $y$. Posledično je $$U(y) = \lim_{n\to\infty}T(y) = T(y).$$ To pomeni, da je $$\norm{T(y)}=\norm{U(y)}\leq \norm{U}\cdot\norm{y}$$ za vsak $y\in Y$. To pomeni, da je $\norm{T}\leq \norm{U}$. Posledično je $\norm{T} = \norm{U}$ in $Tx = Ux$ za vsak $x\in Y$.
+	\end{enumerate}
+\end{dokaz}
 
 \begin{definicija}
 	\label{def:ScalProd}

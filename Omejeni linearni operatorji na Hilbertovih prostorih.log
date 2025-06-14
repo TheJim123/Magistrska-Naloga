@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  13 JUN 2025 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  14 JUN 2025 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1200,7 +1200,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathe
 x.enc}]
-Overfull \hbox (28.03287pt too wide) in paragraph at lines 515--516
+Overfull \hbox (28.03287pt too wide) in paragraph at lines 519--520
 []\OT1/lmr/m/it/10.95 Naj bo $\OML/lmm/m/it/10.95 X$ \OT1/lmr/m/it/10.95 po-lju
 -ben vek-tor-ski pro-stor. Ele-men-tom pro-stora $\OML/lmm/m/it/10.95 L\OT1/lmr
 /m/n/10.95 (\OML/lmm/m/it/10.95 X; \U/msb/m/n/10.95 F\OT1/lmr/m/n/10.95 )$ \OT1
@@ -1271,15 +1271,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [10]
-Overfull \hbox (12.45383pt too wide) in paragraph at lines 674--675
-[]\OT1/lmr/m/it/10.95 Ce je $\OML/lmm/m/it/10.95 V$ \OT1/lmr/m/it/10.95 vek-tor
--ski pro-stor (nad $\U/msb/m/n/10.95 F$\OT1/lmr/m/it/10.95 ) in $[]$ ska-larni 
-pro-dukt na njem, pra-vimo, da je $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 V; \
-OT1/lmr/m/n/10.95 +\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 ^^A\OML/lmm/m/it/1
-0.95 ; []\OT1/lmr/m/n/10.95 )$
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1298,6 +1289,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [12]
+Overfull \hbox (12.45383pt too wide) in paragraph at lines 701--702
+[]\OT1/lmr/m/it/10.95 Ce je $\OML/lmm/m/it/10.95 V$ \OT1/lmr/m/it/10.95 vek-tor
+-ski pro-stor (nad $\U/msb/m/n/10.95 F$\OT1/lmr/m/it/10.95 ) in $[]$ ska-larni 
+pro-dukt na njem, pra-vimo, da je $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 V; \
+OT1/lmr/m/n/10.95 +\OML/lmm/m/it/10.95 ; \OMS/lmsy/m/n/10.95 ^^A\OML/lmm/m/it/1
+0.95 ; []\OT1/lmr/m/n/10.95 )$
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1325,10 +1325,28 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17]
 Poglavje 2.
 
 
-[16
+[18
 
 ]
 
@@ -1339,30 +1357,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[17]
-Overfull \hbox (4.673pt too wide) detected at line 852
+[19]
+Overfull \hbox (4.673pt too wide) detected at line 879
 []
  []
 
 
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[18]
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[19]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1471,13 +1471,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [31]
-Overfull \hbox (0.99739pt too wide) in paragraph at lines 1220--1220
-[]\OT1/lmr/m/n/10.95 Premislimo naj-prej, da je pre-sli-kava $\OML/lmm/m/it/10.
-95 P[]$ \OT1/lmr/m/n/10.95 li-ne-arna. Vze-mimo po-ljubna ele-menta $\OML/lmm/m
-/it/10.95 x[]; x[] \OMS/lmsy/m/n/10.95 2
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1496,10 +1489,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [33]
-Overfull \hbox (1.24532pt too wide) in paragraph at lines 1241--1242
-\OT1/lmr/m/it/10.95 pro-stor v $\OML/lmm/m/it/10.95 X$\OT1/lmr/m/it/10.95 . Ope
--ra-tor $\OML/lmm/m/it/10.95 P[]$ \OT1/lmr/m/it/10.95 iz iz-reka []2.29[] ime-n
-u-jemo $[]$. 
+Overfull \hbox (0.99739pt too wide) in paragraph at lines 1247--1247
+[]\OT1/lmr/m/n/10.95 Premislimo naj-prej, da je pre-sli-kava $\OML/lmm/m/it/10.
+95 P[]$ \OT1/lmr/m/n/10.95 li-ne-arna. Vze-mimo po-ljubna ele-menta $\OML/lmm/m
+/it/10.95 x[]; x[] \OMS/lmsy/m/n/10.95 2
  []
 
 
@@ -1521,12 +1514,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35]
-Poglavje 3.
+Overfull \hbox (1.24532pt too wide) in paragraph at lines 1268--1269
+\OT1/lmr/m/it/10.95 pro-stor v $\OML/lmm/m/it/10.95 X$\OT1/lmr/m/it/10.95 . Ope
+-ra-tor $\OML/lmm/m/it/10.95 P[]$ \OT1/lmr/m/it/10.95 iz iz-reka []2.29[] ime-n
+u-jemo $[]$. 
+ []
 
 
-[36
 
-]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1536,15 +1539,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [37]
+Poglavje 3.
 
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+[38
 
-[38]
+]
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1572,14 +1572,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-Overfull \hbox (40.12825pt too wide) in paragraph at lines 1409--1410
-[]$[]$ \OT1/lmr/m/it/10.95 ozi-roma $[]$, ^^Tce je $\OML/lmm/m/it/10.95 A[] \OT
-1/lmr/m/n/10.95 = \OML/lmm/m/it/10.95 A$\OT1/lmr/m/it/10.95 . Ope-ra-torja $\OT
-1/lmr/m/n/10.95 0$ \OT1/lmr/m/it/10.95 in $\OML/lmm/m/it/10.95 I$ \OT1/lmr/m/it
-/10.95 ime-nu-jemo $[]$
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1598,6 +1590,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43]
+Overfull \hbox (40.12825pt too wide) in paragraph at lines 1436--1437
+[]$[]$ \OT1/lmr/m/it/10.95 ozi-roma $[]$, ^^Tce je $\OML/lmm/m/it/10.95 A[] \OT
+1/lmr/m/n/10.95 = \OML/lmm/m/it/10.95 A$\OT1/lmr/m/it/10.95 . Ope-ra-torja $\OT
+1/lmr/m/n/10.95 0$ \OT1/lmr/m/it/10.95 in $\OML/lmm/m/it/10.95 I$ \OT1/lmr/m/it
+/10.95 ime-nu-jemo $[]$
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1607,11 +1607,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44]
-Overfull \hbox (1.31659pt too wide) detected at line 1487
-[]
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1630,6 +1625,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46]
+Overfull \hbox (1.31659pt too wide) detected at line 1514
+[]
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1657,15 +1657,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [49]
-Overfull \hbox (1.16852pt too wide) in paragraph at lines 1581--1581
-[]\OT1/lmr/m/n/10.95 Ker je $\OML/lmm/m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lm
-m/m/it/10.95 T\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^R \U/msb/m/n/10.95 R$\
-OT1/lmr/m/n/10.95 , lahko $\OMS/lmsy/m/n/10.95 C[]\OT1/lmr/m/n/10.95 (\OML/lmm/
-m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 ))$ o
-brav-na-vamo kot re-a-len vek-tor-ski pro-stor. Ozna^^Tcimo
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1684,6 +1675,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [51]
+Overfull \hbox (1.16852pt too wide) in paragraph at lines 1608--1608
+[]\OT1/lmr/m/n/10.95 Ker je $\OML/lmm/m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lm
+m/m/it/10.95 T\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^R \U/msb/m/n/10.95 R$\
+OT1/lmr/m/n/10.95 , lahko $\OMS/lmsy/m/n/10.95 C[]\OT1/lmr/m/n/10.95 (\OML/lmm/
+m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 T\OT1/lmr/m/n/10.95 ))$ o
+brav-na-vamo kot re-a-len vek-tor-ski pro-stor. Ozna^^Tcimo
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1748,21 +1748,39 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [58]
 
-[59
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[59]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[60]
+
+[61
 
 
 ]
-Overfull \hbox (27.1662pt too wide) in paragraph at lines 1780--1796
+Overfull \hbox (27.1662pt too wide) in paragraph at lines 1807--1823
 [][] 
  []
 
 
 
-[60
+[62
 
 ]
 
-[61
+[63
 
 ] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
@@ -1778,13 +1796,13 @@ prostorih".out' has not changed.
 (rerunfilecheck)             Checksum: 5412FBBD6B9EDB1A8EFEB3806A5DDCEB;2507.
  ) 
 Here is how much of TeX's memory you used:
- 29433 strings out of 473522
- 592866 string characters out of 5712673
- 1027947 words of memory out of 5000000
- 51841 multiletter control sequences out of 15000+600000
+ 29439 strings out of 473522
+ 592920 string characters out of 5712673
+ 1027977 words of memory out of 5000000
+ 51842 multiletter control sequences out of 15000+600000
  619151 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,1761b,1348s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,1761b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1805,9 +1823,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (7
-1 pages, 589281 bytes).
+3 pages, 597389 bytes).
 PDF statistics:
- 924 PDF objects out of 1000 (max. 8388607)
- 323 named destinations out of 1000 (max. 500000)
+ 939 PDF objects out of 1000 (max. 8388607)
+ 328 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
