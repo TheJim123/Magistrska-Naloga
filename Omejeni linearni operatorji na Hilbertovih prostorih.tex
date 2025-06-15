@@ -473,15 +473,14 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	\end{itemize}
 	Če je $M$ neprazna množica in $d$ metrika na $M$, par $(M, d)$ imenujemo \pojem{metrični prostor}.
 \end{definicija}
-
+Ključen pojem v nadaljevanju dela bo pojem polnega metričnega prostora, ki ga definiramo na naslednji način. 
 \begin{definicija}
 	\label{def:PolnMP}
 	Naj bo $(M, d)$ poljuben metrični prostor. Pravimo, da je $M$ \pojem{poln} metrični prostor, če je vsako Cauchyjevo zaporedje v $M$ tudi konvergentno v $M$.
 \end{definicija}
-
+Navedimo nekaj klasičnih primerov polnih metričnih prostorov.
 \begin{primer}
 	\label{prim:PolnMP}
-	Navedimo nekaj klasičnih primerov polnih metričnih prostorov:
 	\begin{itemize}
 		\item prostori $\R^n$ s standardno Evklidsko normo;
 		\item prostori $\C^n$ s standardno Evklidsko normo;
@@ -489,7 +488,7 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\displaystyle\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
 	\end{itemize}
 \end{primer}
-
+Še en ključen pojem v tem delu je pojem norme, ki ga definiramo v naslednji definiciji.
 \begin{definicija}
 	\label{def:norm}
 	Naj bo $V$ poljuben vektorski prostor nad poljem $\F$. Preslikavi $\map{\norm{.}}{V}{\R}$ pravimo \pojem{norma} na $V$, če za poljubna elementa $x, y\in V$ ter poljuben skalar $\alpha\in \F$ velja: \begin{itemize}
@@ -501,29 +500,44 @@ Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 	Če je $V$ vektorski prostor (nad $\F$) in $\norm{.}$ norma na njem, pravimo, da je $(V, +, \cdot, \norm{.})$ \pojem{normiran prostor}.
 \end{definicija}
 
-V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili nad katerim prostorom je definirana dana norma. Norma nad normiranim prostorom $X$ bo torej označena z $\norm{.}_X$. To oznako bomo postopoma opustili, kateremu prostoru pripada dana norma, pa bomo razbrali iz konteksta.
+V tem poglavju bomo občasno zaradi jasnosti ali preglednosti z indeksom označili nad katerim prostorom je definirana dana norma. Norma nad normiranim prostorom $X$ bo torej označena z $\norm{.}_X$. To oznako bomo v kasnejših poglavjih opustili, kateremu prostoru pripada dana norma, pa bomo razbrali iz konteksta.
 
 \begin{opomba}
 	\label{opomb:normzv} 
 	Ni težko videti, da je vsaka norma tudi zvezna preslikava. Res, naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Izberemo poljubno pozitivno število $\varepsilon>0$ in naj bo $x\in X$ poljuben. Tedaj je $$\norm{x+h}_X - \norm{x}_X \leq (\norm{x}_X + \norm{h}_X) - \norm{x}_X = \norm{h}_X$$ in $$\norm{x}_X - \norm{x+h}_X \geq \norm{x}_X - (\norm{x}_X + \norm{h}_X) \geq q\norm{h}_X.$$ To pomeni, da je $$\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X.$$ Za $\delta=\varepsilon$ potem velja: Če je $\norm{h}_X<\delta$, je $\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X < \varepsilon$. Torej je norma $\norm{.}_X$ zvezna na $X$. Še več, opazimo da izbrani $\delta=\varepsilon$ zadošča vsakemu elementu $x\in X$. Posledično je norma $\norm{.}_X$ enakomerno zvezna na $X$.
 \end{opomba}
+V naslednji definiciji bomo povzeli nekaj ključnih pojmov, ki so povezani s preslikavami na vektorskih prostorih.
 \begin{definicija}
 	\label{def:linop}
 	Naj bosta $X$ ter $Y$ poljubna vektorska prostora nad poljem $\F$. \begin{enumerate}[a)]
 		\item Pravimo, da je preslikava $\map{T}{X}{Y}$ \pojem{linearen operator}, če velja: \begin{itemize}
 			\item Za vsaka elementa $x, y\in X$ je $T(x+y) = T(x) + T(y)$.
 			\item Za vsak element $x\in X$ in vsak skalar $\alpha\in\F$ je $T(\alpha x)=\alpha T(x)$.
-		\end{itemize} V tem primeru namesto $T(x)$ uporabimo oznako $Tx$. 
+		\end{itemize} V tem primeru namesto $T(x)$ po navadi uporabimo oznako $Tx$. 
 		\item Naj bosta $(X, \norm{.}_X)$ in $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Pravimo, da je linearen operator $\map{T}{X}{Y}$ \pojem{omejen}, če obstaja tako pozitivno število $M>0$, da za vsak $x\in X$ velja $$\norm{Tx}_Y\leq M\cdot\norm{x}_X.$$
 		\item Z $L(X, Y)$ označimo vektorski prostor (nad $\F$) vseh linearnih operatorjev iz $X$ v $Y$, z $B(X, Y)$ pa podprostor od $L(X, Y)$, ki sestoji iz vseh omejenih linearnih operatorjev iz $X$ v $Y$. Kadar je $X=Y$, uporabimo oznaki $L(X)$ in $B(X)$.
 		\item Naj bo $X$ poljuben vektorski prostor. Elementom prostora $L(X, \F)$ pravimo \pojem{linearni funkcionali}, elementom prostora $B(X, \F)$ pa \pojem{omejeni linearni funkcionali}. Za množico $B(X, \F)$ pogosto uporabimo oznako $X^*$.
 	\end{enumerate}
 \end{definicija}
-
+Sedaj definirajmo konvergenco zaporedij, konvergenco vrst in zveznost linearnih operatorjev.
 \begin{definicija}
-	\label{zvop} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Pravimo, da je linearen operator $T\in L(X, Y)$ \pojem{zvezen} v točki $x_0\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako pozitivno število $\delta>0$, da za vsak element $x\in X$ velja sklep: $$\norm{x-x_0}_X<\delta \Rightarrow \norm{Ax - Ax_0}_Y<\varepsilon.$$ Če je operator $T$ zvezen v vsaki točki $x\in X$, pravimo, da je \pojem{zvezen} na $X$.
+	\label{zvop} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. 
+	\begin{enumerate}[a)]
+		\item Pravimo, da zaporedje $\{x_n\}_{n\in\N}$ \pojem{konvergira} k elementu $x\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako naravno število $n_0\in\N$, da je $\norm{x_n - x}_X<\varepsilon$, čim je $n\geq n_0$. V tem primeru pišemo $x = \lim_{n\to \infty}x_n$. Če zaporedje konvergira, pravimo, da je \pojem{konvergentno}.
+		\item Pravimo, da vrsta $\sum_{n = 0}^\infty x_n$ \pojem{konvergira}, če je zaporedje delnih vsot $\{s_n\}_{n\in\N}$, definirano s predpisom $s_n=\sum_{k=0}^n x_n$, konvergentno.
+		\item Pravimo, da je linearen operator $T\in L(X, Y)$ \pojem{zvezen} v točki $x_0\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako pozitivno število $\delta>0$, da za vsak element $x\in X$ velja sklep: $$\norm{x-x_0}_X<\delta \Rightarrow \norm{Ax - Ax_0}_Y<\varepsilon.$$ Če je operator $T$ zvezen v vsaki točki $x\in X$, pravimo, da je \pojem{zvezen} na $X$.
+	\end{enumerate}
 \end{definicija}
 
+\begin{opomba}
+	\label{opomb:limitpravila}
+	Naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Za poljubni konvergentni zaporedji $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ s členi v $X$ in poljuben skalar $\lambda\in\F$ velja: \begin{itemize}
+		\item $\lim_{n\to\infty}\lambda x_n = \lambda \lim_{n\to \infty}x_n = \lambda x$;
+		\item $\lim_{n\to\infty}x_n + y_n = \lim_{n\to \infty}x_n + \lim_{n\to\infty}y_n= x + y$;
+		\item $\lim_{n\to\infty}x_n\cdot y_n = \lim_{n\to \infty}x_n\cdot\lim_{n\to \infty}y_n = x\cdot y$.
+	\end{itemize} Vsako izmed omenjenih enakosti dokažemo na podoben način kot analogne rezultate za realna zaporedja.
+\end{opomba}
+V naslednji lemi dokažemo pomemben pomožen rezultat, ki nam bo pomagal dokazati, da sta za linearne operatorje na normiranih prostorih zveznost in omejenost ekvivalentni.
 \begin{lema}
 	\label{lem:omopzv}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Naj bo $x_0 \in X$ poljuben element. Potem je operator $T$ zvezen v točki $x_0$ natanko tedaj, ko je operator $T$ zvezen na $X$.
@@ -533,7 +547,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Izberimo poljuben element $x_0\in X$. Če predpostavimo, da je operator $T$ zvezen na $X$, je seveda zvezen tudi v izbrani točki $x_0$, zato ta implikacija velja trivialno. 
 	Denimo zato, da je operator $T$ zvezen v točki $x_0\in X$. To pomeni, da za vsako pozitivno število $\varepsilon>0$ obstaja tako pozitivno število $\delta>0$, da za vsak $x\in X$ velja, da je $\norm{Tx - Tx_0}_Y <\varepsilon$, čim je $\norm{x - x_0}_X<\delta$. Naj bo $x_1\in X$ poljuben element in $\varepsilon>0$ poljubno pozitivno število. Naj bo $\delta>0$ tisto pozitivno število, za katerega je $\norm{Tx - Tx_0}_Y <\varepsilon$, čim je $\norm{x - x_0}_X<\delta$, za vsak $x\in X$. Tedaj za vsak element $x\in K_\delta(x_1)$ velja: $$\norm{Tx_1-Tx}_Y = \norm{T(x-x_0+x_0-x_1)}_Y=\norm{Tx_0 - T(x_0+x_1-x)}_Y.$$ Sedaj vpeljemo oznako $y = x_0 + x_1 - x$ in opazimo, da je $$\norm{x_0 - y}_X = \norm{x_1 - x}_X < \delta.$$ Posledično je $$\norm{Tx_1 - Tx}_Y = \norm{Tx_0 - Ty}_Y < \varepsilon.$$ To pomeni, da je operator $T$ zvezen v elementu $x_1$. Ker je bil element $x_1\in X$ poljuben, je operator $T$ zvezen na $X$.
 \end{dokaz}
-
+Sedaj premislimo, da res velja obljubljena ekvivalenca.
 \begin{izrek}
 	\label{izr:omopzv}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Potem je operator $T$ zvezen natanko tedaj, ko je omejen.
@@ -541,7 +555,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 
 \begin{dokaz}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Dokazali bomo obe implikaciji.
-	Denimo najprej, da je operator $T$ omejen. Naj bo $M>0$ tisto pozitivno število, za katerega velja, da je $\norm{Tx}_Y\leq M\cdot\norm{x}_X$ za vsak $x\in X$. Naj bo $x\in X$ poljuben element. Vzemimo poljubno pozitivno število $\varepsilon>0$ in naj bo $\delta = \frac{\varepsilon}{M}$. Tedaj je $$\norm{Tx}_Y \leq M\cdot \norm{x}_X < M\frac{\varepsilon}{M}=\varepsilon,$$ čim je $\norm{x}_X < \delta$. Posledično je operator $T$ zvezen v elementu $0\in X$. Lema \ref{lem:omopzv} nam sedaj pove, da je operator $T$ zvezen na celotnem prostoru $X$. S tem smo dokazali prvo implikacijo. Dokažimo sedaj še drugo.
+	Denimo najprej, da je operator $T$ omejen. Naj bo $M>0$ tako pozitivno število, da je $$\norm{Tx}_Y\leq M\cdot\norm{x}_X$$ za vsak $x\in X$. Naj bo $x\in X$ poljuben element. Vzemimo poljubno pozitivno število $\varepsilon>0$ in naj bo $\delta = \frac{\varepsilon}{M}$. Tedaj je $$\norm{Tx}_Y \leq M\cdot \norm{x}_X < M\frac{\varepsilon}{M}=\varepsilon,$$ čim je $\norm{x}_X < \delta$. Posledično je operator $T$ zvezen v elementu $0\in X$. Lema \ref{lem:omopzv} nam sedaj pove, da je operator $T$ zvezen na celotnem prostoru $X$. S tem smo dokazali prvo implikacijo. Dokažimo sedaj še drugo.
 	Denimo, da je operator $T$ zvezen na $X$. Tedaj je $T$ zvezen tudi v elementu $0\in X$. Vzemimo sedaj $\varepsilon=1$. Tedaj obstaja tako pozitivno število $\delta>0$, da za vsak $x\in X$ velja, da je $\norm{Tx}_Y<1$, čim je $\norm{x}_X < \delta$. Fiksirajmo ta $\delta$ in vzemimo poljuben $x\in X$. Tedaj velja: $$\norm{Tx}_Y = \norm{T(\frac{2\cdot\norm{x}_X}{\delta}\cdot\frac{\delta}{2\cdot\norm{x}_X}x)}_Y = \frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y .$$ Ker je $\norm{\frac{\delta}{2\cdot\norm{x}_X}x}_Y<\frac{\delta}{2}<\delta$, je $\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y<1$. Posledično velja: $$\norm{Tx}_Y=\frac{2\cdot\norm{x}_X}{\delta}\cdot\norm{T(\frac{\delta}{2\cdot\norm{x}_X}x)}_Y <\frac{2}{\delta}\norm{x}_X.$$ Naj bo sedaj $M=\frac{2}{\delta}$. Tedaj za vsak element $x\in X$ velja: $$\norm{Tx}_Y \leq M\cdot\norm{x}_X.$$ To pomeni, da je operator $T$ omejen.
 \end{dokaz}
 
@@ -549,7 +563,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 	 \label{opomb:omopzv}
 	 Naj bosta $X$ ter $Y$ poljubna normirana prostora nad poljem $\F$. Izrek \ref{izr:omopzv} nam pove, da so vsi zvezni operatorji na $X$ natanko vsi omejeni operatorji na $X$. To pomeni, da je prostor $B(X, Y)$ ravno prostor vseh zveznih operatorjev iz $X$ v $Y$. V nadaljevanju te naloge bomo zato pojma omejenosti in zveznosti tretirali kot ekvivalentna.
 \end{opomba}
-
+Kasneje v nalogi se bo pojavil in uporabil pojem izometrije, zato ga definirajmo kar tukaj.
 \begin{definicija}
 	\label{def:izometrija}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Pravimo, da je operator $T$ \pojem{izometrija}, če je $$\norm{Tx}_Y = \norm{x}_X$$ za vsak $x\in X$.
@@ -559,7 +573,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 	\label{opomb:izometrija}
 	Kratek premislek nam pove, da je vsaka izometrija tudi omejen linearen operator.
 \end{opomba}
-
+Kasneje nam bo prišel prav tudi spodaj naveden t.~i.~ ">Heine-Borel-Lebesgueov"< izrek, ki ga bomo podali brez dokaza.
 \begin{izrek}[Heine-Borel-Lebesgue]
 	\label{izr:HBL}
 	Naj bo $n\in\N$ poljubno naravno število in naj bo $\F^n$ metrični prostor, opremljen s standardno evklidsko metriko $d$. Za neprazno podmnožico $A\subseteq \F^n$ sta naslednji trditvi ekvivalentni: \begin{enumerate}[a)]
@@ -567,6 +581,22 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 		\item $A$ je zaprta in omejena.
 	\end{enumerate}
 \end{izrek}
+
+\begin{definicija}
+	\label{def:porojmetr}
+	Naj bo $V$ poljuben normiran prostor nad $\F$ z normo $\norm{.}$. Preslikavo $\map{d}{V\times V}{\R}$ s predpisom $d(x, y) = \norm{x-y}$ imenujemo \pojem{metrika porojena z $\norm{.}$}.
+\end{definicija}
+
+\begin{opomba}
+	\label{opomb:porojmetr} Ni težko preveriti, da je preslikava $d$ iz definicije \ref{def:porojmetr} res metrika na prostoru $V$.
+\end{opomba}
+Sedaj definirajmo še t.~i.~ Banachove prostore.
+\begin{definicija}
+	\label{def:Banach}
+	Naj bo $V$ poljuben normiran prostor nad poljem $\F$ z normo $\norm{.}$. Naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $V$ \pojem{Banachov prostor} nad $\F$. 
+\end{definicija}
+
+Pojavi se narvno vprašanje, ali lahko definiramo normo na prostoru omejenih linearnih operatorjev s pomočjo norm na domeni in kodomeni. Odgovor na to vprašanje poda naslednji izrek, hkrati pa nam pove tudi, kdaj bo normiran prostor omejenih linearnih operatorjev Banachov.
 
 \begin{izrek}
 	\label{izr:opnorm} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Tedaj je vektorski prostor $B(X, Y)$ normiran prostor za normo s predpisom $$\norm{T}=\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}.$$ Dodatno, če je prostor $(Y, \norm{.}_Y)$ Banachov prostor, je tudi $(B(X, Y), \norm{.})$ Banachov prostor.
@@ -585,42 +615,28 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 		T(\lambda_1x_1 + \lambda_2x_2)&=\lim_{n\to \infty}T_n(\lambda_1x_1 + \lambda_2x_2)=\lim_{n\to \infty}(\lambda_1T_nx_1 + \lambda_2T_nx_2) \\ 
 		&= \lambda_1\lim_{n\to \infty}T_nx_1 + \lambda_2\lim_{n\to \infty}T_nx_2=\lambda_1Tx_1 + \lambda_2Tx_2.
 	\end{align*} To pomeni, da je $T\in L(X, Y)$. Premislimo sedaj, da je operator $T$ limita zaporedja operatorjev $\{T_n\}_{n\in\N}$. 
-	Naj bo $\varepsilon>0$ poljubno pozitivno število in, enako kot prej, fiksiramo tisto naravno število $n_0\in\N$, za katerega velja, da če sta naravni števili $m, n\geq n_0$, je potem $\norm{T_m - T_n} < \varepsilon$. Naj bo $x\in X$ poljuben element. Tedaj za vsako naravno število $n\geq n_0$ velja: $$\norm{T_nx - Tx}_Y=\norm{T_nx - \lim_{m\to \infty}T_mx}_Y = \norm{\lim_{m\to \infty}T_nx-T_mx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y.$$ Ker za vsaka $m, n\geq n_0$ velja $\norm{T_nx - T_mx}_Y<\varepsilon\norm{x}_X$, je posledično $$\norm{T_nx - Tx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y\leq \varepsilon\norm{x}_X.$$ Ta sklep velja za vsak $x\in X$ in vsak $n\geq n_0$, torej je tudi $\frac{\norm{(T_n - T)x}_Y}{\norm{x}_X} \leq \varepsilon$ za vsak $x\in X\setminus\{0\}$ in vsak $n\geq 0$. Posledično je $\norm{T_n - T} \leq \varepsilon$ za vsak $n\geq n_0$. To pomeni, da je $T=\lim_{n\to \infty}T_n$.
-	Za konec premislimo še, da je operator $T$ omejen. Operator $T$ zapišemo na naslednji način: $T = (T-T_{n_0}) + T_{n_0}$. Ker je $\norm{T-T_{n_0}}\leq \varepsilon$, velja, da je $T-T_{n_0}\in B(X, Y)$. Hkrati je operator $T_{n_0}\in B(X, Y)$. Ker je $B(X, Y)$ vektorski prostor zato sledi, da je $T\in B(X, Y)$.
+	Naj bo $\varepsilon>0$ poljubno pozitivno število in, enako kot prej, fiksiramo tisto naravno število $n_0\in\N$, za katerega je $\norm{T_m - T_n} < \varepsilon$, čim sta naravni števili $m, n\geq n_0$. Naj bo $x\in X$ poljuben element. Tedaj za vsako naravno število $n\geq n_0$ velja: $$\norm{T_nx - Tx}_Y=\norm{T_nx - \lim_{m\to \infty}T_mx}_Y = \norm{\lim_{m\to \infty}T_nx-T_mx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y.$$ Ker za vsaka $m, n\geq n_0$ velja $\norm{T_nx - T_mx}_Y<\varepsilon\norm{x}_X$, je posledično $$\norm{T_nx - Tx}_Y = \lim_{m\to \infty}\norm{T_nx-T_mx}_Y\leq \varepsilon\norm{x}_X.$$ Ta sklep velja za vsak $x\in X$ in vsak $n\geq n_0$, torej je tudi $\frac{\norm{(T_n - T)x}_Y}{\norm{x}_X} \leq \varepsilon$ za vsak $x\in X\setminus\{0\}$ in vsak $n\geq 0$. Posledično je $\norm{T_n - T} \leq \varepsilon$ za vsak $n\geq n_0$. To pomeni, da je $T=\lim_{n\to \infty}T_n$.
+	Za konec premislimo še, da je operator $T$ omejen. Operator $T$ zapišemo na naslednji način: $T = (T-T_{n_0}) + T_{n_0}$. Ker je $\norm{T-T_{n_0}}\leq \varepsilon$, velja, da je $T-T_{n_0}\in B(X, Y)$. Hkrati je operator $T_{n_0}\in B(X, Y)$. Ker je $B(X, Y)$ vektorski prostor zato sledi, da je $T\in B(X, Y)$. To pomeni, da je zaporedje $\{T_n\}_{n\in\N}$ konvergentno v $B(X, Y)$, torej je $B(X, Y)$ Banachov prostor.
 \end{dokaz}
-
 \begin{definicija}
  	\label{def:opnorm} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Normo iz izreka \ref{izr:opnorm} imenujemo \pojem{operatorska norma} na prostoru $B(X, Y)$.
 \end{definicija}
-
+Izkaže se, da ima operatorska norma, kot smo jo definirali v izreku \ref{izr:opnorm}, več ekvivalentnih definicij. Te povzamemo v naslednji opombi.
 \begin{opomba}
 	\label{opomb:opnorm}
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Potem za operator $T\in B(X, Y)$ velja: \begin{align*}
 		\norm{T}&=\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}=\inf\{M\in [0, \infty)~|~\norm{Tx}_Y \leq M\cdot\norm{x}_X~\text{za vse}~x\in X\} \\ &=\sup_{\norm{x}_X =1}\norm{Tx}_Y = \sup_{\norm{x}_X\leq 1}\norm{Tx}_Y.
 	\end{align*} Posledično bi lahko operatorsko normo ekvivalentno definirali preko katerekoli izmed omenjenih enakosti.
 \end{opomba}
-
+V nasledji lemi premislimo zvezo med obrnljivostjo operatorja in normo njegovega inverza.
 \begin{lema}
 	\label{lem:invnorm}
 	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben operator. Če je operator $T$ obrnljiv, potem za vsak $x\in X$ velja: $$\norm{Tx}_Y\geq \norm{T^{-1}}^{-1}\norm{x}_X.$$
 \end{lema}
 \begin{dokaz}
-	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben obrnljiv operator. Ker operator $T^{-1}$ obstaja in je tudi sam obrnljiv operator, je $\norm{T^{-1}}\neq 0$. Naj bo sedaj $x\in X$ poljuben element. Tedaj je $$\norm{x}_X=\norm{T^{-1}Tx}_X \leq \norm{T^{-1}}\cdot\norm{Tx}_Y.$$ Od tod direktno sledi, da je $$\norm{Tx}_Y \geq\norm{T^{-1}}^{-1}\norm{x}_X.$$
+	Naj bosta $X$ ter $Y$ poljubna normirana prostora nad $\F$ in naj bo $T\in B(X, Y)$ poljuben obrnljiv operator. Ker operator $T^{-1}$ obstaja in je tudi sam obrnljiv operator, je $\norm{T^{-1}}\neq 0$. Naj bo sedaj $x\in X$ poljuben element. Tedaj je $$\norm{x}_X=\norm{T^{-1}Tx}_X \leq \norm{T^{-1}}\cdot\norm{Tx}_Y.$$ Od tod neposredno sledi, da je $$\norm{Tx}_Y \geq\norm{T^{-1}}^{-1}\norm{x}_X.$$
 \end{dokaz}
-\begin{definicija}
-	\label{def:porojmetr}
-	Naj bo $V$ poljuben normiran prostor nad $\F$ z normo $\norm{.}$. Preslikavo $\map{d}{V\times V}{\R}$ s predpisom $d(x, y) = \norm{x-y}$ imenujemo \pojem{metrika porojena z $\norm{.}$}.
-\end{definicija}
-
-\begin{opomba}
-	\label{opomb:porojmetr} Ni težko preveriti, da je preslikava $d$ iz definicije \ref{def:porojmetr} res metrika na prostoru $V$.
-\end{opomba}
-
-\begin{definicija}
-	\label{def:Banach}
-	Naj bo $V$ poljuben normiran prostor nad poljem $\F$ z normo $\norm{.}$. Naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $V$ \pojem{Banachov prostor} nad $\F$. 
-\end{definicija}
-
+V naslednji lemi premislimo zadosten pogoj, da bo slika operatorja, ki ima za domeno Banachov prostor, zaprt podprostor kodomene.
 \begin{lema}
 	\label{lem:banzap}
 	Naj bo $(X,\norm{.}_X)$ poljuben Banachov prostor nad poljem $\F$, $(Y,\norm{.}_Y)$ poljuben normiran prostor nad $\F$ ter $T\in B(X, Y)$ poljuben omejen linearen operator. Če obstaja tak $r>0$, da je $\norm{Tx}_Y\geq r\norm{x}_X$ za vsak $x\in X$, je $\operatorname{Im}T$ zaprti podprostor v $Y$.
@@ -628,6 +644,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 \begin{dokaz}
 	Naj bo $(X,\norm{.}_X)$ poljuben Banachov prostor nad poljem $\F$, $(Y,\norm{.}_Y)$ poljuben normiran prostor nad $\F$ ter $T\in B(X, Y)$ poljuben omejen linearen operator. Denimo, da obstaja tako pozitivno število $r>0$, da je $\norm{Tx}_Y\geq r\norm{x}_X$ za vsak $x\in X$. Naj bo sedaj $\{y_n\}_{n\in\N}$ poljubno konvergentno zaporedje z elementi iz $\operatorname{Im}T$ in naj bo $y\in Y$ njegova limita: $y = \lim_{n\to \infty}y_n$. Naj bo $n\in\N$ poljuben. Ker je $y_n\in \operatorname{Im}T$, obstaja tak element $x_n\in X$, da je $y_n = Tx_n$ Za vsak $n\in\N$ izberemo en tak $x_n$ in tako tvorimo zaporedje $\{x_n\}_{n\in\N}$. Ker je zaporedje $\{y_n\}_{n\in\N}$ konvergentno v $Y$, je tudi Cauchyjevo. Ker za poljubna $m, n\in\N$ velja $$\norm{y_n - y_m}_Y = \norm{Tx_n - Tx_m}_Y = \norm{T(x_n - x_m)}_y\geq r\norm{x_n - x_m},$$ sledi, da je zaporedje $\{x_n\}_{n\in\N}$ Cauchyjevo v $X$. Še več, zaporedje $\{x_n\}_{n\in\N}$ je konvergentno v $X$, ker je $X$ Banachov prostor. Označimo $x=\lim_{n\to\infty}x_n$. Ker je operator $T$ zvezen, velja: $$Tx = \lim_{n\to \infty}Tx_n = \lim_{n\to\infty}y_n = y.$$ To pomeni, da je $y\in\operatorname{Im}T$. Posledično je $\operatorname{Im}T$ zaprti podprostor v $Y$.
 \end{dokaz}
+Preden podamo naslednji izrek, se spomnimo definicije odprte preslikave.
 \begin{definicija}
 	\label{def:odppresl}
 	Naj bosta $(X, d_X)$ in $(Y, d_Y)$ poljubna metrična prostora. Pravimo, da je preslikava ~$\map{f}{X}{Y}$ \pojem{odprta}, če je za vsako odprto podmnožico $U$ v $X$ njena slika, $f(U)$, odprta podmnožica v $Y$.
@@ -637,16 +654,16 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 	\label{izr:odppresl}
 	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$. Če je operator $T\in B(X, Y)$ surjektiven, je $T$ odprta preslikava.
 \end{izrek}
-
+Ker bi za dokaz izreka potrebovali več pomožnih rezultatov, ga izpustimo. Bolj kot naveden izrek \ref{izr:odppresl}, nas bo zanimala ena izmed njegovih posledic.
 \begin{posledica}
 	\label{posl:odppresl}
 	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$. Če je $T\in B(X, Y)$ izomorfizem, je~$T^{-1}\in B(Y, X)$.
 \end{posledica}
 
 \begin{dokaz}
-	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$ in naj bo $T\in B(X, Y)$ poljuben omejen izomorfizem. Označimo s $T^{-1}$ inverz operatorja $T$. Ker je operator $T$ zvezen, je vsaka praslika odprte množice v $Y$ tudi odprta v $X$. Posledično, lahko vsako odprto množico v $Y$ zapišemo kot sliko neke odprte množice v $X$. Naj bo $U\subseteq X$ poljubna odprta podmnožica prostora $X$. Ker je operator $T$ bijektiven, je $$T(U) = \pra{(T^{-1})}{U}.$$ Ker je operator $T$ poleg tega še omejen, nam izrek \ref{izr:odppresl} pove, da je množica $T(U)$ odprta. To pomeni, da je praslika preslikave $T^{-1}$ vsake odprte podmnožice v $Y$ odprta množica v $X$. Sledi, da je operator $T^{-1}$ zvezen oz. $T^{-1}\in B(Y, X)$.
+	Naj bosta $X$ in $Y$ poljubna Banachova prostora nad poljem $\F$ in naj bo $T\in B(X, Y)$ poljuben omejen izomorfizem. Označimo s $T^{-1}$ inverz operatorja $T$. Ker je operator $T$ zvezen, je vsaka praslika odprte množice v $Y$ tudi odprta v $X$. Posledično, lahko vsako odprto množico v $Y$ zapišemo kot sliko neke odprte množice v $X$. Naj bo $U\subseteq X$ poljubna odprta podmnožica prostora $X$. Ker je operator $T$ bijektiven, je $$T(U) = (T^{-1})^{-1}(U).$$ Ker je operator $T$ poleg tega še omejen, nam izrek \ref{izr:odppresl} pove, da je množica $T(U)$ odprta. To pomeni, da je praslika preslikave $T^{-1}$ vsake odprte podmnožice v $Y$ odprta množica v $X$. Sledi, da je operator $T^{-1}$ zvezen oz. $T^{-1}\in B(Y, X)$.
 \end{dokaz}
-
+Navedimo še en pomemben izrek.
 \begin{izrek}[Hahn-Banach]
 	\label{izr:HB} 
 	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljuben podprostor prostora $X$. Za poljuben omejen linearen funkcional $\map{f}{Y}{\F}$, obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da velja: \begin{enumerate}[a)]
@@ -654,7 +671,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 		\item $\norm{F} = \norm{f}$.
 	\end{enumerate}
 \end{izrek}
-
+Enako kot za dokaz izreka \ref{izr:odppresl}, bi tudi za dokaz izreka \ref{izr:HB} potrebovali kar nekaj pomožnih rezultatov. Zato tudi ta dokaz izpustimo in pozornost posvetimo eni izmed za nas bolj pomembnih posledic.
 \begin{posledica}
 	\label{posl:HB}
 	Naj bo $X$ poljuben normiran prostor nad poljem $\F$. Tedaj za vsak element $x_0\in X\setminus\{0\}$ obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da je: \begin{itemize}
@@ -666,7 +683,7 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 \begin{dokaz}
 	Naj bo $X$ poljuben normiran prostor nad poljem $\F$ in vzemimo poljuben element $x_0\in X\setminus\{0\}$. Označimo $\F_{x_0} = \{\lambda\cdot x_0~|~\lambda\in\F\}$ vektorski podprostor prostora $X$ in definiramo preslikavo $\map{f}{\F_{x_0}}{\F}$ s predpisom $f(\lambda\cdot x_0) = \lambda\cdot\norm{x_0}$. Premislimo najprej, da je preslikava $f$ linearen funkcional. Naj bosta $\lambda_1, \lambda_2\in\F$ poljubna skalarja. Tedaj je $$f(\lambda_1\cdot x_0 + \lambda_2\cdot x_0)= f((\lambda_1+\lambda_2)\cdot x_0)=(\lambda_1+\lambda_2)\cdot\norm{x_0} = \lambda_1\cdot f(x_0) + \lambda_2\cdot f(x_0).$$ Še več, za vsak $\lambda\in \F\setminus\{0\}$ je $$\frac{\abs{f(\lambda\cdot x_0)}}{\norm{\lambda\cdot x_0}} = \frac{\abs{\lambda}\cdot\norm{x_0}}{\abs{\lambda}\cdot\norm{x_0}}=1.$$ To pomeni, da je $f$ omejen linearen operator na $\F_{x_0}$ za katerega je $f(x_0) = \norm{x_0}$ in $\norm{f}=1$. Po izreku \ref{izr:HB} tedaj obstaja tak omejen linearen funkcional $\map{F}{X}{\F}$, da je $F_{\substack{|\F_{x_0}}}=f$ in $\norm{F} = \norm{f}$. Posledično je $\norm{F} = 1$ in $F(x_0) = f(x_0) = \norm{x_0}$.
 \end{dokaz}
-
+V nadaljevanju nam bo prav prišel tudi naslednji izrek.
 \begin{izrek}
 	\label{izr:opHB} 
 	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
@@ -679,12 +696,12 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$ in $T\in B(Y, Z)$ poljuben operator. Dokazali bomo obe točki izreka začenši s točko $a)$. \begin{enumerate}[a)]
 		\item Vzemimo poljuben element $x\in X$ in naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k $x$. Ker je zaporedje $\{x_n\}_{n\in\N}$ konvergentno, je tudi Cauchyjevo. Ko upoštevamo, da je operator $T$ omejen, vidimo, da je $$\norm{T(x_m) - T(x_n)} = \norm{T(x_m - x_n)}\leq \norm{T}\cdot\norm{x_m-x_n}.$$ To pomeni, da je tudi zaporedje $\{T(x_n)\}_{n\in\N}$ Cauchyjevo v $Z$. Ker je $Z$ Banachov prostor, sledi, da je $\{T(x_n)\}_{n\in\N}$ konvergentno zaporedje. Označimo njegovo limito s $T(x)$ in premislimo, da zaporedje $\{T(y_n)\}_{n\in\N}$ tudi konvergira k $T(x)$. Najprej opazimo, da je zaporedje $\{T(y_n)\}_{n\in\N}$ konvergentno v prostoru $Z$ po enakem argumentu kot zaporedje $\{T(x_n)\}_{n\in\N}$. Vzemimo sedaj poljubno pozitivno število $\varepsilon>0$ in naj bo $n_0\in\N$ tako naravno število, da je $\norm{x-y_n}< \frac{\varepsilon}{\norm{T}}$ za vsako naravno število $n\in\N$, ki je večje od $n_0$. Tedaj za vsak $n\geq n_0$ velja: $$\norm{T(x) - T(y_n)}=\norm{T(x - y_n)}\leq\norm{T}\cdot\norm{x-y_n}<\norm{T}\cdot\frac{\varepsilon}{\norm{T}}=\varepsilon.$$ To pomeni, da zaporedje $\{T(y_n)\}_{n\in\N}$ konvergira k $T(x)$, oziroma $$\lim_{n\to \infty}T(x_n) =\lim_{n\to \infty}T(y_n).$$
 		\item Ker je $Y$ gost podprostor prostora $X$, za vsak element $x\in X$ obstaja tako zaporedje $\{x_n\}_{n\in\N}$, da je $\lim_{n\to \infty}x_n = x$. Upoštevajoč to dejstvo definiramo preslikavo $\map{U}{X}{Z}$ s predpisom $$U(x)=\lim_{n\to \infty}T(x_n).$$ Točka $a)$ tega dokaza zagotovi, da je preslikava $U$ dobro definirana. Premislimo sedaj, da je $U$ linearen operator.
-		Naj bosta $x, y\in X$ poljubna elementa in naj bo $\lambda\in \F$ poljuben skalar. Dodatno, naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ taki zaporedji s členi v $Y$, da je $\lim_{n\to \infty}x_n = x$ in $\lim_{n\to \infty}y_n = y$. Pomnimo, da potem velja: $$\lim_{n\to\infty}(x_n + y_n) = x + y~\text{in}~\lim_{n\to \infty}(\lambda x_n)=\lambda x.$$ Premislimo najprej, da je preslikava $U$ aditivna: \begin{align*}
+		Naj bosta $x, y\in X$ poljubna elementa in naj bo $\lambda\in \F$ poljuben skalar. Dodatno, naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ taki zaporedji s členi v $Y$, da je $\lim_{n\to \infty}x_n = x$ in $\lim_{n\to \infty}y_n = y$. Po opombi \ref{opomb:limitpravila} potem velja: $$\lim_{n\to\infty}(x_n + y_n) = x + y~\text{in}~\lim_{n\to \infty}(\lambda x_n)=\lambda x.$$ Premislimo najprej, da je preslikava $U$ aditivna: \begin{align*}
 			U(x + y) &= \lim_{n\to \infty}T(x_n + y_n) = \lim_{n\to \infty}(T(x_n) + (y_n))= \lim_{n\to \infty}T(x_n) + \lim_{n\to \infty}T(y_n) \\
 			&= U(x) + U(y).
 		\end{align*}
 		Sedaj preverimo še, da je preslikava $U$ homogena: $$U(\lambda x)= \lim_{n\to \infty}T(\lambda x_n)= \lim_{n\to \infty}\lambda T(x_n)=\lambda\lim_{n\to \infty}T(x_n)=\lambda U(x).$$ To pomeni, da je preslikava $U$ res linearen operator. Vzemimo sedaj poljuben element $x\in X$ za katerega velja, da je $\norm{x} = 1$. Naj bo $\{x_n\}_{n\in\N}$ poljubno zaporedje iz $Y$, ki konvergira k $X$. Sedaj definiramo novo zaporedje v $Y$, $\{y_n\}_{n\in\N}$, s predpisom $y_n = \frac{x_n}{\norm{x_n}}$. Ker je $\lim_{n\to \infty}\norm{x_n} = \norm{x} = 1$, tudi zaporedje $\{y_n\}_{n\in\N}$ konvergira k elementu $x$ in velja, da je $\norm{y_n} = \frac{\norm{x_n}}{\norm{x_n}}=1$ za vsak $n\in\N$. Hkrati velja: \begin{align*}
-			\norm{Ux} &=\norm{\lim_{n\to \infty}T(y_n)} =\lim_{n\to\infty}\norm{T(y_n)}\leq \sup\{\norm{T(y_n)}~|~n\in\N\} \\
+			\norm{U(x)} &=\norm{\lim_{n\to \infty}T(y_n)} =\lim_{n\to\infty}\norm{T(y_n)}\leq \sup\{\norm{T(y_n)}~|~n\in\N\} \\
 			&\leq \sup\{\norm{T}\cdot\norm{y_n}~|~n\in\N\} = \norm{T}\sup\{\norm{y_n}~|~n\in\N\} = \norm{T}.
 		\end{align*} To pomeni, da je operator $U$ omejen in $\norm{U}\leq \norm{T}$. Vzemimo sedaj poljuben element $y\in Y$. Tedaj je konstantno zaporedje $\{y\}$ zaporedje v $Y$, ki konvergira k $y$. Posledično je $$U(y) = \lim_{n\to\infty}T(y) = T(y).$$ To pomeni, da je $$\norm{T(y)}=\norm{U(y)}\leq \norm{U}\cdot\norm{y}$$ za vsak $y\in Y$. To pomeni, da je $\norm{T}\leq \norm{U}$. Posledično je $\norm{T} = \norm{U}$ in $Tx = Ux$ za vsak $x\in Y$.
 	\end{enumerate}
@@ -715,17 +732,42 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 	\label{opomb:ScalProd}
 	Naj bo $(V, +, \cdot, \Sp{.}{.})$ prostor s skalarnim produktom nad poljem $\F$. Enostavno je preveriti, da je s predpisom $\norm{x} = \sqrt{\Sp{x}{x}}$ definirana norma na $V$. Za tako normo pravimo, da je \pojem{porojena s skalarnim produktom} $\Sp{.}{.}$.
 \end{opomba}
-
+Premislimo najprej en pomožen rezultat, ki nam bo večkrat prišel prav.
+\begin{lema}
+	\label{lem:scalprodopenak}
+	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom. Tedaj velja: \begin{enumerate}[a)]
+		\item Če za elementa $x_0, y_0\in X$ velja, da je $\Sp{x_0}{x}=\Sp{y_0}{x}$ za vsak $x\in X$, je $x_0=y_0$.
+		\item Če za operatorja $S, T \in B(X)$ velja, da je $\Sp{Tx}{x} = \Sp{Sx}{x}$ za vsak $x\in X$, potem je $T = S$.
+	\end{enumerate} 
+\end{lema}
+\begin{dokaz}
+	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom. \begin{enumerate}[a)]
+		\item Naj bosta $x_0, y_0\in X$ poljubna elementa in denimo, da je $\Sp{x_0}{x}=\Sp{y_0}{x}$ za vsak $x\in X$, je $x_0=y_0$. Vzemimo poljuben element $x\in X$. Tedaj je $$0=\Sp{x_0}{x}-\Sp{y_0}{x} = \Sp{x_0 - y_0}{x}$$ za vsak $x\in X$. To pomeni, da je $x_0-y_0=0$ oz. $x_0=y_0$.
+		\item Naj bosta $S, T \in B(X)$ poljubna omejena linearna operatorja. Denimo, da je $\Sp{Tx}{x} = \Sp{Sx}{x}$ za vsak $x\in X$. Vzemimo poljuben $x\in X$. Tedaj je $$0=\Sp{Tx}{x}-\Sp{Sx}{x}=\Sp{Tx - Sx}{x}=\Sp{(T-S)x}{x}$$ za vsak $x\in X$. To pomeni, da je $(T-S)x = 0$ oziroma $Tx = Sx$. Ker to velja za poljuben element $x\in X$, sledi, da je $S=T$.
+	\end{enumerate} 
+\end{dokaz}
+V naslednjem izreku bomo premislili pomembno lastnost skalarnega produkta, na katero se bomo več krat sklicali.
 \begin{izrek}[Neenakost Cauchy-Schwarz-Bunyakowsky]
 	\label{izr:CSB}
 	Naj bo $(X, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Tedaj za vsak par elementov $x, y\in X$ velja: $$\abs{\Sp{x}{y}}^2 \leq \Sp{x}{x}\Sp{y}{y}.$$
 \end{izrek}
 
+\begin{dokaz}
+	Naj bo $(X, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Vzemimo poljubna elementa $x, y\in X$. Če je kateri od elementov $x$ in $y$ ničeln, trditev velja trivialno. Denimo zato, da sta elementa $x$ in $y$ oba različna od $0$. Sedaj označimo $\lambda=-\frac{\overline{\Sp{x}{y}}}{\Sp{x}{x}}$ in $\mu=1$. Tedaj je \begin{align*}
+	0 &\leq\Sp{\lambda x + y}{\lambda x + y}=\abs{\lambda}^2\Sp{x}{x} + \lambda\Sp{x}{y} + \overline{\lambda}\Sp{y}{x} + \Sp{y}{y}\\ &=\frac{\abs{\Sp{x}{y}}^2}{\Sp{x}{x}} - \frac{\abs{\Sp{x}{y}}^2}{\Sp{x}{x}} - \frac{\abs{\Sp{x}{y}}^2}{\Sp{x}{x}} + \Sp{y}{y} = -\frac{\abs{\Sp{x}{y}}^2}{\Sp{x}{x}} + \Sp{y}{y}.
+	\end{align*}
+	To pomeni, da je $\frac{\abs{\Sp{x}{y}}^2}{\Sp{x}{x}} \leq \Sp{y}{y}$ oziroma $\abs{\Sp{x}{y}}^2\leq \Sp{x}{x}\Sp{y}{y}$.
+\end{dokaz}
+
 \begin{opomba}
 	\label{opomb:CSB}
-	Če definiramo normo $\norm{.}$ tako, kot je v opombi \ref{opomb:ScalProd}, lahko neenakost v izreku \ref{izr:CSB} zapišemo tudi v naslednji obliki: $$\abs{\Sp{x}{y}} \leq \norm{x}\cdot\norm{y}.$$
+	Naj bo $(X, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$ in naj bo $\norm{.}$ norma na $X$ porojena s skalarnim produktom $\Sp{.}{.}$.
+	\begin{enumerate}[a)]
+		\item Neenakost v izreku \ref{izr:CSB} lahko zapišemo tudi v naslednji obliki: $$\abs{\Sp{x}{y}} \leq \norm{x}\cdot\norm{y}.$$
+		\item Prostor $X\times X$ je normiran prostor za normo definirano s predpisom $$\norm{(x, y)}=\max\{\norm{x}, \norm{y}\}=\max\{\sqrt{\Sp{x}{x}}, \sqrt{\Sp{y}{y}}\}.$$
+	\end{enumerate}	
 \end{opomba}
-
+Premislimo sedaj, da je skalarni produkt zvezna preslikava in obravnavamo njegovo obnašanje na konvergentnih zaporedjih.
 \begin{trditev}
 	\label{trd:spzvez}
 	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom $\Sp{.}{.}$ nad poljem $\F$. Velja: \begin{enumerate}[a)]
@@ -733,12 +775,21 @@ V tem delu bomo občasno zaradi jasnosti ali preglednosti z indeksom označili n
 		\item Če sta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ konvergentni zaporedji v $X$ z limitama $x = \lim_{n\to \infty}x_n$ in $y = \lim_{n\to \infty}y_n$, potem je tudi zaporedje $\{\Sp{x_n}{y_n}\}_{n\in\N}$ konvergentno in velja: $$\Sp{x}{y} = \lim_{n\to \infty}\Sp{x_n}{y_n}.$$
 	\end{enumerate}
 \end{trditev}
-
-Sedaj definirajmo Hilbertove prostore.
-
+\begin{dokaz}
+	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom $\Sp{.}{.}$ nad poljem $\F$. Z $\norm{.}_X$ označimo normo na $X$ porojeno s skalarnim produktom $\Sp{.}{.}$, z $\norm{.}$ pa normo na $X\times X$, kot je definirana v točki $b)$ opombe \ref{opomb:CSB}. \begin{enumerate}[a)]
+		\item Vzemimo poljuben element $(x_0, y_0)\in X\times X$ in naj bo $\varepsilon>0$ poljubno pozitivno število. Naj bo tudi $(x, y)\in X\times X$ poljuben element. Upoštevajoč izrek \ref{izr:CSB} je potem \begin{align*}
+			\abs{\Sp{x}{y} - \Sp{x_0}{y_0}}&=\abs{\Sp{x-x_0}{y}+\Sp{x_0}{y-y_0}}
+			\leq \abs{\Sp{x-x_0}{y}}+\abs{\Sp{x_0}{y-y_0}} \\ &\leq\norm{x-x_0}_X\norm{y}_X + \norm{x_0}_X\norm{y-y_0}_X.
+		\end{align*} Denimo najprej, da je $\norm{y-y_0}_X<1$. Tedaj je $$\norm{y}_X = \norm{y-y_0+y_0}_X\leq \norm{y-y_0}_x + \norm{y_0}_X < 1 + \norm{y_0}_X.$$ Če sedaj to vstavimo v prej premišljeno neenakost $$\abs{\Sp{x}{y} - \Sp{x_0}{y_0}} \leq \norm{x-x_0}_X\norm{y}_X + \norm{x_0}_X\norm{y-y_0}_X,$$ in upoštevamo, da sta števili $\norm{y-y_0}_X$ ter $\norm{x-x_0}_X$ obe manjši od $\norm{(x-x_0,y-y_0)}$, dobimo: \begin{align*}
+		\abs{\Sp{x}{y} - \Sp{x_0}{y_0}}&\leq \norm{x-x_0}_X(1+\norm{y_0}_X) +\norm{x_0}_X\norm{y-y_0}_X \\ &< \norm{(x-x_0, y-y_0)}\cdot(1 + \norm{y_0}_X+\norm{x_0}_X).
+		\end{align*} Vzemimo sedaj $\delta = \min\{\frac{\varepsilon}{(1 + \norm{y_0}_X+\norm{x_0}_X)}, 1\}$. Če je $\norm{(x-x_0, y-y_0)}<\delta$, velja: $$\abs{\Sp{x}{y} - \Sp{x_0}{y_0}} < \frac{\varepsilon}{(1 + \norm{y_0}_X+\norm{x_0}_X)}(1 + \norm{y_0}_X+\norm{x_0}_X)=\varepsilon.$$ To pomeni, da je skalarni produkt $\Sp{.}{.}$ zvezen v točki $(x_0, y_0)$. Ker je ta bila poljuben element prostora $X\times X$, sledi, da je skalarni produkt $\Sp{.}{.}$ zvezen na $X\times X$.
+		\item Naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ poljubni konvergentni zaporedji v $X$. Označimo $x = \lim_{n\to \infty}x_n$ in $y = \lim_{n\to \infty}y_n$. Posledično je tudi zaporedje $\{(x_n, y_n)\}_{n\in\N}$ konvergentno v normiranem prostoru $X\times X$ (z normo iz opombe \ref{opomb:CSB}). V točki $a)$ tega dokaza smo že premislili, da je skalarni produkt $\Sp{.}{.}$ zvezna preslikava. Posledično je zaporedje $\{\Sp{x_n}{y_n}\}_{n\in\N}$ konvergentno in velja: $$\lim_{n\to \infty}\Sp{x_n}{y_n} = \Sp{\lim_{n\to \infty}x_n}{\lim_{n\to \infty}y_n} = \Sp{x}{y}.$$
+	\end{enumerate} 
+\end{dokaz}
+Sedaj končno definirajmo Hilbertove prostore.
 \begin{definicija}
 	\label{def:Hilbert}
-	Naj bo $(V, \Sp{.}{.})$ poljuben prostor s skalarnim produktom nad poljem $\F$. Naj bo $\norm{.}$ norma na $V$ porojena s $\Sp{.}{.}$ in naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Hilbertov prostor} nad $\F$. 
+	Naj bo $(V, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Naj bo $\norm{.}$ norma na $V$ porojena s $\Sp{.}{.}$ in naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Hilbertov prostor} nad $\F$. 
 \end{definicija}
 
 \begin{primer}
@@ -774,44 +825,71 @@ Sedaj definirajmo Hilbertove prostore.
 
 \begin{opomba}
 	\label{opomb:zaprtortogkompl}
-	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$ in naj bo $A$ poljubna neprazna podmnožica prostora $X$. Enostavno je videti, da je potem $A^\bot$ zaprta podmnožica v $X$. Res, vzemimo poljubno konvergentno zaporedje $\{x_n\}_{n\in\N}\subseteq A^\bot$ z limito $x\in X$. Naj bo $a\in A$ poljuben. Ker je po trditvi \ref{trd:spzvez} skalarni produkt zvezna preslikava, je $$\Sp{a}{x} = \Sp{a}{\lim_{n\to \infty}x_n} = \lim_{n\to\infty}\Sp{a}{x_n} =0.$$
-	Posledično je $x\in A^\bot$, torej je $A^\bot$ zaprta podmnožica v $X$.
+	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Velja: \begin{enumerate}[a)]
+		\item  Za vsako neprazno podmnožico $A$ prostora $X$ je $A^\bot$ je zaprta podmnožica v $X$. 
+		\item Za vsaki neprazni podmnožici $A$ in $B$ prostora $X$ velja: Če je $B\subseteq A$, je $A^\bot\subseteq B^\bot$.
+	\end{enumerate}
+	Premislimo najprej točko $a)$. Vzemimo poljubno konvergentno zaporedje $\{x_n\}_{n\in\N}\subseteq A^\bot$ z limito $x\in X$. Naj bo $a\in A$ poljuben. Ker je po trditvi \ref{trd:spzvez} skalarni produkt zvezna preslikava, je $$\Sp{a}{x} = \Sp{a}{\lim_{n\to \infty}x_n} = \lim_{n\to\infty}\Sp{a}{x_n} =0.$$
+	Posledično je $x\in A^\bot$, torej je $A^\bot$ zaprta podmnožica v $X$. Še več, enostavno je preveriti, da je $A^\bot$ celo zaprt podprostor v $X$.
+	
+	Sedaj premislimo še točko $b)$. Vzemimo poljubna elementa $x\in A^\bot$ in $b\in B$. Tedaj je $b\in A$, torej je $\Sp{x}{b}=0$. Ker to velja za vsak $b\in B$, sledi, da je $x\in B^\bot$. To pomeni, da je $A^\bot\in B^\bot$.
 \end{opomba}
 
 \begin{izrek}
 	\label{izr:ortogdecomp}
 	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je: $$X = Y \oplus Y^\bot.$$
 \end{izrek}
-
+Da bi dokazali izrek \ref{izr:ortogdecomp} bi potrebovali nekaj pomožnih rezultatov in novih konceptov, ki pa niso bistveni za to nalogo. Zaradi tega dokaz tega izreka izpustimo in raje dokažemo naslednji dve posledici.
 \begin{posledica}
 	\label{posl:zaportoggost}
-	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je $Y^{\bot\bot} = Y$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je $(Y^{\bot})^\bot = Y$.
 \end{posledica}
-
+\begin{dokaz}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$ in naj bo $Y$ poljuben zaprt podprostor v $X$. Seveda je $Y\subseteq (Y^\bot)^\bot$. Premislimo torej, da velja še obratna inkluzija. Vzemimo poljuben element $x\in (Y^\bot)^\bot$. Izrek \ref{izr:ortogdecomp} nam pove, da je $X = Y \oplus Y^\bot$, torej obstajata taka elementa $u\in Y$ in $v\in Y^\bot$, da je $x = u + v$. Ker je $x\in (Y^\bot)^\bot$ in $v\in Y^\bot$, je $\Sp{x}{v}=0$. To pomeni, da je $$0=\Sp{x}{v}=\Sp{u+v}{v}=\Sp{u}{v} + \Sp{v}{v} = 0 + \norm{v}^2 = \norm{v}^2.$$ Posledično je $\norm{v}=0$ oziroma $v=0$. To pomeni, da je $x = u$, torej je $x\in Y$. Sledi, da je $Y\subseteq(Y^\bot)^\bot$. S tem smo dokazali enakost.
+\end{dokaz}
 \begin{posledica}
 	\label{posl:ortoggost}
-	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben podprostor $Y$ velja, da je $Y^{\bot\bot} = \overline{Y}$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben podprostor $Y$ velja, da je $(Y^\bot)^\bot = \overline{Y}$.
 \end{posledica}
-
+\begin{dokaz}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$ in naj bo $Y$ poljuben podprostor v $X$. Premislimo najprej, da je $\overline{Y}\subseteq(Y^\bot)^\bot$. Očitno je $Y\subseteq(Y^\bot)^\bot$. Dodatno nam točka $a)$ opombe \ref{opomb:zaprtortogkompl} pove, da je $(Y^\bot)^\bot$ zaprta množica. Posledično je $\overline{Y}\subseteq (Y^\bot)^\bot$. Premislimo sedaj še obratno inkluzijo.
+	Ker je $Y\subseteq\overline{Y}$, nam točka $b)$ opombe \ref{opomb:zaprtortogkompl} pove, da je $\overline{Y}^\bot \subseteq Y^\bot$. Ponovna uporaba istega rezultata nam pove, da je potem $(Y^\bot)^\bot\subseteq(\overline{Y}^\bot)^\bot$. Ker je $\overline{Y}$ zaprta množica, nam posledica \ref{posl:zaportoggost} pove, da je $(\overline{Y}^\bot)^\bot=\overline{Y}$. To pomeni, da je $(Y^\bot)^\bot\subseteq \overline{Y}$.
+\end{dokaz}
+Premislimo sedaj, da lahko preko skalarnega produkta definiramo linearne funkcionale.
+\begin{trditev}
+	\label{trd:linfunsp}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj je za vsak element $a\in X$ preslikava $\map{f_a}{X}{\F}$ s predpisom $f_a(x)=\Sp{x}{a}$ omejen linearen funkcional na $X$ za katerega velja, da je $\norm{f_a}=\norm{a}$.
+\end{trditev}
+\begin{dokaz}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Vzemimo poljuben element $a\in X$ in definiramo preslikavo $f_a$ kot v formulaciji trditve. To, da je preslikava $f_a$ linearen funkcional, sledi direktno iz definicije skalarnega produkta \ref{def:ScalProd}. Denimo najprej, da je $a=0$. Tedaj je $f_0(x) = \Sp{x}{0}=0$ za vsak $x\in X$, torej je $f_a\equiv 0$. Posledično je $\norm{f_0}=0$, torej trditev v tem primeru velja. Naj bo sedaj $a\neq 0$ in premislimo, da je linearen funkcional $f_a$ omejen. Vzemimo poljuben element $x\in X$. Upoštevajoč točko $a)$ opombe \ref{opomb:CSB} nam izrek \ref{izr:CSB} pove, da je $$\abs{f_a(x)}=\abs{\Sp{x}{a}}\leq\norm{a}\cdot\norm{x}.$$ To pomeni, da je linearen funkcional $f_a$ omejen in $\norm{f_a}\leq \norm{a}$. Premislimo, da velja tudi obratna neenakost. Opazimo, da je $f_a(a)=\Sp{a}{a}=\norm{a}^2\neq 0$. To pomeni, da je $$\frac{\abs{f_a(a)}}{\norm{a}}=\norm{a}.$$ Od tod sledi, da je $$\norm{f_a}=\sup_{x\neq 0}\{\frac{\abs{f_a(x)}}{\norm{x}}\}\geq \norm{a}.$$ S tem je trditev dokazana.
+\end{dokaz}
+Navedimo še en izrek, ki ga bomo potrebovali v nadaljevanju.
 \begin{izrek}[Riesz]
 	\label{izr:Riesz}
 	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Potem za vsak omejen linearen funkcional $\map{f}{X}{\F}$ obstaja enolično določen element $a\in X$, da je $f(x) = \Sp{x}{a}$ za vsak $x\in X$. Dodatno velja še, da je $\norm{f} = \norm{a}$.
 \end{izrek}
-
-\begin{lema}
-	\label{lem:scalprodopenak}
-	Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen vektorski prostor s skalarnim produktom in naj bosta $S, T \in B(X)$ poljubna omejena linearna operatorja. Če je $\Sp{Tx}{x} = \Sp{Sx}{x}$ za vsak $x\in X$, je $T = S$.
-\end{lema}
-
+\begin{dokaz}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Vzemimo poljuben omejen linearen funkcional $\map{f}{X}{\F}$. Označimo $\F_a = \{\lambda a~|~\lambda\in\F\}$ podprostor prostora $X$ in vzemimo poljuben element $x\in \operatorname{Ker}f$. Tedaj je $\Sp{x}{a}=0$. Še več, velja, da je $\Sp{x}{\lambda a}=0$ za poljuben skalar $\lambda\in\F$. To pomeni, da je $x\in \F_a^\bot$. Vzemimo sedaj poljuben element $y\in \F_a^\bot$. Tedaj je $\Sp{y}{\lambda a}= 0$ za vsak $\lambda\in\F$. V posebnem primeru vidimo, da je $\Sp{y}{a}=0$, torej je $y\in\operatorname{Ker}f$. To pomeni, da je $\operatorname{Ker}f = \F_a^\bot$, torej je po opombi \ref{opomb:zaprtortogkompl} $\operatorname{Ker}f$ zaprt podprostor v $X$. Ker je $\operatorname{Ker}f$ zaprt podprostor v $X$, nam izrek \ref{izr:ortogdecomp} pove, da je $$X=\operatorname{Ker}f \oplus (\operatorname{Ker}f)^\bot.$$ Denimo najprej, da je $\operatorname{Ker}f = X$. Tedaj je $f\equiv 0$ in $a=0$. Denimo sedaj, da je $\operatorname{Ker}f \subset X$. Tedaj je $(\operatorname{Ker}f)^\bot\neq \{0\}$, torej obstaja nek element $b\in (\operatorname{Ker}f)^\bot\setminus\{0\}$. Ker $b\notin \operatorname{Ker}f$, je $f(b)\neq 0$ in zato lahko označimo element $c = \frac{1}{f(b)}b$. Opazimo, da je $ f(c)=1$ in $c\in(\operatorname{Ker}f)^\bot$. Vzemimo sedaj poljuben element $x\in X$. Tedaj je $$f(x-f(x)c)= f(x) - f(x) = 0.$$ To pomeni, da je $(x-f(x)c) \in \operatorname{Ker}f$. Ker je $c\in(\operatorname{Ker}f)^\bot$ in $(x-f(x)c) \in \operatorname{Ker}f$, je $$0=\Sp{x - f(x)c}{c}=\Sp{x}{c} - f(x)\Sp{c}{c} = \Sp{x}{c} - f(x)\cdot\norm{c}^2.$$ Posledično je $$f(x) = \frac{\Sp{x}{c}}{\norm{c}^2}=\Sp{x}{\frac{1}{\norm{c}^2}c}.$$ Ker je bil $x$ poljuben element, dobljena enakost velja za vsak element prostora $X$. Če označimo $a = \frac{1}{\norm{c}^2}c$ je potem $f(x)=\Sp{x}{a}=f_a(x)$ za vsak $x\in X$, kjer je $f_a$ omejen linearen operator iz trditve \ref{trd:linfunsp}. Po isti trditvi sledi, da je $\norm{f}=\norm{f_a}=\norm{a}$. Premislimo sedaj, da je element $a$ res enolično določen. Denimo, da obstajata elementa $a, u\in X$, taka, da je $f(x) = f_a(x)=f_u(x)$ za vsak $x\in X$. Tedaj je $\Sp{x}{a}=\Sp{x}{u}$ za vsak $x\in X$. Zato po lemi \ref{lem:scalprodopenak} sledi, da je $a=u$.
+\end{dokaz}
+V naslednjem izreku dokažemo analogijo konvergence geometrijske vrste v primeru omejenih linarnih operatorjev nad kompleksnim hilbertovim prostorom.
 \begin{izrek}
 	\label{izr:Hilbertopinv}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben omejen linearen operator. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $$(I-T)^{-1} = \sum_{n = 0}^{\infty}T^n.$$
 \end{izrek}
-
+\begin{dokaz}
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben omejen linearen operator za katerega velja $\norm{T}< 1$. Premislimo najprej, da vrsta $\sum_{n=0}^{\infty}T^n$ konvergira. Definirajmo najprej zaporedje delnih vsot $\{s_n\}_{n\in\N}$ s predpisom $s_n = \sum_{k=0}^{n}T^k$. Ker je prostor $B(X)$ Banachov prostor, je dovol premisliti, da je zaporedje $\{s_n\}_{n\in\N}$ Cauchyjevo. Označimo $q = \norm{T}$ in definiramo novo zaporedje $\{\sigma_n\}_{n\in\N}$ s predpisom $\sigma_n = \sum_{k=0}^{n}q^k$. Ker je $q<1$, je zaporedje $\{\sigma_n\}_{n\in\N}$, ki je v resnici zaporedje delnih vsot geometrijske vrste $\sum_{n=0}^{\infty}q^n$, konvergentno, torej je Cauchyjevo. Vzemimo sedaj poljubni naravni števili $m, n\in\N$. Brez škode za splošnost naj bo $m>n$. Tedaj je \begin{align*}
+		\norm{s_m - s_n}&=\norm{T^m + T^{m-1}+\ldots+T^{n+1}}\leq\norm{T^m} + \norm{T^{m-1}}+\ldots+\norm{T^{n+1}} \\
+		&= q^m + q^{m-1} + \ldots + q^{n+1} = \abs{\sigma_m - \sigma_n}.
+	\end{align*} To pomeni, da za vsak par naravnih števil $m, n\in\N$ velja ocena $\norm{s_m - s_n}\leq \abs{\sigma_m - \sigma_n}$. Ker je zaporedje $\{\sigma_n\}_{n\in\N}$ Cauchyjevo, je zato tudi $\{s_n\}_{n\in\N}$. To pomeni, da je zaporedje $\{s_n\}_{n\in\N}$ konvergentno, torej vrsta $\sum_{n=0}^{\infty}T^n$ konvergira. Opazimo tudi, da za vsak $n\in\N$ velja ocena: $$0\leq \norm{T^n}\leq \norm{T}^n.$$ Upoštevajoč prejšnjo oceno in dejstvo, da je $\norm{T}<1$, vidimo, da velja naslednje: $$\lim_{n\to \infty}\norm{T^n}\leq \lim_{n\to \infty}\norm{T}^n = 0.$$ To pomeni, da je $\lim_{n\to \infty}T^n = 0$. Spomnimo se tudi točke iz opombe \ref{opomb:limitpravila}, ki nam pove naslednje: Če sta zaporedji $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ konvergentni, je: $$\lim_{n\to\infty}x_n\cdot y_n = \lim_{n\to\infty}x_n \cdot \lim_{n\to \infty}y_n.$$ S pomočjo omenjenega vidimo, da je \begin{align*}
+	(I-T)\sum_{n = 0}^\infty T^n &= (I-T)\lim_{n\to \infty}s_n = \lim_{n\to \infty}\left((I-T)\sum_{k=0}^n T^k\right) = \lim_{n\to \infty}\left(\sum_{k=0}^nT^k - \sum_{k=1}^{n+1}T^k\right) \\ &= \lim_{n\to\infty}\left(I-T^{n+1}\right) = I - \lim_{n\to \infty}T^{n+1} = I-0 = I.
+	\end{align*}
+	Na podoben način preverimo, da je $\left(\sum_{n = 0}^\infty T^n\right)(I-T) = I$. To pomeni, da je operator $(I-T)$ inverz od operatorja $\sum_{n = 0}^\infty T^n $.
+\end{dokaz}
+V naslednjem izreku bomo premislili nekatere algebraične in topološke lastnosti prostora obrnljivih operatorjev nad kompleksnim Hilbertovim prostorom.
 \begin{izrek}
 	\label{izr:Hilbertinvset}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $\mathcal{G}(X)$ množica vseh obrnljivih operatorjev v $B(X)$. Velja: \begin{enumerate}[a)]
-		\item $(\mathcal{G}, \cdot)$ je grupa.
+		\item $(\mathcal{G}, \circ)$ je grupa.
 		\item Množica $\mathcal{G}$ je odprta v $B(X)$.
 		\item Preslikava invertiranja, $\map{^{-1}}{\mathcal{G}}{\mathcal{G}}$, s predpisom $^{-1}(T) = T^{-1}$ je zvezna.
 	\end{enumerate}
