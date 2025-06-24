@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  15 JUN 2025 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.16)  24 JUN 2025 09:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1141,37 +1141,31 @@ Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
 [4]
 
 [5]
-
-[6
-
-]
 Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
 
 
-[8] (Omejeni linearni operatorji na Hilbertovih prostorih.toc
+[7] (Omejeni linearni operatorji na Hilbertovih prostorih.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 6.
+(Font)              <10.95> on input line 5.
 )
 \tf@toc=\write6
 \openout6 = `"Omejeni linearni operatorji na Hilbertovih prostorih.toc"'.
 
 
 
-[9
+[8
 
 ]
-
-[10]
 
 [1
 
@@ -1179,7 +1173,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ]
 Poglavje 1.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-69.
+70.
 (C:\Users\Uporabnik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1200,14 +1194,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [3{C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathe
 x.enc}]
-Overfull \hbox (28.03287pt too wide) in paragraph at lines 519--520
-[]\OT1/lmr/m/it/10.95 Naj bo $\OML/lmm/m/it/10.95 X$ \OT1/lmr/m/it/10.95 po-lju
--ben vek-tor-ski pro-stor. Ele-men-tom pro-stora $\OML/lmm/m/it/10.95 L\OT1/lmr
-/m/n/10.95 (\OML/lmm/m/it/10.95 X; \U/msb/m/n/10.95 F\OT1/lmr/m/n/10.95 )$ \OT1
-/lmr/m/it/10.95 pra-vimo $[]$,
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1307,7 +1293,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-Overfull \hbox (12.45383pt too wide) in paragraph at lines 718--719
+Overfull \hbox (12.45383pt too wide) in paragraph at lines 717--718
 []\OT1/lmr/m/it/10.95 Ce je $\OML/lmm/m/it/10.95 V$ \OT1/lmr/m/it/10.95 vek-tor
 -ski pro-stor (nad $\U/msb/m/n/10.95 F$\OT1/lmr/m/it/10.95 ) in $[]$ ska-larni 
 pro-dukt na njem, pra-vimo, da je $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 V; \
@@ -1334,7 +1320,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [16]
-Overfull \hbox (4.6229pt too wide) in paragraph at lines 770--771
+Overfull \hbox (4.6229pt too wide) in paragraph at lines 769--770
 []\OT1/lmr/m/n/10.95 Premislimo se-daj, da je ska-larni pro-dukt zve-zna pre-sl
 i-kava in obrav-na-vamo nje-govo obna^^Tsanje
  []
@@ -1394,7 +1380,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [22]
-Overfull \hbox (1.4642pt too wide) detected at line 885
+Overfull \hbox (1.4642pt too wide) detected at line 886
 []
  []
 
@@ -1432,7 +1418,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [26]
-Overfull \hbox (4.673pt too wide) detected at line 957
+Overfull \hbox (4.673pt too wide) detected at line 958
 []
  []
 
@@ -1563,7 +1549,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
-Overfull \hbox (0.99739pt too wide) in paragraph at lines 1325--1325
+Overfull \hbox (0.99739pt too wide) in paragraph at lines 1327--1327
 []\OT1/lmr/m/n/10.95 Premislimo naj-prej, da je pre-sli-kava $\OML/lmm/m/it/10.
 95 P[]$ \OT1/lmr/m/n/10.95 li-ne-arna. Vze-mimo po-ljubna ele-menta $\OML/lmm/m
 /it/10.95 x[]; x[] \OMS/lmsy/m/n/10.95 2
@@ -1588,7 +1574,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [42]
-Overfull \hbox (1.24532pt too wide) in paragraph at lines 1346--1347
+Overfull \hbox (1.24532pt too wide) in paragraph at lines 1345--1346
 \OT1/lmr/m/it/10.95 pro-stor v $\OML/lmm/m/it/10.95 X$\OT1/lmr/m/it/10.95 . Ope
 -ra-tor $\OML/lmm/m/it/10.95 P[]$ \OT1/lmr/m/it/10.95 iz iz-reka []2.29[] ime-n
 u-jemo $[]$. 
@@ -1664,14 +1650,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [50]
-Overfull \hbox (40.12825pt too wide) in paragraph at lines 1514--1515
-[]$[]$ \OT1/lmr/m/it/10.95 ozi-roma $[]$, ^^Tce je $\OML/lmm/m/it/10.95 A[] \OT
-1/lmr/m/n/10.95 = \OML/lmm/m/it/10.95 A$\OT1/lmr/m/it/10.95 . Ope-ra-torja $\OT
-1/lmr/m/n/10.95 0$ \OT1/lmr/m/it/10.95 in $\OML/lmm/m/it/10.95 I$ \OT1/lmr/m/it
-/10.95 ime-nu-jemo $[]$
- []
-
-
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1699,7 +1677,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [53]
-Overfull \hbox (1.31659pt too wide) detected at line 1592
+Overfull \hbox (1.31659pt too wide) detected at line 1591
 []
  []
 
@@ -1749,7 +1727,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [58]
-Overfull \hbox (1.16852pt too wide) in paragraph at lines 1686--1686
+Overfull \hbox (1.16852pt too wide) in paragraph at lines 1685--1685
 []\OT1/lmr/m/n/10.95 Ker je $\OML/lmm/m/it/10.95 ^^[\OT1/lmr/m/n/10.95 (\OML/lm
 m/m/it/10.95 T\OT1/lmr/m/n/10.95 ) \OMS/lmsy/m/n/10.95 ^^R \U/msb/m/n/10.95 R$\
 OT1/lmr/m/n/10.95 , lahko $\OMS/lmsy/m/n/10.95 C[]\OT1/lmr/m/n/10.95 (\OML/lmm/
@@ -1844,17 +1822,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Overfull \hbox (27.1662pt too wide) in paragraph at lines 1885--1901
+Overfull \hbox (27.1662pt too wide) in paragraph at lines 1884--1900
 [][] 
  []
 
 
 
 [69
-
-]
-
-[70
 
 ] (Omejeni linearni operatorji na Hilbertovih prostorih.aux)
  ***********
@@ -1867,16 +1841,16 @@ LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Omejeni linearni operatorji na Hilbertovih 
 prostorih".out' has not changed.
-(rerunfilecheck)             Checksum: 5412FBBD6B9EDB1A8EFEB3806A5DDCEB;2507.
+(rerunfilecheck)             Checksum: 4DEF5CF984811844066C9F61930189C5;2422.
  ) 
 Here is how much of TeX's memory you used:
- 29463 strings out of 473522
- 593127 string characters out of 5712673
- 1028035 words of memory out of 5000000
- 51844 multiletter control sequences out of 15000+600000
+ 29455 strings out of 473522
+ 593047 string characters out of 5712673
+ 1029009 words of memory out of 5000000
+ 51842 multiletter control sequences out of 15000+600000
  619151 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,93p,2379b,1315s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,14n,93p,2352b,1305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
 0.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
 mbx12.pfb><C:/Users/Uporabnik/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -1896,10 +1870,10 @@ cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Uporabnik/AppDat
 a/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Uporabnik/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Uporabnik/
 AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (8
-0 pages, 631588 bytes).
+Output written on "Omejeni linearni operatorji na Hilbertovih prostorih.pdf" (7
+7 pages, 629811 bytes).
 PDF statistics:
- 1007 PDF objects out of 1200 (max. 8388607)
- 350 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 987 PDF objects out of 1000 (max. 8388607)
+ 344 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 

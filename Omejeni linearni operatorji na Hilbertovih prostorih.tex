@@ -323,9 +323,9 @@ doc.\ dr.\ Daniel Eremita\\
 % --------------------------------------------
 % ---------======== Povzetek =======----------
 % --------------------------------------------
-\chapter*{Povzetek}
-\addcontentsline{toc}{chapter}{\protect\numberline{}Povzetek}
-Bo napisan na koncu.
+%\chapter*{Povzetek}
+%\addcontentsline{toc}{chapter}{\protect\numberline{}Povzetek}
+
 \newpage
 \textbf{ZAKERŠNIK, J. : Omejeni linearni operatorji na Hilbertovih prostorih.\\
 Magistrsko delo, Univerza v Mariboru, Fakulteta za naravoslovje in \-ma\-te\-ma\-ti\-ko,
@@ -341,17 +341,18 @@ IZVLEČEK
 
 \vspace{1.5cm}
 \begin{sloppypar}
-Opis problema...
+V magistrskem delu predstavimo in preučujemo omejene linearne operatorje na Hilbertovih prostorih. 
 \end{sloppypar}
 \begin{sloppypar}
-Kaj se obravnava v magistrskem delu...
+	V prvem delu uvedemo osnovne pojme in dokažemo ali navedemo nekatere rezultate s področja funkcionalne analize, kot so Hahn-Banachov izrek, izrek o odprti preslikavi ter Rieszov izrek. 
 \end{sloppypar}
 \begin{sloppypar}
-V prvem delu...
+	V drugem delu nato uvedemo pojem adjungiranega operatorja in z njegovo pomočjo naredimo pregled raznih posebnih tipov omejenih linearnih operatorjev. Posebej obravnavamo normalne, sebi-adjungirane in unitarne operatorje ter ortogonalne projektorje na kompleksnih Hilbertovih prostorih.
 \end{sloppypar}
 \begin{sloppypar}
-Kon\v cna ugotovitev ka\v ze na to, da je... 
+Na koncu definiramo spekter omejenega linearnega operatorja na kompleksnem Hilbertovem prostoru in dokažemo nekaj osnovnih rezultatov. Te nato uporabimo pri nadaljnjem študiju omejenih linearnih operatorjev ter pri definiciji in proučevanju pozitivnih operatorjev na kompleksnih Hilbertovih prostorih.
 \end{sloppypar}
+
 
 \vfill
 
@@ -388,7 +389,16 @@ ABSTRACT
 
 \vspace{1.5cm}
 \begin{sloppypar}
-Will be written last.
+	In the thesis we define and study bounded linear operators on Hilbert spaces.
+\end{sloppypar}
+\begin{sloppypar}
+	In the first section we introduce some elementary concepts and prove or list some results from the field of functional analysis, such as the Hahn-Banach theorem, the open mapping theorem and the Riesz theorem.
+\end{sloppypar}
+\begin{sloppypar}
+	In the second section we then introduce the concept of an adjoint operator and use it to take a look at various special types of bounded linear operators. In particular, we study normal, self-adjoint and unitary operators as well as orthogonal projectors on complex Hilbert spaces.
+\end{sloppypar}
+\begin{sloppypar}
+	Finally, we define the concept of the specter of a bounded linear operator on a complex Hilbert space and prove some elementary results. We then use those results to continue studying bounded linear operators and to define and study positive operators on complex Hilbert spaces.
 \end{sloppypar}
 
 
@@ -434,18 +444,9 @@ Will be written last.
 \chapter*{Uvod}
 \addcontentsline{toc}{chapter}{\protect\numberline{}Uvod}
 
-Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
+%Sem spada uvod, ki bo napisan, ko bo naloga bolj vsebinsko dovršena.
 
-%Tema magistrskega dela je pojem, s katerim se sre\v cujemo...
-
-%V strokovni literaturi...\\
-
-%Pojem magistrskega dela je uporaben na zelo \v sirokem podroju. 
-
-%Delo je organizirano v tri dele. V prvem delu... 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\doublespacing
+V tem magistrskem delu bodo obravnavani posebni primeri enega izmed osrednjih pojmov funkcionalne analize, t.~i.~ omejenih linearnih operatorjev. Delo je organizirano v tri poglavja. V prvem poglavju bodo uvedeni osnovni pojmi in rezultati, ki bodo služili kot temelj pri obravnavi osrednje teme. Med drugim bodo navedeni Hahn-Banachov izrek za normirane prostore, izrek o odprti preslikavi in Rieszov izrek. Nato bodo v drugem poglavju definirani t.~i.~ Adjungirani operatorji, na osnovi katerih bodo definirani in obravnavani razni posebni primeri omejenih linearnih operatorjev na kompleksnih Hilbertovih prostorih. Posebej bodo proučeni normalni, sebi-adjungirani in unitarni operatorji ter ortogonalni projektorji. Na koncu bo v tretjem poglavju definiran pojem spektra omejenega operatorja na kompleksnem Hilbertovem prostoru, ki bo služil kot orodje za nadaljno obravnavo primerov operatorjev iz drugega poglavja ter definicijo in obravnavo t.~i.~ pozitivnih operatorjev na kompleksnih Hilbertovih prostorih.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Prvo poglavje
@@ -481,11 +482,13 @@ Ključen pojem v nadaljevanju dela bo pojem polnega metričnega prostora, ki ga 
 Navedimo nekaj klasičnih primerov polnih metričnih prostorov.
 \begin{primer}
 	\label{prim:PolnMP}
+	~
+	
 	\begin{itemize}
-		\item prostori $\R^n$ s standardno Evklidsko normo;
-		\item prostori $\C^n$ s standardno Evklidsko normo;
-		\item prostor $l^2$ skupaj z normo, definirano s predpisom $\norm{\bar{x}}_2= \left(\displaystyle\sum_{i=1}^{\infty}\abs{x_i}^2\right)^\frac{1}{2}$;
-		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z normo, definirano s predpisom $\norm{f}_2= \left(\displaystyle\int_{X}\abs{f}^2d\mu\right)^\frac{1}{2}$.
+		\item prostori $\R^n$ s standardno Evklidsko metriko;
+		\item prostori $\C^n$ s standardno Evklidsko metriko;
+		\item prostor $l^2$ skupaj z normo, definirano s predpisom $d_2(\bar{x}, \bar{y})= \left(\displaystyle\sum_{i=1}^{\infty}\abs{x_i - y_i}^2\right)^\frac{1}{2}$;
+		\item prostor s kvadratom integrabilnih funkcij na (realnem ali kompleksnem) merljivem prostoru $X$, ki je opremljen z Lebesguesovo mero $\mu$; $\mathcal{L}^2(X, \mu)$; skupaj z metriko, definirano s predpisom $d_2(f, g)= \left(\displaystyle\int_{X}\abs{f-g}^2d\mu\right)^\frac{1}{2}$.
 	\end{itemize}
 \end{primer}
 Še en ključen pojem v tem delu je pojem norme, ki ga definiramo v naslednji definiciji.
@@ -504,7 +507,7 @@ V tem poglavju bomo občasno zaradi jasnosti ali preglednosti z indeksom označi
 
 \begin{opomba}
 	\label{opomb:normzv} 
-	Ni težko videti, da je vsaka norma tudi zvezna preslikava. Res, naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Izberemo poljubno pozitivno število $\varepsilon>0$ in naj bo $x\in X$ poljuben. Tedaj je $$\norm{x+h}_X - \norm{x}_X \leq (\norm{x}_X + \norm{h}_X) - \norm{x}_X = \norm{h}_X$$ in $$\norm{x}_X - \norm{x+h}_X \geq \norm{x}_X - (\norm{x}_X + \norm{h}_X) \geq q\norm{h}_X.$$ To pomeni, da je $$\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X.$$ Za $\delta=\varepsilon$ potem velja: Če je $\norm{h}_X<\delta$, je $\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X < \varepsilon$. Torej je norma $\norm{.}_X$ zvezna na $X$. Še več, opazimo da izbrani $\delta=\varepsilon$ zadošča vsakemu elementu $x\in X$. Posledično je norma $\norm{.}_X$ enakomerno zvezna na $X$.
+	Ni težko videti, da je vsaka norma tudi zvezna preslikava. Res, naj bo $(X, \norm{.}_X)$ poljuben normiran prostor nad poljem $\F$. Izberemo poljubno pozitivno število $\varepsilon>0$ in naj bo $x\in X$ poljuben. Tedaj je $$\norm{x+h}_X - \norm{x}_X \leq (\norm{x}_X + \norm{h}_X) - \norm{x}_X = \norm{h}_X$$ in $$\norm{x}_X - \norm{x+h}_X \geq \norm{x}_X - (\norm{x}_X + \norm{h}_X) \geq \norm{h}_X.$$ To pomeni, da je $$\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X.$$ Za $\delta=\varepsilon$ potem velja: Če je $\norm{h}_X<\delta$, je $\abs{~\norm{x+h}_X - \norm{x}_X} \leq \norm{h}_X < \varepsilon$. Torej je norma $\norm{.}_X$ zvezna na $X$. Še več, opazimo da izbrani $\delta=\varepsilon$ zadošča vsakemu elementu $x\in X$. Posledično je norma $\norm{.}_X$ enakomerno zvezna na $X$.
 \end{opomba}
 V naslednji definiciji bomo povzeli nekaj ključnih pojmov, ki so povezani s preslikavami na vektorskih prostorih.
 \begin{definicija}
@@ -516,15 +519,15 @@ V naslednji definiciji bomo povzeli nekaj ključnih pojmov, ki so povezani s pre
 		\end{itemize} V tem primeru namesto $T(x)$ po navadi uporabimo oznako $Tx$. 
 		\item Naj bosta $(X, \norm{.}_X)$ in $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Pravimo, da je linearen operator $\map{T}{X}{Y}$ \pojem{omejen}, če obstaja tako pozitivno število $M>0$, da za vsak $x\in X$ velja $$\norm{Tx}_Y\leq M\cdot\norm{x}_X.$$
 		\item Z $L(X, Y)$ označimo vektorski prostor (nad $\F$) vseh linearnih operatorjev iz $X$ v $Y$, z $B(X, Y)$ pa podprostor od $L(X, Y)$, ki sestoji iz vseh omejenih linearnih operatorjev iz $X$ v $Y$. Kadar je $X=Y$, uporabimo oznaki $L(X)$ in $B(X)$.
-		\item Naj bo $X$ poljuben vektorski prostor. Elementom prostora $L(X, \F)$ pravimo \pojem{linearni funkcionali}, elementom prostora $B(X, \F)$ pa \pojem{omejeni linearni funkcionali}. Za množico $B(X, \F)$ pogosto uporabimo oznako $X^*$.
+		\item Naj bo $X$ poljuben vektorski prostor. Elementom prostora $L(X, \F)$ pravimo \pojem{linearni} \pojem{funkcionali}, elementom prostora $B(X, \F)$ pa \pojem{omejeni linearni funkcionali}. Za množico $B(X, \F)$ pogosto uporabimo oznako $X^*$.
 	\end{enumerate}
 \end{definicija}
 Sedaj definirajmo konvergenco zaporedij, konvergenco vrst in zveznost linearnih operatorjev.
 \begin{definicija}
 	\label{zvop} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. 
 	\begin{enumerate}[a)]
-		\item Pravimo, da zaporedje $\{x_n\}_{n\in\N}$ \pojem{konvergira} k elementu $x\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako naravno število $n_0\in\N$, da je $\norm{x_n - x}_X<\varepsilon$, čim je $n\geq n_0$. V tem primeru pišemo $x = \lim_{n\to \infty}x_n$. Če zaporedje konvergira, pravimo, da je \pojem{konvergentno}.
-		\item Pravimo, da vrsta $\sum_{n = 0}^\infty x_n$ \pojem{konvergira}, če je zaporedje delnih vsot $\{s_n\}_{n\in\N}$, definirano s predpisom $s_n=\sum_{k=0}^n x_n$, konvergentno.
+		\item Pravimo, da zaporedje $\{x_n\}_{n\in\N}$ \pojem{konvergira} k elementu $x\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako naravno število $n_0\in\N$, da je $\norm{x_n - x}_X<\varepsilon$, čim je $n\geq n_0$. V tem primeru pravimo, da je element $x$ \pojem{limita} zaporedja $\{x_n\}_{n\in\N}$ in pišemo $$x = \lim_{n\to \infty}x_n.$$ Če zaporedje konvergira, pravimo, da je \pojem{konvergentno}.
+		\item Pravimo, da vrsta $\sum_{n = 1}^\infty x_n$ \pojem{konvergira}, če je zaporedje delnih vsot $\{s_n\}_{n\in\N}$, definirano s predpisom $s_n=\sum_{k=1}^n x_n$, konvergentno.
 		\item Pravimo, da je linearen operator $T\in L(X, Y)$ \pojem{zvezen} v točki $x_0\in X$, če za poljubno pozitivno število $\varepsilon>0$ obstaja tako pozitivno število $\delta>0$, da za vsak element $x\in X$ velja sklep: $$\norm{x-x_0}_X<\delta \Rightarrow \norm{Ax - Ax_0}_Y<\varepsilon.$$ Če je operator $T$ zvezen v vsaki točki $x\in X$, pravimo, da je \pojem{zvezen} na $X$.
 	\end{enumerate}
 \end{definicija}
@@ -569,11 +572,7 @@ Kasneje v nalogi se bo pojavil in uporabil pojem izometrije, zato ga definirajmo
 	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $T\in L(X, Y)$ poljuben linearen operator. Pravimo, da je operator $T$ \pojem{izometrija}, če je $$\norm{Tx}_Y = \norm{x}_X$$ za vsak $x\in X$.
 \end{definicija}
 
-\begin{opomba}
-	\label{opomb:izometrija}
-	Kratek premislek nam pove, da je vsaka izometrija tudi omejen linearen operator.
-\end{opomba}
-Kasneje nam bo prišel prav tudi spodaj naveden t.~i.~ ">Heine-Borel-Lebesgueov"< izrek, ki ga bomo podali brez dokaza.
+Kratek premislek nam pove, da je vsaka izometrija tudi omejen linearen operator. Sedaj brez dokaza navedemo še t.~i.~">Heine-Borel-Lebesgueov"< izrek, ki nam bo prišel prav kasneje.
 \begin{izrek}[Heine-Borel-Lebesgue]
 	\label{izr:HBL}
 	Naj bo $n\in\N$ poljubno naravno število in naj bo $\F^n$ metrični prostor, opremljen s standardno evklidsko metriko $d$. Za neprazno podmnožico $A\subseteq \F^n$ sta naslednji trditvi ekvivalentni: \begin{enumerate}[a)]
@@ -581,7 +580,7 @@ Kasneje nam bo prišel prav tudi spodaj naveden t.~i.~ ">Heine-Borel-Lebesgueov"
 		\item $A$ je zaprta in omejena.
 	\end{enumerate}
 \end{izrek}
-
+Sedaj definiramo metriko, ki je porojena z dano normo.
 \begin{definicija}
 	\label{def:porojmetr}
 	Naj bo $V$ poljuben normiran prostor nad $\F$ z normo $\norm{.}$. Preslikavo $\map{d}{V\times V}{\R}$ s predpisom $d(x, y) = \norm{x-y}$ imenujemo \pojem{metrika porojena z $\norm{.}$}.
@@ -596,7 +595,7 @@ Sedaj definirajmo še t.~i.~ Banachove prostore.
 	Naj bo $V$ poljuben normiran prostor nad poljem $\F$ z normo $\norm{.}$. Naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $V$ \pojem{Banachov prostor} nad $\F$. 
 \end{definicija}
 
-Pojavi se narvno vprašanje, ali lahko definiramo normo na prostoru omejenih linearnih operatorjev s pomočjo norm na domeni in kodomeni. Odgovor na to vprašanje poda naslednji izrek, hkrati pa nam pove tudi, kdaj bo normiran prostor omejenih linearnih operatorjev Banachov.
+Pojavi se naravno vprašanje, ali lahko definiramo normo na prostoru omejenih linearnih operatorjev s pomočjo norm na domeni in kodomeni. Odgovor na to vprašanje poda naslednji izrek, hkrati pa nam pove tudi, kdaj bo normiran prostor omejenih linearnih operatorjev Banachov.
 
 \begin{izrek}
 	\label{izr:opnorm} Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$. Tedaj je vektorski prostor $B(X, Y)$ normiran prostor za normo s predpisom $$\norm{T}=\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}.$$ Dodatno, če je prostor $(Y, \norm{.}_Y)$ Banachov prostor, je tudi $(B(X, Y), \norm{.})$ Banachov prostor.
@@ -686,7 +685,7 @@ Enako kot za dokaz izreka \ref{izr:odppresl}, bi tudi za dokaz izreka \ref{izr:H
 V nadaljevanju nam bo prav prišel tudi naslednji izrek.
 \begin{izrek}
 	\label{izr:opHB} 
-	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljubna gosta podmnožica prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
+	Naj bo $X$ poljuben normiran prostor nad $\F$ in naj bo $Y$ poljuben gosti podprostor prostora $X$. Naj bo $Z$ poljuben Banachov prostor nad $\F$. Tedaj za operator $T\in B(Y, Z)$ velja: \begin{enumerate}[a)]
 		\item Naj bo $x\in X$ poljuben element in $\{x_n\}_{n\in\N},\{y_n\}_{n\in\N}$ poljubni zaporedji v $Y$, ki konvergirata k elementu $x$: $$\lim_{n\to \infty}x_n = x = \lim_{n\to \infty}y_n.$$ Tedaj sta tudi zaporedji $\{T(x_n)\}_{n\in\N}$ in $\{T(y_n)\}_{n\in\N}$ konvergentni in imata isto limito: $$\lim_{n\to \infty}T(x_n) = \lim_{n\to \infty}T(y_n).$$
 		\item Obstaja tak operator $U\in B(X, Z)$, da je $\norm{U} = \norm{T}$ in $Ux = Tx$ za vsak $x\in Y$.
 	\end{enumerate}
@@ -706,7 +705,7 @@ V nadaljevanju nam bo prav prišel tudi naslednji izrek.
 		\end{align*} To pomeni, da je operator $U$ omejen in $\norm{U}\leq \norm{T}$. Vzemimo sedaj poljuben element $y\in Y$. Tedaj je konstantno zaporedje $\{y\}$ zaporedje v $Y$, ki konvergira k $y$. Posledično je $$U(y) = \lim_{n\to\infty}T(y) = T(y).$$ To pomeni, da je $$\norm{T(y)}=\norm{U(y)}\leq \norm{U}\cdot\norm{y}$$ za vsak $y\in Y$. To pomeni, da je $\norm{T}\leq \norm{U}$. Posledično je $\norm{T} = \norm{U}$ in $Tx = Ux$ za vsak $x\in Y$.
 	\end{enumerate}
 \end{dokaz}
-
+Sedaj definiramo skalarni produkt.
 \begin{definicija}
 	\label{def:ScalProd}
 	Naj bo $V$ poljuben vektorski prostor nad poljem $\F$. Preslikavi $\map{\Sp{.}{.}}{V\times V}{\F}$ pravimo \pojem{skalarni produkt} na $V$, če za poljubne elemente $x, x_1, x_2, y\in V$ ter poljubna skalarja $\alpha_1, \alpha_2\in \F$ velja: \begin{itemize}
@@ -783,7 +782,7 @@ Premislimo sedaj, da je skalarni produkt zvezna preslikava in obravnavamo njegov
 		\end{align*} Denimo najprej, da je $\norm{y-y_0}_X<1$. Tedaj je $$\norm{y}_X = \norm{y-y_0+y_0}_X\leq \norm{y-y_0}_x + \norm{y_0}_X < 1 + \norm{y_0}_X.$$ Če sedaj to vstavimo v prej premišljeno neenakost $$\abs{\Sp{x}{y} - \Sp{x_0}{y_0}} \leq \norm{x-x_0}_X\norm{y}_X + \norm{x_0}_X\norm{y-y_0}_X,$$ in upoštevamo, da sta števili $\norm{y-y_0}_X$ ter $\norm{x-x_0}_X$ obe manjši od $\norm{(x-x_0,y-y_0)}$, dobimo: \begin{align*}
 		\abs{\Sp{x}{y} - \Sp{x_0}{y_0}}&\leq \norm{x-x_0}_X(1+\norm{y_0}_X) +\norm{x_0}_X\norm{y-y_0}_X \\ &< \norm{(x-x_0, y-y_0)}\cdot(1 + \norm{y_0}_X+\norm{x_0}_X).
 		\end{align*} Vzemimo sedaj $\delta = \min\{\frac{\varepsilon}{(1 + \norm{y_0}_X+\norm{x_0}_X)}, 1\}$. Če je $\norm{(x-x_0, y-y_0)}<\delta$, velja: $$\abs{\Sp{x}{y} - \Sp{x_0}{y_0}} < \frac{\varepsilon}{(1 + \norm{y_0}_X+\norm{x_0}_X)}(1 + \norm{y_0}_X+\norm{x_0}_X)=\varepsilon.$$ To pomeni, da je skalarni produkt $\Sp{.}{.}$ zvezen v točki $(x_0, y_0)$. Ker je ta bila poljuben element prostora $X\times X$, sledi, da je skalarni produkt $\Sp{.}{.}$ zvezen na $X\times X$.
-		\item Naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ poljubni konvergentni zaporedji v $X$. Označimo $x = \lim_{n\to \infty}x_n$ in $y = \lim_{n\to \infty}y_n$. Posledično je tudi zaporedje $\{(x_n, y_n)\}_{n\in\N}$ konvergentno v normiranem prostoru $X\times X$ (z normo iz opombe \ref{opomb:CSB}). V točki $a)$ tega dokaza smo že premislili, da je skalarni produkt $\Sp{.}{.}$ zvezna preslikava. Posledično je zaporedje $\{\Sp{x_n}{y_n}\}_{n\in\N}$ konvergentno in velja: $$\lim_{n\to \infty}\Sp{x_n}{y_n} = \Sp{\lim_{n\to \infty}x_n}{\lim_{n\to \infty}y_n} = \Sp{x}{y}.$$
+		\item Naj bosta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ poljubni konvergentni zaporedji v $X$. Označimo: $$x = \lim_{n\to \infty}x_n~\text{in}~y = \lim_{n\to \infty}y_n.$$ Posledično je tudi zaporedje $\{(x_n, y_n)\}_{n\in\N}$ konvergentno v normiranem prostoru $X\times X$ (z normo iz opombe \ref{opomb:CSB}). V točki $a)$ tega dokaza smo že premislili, da je skalarni produkt $\Sp{.}{.}$ zvezna preslikava. Posledično je zaporedje $\{\Sp{x_n}{y_n}\}_{n\in\N}$ konvergentno in velja: $$\lim_{n\to \infty}\Sp{x_n}{y_n} = \Sp{\lim_{n\to \infty}x_n}{\lim_{n\to \infty}y_n} = \Sp{x}{y}.$$
 	\end{enumerate} 
 \end{dokaz}
 Sedaj končno definirajmo Hilbertove prostore.
@@ -791,10 +790,12 @@ Sedaj končno definirajmo Hilbertove prostore.
 	\label{def:Hilbert}
 	Naj bo $(V, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Naj bo $\norm{.}$ norma na $V$ porojena s $\Sp{.}{.}$ in naj bo $\map{d}{V\times V}{\R}$ metrika na $V$ porojena z $\norm{.}$. Če je $(V, d)$ poln metrični prostor, pravimo, da je $(V, \Sp{.}{.})$ \pojem{Hilbertov prostor} nad $\F$. 
 \end{definicija}
-
+Navedimo sedaj nekaj znanih primerov Hilbertovih prostorov. 
 \begin{primer}
 	\label{prim:Hilbert}
-	Navedimo nekaj znanih primerov Hilbertovih prostorov. \begin{itemize}
+	~
+	
+	\begin{itemize}
 		\item prostori $\R^n$ skupaj s standardnim skalarnim produktom;
 		\item prostori $\C^n$ skupaj s (standardnim) skalarnim produktom iz primera \ref{prim:ScalProd};
 		\item prostor $l^2$ skupaj s skalarnim produktom iz primera \ref{prim:ScalProd};
@@ -826,13 +827,13 @@ Sedaj končno definirajmo Hilbertove prostore.
 \begin{opomba}
 	\label{opomb:zaprtortogkompl}
 	Naj bo $X$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Velja: \begin{enumerate}[a)]
-		\item  Za vsako neprazno podmnožico $A$ prostora $X$ je $A^\bot$ je zaprta podmnožica v $X$. 
+		\item  Za vsako neprazno podmnožico $A$ prostora $X$ je $A^\bot$ je zaprt podprostor v $X$. 
 		\item Za vsaki neprazni podmnožici $A$ in $B$ prostora $X$ velja: Če je $B\subseteq A$, je $A^\bot\subseteq B^\bot$.
 	\end{enumerate}
 	Premislimo najprej točko $a)$. Vzemimo poljubno konvergentno zaporedje $\{x_n\}_{n\in\N}\subseteq A^\bot$ z limito $x\in X$. Naj bo $a\in A$ poljuben. Ker je po trditvi \ref{trd:spzvez} skalarni produkt zvezna preslikava, je $$\Sp{a}{x} = \Sp{a}{\lim_{n\to \infty}x_n} = \lim_{n\to\infty}\Sp{a}{x_n} =0.$$
 	Posledično je $x\in A^\bot$, torej je $A^\bot$ zaprta podmnožica v $X$. Še več, enostavno je preveriti, da je $A^\bot$ celo zaprt podprostor v $X$.
 	
-	Sedaj premislimo še točko $b)$. Vzemimo poljubna elementa $x\in A^\bot$ in $b\in B$. Tedaj je $b\in A$, torej je $\Sp{x}{b}=0$. Ker to velja za vsak $b\in B$, sledi, da je $x\in B^\bot$. To pomeni, da je $A^\bot\in B^\bot$.
+	Sedaj premislimo še točko $b)$. Vzemimo poljubna elementa $x\in A^\bot$ in $b\in B$. Tedaj je $b\in A$, torej je $\Sp{x}{b}=0$. Ker to velja za vsak $b\in B$, sledi, da je $x\in B^\bot$. To pomeni, da je $A^\bot\subset B^\bot$.
 \end{opomba}
 
 \begin{izrek}
@@ -871,7 +872,7 @@ Navedimo še en izrek, ki ga bomo potrebovali v nadaljevanju.
 \begin{dokaz}
 	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Vzemimo poljuben omejen linearen funkcional $\map{f}{X}{\F}$. Označimo $\F_a = \{\lambda a~|~\lambda\in\F\}$ podprostor prostora $X$ in vzemimo poljuben element $x\in \operatorname{Ker}f$. Tedaj je $\Sp{x}{a}=0$. Še več, velja, da je $\Sp{x}{\lambda a}=0$ za poljuben skalar $\lambda\in\F$. To pomeni, da je $x\in \F_a^\bot$. Vzemimo sedaj poljuben element $y\in \F_a^\bot$. Tedaj je $\Sp{y}{\lambda a}= 0$ za vsak $\lambda\in\F$. V posebnem primeru vidimo, da je $\Sp{y}{a}=0$, torej je $y\in\operatorname{Ker}f$. To pomeni, da je $\operatorname{Ker}f = \F_a^\bot$, torej je po opombi \ref{opomb:zaprtortogkompl} $\operatorname{Ker}f$ zaprt podprostor v $X$. Ker je $\operatorname{Ker}f$ zaprt podprostor v $X$, nam izrek \ref{izr:ortogdecomp} pove, da je $$X=\operatorname{Ker}f \oplus (\operatorname{Ker}f)^\bot.$$ Denimo najprej, da je $\operatorname{Ker}f = X$. Tedaj je $f\equiv 0$ in $a=0$. Denimo sedaj, da je $\operatorname{Ker}f \subset X$. Tedaj je $(\operatorname{Ker}f)^\bot\neq \{0\}$, torej obstaja nek element $b\in (\operatorname{Ker}f)^\bot\setminus\{0\}$. Ker $b\notin \operatorname{Ker}f$, je $f(b)\neq 0$ in zato lahko označimo element $c = \frac{1}{f(b)}b$. Opazimo, da je $ f(c)=1$ in $c\in(\operatorname{Ker}f)^\bot$. Vzemimo sedaj poljuben element $x\in X$. Tedaj je $$f(x-f(x)c)= f(x) - f(x) = 0.$$ To pomeni, da je $(x-f(x)c) \in \operatorname{Ker}f$. Ker je $c\in(\operatorname{Ker}f)^\bot$ in $(x-f(x)c) \in \operatorname{Ker}f$, je $$0=\Sp{x - f(x)c}{c}=\Sp{x}{c} - f(x)\Sp{c}{c} = \Sp{x}{c} - f(x)\cdot\norm{c}^2.$$ Posledično je $$f(x) = \frac{\Sp{x}{c}}{\norm{c}^2}=\Sp{x}{\frac{1}{\norm{c}^2}c}.$$ Ker je bil $x$ poljuben element, dobljena enakost velja za vsak element prostora $X$. Če označimo $a = \frac{1}{\norm{c}^2}c$ je potem $f(x)=\Sp{x}{a}=f_a(x)$ za vsak $x\in X$, kjer je $f_a$ omejen linearen operator iz trditve \ref{trd:linfunsp}. Po isti trditvi sledi, da je $\norm{f}=\norm{f_a}=\norm{a}$. Premislimo sedaj, da je element $a$ res enolično določen. Denimo, da obstajata elementa $a, u\in X$, taka, da je $f(x) = f_a(x)=f_u(x)$ za vsak $x\in X$. Tedaj je $\Sp{x}{a}=\Sp{x}{u}$ za vsak $x\in X$. Zato po lemi \ref{lem:scalprodopenak} sledi, da je $a=u$.
 \end{dokaz}
-V naslednjem izreku dokažemo analogijo konvergence geometrijske vrste v primeru omejenih linarnih operatorjev nad kompleksnim hilbertovim prostorom.
+V naslednjem izreku dokažemo analogijo konvergence geometrijske vrste v primeru omejenih linarnih operatorjev nad kompleksnim Hilbertovim prostorom.
 \begin{izrek}
 	\label{izr:Hilbertopinv}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Naj bo $T\in B(X)$ poljuben omejen linearen operator. Če je $\norm{T}< 1$, je operator $I-T$ obrnljiv in velja: $$(I-T)^{-1} = \sum_{n = 0}^{\infty}T^n.$$
@@ -885,7 +886,7 @@ V naslednjem izreku dokažemo analogijo konvergence geometrijske vrste v primeru
 	\end{align*}
 	Na podoben način preverimo, da je $\left(\sum_{n = 0}^\infty T^n\right)(I-T) = I$. To pomeni, da je operator $(I-T)$ inverz od operatorja $\sum_{n = 0}^\infty T^n $.
 \end{dokaz}
-V naslednjem izreku bomo premislili nekatere algebraične in topološke lastnosti prostora obrnljivih operatorjev nad kompleksnim Hilbertovim prostorom.
+V naslednjem izreku navajamo nekatere algebraične in topološke lastnosti prostora obrnljivih operatorjev nad kompleksnim Hilbertovim prostorom.
 \begin{izrek}
 	\label{izr:Hilbertinvset}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $\mathcal{G}(X)$ množica vseh obrnljivih operatorjev v $B(X)$. Velja: \begin{enumerate}[a)]
@@ -894,12 +895,12 @@ V naslednjem izreku bomo premislili nekatere algebraične in topološke lastnost
 		\item Preslikava invertiranja, $\map{^{-1}}{\mathcal{G}}{\mathcal{G}}$, s predpisom $^{-1}(T) = T^{-1}$ je zvezna.
 	\end{enumerate}
 \end{izrek}
-
+Naslednji izrek nam pove, da vsak Hilbertov prostor premore neko maksimalno ortonormirano množico.
 \begin{izrek}
 	\label{izr:ortogbaza}
 	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Vsaka ortonormirana podmnožica prostora $X$ je vsebovana v neki maksimalni ortonormirani podmnožici prostora $X$.
 \end{izrek}
-
+Za konec tega poglavja navedemo še izrek, s pomočjo katerega definiramo t.~i.~ Fourierjeve vrste v neskončno razsežnih Hilbertovih prostorih.
 \begin{izrek}
 	\label{izr:fouriervrsta}
 	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$ in naj bo $M$ maksimalna ortonormirana podmnožica v $X$. Tedaj za vsak $x\in X$ velja: \begin{enumerate}[a)]
@@ -911,7 +912,7 @@ V naslednjem izreku bomo premislili nekatere algebraične in topološke lastnost
 
 \begin{definicija}
 	\label{def:ortogbaz}
-	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Maksimalno ortonormirano podmnožico v $X$ imenujemo \pojem{ortonormirana baza} prostora $X$.
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Maksimalno ortonormirano podmnožico $M$ v $X$ imenujemo \pojem{ortonormirana baza} prostora $X$. Naj bo $x\in X$ poljuben element in naj bo množica $M_x$ definirana kot v izreku \ref{izr:fouriervrsta}. Vrsto $\sum_{e\in M_x}\Sp{x}{e}e$ imenujemo (posplošena) \pojem{Fourierjeva} vrsta, enakost $\norm{x}^2 = \sum_{e\in M_x}\abs{\Sp{x}{e}}^2$ pa \pojem{Parsevalova} enakost.
 \end{definicija}
 
 \chapter{Omejeni linearni operatorji na Hilbertovih prostorih}
@@ -1055,6 +1056,7 @@ S pomočjo lem \ref{lem:invnorm}, \ref{lem:banzap} in \ref{lem:adjlast2} dokaže
 	Predpostavimo najprej, da je operator $T\in B(X)$ obrnljiv. Tedaj je $T$ bijekcija in njegov inverz, $T^{-1}$, pripada $B(X)$. Posledično je $\operatorname{Im}T = X$. Zato je $\operatorname{Im}T$ gosta podmnožica v $X$ in tako nam lema \ref{lem:adjlast2} pove, da je $\operatorname{Ker}T^* = \{0\}$. Ker je $X$ Hilbertov prostor, zadošča tudi pogojem leme \ref{lem:invnorm}, ki nam pove, da velja $$\norm{Tx}\geq \norm{T^{-1}}^{-1}\norm{x}$$ za vsak $x\in X$. S tem smo dokazali prvo implikacijo, saj lahko za iskano število $r$ vzamemo kar $r = \norm{T^{-1}}^{-1}$.
 	
 	Sedaj pokažimo še obratno implikacijo. Denimo, da je $\operatorname{Ker}T^* = \{0\}$ in da obstaja tak $r>0$, da za vsak $x\in X$ velja ocena $\norm{Tx} \geq r\norm{x}$. Lema \ref{lem:adjlast2} nam potem pove, da je $\operatorname{Im}T$ gosta podmnožica v $X$, lema \ref{lem:banzap} pa, da je $\operatorname{Im}T$ zaprti podprostor v $X$. To pomeni, da je $X = \overline{\operatorname{Im}T} = \operatorname{Im}T$.
+	
 	Vzemimo sedaj poljuben element $x\in \operatorname{Ker}T$. Tedaj je $Tx = 0$, po predpostavki pa potem sledi, da je $0 = \norm{Tx} \geq r\norm{x}$. Slednje je lahko res le, kadar je $x = 0$. To pomeni, da je $\operatorname{Ker}T = \{0\}$, torej je $T$ bijektiven endomorfizem Banachovega prostora $X$. Zato je po posledici \ref{posl:odppresl} operator $T$ obrnljiv.
 \end{dokaz}
 
@@ -1322,10 +1324,7 @@ Izkaže se, da imajo ortogonalni projektorji zanimivo zvezo z zaprtimi podprosto
 	\begin{enumerate}
 		\item Naj bo $Y$ poljuben zaprti podprostor v $X$. Spomnimo se izreka \ref{izr:ortogdecomp}, ki nam pove, da lahko prostor $X$ zapišemo kot direktno vsoto podprostorov: $$X = Y \oplus Y^\bot.$$ Vzemimo torej poljuben element $x\in X$. Vemo, da tedaj obstajata enolično določena elementa $y\in Y$ in $z\in Y^\bot$, da je $x = y + z$. Sedaj definiramo preslikavo $\map{P_Y}{X}{X}$ s predpisom $P_Y(x) = y$. Pokazali bomo, da ta preslikava zadošča vsem pogojem trditve.
 		
-		Premislimo najprej, da je preslikava $P_Y$ linearna. Vzemimo poljubna elementa $x_1, x_2\in X$ in poljubna skalarja $\lambda_1, \lambda_2\in \C$. Naj bodo $y_1, y_2\in Y$ in $z_1, z_2\in Y^\bot$ tisti elementi, za katere je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Tedaj je $$\lambda_1x_1 + \lambda_2x_2 = \lambda_1(y_1 + z_1) + \lambda_2(y_2 + z_2) = (\lambda_1y_1 + \lambda_2y_2) + (\lambda_1z_1 + \lambda_2z_2).$$ Ker sta $Y$ in $Y^\bot$ oba vektorska prostora sledi: $$\lambda_1y_1 + \lambda_2y_2\in Y~\text{in}~\lambda_1z_1 + \lambda_2z_2\in Y^\bot.$$ Posledično je $$P_Y(\lambda_1x_1 + \lambda_2x_2)= \lambda_1y_1 + \lambda_2y_2 = \lambda_1P_Y(x_1) + \lambda_2P_Y(x_2).$$ To pomeni, da je $P_Y$ res linearen operator na prostoru $X$.
-		
-		Kratek račun pokaže, da je operator $P_Y$ tudi omejen. Vzemimo spet poljuben element $x\in X$ in naj bosta elementa $y\in Y$ ter $z\in Y^\bot$ tista, za katera je $x = y + z$. Tedaj je $$\norm{x}^2=\Sp{x}{x}=\Sp{y+z}{y+z}=\Sp{y}{y}+\Sp{y}{z}+\Sp{z}{y}+\Sp{z}{z}=\norm{y}^2 + \norm{z}^2.$$ To pomeni, da je $$\norm{P_Y(x)}^2 = \norm{y}^2 \leq \norm{y}^2 + \norm{z}^2 =\norm{x}^2.$$ Posledično je $$\norm{P_Y(x)}=\norm{y}\leq \norm{x} .$$ Sledi, da je opertor $P_Y$ omejen in da je $\norm{P_Y}\leq 1$.
-		
+		Premislimo najprej, da je preslikava $P_Y$ linearna. Vzemimo poljubna elementa $x_1, x_2\in X$ in poljubna skalarja $\lambda_1, \lambda_2\in \C$. Naj bodo $y_1, y_2\in Y$ in $z_1, z_2\in Y^\bot$ tisti elementi, za katere je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Tedaj je $$\lambda_1x_1 + \lambda_2x_2 = \lambda_1(y_1 + z_1) + \lambda_2(y_2 + z_2) = (\lambda_1y_1 + \lambda_2y_2) + (\lambda_1z_1 + \lambda_2z_2).$$ Ker sta $Y$ in $Y^\bot$ oba vektorska prostora sledi: $$\lambda_1y_1 + \lambda_2y_2\in Y~\text{in}~\lambda_1z_1 + \lambda_2z_2\in Y^\bot.$$ Posledično je $$P_Y(\lambda_1x_1 + \lambda_2x_2)= \lambda_1y_1 + \lambda_2y_2 = \lambda_1P_Y(x_1) + \lambda_2P_Y(x_2).$$ To pomeni, da je $P_Y$ res linearen operator na prostoru $X$. Kratek račun pokaže, da je operator $P_Y$ tudi omejen. Vzemimo spet poljuben element $x\in X$ in naj bosta elementa $y\in Y$ ter $z\in Y^\bot$ tista, za katera je $x = y + z$. Tedaj je $$\norm{x}^2=\Sp{x}{x}=\Sp{y+z}{y+z}=\Sp{y}{y}+\Sp{y}{z}+\Sp{z}{y}+\Sp{z}{z}=\norm{y}^2 + \norm{z}^2.$$ To pomeni, da je $$\norm{P_Y(x)}^2 = \norm{y}^2 \leq \norm{y}^2 + \norm{z}^2 =\norm{x}^2.$$ Posledično je $$\norm{P_Y(x)}=\norm{y}\leq \norm{x} .$$ Sledi, da je opertor $P_Y$ omejen in da je $\norm{P_Y}\leq 1$.
 		Premislimo sedaj, da je operator $P_Y$ sebi-adjungiran. Naj bosta $x_1, x_2\in X$ poljubna elementa. Naj bodo $y_1, y_2\in Y$ ter $z_1, z_2\in Y^\bot$ tisti elementi, za katere je je $x_1 = y_1 + z_1$ in $x_2 = y_2 + z_2$. Potem je $$\Sp{P_Y(x_1)}{x_2} = \Sp{y_1}{y_2 + z_2} = \Sp{y_1}{y_2}$$ in $$\Sp{x_1}{P_Y(x_2)} = \Sp{y_1+ z_1}{y_2} = \Sp{y_1}{y_2}.$$ Sledi, da je $\Sp{P_Y(x_1)}{x_2} = \Sp{x_1}{P_Y(x_2)}$ za vsaka elementa $x_1, x_2 \in X$. To pomeni, da je operator $P_Y$ sebi-adjungiran.
 		
 		Sedaj preverimo, da je $\operatorname{Im}P_Y = Y$. Naj bo $y\in Y$ poljuben element. Tedaj je ortogonalni razcep tega elementa enak $y = y + 0$, torej je $P_Y(y) = y$. To pomeni, da je $Y\subseteq \operatorname{Im}P_Y$. Hkrati nam predpis operatorja $P_Y$ pove, da je $\operatorname{Im}P_Y \subseteq Y$. Torej je $\operatorname{Im}P_Y = Y$. Točka $a)$ leme \ref{lem:adjlast2} nam tudi pove, da je: $$\operatorname{Ker}P_Y = (\operatorname{Im}(P_Y)^*)^\bot = (\operatorname{Im}P_Y)^\bot = Y^\bot.$$
@@ -1454,15 +1453,15 @@ Preden določimo nekaj osnovnih lastnosti spektra operatorja, se spomnimo Liouvi
 		Vzemimo najprej poljubno kompleksno število $\lambda\in\C$, za katerega je $\abs{\lambda}>\norm{T}$. Tedaj je: $$(T- \lambda I)^{-1} = (-\lambda)^{-1}(I - \lambda^{-1}T)^{-1}.$$ Opazimo, da je $\norm{\lambda^{-1}T}<1$. Izrek \ref{izr:Hilbertopinv} nam pove, da je potem: $$(T- \lambda I)^{-1} = (-\lambda)^{-1}\sum_{n = 0}^{\infty}(\lambda^{-1}T)^n.$$ Posledično je: $$\norm{(T- \lambda I)^{-1}} \leq\frac{1}{\abs{\lambda}}\sum_{n = 0}^{\infty}\abs{\lambda}^{-n}\norm{T}^n = \frac{1}{\abs{\lambda}}\sum_{n=0}^{\infty}\left(\frac{\norm{T}}{\abs{\lambda}}\right)^n = \frac{1}{\abs{\lambda}}\frac{1}{1-\frac{\norm{T}}{\abs{\lambda}}}=\frac{1}{\abs{\lambda}-\norm{T}}.$$
 		Ker je $0 \leq \norm{(T- \lambda I)^{-1}}$ za vsako število $\lambda\in\C$ in ker je $$\lim_{\abs{\lambda}\to\infty}\frac{1}{\abs{\lambda} - \norm{T}}=0$$ po t.~i.~izreku o sendviču sklepamo, da je: $$\lim_{\abs{\lambda}\to\infty}\norm{(T- \lambda I)^{-1}} = 0.$$ Z dobljeno limito bomo obravnavali obnašanje funkcije $\varphi$ daleč od izhodišča. Za vsako kompleksno število $\nu\in\C$ velja naslednja ocena: $$0 \leq\abs{\varphi(\nu)} = \abs{f((T-\nu I)^{-1})} \leq \norm{f}\cdot\norm{(T-\nu I)^{-1}}.$$ Z uporabo prej izračunane limite in ponovno uporabo izreka o sendviču vidimo, da je $\lim_{\abs{\lambda}\to\infty}\abs{\varphi(\lambda)}=0$. Posledično je: $$\lim_{\abs{\lambda}\to\infty}\varphi(\lambda)=0.$$ To pomeni, da obstaja tako realno število $R>0$, da je $\abs{\varphi(\lambda)}\leq 1$ za vsako število $\lambda\in \overline{K_R(0)}^c$. Ker je $\varphi$ zvezna na $\overline{K_R(0)}$, je tam tudi omejena. To pomeni, da je $\varphi$ omejena na celi kompleksni ravnini $\C$.
 		Izrek \ref{izr:Liouville} nam pove, da je potem funkcija $\varphi$ konstantna. Ker je, $\lim_{\abs{\lambda}\to\infty}\varphi(\lambda) = 0$ in je funkcija $\varphi$ zvezna, je potem $\varphi\equiv 0$. To pomeni, da je $f((T - \lambda I)^{-1})=0$ za vsak $\lambda\in\C$. Ker je $f$ bil poljuben omejen linearen funkcional na $B(X)$, sklep velja za vse omejene linearne funkcionale na $B(X)$. Vzemimo sedaj poljubno kompleksno število $\lambda\in\C$.
-		Posledica \ref{posl:HB} nam pove, da obstaja tak omejen linearen funkcional $\map{g}{B(X)}{\C}$, da je $0 = g((T- \lambda I)^{-1})=\norm{(T- \lambda I)^{-1}}$. To pa pomeni, da je $(T- \lambda I)^{-1} = 0$. Prišli smo v protislovje, saj ničelni operator ni obrnljiv.
+		Posledica \ref{posl:HB} nam pove, da obstaja tak omejen linearen funkcional $\map{g}{B(X)}{\C}$, da je $$0 = g((T- \lambda I)^{-1})=\norm{(T- \lambda I)^{-1}}.$$ To pa pomeni, da je $(T- \lambda I)^{-1} = 0$. Prišli smo v protislovje, saj ničelni operator ni obrnljiv.
 	\end{enumerate}
 \end{dokaz}
 
 \begin{opomba}
-	\label{opomb:specprimeri} Naj bo $X$ poljuben kompleksen Hilbertov prostor. Prva točka izreka \ref{izr:specter} nam pove, da za poljuben $T\in B(X)$ velja, da je $\sigma(T)\subseteq \overline{K_{\norm{T}}(0)}$. S pomočjo druge točke izreka tudi opazimo dva skrajna primera za spekter. V prvem skrajnem primeru spekter vsebuje le eno samo vrednost: $\sigma(T)=\{\lambda_0\}$, za nek $\lambda_0\in\overline{K_{\norm{T}}(0)}$. Primer takega operatorja $T$ je ravno ničelni operator: $\sigma(0) = \{0\}$. Drugi skrajni primer je, da je $\sigma(T) = \overline{K_{\norm{T}}(0)}$.
+	\label{opomb:specprimeri} Naj bo $X$ poljuben kompleksen Hilbertov prostor. Prva točka izreka \ref{izr:specter} nam pove, da za poljuben operator $T\in B(X)$ velja, da je $\sigma(T)\subseteq \overline{K_{\norm{T}}(0)}$. S pomočjo druge točke istega izreka tudi opazimo dva skrajna primera za spekter. V prvem skrajnem primeru spekter vsebuje le eno samo vrednost: $\sigma(T)=\{\lambda_0\}$, za nek $\lambda_0\in\overline{K_{\norm{T}}(0)}$. Primer takega operatorja $T$ je ravno ničelni operator, saj je $\sigma(0) = \{0\}$. Drugi skrajni primer je, da je $\sigma(T) = \overline{K_{\norm{T}}(0)}$.
 \end{opomba}
 
-Sedaj premislimo še povezavo med spektrom poljubnega operatorja in spektrom njegovega adjungiranega operatorja.
+Sedaj premislimo še povezavo med spektroma poljubnega operatorja in spektrom njegovega adjungiranega operatorja.
 
 \begin{lema}
 	\label{lem:adjspec}
@@ -1511,7 +1510,7 @@ S pomočjo izreka \ref{izr:polyspec} lahko enostavno določimo spektre raznih po
 \begin{definicija}
 	\label{def:idemnilop}
 	Naj bo $U$ poljuben vektorski prostor nad poljem $\F$. Za linearen operator $A\in L(U)$ pravimo, da je: \begin{enumerate}[a)]
-		\item \pojem{Idempotent} oziroma \pojem{projektor}, če je $A^2 = A$. Operatorja $0$ in $I$ imenujemo \pojem{trivialna idempotenta} oziroma \pojem{trivialna projektorja}.
+		\item \pojem{Idempotent} oziroma \pojem{projektor}, če je $A^2 = A$. Operatorja $0$ in $I$ imenujemo \pojem{trivialna} \pojem{idempotenta} oziroma \pojem{trivialna projektorja}.
 		\item \pojem{Nilpotent}, če obstaja tako število $n\in\N$, da je $A^n = 0$.
 	\end{enumerate}
 \end{definicija}
@@ -1719,7 +1718,7 @@ Iz vira \cite{bib:Kurepa} povzemimo nekaj posledic izreka \ref{izr:pozroot}.
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja. Če je $S^2 = T^2$, je $S=T$.
 \end{posledica}
 \begin{dokaz}
-	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja. Denimo, da je $S^2 = T^2$. Tedaj sta $S$ in $T$ oba (pozitivna) korena pozitivnega operatorja $T^2$. Ker je koren pozitivnega operatorja enolično določen zato sledi, da je $S=T$.
+	Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bosta $S, T\in B(X)$ poljubna pozitivna operatorja. Denimo, da je $S^2 = T^2$. Tedaj sta operatorja $S$ in $T$ oba pozitivna korena pozitivnega operatorja $T^2$. Ker je koren pozitivnega operatorja enolično določen zato sledi, da je $S=T$.
 \end{dokaz}
 
 \begin{posledica}
@@ -1765,7 +1764,7 @@ Sedaj, ko smo se prepričali, da so koreni pozitivnih operatorjev dobro definira
 	Na enak način preverimo, da je tudi $(T + i(I-T^2)^{\frac{1}{2}})^*(T + i(I-T^2)^{\frac{1}{2}})=I$ in s tem vidimo, da je operator $(T + i(I-T^2)^{\frac{1}{2}})$ res unitaren. Opazimo tudi, da smo istočasno preverili, da je operator $(T - i(I-T^2)^{\frac{1}{2}})$ unitaren.
 \end{dokaz}
 
-Sedaj bomo pokazali, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. Dekompozicijo obrnljivega operatorja na taka faktorja imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
+Sedaj bomo pokazali, da je vsak obrnljiv operator na kompleksnem Hilbertovem prostoru produkt unitarnega in pozitivnega operatorja. To dekompozicijo imenujemo ">polarna dekompozicija"<, saj spominja na polarni zapis kompleksnih števil.
 
 \begin{izrek}
 	Naj bo $X$ poljuben kompleksen Hilbertov prostor. Tedaj za vsak obrnjiv operator $T\in B(X)$ obstajata tak unitaren operator $U$ na $X$ in tak pozitiven operator $R$ na $X$, da je $T = UR$.
@@ -1880,14 +1879,14 @@ Sedaj se lahko lotimo obljubljenega izreka.
 % ----------======== Seznam uporabljenih kratic in simboov =======-----------
 % --------------------------------------------
 
-\chapter*{Seznam uporabljenih kratic in simbolov (NEOBVEZNO!)}
+\chapter*{Seznam uporabljenih kratic in simbolov}
 \begin{table}[!ht]
 		\begin{tabular}{r l}
 			$\N$ & množica naravnih števil,\\
 			$\R$ & množica realnih števil,\\
 			$\C$ & množica kompleksnih števil,\\
 			$\F$ & polje, bodisi $\R$ bodisi $\C$,\\
-			$f^*(A)$ & praslika preslikave $f$ na množici $A$,\\
+			%$f^*(A)$ & praslika preslikave $f$ na množici $A$,\\
 			$K_r(a)$ & odprta krogla s polmerom $r$ in središčem v $a$,\\
 			$l^2$ & prostor vseh zaporedij $\{x_n\}_{n\in\N}$ nad $\F$, za katera je $\sum_{n = 1}^\infty\abs{x_n}^2 \leq \infty$,\\
 			$L(X, Y)$ & množica vseh linearnih operatorjev iz vektorskega prostora $X$ v $Y$,\\
@@ -1904,7 +1903,7 @@ Sedaj se lahko lotimo obljubljenega izreka.
 % ---------------======== Stvarno kazalo =======---------------
 % -------------------------------------------------------------
 
-\chapter*{Stvarno kazalo (NEOBVEZNO!)}
+%\chapter*{Stvarno kazalo (NEOBVEZNO!)}
 
 %\addcontentsline{toc}{chapter}{Index}
 %\printindex
