@@ -1,0 +1,494 @@
+\documentclass[beamer,t,envcountsect,notheorems]{beamer}%
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[slovene]{babel}
+\usepackage{graphicx}%
+\usepackage{lmodern}
+
+\setcounter{MaxMatrixCols}{30}
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+
+\newcommand{\Sp}[2]{\ensuremath{\left<#1, #2\right>}}
+\newcommand{\abs}[1]{\ensuremath{\lvert #1 \rvert}}
+\newcommand{\norm}[1]{\abs{\abs{#1}}}
+\newcommand{\map}[3]{\ensuremath{{#1}:{#2}\rightarrow{#3}}}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\No}{\N_0}
+\newcommand{\n}{\underline{n}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+
+%TUKAJ LAHKO SPREMENITE TEMO
+%Tema #1
+%\usetheme{Berlin}
+%\usecolortheme{crane}
+
+%Tema #2
+\usetheme{Warsaw}
+\useoutertheme[subsection=false]{smoothbars}
+
+%Tema #3
+%\usetheme{Montpellier}
+%\usecolortheme{dolphin}
+
+\newtheorem{theorem}{Izrek} [section]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Primer}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Posledica}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definicija}
+\newtheorem{example}[theorem]{Primer}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Trditev}
+\newtheorem{remark}[theorem]{Opomba}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Naslovnica
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Omejeni linearni operatorji na Hilbertovih prostorih}
+\author{Avtor: Jimmy Zakeršnik \\Mentor: Daniel Eremita}
+\date{Avgust, 2025}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Primer diapozitivov
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Uvod}
+
+\subsection{Napovednik}%
+\begin{frame}
+
+\frametitle{Napovednik}%Naslov slida
+
+\begin{stepitemize}%postopno dodajanje alinej
+
+\item Osnovne definicije in rezultati,
+\item Adjungirani operatorji,
+\item Spekter.
+
+\end{stepitemize}%
+\end{frame}% .
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Osnovne definicije in rezultati}%
+\begin{frame}%vsak frame(slide) je sestavljen iz večih "strani" (pages). Podobno kot pri powerpointu, se lahko z puščicami premikamo skozi strani in tako postopoma odkrivamo elemente na slidu. Novo stran na slidu dodamo znotraj zavitih oklepajev '{' in '}'
+
+\frametitle{Hilbertov prostor}%Naslov slida
+
+\pause %doda prazno stran na slide
+
+\uncover<2,3>{\begin{definition} %\uncover<2,3> bo sledeči element prikazal(odkril) na 2. in 3. strani slida. 
+Naj bo $(X, \Sp{.}{.})$ vektorski prostor s skalarnim produktom nad poljem $\mathbb{F}$ in naj bo $d$ metrika na $X$ porojena s tem skalarnim produktom. Če je $(X, d)$ poln metrični prostor, pravimo, da je $(X, \Sp{.}{.})$ \textbf{Hilbertov prostor}.
+\end{definition}}
+
+\uncover<3>{\begin{definition} 
+		Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad $\F$. Preslikavo $\map{\norm{.}}{B(X, Y)}{\R}$ s predpisom $$\norm{T}=\sup_{x\neq 0}\frac{\norm{Tx}_Y}{\norm{x}_X}$$ imenujemo \textbf{operatorska norma} na prostoru $B(X, Y)$.
+\end{definition}}
+
+\end{frame}% Konec slida
+
+\begin{frame}%vsak frame(slide) je sestavljen iz večih "strani" (pages). Podobno kot pri powerpointu, se lahko z puščicami premikamo skozi strani in tako postopoma odkrivamo elemente na slidu. Novo stran na slidu dodamo znotraj zavitih oklepajev '{' in '}'
+	
+	\frametitle{Hilbertov prostor}%Naslov slida
+	
+	\begin{definition}<2> %\uncover<3> bo sledeči element prikazal(odkril) na 3. strani slida.
+			Naj bo $(X, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad
+			poljem $\mathbb{F}$. Naj bo $A$ poljubna neprazna podmnožica prostora X. \textbf{Ortogonalni komplement} množice $A$ je množica $$A^\bot=\{x\in X~|~\Sp{x}{a}=0~\text{za vsak}~a\in A\}.$$
+	\end{definition}
+	
+%	\uncover<2>{\begin{definition} %\uncover<2,3> bo sledeči element prikazal(odkril) na 2. in 3. strani slida. 
+%	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Maksimalno ortonormirano podmnožico $M$ v $X$ imenujemo \textbf{ortonormirana baza} prostora $X$. Naj bo $x\in X$ poljuben element in označimo množico $M_x=\{e\in M~|~\Sp{x}{e}\neq 0\}$. Tedaj vrsto $\sum_{e\in M_x}\Sp{x}{e}e$ imenujemo (posplošena) \textbf{Fourierjeva} vrsta, enakost $\norm{x}^2 = \sum_{e\in M_x}\abs{\Sp{x}{e}}^2$ pa \textbf{Parsevalova} enakost.
+%	\end{definition}}
+	
+\end{frame}% Konec slida
+
+\begin{frame}
+	
+\frametitle{Pomembnejši pomožni rezultati}%Naslov slida
+	
+\pause %doda prazno stran na slide	
+	
+\uncover<2, 3>{\begin{block}{Izrek}
+	Naj bosta $(X, \norm{.}_X)$ ter $(Y, \norm{.}_Y)$ poljubna normirana prostora nad poljem $\F$ in naj bo $\map{T}{X}{Y}$ poljuben linearen operator. Potem je operator $T$ zvezen natanko tedaj, ko je omejen.
+	\end{block}}
+	
+	\uncover<3>{\begin{block}{Izrek}
+	Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Tedaj za poljuben zaprti podprostor $Y$ velja, da je: $$X = Y \oplus Y^\bot.$$
+	\end{block}}
+	
+\end{frame}% Konec slida
+
+
+
+\begin{frame}
+	
+	\frametitle{Pomembnejši pomožni rezultati}%Naslov slida
+	\pause %doda prazno stran na slide	
+	
+	\uncover<2>{\begin{block}{Izrek (Cauchy-Schwarz-Bunyakowsky)}
+			Naj bo $(X, \Sp{.}{.})$ poljuben vektorski prostor s skalarnim produktom nad poljem $\F$. Tedaj za vsak par elementov $x, y\in X$ velja: $$\abs{\Sp{x}{y}}^2 \leq \Sp{x}{x}\Sp{y}{y}.$$
+	\end{block}}
+
+\end{frame}% Konec slida
+
+\begin{frame}
+	
+	\frametitle{Pomembnejši pomožni rezultati}%Naslov slida
+	
+	\pause %doda prazno stran na slide	
+	
+	\uncover<2>{\begin{block}{Trditev}
+			Naj bo $X$ poljuben vektorski prostor s skalarnim produktom $\Sp{.}{.}$ nad poljem $\F$. Velja: \begin{enumerate}[a)]
+				\item Preslikava $\Sp{.}{.}$ je zvezna preslikava iz $X\times X$ v $\F$.
+				\item Če sta $\{x_n\}_{n\in\N}$ in $\{y_n\}_{n\in\N}$ konvergentni zaporedji v $X$ z limitama $x = \lim_{n\to \infty}x_n$ in $y = \lim_{n\to \infty}y_n$, potem je tudi zaporedje $\{\Sp{x_n}{y_n}\}_{n\in\N}$ konvergentno in velja: $$\Sp{x}{y} = \lim_{n\to \infty}\Sp{x_n}{y_n}.$$
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}% Konec slida
+
+
+\begin{frame}
+	
+	\frametitle{Pomembnejši pomožni rezultati}%Naslov slida
+	
+	\pause %doda prazno stran na slide	
+	
+	\uncover<2>{\begin{block}{Izrek (Riesz)}
+			Naj bo $X$ poljuben Hilbertov prostor nad poljem $\F$. Potem za vsak omejen linearen funkcional $\map{f}{X}{\F}$ obstaja enolično določen element $a\in X$, da je $f(x) = \Sp{x}{a}$ za vsak $x\in X$. Dodatno velja še, da je $\norm{f} = \norm{a}$.
+	\end{block}}
+\end{frame}% Konec slida
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Adjungiran operator}%
+
+\begin{frame}
+	
+	\frametitle{Adjungiran operator}%Naslov slida
+	
+	\pause %doda prazno stran na slide	
+	
+	\uncover<2>{\begin{block}{Izrek}
+			Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora in naj bo $T$ poljuben element $B(X, Y)$. Tedaj obstaja enolično določen operator $T^*\in B(Y, X)$, tak, da velja $$\Sp{Tx}{y}_Y = \Sp{x}{T^*y}_X$$ za vsak $x\in X$ in vsak $y \in Y$. Operator $T^*$ imenujemo \textbf{adjungiran operator} operatorja $T$.
+	\end{block}}
+\end{frame}% Konec slida
+
+\begin{frame}
+\frametitle{Lastnosti adjungiranja}
+
+\pause
+
+\uncover<2>{\begin{block}{Izrek}
+Naj bodo $(X, \Sp{.}{.}_X)$, $(Y, \Sp{.}{.}_Y)$ in $(Z, \Sp{.}{.}_Z)$ poljubni kompleksni Hilbertovi prostori, naj bodo $U, V \in B(X, Y)$ in $T \in B(Y, Z)$ poljubni operatorji ter naj bosta $\alpha, \beta \in \C$ poljubna skalarja. Tedaj velja: \begin{enumerate}[a)]
+	\item $(\alpha U + \beta V)^* = \bar{\alpha}U^* + \bar{\beta}V^*$,
+	\item $(TU)^* = U^*T^*$,
+	\item $(U^*)^* = U$,
+	\item $\norm{U^*} = \norm{U}$,
+	\item $\norm{U^*U} = \norm{U}^2$,
+	\item Preslikava $\map{f}{B(X, Y)}{B(Y, X)}$, definirana s predpisom $f(U) = U^*$ je zvezna.
+\end{enumerate}
+\end{block}}
+
+%\uncover<3>{\begin{block}{Izrek}
+%Besedilo izreka.
+%\end{block}}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lastnosti adjungiranja}
+	
+	\pause
+	
+	\uncover<2, 3>{\begin{block}{Lema}
+			Naj bosta $(X, \Sp{.}{.}_X)$ in $(Y, \Sp{.}{.}_Y)$ poljubna kompleksna Hilbertova prostora. Tedaj za vsak operator $T\in B(X, Y)$ velja: \begin{enumerate}[a)]
+				\item $\operatorname{Ker}T = (\operatorname{Im}T^*)^{\bot}$,
+				\item $\operatorname{Ker}T^* = (\operatorname{Im}T)^{\bot}$,
+				\item $\operatorname{Ker}T^* = \{0\}$ natanko tedaj, ko je $\operatorname{Im}T$ gosta podmnožica v $Y$.
+			\end{enumerate}
+	\end{block}}
+	\uncover<3>{\begin{block}{Lema}
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor. Če je operator $T\in B(X)$ obrnljiv, tedaj je obrnljiv tudi operator $T^*$. V tem primeru je $(T^*)^{-1} = (T^{-1})^*$.
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Posebni tipi operatorjev}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Definicija}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T \in B(X)$: \begin{enumerate}
+				\item \textbf{normalen}, če je $TT^* = T^*T$,
+				\item \textbf{sebi-adjungiran}, če je $T = T^*$,
+				\item \textbf{unitaren}, če je $TT^* = T^*T = I$,
+				\item \textbf{ortogonalen projektor}, če je $T^2 = T = T^*$
+				\item \textbf{pozitivno semidefiniten}, če je $\Sp{Tx}{x} \geq 0$ za vsak $x\in X$.
+			\end{enumerate}
+	\end{block}}
+	\begin{definition}<3> %\uncover<3> bo sledeči element prikazal(odkril) na 3. strani slida.
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor in $T\in B(X)$ poljuben operator. \textbf{Kvadratni koren} operatorja $T$ je tak operator $U\in B(X)$, da je $U^2 = T$.
+	\end{definition}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Osnovne lastnosti posebnih tipov}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Posledica}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben normalen operator. Naslednji trditvi sta ekvivalentni: \begin{enumerate}[a)]
+				\item Operator $T$ je obrnljiv.
+				\item Obstaja tako realno število $r > 0$, da je $\norm{Tx} \geq r\norm{x}$ za vsak $x\in X$.
+			\end{enumerate}
+	\end{block}}
+
+	\uncover<3>{\begin{block}{Trditev}
+			Naj bo $(X, \Sp{.}{.})$ poljuben kompleksen Hilbertov prostor. Operator $T\in B(X)$ je sebi-adjungiran natanko tedaj, ko je $\Sp{Tx}{x}\in\R$ za vsak $x\in X$.
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Osnovne lastnosti posebnih tipov}
+	
+	\pause
+	
+	\uncover<2>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za poljubna operatorja $T, U\in B(X)$ velja: \begin{enumerate}[a)]
+				\item $T^*T = I$ natanko tedaj, ko je $T$ izometrija.
+				\item $U$ je unitaren operator natanko tedaj, ko je $U$ surjektivna izometrija na $X$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Osnovne lastnosti posebnih tipov}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Velja: \begin{enumerate}
+				\item Za poljuben zaprt podprostor $Y$ v $X$ obstaja tak ortogonalen projektor $P_Y\in B(X)$, da je $\operatorname{Im}P_Y = Y$, $\operatorname{Ker}P_Y = Y^\bot$ in $\norm{P_Y} \leq 1$.
+				\item Za poljuben ortogonalen projektor $Q\in B(X)$ je $\operatorname{Im}Q$ zaprt podprostor v $X$ in velja: $$Q = P_{\operatorname{Im}Q}.$$
+			\end{enumerate}
+	\end{block}}
+	
+	\begin{definition}<3> %\uncover<3> bo sledeči element prikazal(odkril) na 3. strani slida.
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor in $Y$ poljuben zaprt podprostor v $X$. Operator $P_Y$ iz prejšnjega izreka imenujemo \textbf{ortogonalen projektor prostora $X$ na $Y$}.
+	\end{definition}
+	
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spekter}
+
+\begin{frame}
+	\frametitle{Spekter}
+	
+	\pause
+	
+	\begin{definition}<2,3> %\uncover<3> bo sledeči element prikazal(odkril) na 3. strani slida.
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben operator. \textbf{Spekter} operatorja $T$ je množica, definirana na naslednji način: $$\sigma(T) = \{\lambda\in\C~|~\text{operator}~T-\lambda I~\text{ni obrnljiv}\}.$$
+	\end{definition}
+	
+	\uncover<3>{\begin{block}{Lema}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Če je $\lambda$ lastna vrednost operatorja $T\in B(X)$, potem je $\lambda\in\sigma(T)$.
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lastnosti spektra}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Izrek (Liouvilleov)}
+			Naj bo $\map{f}{\C}{\C}$ poljubna funkcija, ki je (kompleksno) odvedljiva na celotni kompleksni ravnini $\C$. Če je $f$ omejena, je tudi konstantna.
+	\end{block}}
+	
+	\uncover<3>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za vsak operator $T\in B(X)$ velja: \begin{enumerate}[a)]
+				\item Če je $\lambda\in\sigma(T)$, je $\abs{\lambda}\leq\norm{T}$.
+				\item $\sigma(T)$ je kompaktna množica v $\C$.
+				\item $\sigma(T)\neq \emptyset$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lastnosti spektra}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Lema}
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor. Tedaj je za vsak $T\in B(X)$: $$\sigma(T^*)=\{\bar{\lambda}~|~\lambda\in\sigma(T)\}.$$
+	\end{block}}
+	
+	\uncover<3>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben operator. Tedaj za poljuben nekonstanten polinom $p\in\C[X]$ velja: \begin{enumerate}[a)]
+				\item $\sigma(p(T))=\{p(z)~|~z\in\sigma(T)\}$,
+				\item Če je $T$ obrnljiv, je $\sigma(T^{-1})=\{\lambda^{-1}~|~\lambda\in\sigma(T)\}$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lastnosti spektra}
+	
+	\pause
+	
+	\uncover<2>{\begin{block}{Lema}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Za operator $T\in B(X)$ velja: \begin{enumerate}[a)]
+				\item Če je $T$ netrivialen idempotent, je $\sigma(T) = \{0, 1\}$.
+				\item Če je $T$ nilpotent, je $\sigma(T) = \{0\}$.
+				\item Če je $T\in \mathcal{U}(X)$, je $\sigma(T) \subseteq \{\lambda\in\C~|~ \abs{\lambda}=1\}$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Numerični zaklad}
+	
+	\pause
+	
+	\begin{definition}<2> %\uncover<3> bo sledeči element prikazal(odkril) na 3. strani slida.
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben operator. \begin{enumerate}[a)]
+			\item \textbf{Spektralni radij} operatorja $T$, označen z $r_\sigma(T)$, je definiran na naslednji način: $$r_\sigma(T) = \sup\{\abs{\lambda}~|~\lambda\in\sigma(T)\}.$$
+			\item \textbf{Numerični zaklad} operatorja $T$, označen z $V(T)$, je definiran na naslednji način: $$V(T)=\{\Sp{Tx}{x}~|~x\in X \land \norm{x}=1\}.$$
+		\end{enumerate}
+	\end{definition}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Numerični zaklad}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Lema}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Če je operator $T\in B(X)$ normalen, je $\sigma(T)\subseteq \overline{V(T)}$.
+	\end{block}}
+	
+	\uncover<3>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Velja: \begin{enumerate}[a)]
+				\item $V(T)\subseteq \R$,
+				\item $\sigma(T)\subseteq \R$,
+				\item $\norm{T}\in\sigma(T)\lor (-\norm{T})\in\sigma(T)$,
+				\item $r_\sigma(T)=\sup\{\abs{t}~|~t\in V(T)\} = \norm{T}$,
+				\item $\inf\{\lambda~|~\lambda\in\sigma(T)\} \leq t \leq \sup\{\lambda~|~\lambda\in\sigma(T)\}$ za vsak $t\in V(T)$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pozitivni operatorji}
+	
+	\pause
+	
+	\begin{definition}<2,3> %\uncover<3> bo sledeči element prikazal(odkril) na 3. strani slida.
+		Naj bo $X$ poljuben kompleksen Hilbertov prostor. Pravimo, da je operator $T\in B(X)$ \textbf{pozitiven}, če je sebi-adjungiran in pozitivno semidefiniten.
+	\end{definition}
+	
+	\uncover<3>{\begin{block}{Trditev}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in naj bo $T\in B(X)$ poljuben sebi-adjungiran operator. Operator je $T$ pozitiven natanko tedaj, ko je $\sigma(T)\subseteq [0, \infty)$.
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Pozitivni operatorji}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Trditev}
+		Naj bo $X$ poljuben Hilbertov prostor in naj bo $T\in B(X)$ poljuben obrnljiv pozitiven operator. Tedaj je operator $T^{-1}$ pozitiven.
+	\end{block}}
+	
+	\uncover<3>{\begin{block}{Lema}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor vseh sebi-adjungiranih operatorjev na $X$. Dodatno s $\mathcal{C}_\R(\sigma(T))$ označimo realen vektorski prostor vseh zveznih funkcij, ki slikajo iz $\sigma(T)$ v $\R$. Tedaj za vsak sebi-adjungiran operator $T\in \mathcal{S}(X)$ obstaja tak omejen linearen operator $\map{\Phi}{\mathcal{C}_\R(\sigma(T))}{\mathcal{S}(X)}$, da je: \begin{enumerate}
+				\item $\Phi(p) = p(T)$ za vsak polinom $p\in\mathcal{C}_\R(\sigma(T))$,
+				\item $\Phi(f\cdot g) = \Phi(f)\Phi(g)$ za vse $f, g\in \mathcal{C}_\R(\sigma(T))$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Koren pozitivnega operatorja}
+	
+	\pause
+	
+	\uncover<2,3>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor in označimo s $\mathcal{S}(X)$ realen Banachov prostor sebi-adjungiranih operatorjev na $X$. Tedaj za vsak pozitiven operator $T\in\mathcal{S}(X)$ obstaja enolično določen pozitiven koren $U$ operatorja $T$, ki je limita nekega zaporedja polinomov v $T$.
+	\end{block}}
+	
+	\uncover<3>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor. Tedaj za vsak obrnjiv operator $T\in B(X)$ obstajata tak unitaren operator $U$ na $X$ in tak pozitiven operator $R$ na $X$, da je $T = UR$.
+	\end{block}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Koren pozitivnega operatorja}
+	
+	\pause
+
+	\uncover<2>{\begin{block}{Izrek}
+			Naj bo $X$ poljuben kompleksen Hilbertov prostor ter naj bo $T\in B(X)$ poljuben sebi-adjungiran operator na $X$. Velja: \begin{enumerate}[i)]
+				\item Operatorja $$ T_+ = \frac{1}{2}(\sqrt{T^2}+T)~\text{ter}~T_-=\frac{1}{2}(\sqrt{T^2}-T)$$ sta pozitivna in velja, da je $T = T_+ - T_-$.
+				\item Obstaja tak ortogonalen projektor $P_+\in B(X)$, da je $P_+T=T_+$, $(P_+ - I)T=T_-$ in za katerega velja, da če je $Tx=0$, je $P_+x=x$.
+				\item Za vsak omejen linearnen operator $V\in B(X)$ velja: Operatorja $V$ in $T$ komutirata natanko tedaj, ko operator $V$ komutira z operatorji $T_+$, $T_-$ in $P_+$.
+			\end{enumerate}
+	\end{block}}
+	
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Zaključek}
+%\begin{frame}%
+%\frametitle{Zaključek}%
+%
+%Virov za prezentacijo ni potrebno navesti, lahko pa dodate stran za vprašanja in/ali zahvalo.
+%
+%\end{frame}%
+%
+
+\end{document}

@@ -1,0 +1,6 @@
+\babel@toc {slovene}{}\relax 
+\beamer@sectionintoc {1}{Uvod}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Napovednik}{2}{0}{1}
+\beamer@sectionintoc {2}{Osnovne definicije in rezultati}{5}{0}{2}
+\beamer@sectionintoc {3}{Adjungiran operator}{19}{0}{3}
+\beamer@sectionintoc {4}{Spekter}{37}{0}{4}
